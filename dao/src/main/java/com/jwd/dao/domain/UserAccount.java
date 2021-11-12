@@ -15,6 +15,13 @@ public class UserAccount {
         this.user = user;
     }
 
+    public UserAccount(String login, String password, String role, User user) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.user = user;
+    }
+
     public long getId() {
         return id;
     }

@@ -5,16 +5,17 @@ import com.jwd.dao.domain.UserAccount;
 import com.jwd.dao.domain.UserDto;
 import com.jwd.dao.exception.DaoException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface UserDao {
 
     List<UserAccount> getUsers();
 
-    UserAccount getUserById(Long id);
+    UserAccount getUserById(Long id) throws DaoException, SQLException;
 
-    UserAccount getUserByLoginAndPassword(UserAccount user);
+    UserAccount getUserByLoginAndPassword(String login, String password);
 
-    void saveUser(UserAccount user) throws DaoException;
+    void saveUserAccount(UserAccount user) throws DaoException, SQLException;
 
 }

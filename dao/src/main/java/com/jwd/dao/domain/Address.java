@@ -18,6 +18,13 @@ public class Address {
         this.apartment = apartment;
     }
 
+    public Address(String city, String street, String building, String apartment) {
+        this.city = city;
+        this.street = street;
+        this.building = building;
+        this.apartment = apartment;
+    }
+
     public long getId() {
         return id;
     }
