@@ -1,4 +1,4 @@
-package com.jwd.dao.repository.impl;
+package com.jwd.dao.connection;
 
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.exception.DaoException;
@@ -14,7 +14,7 @@ import static java.util.Objects.nonNull;
 public class ConnectionUtil {
     private final ConnectionPoolImpl connectionPool;
 
-    protected ConnectionUtil(ConnectionPoolImpl connectionPool) {
+   public ConnectionUtil(ConnectionPoolImpl connectionPool) {
         this.connectionPool = connectionPool;
     }
 
@@ -29,8 +29,8 @@ public class ConnectionUtil {
     }
 
 
-    protected PreparedStatement getPreparedStatement(final String query, final Connection connection,
-                                                     final List<Object> parameters) throws SQLException {
+    public PreparedStatement getPreparedStatement(final String query, final Connection connection,
+                                                  final List<Object> parameters) throws SQLException {
         final PreparedStatement preparedStatement = connection.prepareStatement(query);
         setPreparedStatementParameters(preparedStatement, parameters);
         return preparedStatement;
@@ -56,7 +56,7 @@ public class ConnectionUtil {
     }
 
 
-    protected void close(final ResultSet... resultSets) {
+    public void close(final ResultSet... resultSets) {
         try {
             if (nonNull(resultSets)) {
                 for (final ResultSet resultSet : resultSets) {
@@ -70,7 +70,7 @@ public class ConnectionUtil {
         }
     }
 
-    protected void close(final PreparedStatement... preparedStatements) {
+    public void close(final PreparedStatement... preparedStatements) {
         try {
             if (nonNull(preparedStatements)) {
                 for (final PreparedStatement preparedStatement : preparedStatements) {

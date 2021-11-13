@@ -1,7 +1,11 @@
 <html>
     <body>
-        <h2>Home!</h2>
-        <hr/>
-        <a href="/main">main</a>
-    </body>
+           <div>
+               <h2>Home!</h2>
+               <!-- NAVIGATION -->
+               <a href="/registerPage">Registration</a>
+               <hr/>
+               <br/>
+           </div>
+       </body>
 </html>

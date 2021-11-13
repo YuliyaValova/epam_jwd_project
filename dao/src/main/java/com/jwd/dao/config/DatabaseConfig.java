@@ -58,8 +58,4 @@ public class DatabaseConfig {
         }
     }
 
-
-    public static void main(String[] args) {
-
-    }
 }

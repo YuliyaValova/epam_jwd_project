@@ -1,4 +1,5 @@
-package com.jwd.dao.domain;
+package com.jwd.service.domain;
+
 
 public class UserAccount {
     private long id;
@@ -7,8 +8,7 @@ public class UserAccount {
     private String role;
     private User user;
 
-    public UserAccount() {
-    }
+    public UserAccount(){}
 
 
     public UserAccount(long id, String login, String password, String role, User user) {

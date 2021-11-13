@@ -1,6 +1,7 @@
 package com.jwd.dao.repository.impl;
 
 import com.jwd.dao.config.DatabaseConfig;
+import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.domain.Address;
 import com.jwd.dao.domain.User;
