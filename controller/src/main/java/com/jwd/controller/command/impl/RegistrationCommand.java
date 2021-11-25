@@ -2,18 +2,17 @@ package com.jwd.controller.command.impl;
 
 import com.jwd.controller.command.Command;
 import com.jwd.controller.exception.ControllerException;
+import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.Address;
-import com.jwd.service.domain.User;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.serviceLogic.UserService;
-import com.jwd.service.serviceLogic.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RegistrationCommand implements Command {
 
-    private final UserService userService = new UserServiceImpl();
+    private final UserService userService = ServiceFactory.getServiceFactory().getUserService();
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException {
@@ -30,11 +29,13 @@ public class RegistrationCommand implements Command {
             final String building = req.getParameter("building");
             final String apartment = req.getParameter("apartment");
 
-           //todo validation
+            //todo validation
+            // todo password secure
 
-            Address address = new Address(city,street,building,apartment);
-            User user = new User(fName,lName,phone,address);
-            UserAccount userAccount = new UserAccount(login, password1, "default", user);
+            if (!password1.equals(password2)) throw new Exception("Passwords are not the same.");
+
+            Address address = new Address(city, street, building, apartment);
+            UserAccount userAccount = new UserAccount(login, password1, "default", fName, lName, phone, address);
             userService.register(userAccount);
 
             req.setAttribute("message", "User registered successfully.");

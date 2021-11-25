@@ -3,6 +3,8 @@ package com.jwd.controller;
 
 import com.jwd.controller.command.Command;
 import com.jwd.controller.command.impl.DefaultCommand;
+import com.jwd.controller.command.impl.LogInCommand;
+import com.jwd.controller.command.impl.LogOutCommand;
 import com.jwd.controller.command.impl.RegistrationCommand;
 import com.jwd.controller.exception.ControllerException;
 import com.jwd.controller.util.CommandEnum;
@@ -16,10 +18,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.jwd.controller.util.CommandEnum.DEFAULT;
-import static com.jwd.controller.util.CommandEnum.REGISTRATION;
+import static com.jwd.controller.util.CommandEnum.*;
 import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 
+// todo filters
 
 public class FrontController extends HttpServlet {
     private Map<CommandEnum, Command> commands;
@@ -36,6 +39,8 @@ public class FrontController extends HttpServlet {
         }
         commands.put(DEFAULT, new DefaultCommand());
         commands.put(REGISTRATION, new RegistrationCommand());
+        commands.put(LOGIN, new LogInCommand());
+        commands.put(LOGOUT, new LogOutCommand());
     }
 
 
@@ -53,9 +58,11 @@ public class FrontController extends HttpServlet {
         try {
             final CommandEnum command = getCommand(req);
             commands.get(command).execute(req, resp);
+            req.setAttribute("message","Successful registration");
         } catch (ControllerException e) {
-            // req.setAttribute("message", "error from #doExecute");
-           // req.getRequestDispatcher("/").forward(req, resp);
+            Throwable cause = getCause(e);
+            req.setAttribute("message", "Exception: " + cause.getMessage());
+            req.getRequestDispatcher("/").forward(req, resp);
         }
     }
 
@@ -66,5 +73,13 @@ public class FrontController extends HttpServlet {
         }
         return CommandEnum.valueOf(commandNameParam.toUpperCase());
     }
+
+    private Throwable getCause(Throwable cause) {
+        if (nonNull(cause.getCause())) {
+            cause = getCause(cause.getCause()); // recursive call of same method inside of it
+        }
+        return cause;
+    }
+
 
 }

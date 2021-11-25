@@ -1,7 +1,13 @@
 <html>
     <body>
-        <h2>Main!</h2>
-        <hr/>
-        <a href="/">home</a>
+           <h1>Hello, it is page for products</h1>
+            <c:if test="${sessionScope.role != null}">
+                                  <p>Authorized=<c:out value="${sessionScope.role}" /></p>
+                                  <form method="get" action="/" >
+                                      <input type="hidden" name="command" value="logout"/>
+                                      <button type="submit">Log out</button>
+                                  </form>
+             </c:if>
+
     </body>
 </html>

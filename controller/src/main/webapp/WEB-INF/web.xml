@@ -13,14 +13,14 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FrontServlet</servlet-name>
-        <url-pattern>/main</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FrontServlet</servlet-name>
         <url-pattern>/registerPage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FrontServlet</servlet-name>
-        <url-pattern>/WEB-INF/errors/error</url-pattern>
+        <url-pattern>/loginPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FrontServlet</servlet-name>
+        <url-pattern>/main</url-pattern>
     </servlet-mapping>
 </web-app>

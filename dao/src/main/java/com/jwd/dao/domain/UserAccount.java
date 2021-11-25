@@ -5,65 +5,102 @@ public class UserAccount {
     private String login;
     private String password; //todo: password secure
     private String role;
-    private User user;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private Address address;
 
     public UserAccount() {
     }
 
-
-    public UserAccount(long id, String login, String password, String role, User user) {
+    public UserAccount(long id, String login, String password, String role, String firstName, String lastName, String phone, Address address) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.role = role;
-        this.user = user;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.address = address;
     }
 
-    public UserAccount(String login, String password, String role, User user) {
+    public UserAccount(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public UserAccount(String login, String password, String role, String firstName, String lastName, String phone, Address address) {
         this.login = login;
         this.password = password;
         this.role = role;
-        this.user = user;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.address = address;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getLogin() {
         return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getRole() {
         return role;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setRole(String role) {
         this.role = role;
     }
 
-    public User getUser() {
-        return user;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
@@ -77,7 +114,10 @@ public class UserAccount {
         if (login != null ? !login.equals(that.login) : that.login != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (role != null ? !role.equals(that.role) : that.role != null) return false;
-        return user != null ? user.equals(that.user) : that.user == null;
+        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+        return address != null ? address.equals(that.address) : that.address == null;
     }
 
     @Override
@@ -86,7 +126,10 @@ public class UserAccount {
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
     }
 
@@ -97,7 +140,10 @@ public class UserAccount {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                ", user=" + user +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address=" + address +
                 '}';
     }
 }

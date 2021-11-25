@@ -6,14 +6,17 @@ import com.jwd.controller.exception.ControllerException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DefaultCommand implements Command {
+public class LogOutCommand implements Command {
+
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException {
+
         try {
-            resp.sendRedirect(Command.prepareUri(req) + ".jsp");
+            req.getSession().invalidate();
+            resp.sendRedirect("/");
         } catch (Exception e) {
-            e.printStackTrace();
             throw new ControllerException(e.getMessage());
         }
     }
 }
+

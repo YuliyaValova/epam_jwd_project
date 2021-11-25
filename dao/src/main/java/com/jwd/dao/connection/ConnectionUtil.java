@@ -1,6 +1,5 @@
 package com.jwd.dao.connection;
 
-import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.exception.DaoException;
 
 import java.sql.Connection;
@@ -12,9 +11,9 @@ import java.util.List;
 import static java.util.Objects.nonNull;
 
 public class ConnectionUtil {
-    private final ConnectionPoolImpl connectionPool;
+    private final ConnectionPool connectionPool;
 
-   public ConnectionUtil(ConnectionPoolImpl connectionPool) {
+    public ConnectionUtil(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
 
@@ -57,30 +56,30 @@ public class ConnectionUtil {
 
 
     public void close(final ResultSet... resultSets) {
-        try {
-            if (nonNull(resultSets)) {
-                for (final ResultSet resultSet : resultSets) {
-                    if (nonNull(resultSet)) {
+        if (nonNull(resultSets)) {
+            for (final ResultSet resultSet : resultSets) {
+                if (nonNull(resultSet)) {
+                    try {
                         resultSet.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
     public void close(final PreparedStatement... preparedStatements) {
-        try {
-            if (nonNull(preparedStatements)) {
-                for (final PreparedStatement preparedStatement : preparedStatements) {
-                    if (nonNull(preparedStatement)) {
+        if (nonNull(preparedStatements)) {
+            for (final PreparedStatement preparedStatement : preparedStatements) {
+                if (nonNull(preparedStatement)) {
+                    try {
                         preparedStatement.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
                     }
                 }
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 

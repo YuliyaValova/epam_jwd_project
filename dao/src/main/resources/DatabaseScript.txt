@@ -1,66 +1,66 @@
-create database epam_jwd_db;
+create database if not exists epam_jwd_db;
+
 use epam_jwd_db;
 
-create table Addresses(
+create table if not exists Addresses(
 id bigint primary key auto_increment,
-city varchar(30) not null,
+city varchar(100) not null,
 street text not null,
 building varchar(15) not null,
 apartment varchar(15)
 );
 
-create table Users (
+create table if not exists UserAccounts(
 id bigint primary key auto_increment,
+login varchar(50) unique not null,
+password varchar(50) not null,
+role varchar(25) not null,
 fName varchar(25),
 lName varchar(25),
 phone varchar(15) not null,
 address_id bigint
 );
 
-create table UserAccounts(
-id bigint primary key auto_increment,
-login varchar(50) unique not null,
-password varchar(50) not null,
-role varchar(25) not null,
-user_id bigint not null
-);
-
-create table Products(
+create table if not exists Products(
 id bigint primary key auto_increment,
 name varchar(30) not null,
+type varchar(30) not null,
 description text,
 price integer not null,
 isAvailable bool not null
 );
 
-create table Orders(
+create table if not exists Orders(
 id bigint primary key auto_increment,
 date datetime not null,
 status varchar(30) not null,
 product_amount integer default 1,
 product_id bigint,
-customer_id bigint,
-foreign key (product_id) references Products(id),
-foreign key (customer_id) references UserAccounts(id)
+customer_id bigint
 );
 
-select * from UserAccounts;
-insert into Users (fName,lName,phone, address_id)
+insert into Addresses (city, street, building, apartment)
 values
-("Lulka", "Valova", "9740419", 1),
-("Marina", "Valova", "3606384", 1),
-("Vera", "Kolesinskaya", "6545838", 2);
+("Гродно", "Центральная", "128", "4"),
+("Минск", "Сурганова", "4-1", "603а"),
+("Лида", "Победы", "12", ""),
+("Минск", "П.Бровки", "17", "22");
 
-insert into Addresses (city, street, building,apartment)
+insert into UserAccounts (login, password, role, fName, lName, phone, address_id)
 values
-("Lida", "Nevskogo", "50", "17");
+("PashaKek", "88526", "default", "Pavel", "Malashko", "+375299874512", 1),
+("Marish", "12512555", "default", "Marina", "Kolesinskaya", "+375293654568", 2),
+("Dima666", "14141414", "default", "Dmitriy", "Kohnovich", "+375447842536", 3),
+("Admin", "111", "admin", "Lulka", "Xo", "+375299740419", 4);
 
-insert into UserAccounts (login, password, role, user_id)
+insert into Products (name, type, description, price, isAvailable)
 values
-("Marina2", "9999999", "admin", (select id from Users where Users.fname = "Marina" and phone = "3606384"));
+("Margarita", "Pizza", "Juicy tomato pizza with mozzarella and cheddar", 18, true),
+("Pesto", "Pizza", "Consists of: green - from basil, red - from tomatoes, and white - from mozzarella.", 16, true),
+("Pepperoni", "Pizza", "Pepperoni, chili peppers, tomatoes in their own juice, oregano, dried basil", 17, true);
 
-select UserAccounts.id, Users.id , login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts
-left join Users on Users.id = UserAccounts.user_id
-left join Addresses on Addresses.id = Users.address_id;
-
-
+insert into Orders (date, status, product_amount, product_id, customer_id)
+values
+(now(), "Paid up", 1, 1, 1),
+(now(), "Paid up", 2, 1, 2),
+(now(), "Waiting for payment", 2, 3, 1);

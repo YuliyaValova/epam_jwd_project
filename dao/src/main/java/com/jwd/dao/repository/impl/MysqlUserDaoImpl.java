@@ -1,10 +1,8 @@
 package com.jwd.dao.repository.impl;
 
-import com.jwd.dao.config.DatabaseConfig;
+import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
-import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.domain.Address;
-import com.jwd.dao.domain.User;
 import com.jwd.dao.domain.UserAccount;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.UserDao;
@@ -18,72 +16,67 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+//todo validation
+//todo logger
+
 public class MysqlUserDaoImpl implements UserDao {
-    private static final String FIND_ALL_USERS_QUERY = "select UserAccounts.id, login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts left join Users on Users.id = UserAccounts.user_id left join Addresses on Addresses.id = Users.address_id;\n";
+    private static final String FIND_ALL_USERS_QUERY = "select UserAccounts.id, login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts\n" +
+            "left join Addresses on Addresses.id = UserAccounts.address_id;\n";
     private static final String FIND_USER_BY_ID_QUERY = "select UserAccounts.id, login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts\n" +
-            "left join Users on Users.id = UserAccounts.user_id\n" +
-            "left join Addresses on Addresses.id = Users.address_id\n" +
+            "left join Addresses on Addresses.id = UserAccounts.address_id\n" +
             "where UserAccounts.id = ?;";
     private static final String FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY = "select UserAccounts.id, login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts\n" +
-            "left join Users on Users.id = UserAccounts.user_id\n" +
-            "left join Addresses on Addresses.id = Users.address_id\n" +
+            "left join Addresses on Addresses.id = UserAccounts.address_id\n" +
             "where UserAccounts.login = ? and UserAccounts.password = ?;";
     private static final String SAVE_ADDRESS_QUERY = "insert into Addresses (city, street, building, apartment) values (?,?,?,?);";
-    private static final String SAVE_USER_QUERY = "insert into Users (fName,lName,phone, address_id) values (?,?,?,?);";
-    private static final String SAVE_USER_ACCOUNT_QUERY = "insert into UserAccounts (login, password, role, user_id) values (?, ?, ?, ?);";
+    private static final String SAVE_USER_ACCOUNT_QUERY = "insert into UserAccounts (login, password, role, fName, lName, phone, address_id) values ( ?, ?, ?, ?, ?, ?, ?);";
     private static final String IS_ADDRESS_EXISTS_QUERY = "select distinct id from Addresses where\n" +
             "city = ? and street = ? and building = ? and apartment = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_QUERY = "select id from UserAccounts where login = ?;";
-    private static final String IS_USER_EXISTS_QUERY = "select distinct id from Users where\n" +
-            "fName = ? and lName = ? and phone = ?;";
-    private final DatabaseConfig dataBaseConfig;
-    private final ConnectionPoolImpl connectionPool;
+    private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
 
-    public MysqlUserDaoImpl() {
-        dataBaseConfig = new DatabaseConfig();
-        connectionPool = new ConnectionPoolImpl(dataBaseConfig);
-        daoUtil = new ConnectionUtil(connectionPool);
+    public MysqlUserDaoImpl(ConnectionPool connectionPool, ConnectionUtil daoUtil) {
+        this.connectionPool = connectionPool;
+        this.daoUtil = daoUtil;
     }
 
 
     @Override
-    public List<UserAccount> getUsers() {
+    public List<UserAccount> getUsers() throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = connectionPool.takeConnection();
-            PreparedStatement preparedStatement = daoUtil.getPreparedStatement(FIND_ALL_USERS_QUERY, connection, Collections.emptyList());
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(FIND_ALL_USERS_QUERY, connection, Collections.emptyList());
+            resultSet = preparedStatement.executeQuery();
             final List<UserAccount> users = new ArrayList<>();
             while (resultSet.next()) {
                 users.add(getUserAccountFromDb(resultSet));
             }
-            daoUtil.close(resultSet);
-            daoUtil.close(preparedStatement);
-            connectionPool.retrieveConnection(connection);
             return users;
         } catch (SQLException | DaoException e) {
             e.printStackTrace();
-            throw new RuntimeException();
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet);
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
         }
     }
 
     private UserAccount getUserAccountFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
+        System.out.println("id = "+ id);
         String login = resultSet.getString(2);
         String password = resultSet.getString(3);
         String role = resultSet.getString(4);
-        User user = getUserForAccount(resultSet);
-        return new UserAccount(id, login, password, role, user);
-    }
-
-    private User getUserForAccount(ResultSet res) throws SQLException {
-        User user = new User();
-        user.setFirstName(res.getString(5));
-        user.setLastName(res.getString(6));
-        user.setPhone(res.getString(7));
-        user.setAddress(getAddressForUser(res));
-        return user;
+        String firstName = resultSet.getString(5);
+        String lastName = resultSet.getString(6);
+        String phone = resultSet.getString(7);
+        Address address = getAddressForUser(resultSet);
+        return new UserAccount(id, login, password, role, firstName, lastName, phone, address);
     }
 
     private Address getAddressForUser(ResultSet res) throws SQLException {
@@ -98,137 +91,105 @@ public class MysqlUserDaoImpl implements UserDao {
 
     @Override
     public UserAccount getUserById(Long id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
         List<Object> parameters = Arrays.asList(
                 id
         );
         try {
-            Connection connection = connectionPool.takeConnection();
-            PreparedStatement preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_ID_QUERY, connection, parameters);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_ID_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
             UserAccount userAcc = null;
             while (resultSet.next()) {
                 userAcc = getUserAccountFromDb(resultSet);
             }
-            daoUtil.close(resultSet);
-            daoUtil.close(preparedStatement);
-            connectionPool.retrieveConnection(connection);
             return userAcc;
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException();
-        }
-    }
-
-
-    @Override
-    public UserAccount getUserByLoginAndPassword(String login, String password) {
-        List<Object> parameters = Arrays.asList(
-                login,
-                password
-        );
-        try {
-            Connection connection = connectionPool.takeConnection();
-            PreparedStatement preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY, connection, parameters);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            UserAccount userAcc = null;
-            while (resultSet.next()) {
-                userAcc = getUserAccountFromDb(resultSet);
-            }
-            daoUtil.close(resultSet);
-            daoUtil.close(preparedStatement);
-            connectionPool.retrieveConnection(connection);
-            return userAcc;
-        } catch (SQLException | DaoException e) {
-            e.printStackTrace();
-            throw new RuntimeException();
-        }
-    }
-
-    @Override
-    public void saveUserAccount(UserAccount userAcc) {
-        if (!userAccountIsExists(userAcc)) {
-            Address address = userAcc.getUser().getAddress();
-            Long addressId = saveAddress(address);
-            User user = userAcc.getUser();
-            Long userId = saveUser(user, addressId);
-            List<Object> parameters = Arrays.asList(
-                    userAcc.getLogin(),
-                    userAcc.getPassword(),
-                    userAcc.getRole(),
-                    userId
-            );
-            Connection connection = null;
-            PreparedStatement preparedStatement = null;
-            try {
-                connection = connectionPool.takeConnection();
-                preparedStatement = daoUtil.getPreparedStatement(SAVE_USER_ACCOUNT_QUERY, connection, parameters);
-                int affectedRows = preparedStatement.executeUpdate();
-            } catch (SQLException | DaoException e) {
-                e.printStackTrace();
-            } finally {
-                daoUtil.close(preparedStatement);
-                connectionPool.retrieveConnection(connection);
-            }
-
-        } else System.out.println("Already exists");
-
-    }
-
-    private Long saveUser(User user, Long addressId) {
-        Long userId = getUserId(user);
-        if (userId == null) {
-            List<Object> parameters = Arrays.asList(
-                    user.getFirstName(),
-                    user.getLastName(),
-                    user.getPhone(),
-                    addressId
-            );
-            Connection connection = null;
-            PreparedStatement preparedStatement = null;
-            try {
-                connection = connectionPool.takeConnection();
-                preparedStatement = daoUtil.getPreparedStatement(SAVE_USER_QUERY, connection, parameters);
-                int affectedRows = preparedStatement.executeUpdate();
-                userId = getUserId(user);
-                return userId;
-            } catch (SQLException | DaoException e) {
-                e.printStackTrace();
-            } finally {
-                daoUtil.close(preparedStatement);
-                connectionPool.retrieveConnection(connection);
-            }
-        }
-        return userId;
-    }
-
-    private Long getUserId(User user) {
-        Long userId = null;
-        List<Object> parameters = Arrays.asList(
-                user.getFirstName(),
-                user.getLastName(),
-                user.getPhone()
-        );
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = connectionPool.takeConnection();
-            preparedStatement = daoUtil.getPreparedStatement(IS_USER_EXISTS_QUERY, connection, parameters);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                userId = resultSet.getLong(1);
-            } else userId = null;
-        } catch (SQLException | DaoException e) {
-            e.printStackTrace();
+            throw new DaoException(e);
         } finally {
             daoUtil.close(resultSet);
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
-        return userId;
     }
 
-    private Long saveAddress(Address address) {
+
+    @Override
+    public UserAccount getUserByLoginAndPassword(String login, String password) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        List<Object> parameters = Arrays.asList(
+                login,
+                password
+        );
+        try {
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
+            UserAccount userAcc = null;
+            if (resultSet.next()) {
+                System.out.println("ResultSet");
+                userAcc = getUserAccountFromDb(resultSet);
+            }
+            return userAcc;
+        } catch (SQLException | DaoException e) {
+            e.printStackTrace();
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet);
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public long saveUserAccount(UserAccount userAcc) throws DaoException, SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        long id = userAccountIsExists(userAcc);
+        if (id == -1) {
+            Address address = userAcc.getAddress();
+            Long addressId = saveAddress(address);
+            List<Object> parameters = Arrays.asList(
+
+                    userAcc.getLogin(),
+                    userAcc.getPassword(),
+                    userAcc.getRole(),
+                    userAcc.getFirstName(),
+                    userAcc.getLastName(),
+                    userAcc.getPhone(),
+                    addressId
+            );
+
+            try {
+                connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
+                preparedStatement = daoUtil.getPreparedStatement(SAVE_USER_ACCOUNT_QUERY, connection, parameters);
+                int affectedRows = preparedStatement.executeUpdate();
+                connection.commit();
+                return userAccountIsExists(userAcc);
+            } catch (SQLException | DaoException e) {
+                e.printStackTrace();
+                throw new DaoException(e);
+            } finally {
+                daoUtil.close(preparedStatement);
+                connectionPool.retrieveConnection(connection);
+            }
+
+        } else {
+            connection.rollback();
+            throw new DaoException("This user already exists.");
+        }
+
+    }
+
+    private Long saveAddress(Address address) throws DaoException {
         Long addressId = getAddressId(address);
         if (addressId == null) {
             List<Object> parameters = Arrays.asList(
@@ -247,6 +208,7 @@ public class MysqlUserDaoImpl implements UserDao {
                 return addressId;
             } catch (SQLException | DaoException e) {
                 e.printStackTrace();
+                throw new DaoException(e);
             } finally {
                 daoUtil.close(preparedStatement);
                 connectionPool.retrieveConnection(connection);
@@ -255,7 +217,7 @@ public class MysqlUserDaoImpl implements UserDao {
         return addressId;
     }
 
-    private Long getAddressId(Address address) {
+    private Long getAddressId(Address address) throws DaoException {
         Long addressId = null;
         List<Object> parameters = Arrays.asList(
                 address.getCity(),
@@ -275,6 +237,7 @@ public class MysqlUserDaoImpl implements UserDao {
             } else addressId = null;
         } catch (SQLException | DaoException e) {
             e.printStackTrace();
+            throw new DaoException(e);
         } finally {
             daoUtil.close(resultSet);
             daoUtil.close(preparedStatement);
@@ -283,7 +246,7 @@ public class MysqlUserDaoImpl implements UserDao {
         return addressId;
     }
 
-    private boolean userAccountIsExists(UserAccount acc) {
+    private long userAccountIsExists(UserAccount acc) throws DaoException {
         List<Object> parameters = Arrays.asList(
                 acc.getLogin()
         );
@@ -294,12 +257,12 @@ public class MysqlUserDaoImpl implements UserDao {
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(IS_USER_ACCOUNT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) return true;
-            else return false;
+            if (resultSet.next()) return resultSet.getLong(1);
+            else return -1;
 
         } catch (SQLException | DaoException e) {
             e.printStackTrace();
-            throw new RuntimeException();
+            throw new DaoException(e);
 
         } finally {
             daoUtil.close(resultSet);

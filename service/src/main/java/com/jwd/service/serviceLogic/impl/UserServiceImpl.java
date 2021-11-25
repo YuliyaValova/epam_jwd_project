@@ -1,30 +1,46 @@
 package com.jwd.service.serviceLogic.impl;
 
+import com.jwd.dao.DaoFactory;
 import com.jwd.dao.domain.Address;
-import com.jwd.dao.domain.User;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.UserDao;
-import com.jwd.dao.repository.impl.MysqlUserDaoImpl;
 import com.jwd.service.domain.UserAccount;
+import com.jwd.service.domain.UserDto;
 import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.UserService;
 
 import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
-    private final UserDao userDao = new MysqlUserDaoImpl();
+
+    private final UserDao userDao = DaoFactory.getFactory().getUserDao();
 
     @Override
-    public boolean register(UserAccount user) throws ServiceException {
-        boolean success = false;
+    public void register(UserAccount user) throws ServiceException {
         try {
             //todo validation
             userDao.saveUserAccount(convertToDaoUserAccount(user));
-            success = true;
         } catch (final DaoException | SQLException e) {
             throw new ServiceException(e);
         }
-        return success;
+    }
+
+    @Override
+    public UserAccount login(UserAccount user) throws ServiceException {
+        try {
+            // todo  validation
+
+            String login = user.getLogin();
+            System.out.println("login = "+ login);
+            String password = user.getPassword();
+
+            UserAccount loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+            System.out.println("from lodin " + loginatedUser);
+            return loginatedUser;
+
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {
@@ -33,20 +49,14 @@ public class UserServiceImpl implements UserService {
         acc.setLogin(user.getLogin());
         acc.setPassword(user.getPassword());
         acc.setRole(user.getRole());
-        setUser(acc, user);
+        acc.setFirstName(user.getFirstName());
+        acc.setLastName(user.getLastName());
+        acc.setPhone(user.getPhone());
+        setAddress(acc, user.getAddress());
         return acc;
     }
 
-    private void setUser(com.jwd.dao.domain.UserAccount acc, UserAccount user) {
-        User userDao = new User();
-        userDao.setFirstName(user.getUser().getFirstName());
-        userDao.setLastName(user.getUser().getLastName());
-        userDao.setPhone(user.getUser().getPhone());
-        setAddress(userDao, user.getUser().getAddress());
-        acc.setUser(userDao);
-    }
-
-    private void setAddress(User user,com.jwd.service.domain.Address address) {
+    private void setAddress(com.jwd.dao.domain.UserAccount user, com.jwd.service.domain.Address address) {
         Address addressDao = new Address();
         addressDao.setId(address.getId());
         addressDao.setCity(address.getCity());

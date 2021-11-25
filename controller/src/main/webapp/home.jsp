@@ -4,7 +4,11 @@
                <h2>Home!</h2>
                <!-- NAVIGATION -->
                <a href="/registerPage">Registration</a>
-               <hr/>
+               </br>
+               <a href="/loginPage">Log In</a>
+
+               <p>Message = ${requestScope.message} </p>
+
                <br/>
            </div>
        </body>
