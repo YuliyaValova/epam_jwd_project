@@ -1,5 +1,7 @@
 package com.jwd.service.domain;
 
+import static java.util.Objects.nonNull;
+
 public class UserAccount {
     private long id;
     private String login;
@@ -32,10 +34,16 @@ public class UserAccount {
         this.firstName = acc.getFirstName();
         this.lastName = acc.getLastName();
         this.phone = acc.getPhone();
-        this.address.setCity(acc.getAddress().getCity());
-        this.address.setStreet(acc.getAddress().getCity());
-        this.address.setBuilding(acc.getAddress().getBuilding());
-        this.address.setApartment(acc.getAddress().getApartment());
+        if (nonNull(acc.getAddress())) {
+            Address addr = new Address(
+                    acc.getAddress().getId(),
+                    acc.getAddress().getCity(),
+                    acc.getAddress().getStreet(),
+                    acc.getAddress().getBuilding(),
+                    acc.getAddress().getApartment()
+            );
+            this.address = addr;
+        } else this.address = null;
     }
 
     public UserAccount(String login, String password, String role, String firstName, String lastName, String phone, Address address) {

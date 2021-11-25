@@ -68,7 +68,6 @@ public class MysqlUserDaoImpl implements UserDao {
 
     private UserAccount getUserAccountFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
-        System.out.println("id = "+ id);
         String login = resultSet.getString(2);
         String password = resultSet.getString(3);
         String role = resultSet.getString(4);
@@ -134,7 +133,6 @@ public class MysqlUserDaoImpl implements UserDao {
             resultSet = preparedStatement.executeQuery();
             UserAccount userAcc = null;
             if (resultSet.next()) {
-                System.out.println("ResultSet");
                 userAcc = getUserAccountFromDb(resultSet);
             }
             return userAcc;

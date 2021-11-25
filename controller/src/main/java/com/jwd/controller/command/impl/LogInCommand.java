@@ -25,9 +25,7 @@ public class LogInCommand implements Command {
 
             // todo validation
             final UserAccount user = new UserAccount(login, password);
-            System.out.println(user);
             UserAccount loginatedUser = userService.login(user);
-            System.out.println(loginatedUser);
 
             HttpSession session;
             session = request.getSession(false);
@@ -35,8 +33,8 @@ public class LogInCommand implements Command {
                 session.invalidate();
             }
             session = request.getSession();
-            session.setAttribute("role", loginatedUser.getId());
-            request.getRequestDispatcher(Command.prepareUri(request) + ".jsp").forward(request, response);
+            session.setAttribute("role", loginatedUser.getRole());
+            response.sendRedirect("main.jsp");
 
         } catch (Exception e) {
             throw new ControllerException(e);

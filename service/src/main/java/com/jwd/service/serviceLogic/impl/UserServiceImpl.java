@@ -31,11 +31,9 @@ public class UserServiceImpl implements UserService {
             // todo  validation
 
             String login = user.getLogin();
-            System.out.println("login = "+ login);
             String password = user.getPassword();
 
             UserAccount loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
-            System.out.println("from lodin " + loginatedUser);
             return loginatedUser;
 
         } catch (final DaoException e) {
