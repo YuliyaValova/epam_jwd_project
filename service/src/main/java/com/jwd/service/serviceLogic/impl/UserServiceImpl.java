@@ -16,10 +16,12 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao = DaoFactory.getFactory().getUserDao();
 
     @Override
-    public void register(UserAccount user) throws ServiceException {
+    public boolean register(UserAccount user) throws ServiceException {
         try {
             //todo validation
-            userDao.saveUserAccount(convertToDaoUserAccount(user));
+            long id = userDao.saveUserAccount(convertToDaoUserAccount(user));
+            if (id == -1L) return false;
+            else return true;
         } catch (final DaoException | SQLException e) {
             throw new ServiceException(e);
         }
@@ -34,6 +36,7 @@ public class UserServiceImpl implements UserService {
             String password = user.getPassword();
 
             UserAccount loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+            System.out.println(loginatedUser);
             return loginatedUser;
 
         } catch (final DaoException e) {

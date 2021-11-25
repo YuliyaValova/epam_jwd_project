@@ -58,11 +58,10 @@ public class FrontController extends HttpServlet {
         try {
             final CommandEnum command = getCommand(req);
             commands.get(command).execute(req, resp);
-            req.setAttribute("message","Successful");
         } catch (ControllerException e) {
             Throwable cause = getCause(e);
             req.setAttribute("message", "Exception: " + cause.getMessage());
-            req.getRequestDispatcher("/").forward(req, resp);
+            req.getRequestDispatcher("home.jsp").forward(req, resp);
         }
     }
 

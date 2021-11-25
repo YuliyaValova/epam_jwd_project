@@ -9,13 +9,14 @@ import com.jwd.service.serviceLogic.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class RegistrationCommand implements Command {
 
     private final UserService userService = ServiceFactory.getServiceFactory().getUserService();
 
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException {
+    public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException, IOException {
         try {
 
             final String login = req.getParameter("login");
@@ -32,16 +33,19 @@ public class RegistrationCommand implements Command {
             //todo validation
             // todo password secure
 
-            if (!password1.equals(password2)) throw new Exception("Passwords are not the same.");
-
-            Address address = new Address(city, street, building, apartment);
-            UserAccount userAccount = new UserAccount(login, password1, "default", fName, lName, phone, address);
-            userService.register(userAccount);
-
-            req.setAttribute("message", "User registered successfully.");
-            req.getRequestDispatcher(Command.prepareUri(req) + ".jsp").forward(req, resp);
+            if (!password1.equals(password2)) resp.sendRedirect("home.jsp?message=passwordsNotMatch");
+            else {
+                Address address = new Address(city, street, building, apartment);
+                UserAccount userAccount = new UserAccount(login, password1, "default", fName, lName, phone, address);
+                boolean isRegister = userService.register(userAccount);
+                if (!isRegister) resp.sendRedirect("home.jsp?message=userExists");
+                else {
+                    req.setAttribute("message", "User registered successfully.");
+                    req.getRequestDispatcher(Command.prepareUri(req) + ".jsp").forward(req, resp);
+                }
+            }
         } catch (Exception e) {
-            throw new ControllerException(e);
+            resp.sendRedirect("home.jsp?message=RegistrationError");
         }
     }
 

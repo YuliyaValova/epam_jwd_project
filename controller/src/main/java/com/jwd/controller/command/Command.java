@@ -4,10 +4,11 @@ import com.jwd.controller.exception.ControllerException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public interface Command {
 
-    void execute(final HttpServletRequest req, final HttpServletResponse resp) throws ControllerException;
+    void execute(final HttpServletRequest req, final HttpServletResponse resp) throws ControllerException, IOException;
 
     static String prepareUri(HttpServletRequest req) {
         String uri = req.getRequestURI().replace("/", "");

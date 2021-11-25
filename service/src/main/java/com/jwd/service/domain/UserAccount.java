@@ -27,23 +27,33 @@ public class UserAccount {
     }
 
     public UserAccount(com.jwd.dao.domain.UserAccount acc) {
-        this.id = acc.getId();
-        this.login = acc.getLogin();
-        this.password = acc.getPassword();
-        this.role = acc.getRole();
-        this.firstName = acc.getFirstName();
-        this.lastName = acc.getLastName();
-        this.phone = acc.getPhone();
-        if (nonNull(acc.getAddress())) {
-            Address addr = new Address(
-                    acc.getAddress().getId(),
-                    acc.getAddress().getCity(),
-                    acc.getAddress().getStreet(),
-                    acc.getAddress().getBuilding(),
-                    acc.getAddress().getApartment()
-            );
-            this.address = addr;
-        } else this.address = null;
+        if (nonNull(acc)) {
+            this.id = acc.getId();
+            this.login = acc.getLogin();
+            this.password = acc.getPassword();
+            this.role = acc.getRole();
+            this.firstName = acc.getFirstName();
+            this.lastName = acc.getLastName();
+            this.phone = acc.getPhone();
+            if (nonNull(acc.getAddress())) {
+                Address addr = new Address(
+                        acc.getAddress().getId(),
+                        acc.getAddress().getCity(),
+                        acc.getAddress().getStreet(),
+                        acc.getAddress().getBuilding(),
+                        acc.getAddress().getApartment()
+                );
+                this.address = addr;
+            } else this.address = null;
+        } else {
+            this.id = 0L;
+            this.login = null;
+            this.password = null;
+            this.role = null;
+            this.firstName = null;
+            this.lastName = null;
+            this.phone = null;
+        }
     }
 
     public UserAccount(String login, String password, String role, String firstName, String lastName, String phone, Address address) {

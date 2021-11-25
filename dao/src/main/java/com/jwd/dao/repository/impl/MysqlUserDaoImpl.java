@@ -180,10 +180,7 @@ public class MysqlUserDaoImpl implements UserDao {
                 connectionPool.retrieveConnection(connection);
             }
 
-        } else {
-            connection.rollback();
-            throw new DaoException("This user already exists.");
-        }
+        } else return -1L;
 
     }
 
