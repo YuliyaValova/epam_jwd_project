@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 public class LogInCommand implements Command {

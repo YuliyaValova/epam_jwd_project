@@ -13,7 +13,7 @@ public class LogOutCommand implements Command {
 
         try {
             req.getSession().invalidate();
-            resp.sendRedirect("/");
+            resp.sendRedirect("home.jsp");
         } catch (Exception e) {
             throw new ControllerException(e.getMessage());
         }

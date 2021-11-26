@@ -5,7 +5,6 @@ import com.jwd.dao.domain.Address;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.UserDao;
 import com.jwd.service.domain.UserAccount;
-import com.jwd.service.domain.UserDto;
 import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.UserService;
 
@@ -36,7 +35,6 @@ public class UserServiceImpl implements UserService {
             String password = user.getPassword();
 
             UserAccount loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
-            System.out.println(loginatedUser);
             return loginatedUser;
 
         } catch (final DaoException e) {

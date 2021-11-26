@@ -12,7 +12,7 @@
                <!-- NAVIGATION -->
                <a href="/registerPage">Registration</a>
                </br>
-               <a href="/loginPage">Log In</a>
+               <a href="/loginPage" >Log In</a>
 
                 <c:if test="${error == 'noSuchUser'}">
                        <p style="color: red">There is no such user</p>
@@ -29,7 +29,9 @@
                     <c:if test="${error == 'LoginationError'}">
                        <p style="color: red">Logination is failed</p>
                     </c:if>
-
+                     <c:if test="${error == 'invalideCommand'}">
+                       <p style="color: red">You can't do this operation</p>
+                     </c:if>
                <br/>
            </div>
        </body>
