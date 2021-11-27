@@ -50,7 +50,6 @@ public class DatabaseConfig {
 
     private void loadProperties() {
         try(InputStream is = DatabaseConfig.class.getClassLoader().getResourceAsStream(DATABASE_CONFIG_PATH)) {
-            System.out.println(is);
             properties = new Properties();
             properties.load(is);
         } catch (IOException e) {

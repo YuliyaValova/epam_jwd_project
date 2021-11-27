@@ -14,11 +14,15 @@
                </br>
                <a href="/loginPage" >Log In</a>
 
-                <c:if test="${error == 'noSuchUser'}">
+                    <c:if test="${requestScope.message != null}">
+                        <p style="color: green">${requestScope.message}</p>
+                    </c:if>
+
+                    <c:if test="${error == 'noSuchUser'}">
                        <p style="color: red">There is no such user</p>
                    </c:if>
                    <c:if test="${error == 'userExists'}">
-                       <p style="color: red">Such user already exists exists</p>
+                       <p style="color: red">Such user already exists</p>
                    </c:if>
                    <c:if test="${error == 'passwordsNotMatch'}">
                        <p style="color: red">Entered passwords don't match</p>
@@ -31,6 +35,14 @@
                     </c:if>
                      <c:if test="${error == 'invalideCommand'}">
                        <p style="color: red">You can't do this operation</p>
+                     </c:if>
+
+                     <c:if test="${error == 'MenuError'}">
+                     <p style="color: red">Menu Error</p>
+                     </c:if>
+
+                     <c:if test="${error == 'BasketError'}">
+                     <p style="color: red">Basket Error</p>
                      </c:if>
                <br/>
            </div>

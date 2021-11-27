@@ -6,6 +6,9 @@ import com.jwd.controller.exception.ControllerException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import static com.jwd.controller.util.Constants.JSP;
+import static com.jwd.controller.util.Constants.PATH_TO_JSP;
+
 public class LogOutCommand implements Command {
 
     @Override
@@ -13,7 +16,7 @@ public class LogOutCommand implements Command {
 
         try {
             req.getSession().invalidate();
-            resp.sendRedirect("home.jsp");
+            req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
         } catch (Exception e) {
             throw new ControllerException(e.getMessage());
         }

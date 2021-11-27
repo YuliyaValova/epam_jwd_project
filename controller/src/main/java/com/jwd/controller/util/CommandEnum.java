@@ -4,7 +4,11 @@ public enum CommandEnum {
     DEFAULT("default"),
     REGISTRATION("registration"),
     LOGIN("login"),
-    LOGOUT("logout");
+    LOGOUT("logout"),
+    GOTOMENU("gotomenu"),
+    GOTOBASKET("gotobasket"),
+    GOTOACCOUNT("gotoaccount");
+
 
     private String name;
 

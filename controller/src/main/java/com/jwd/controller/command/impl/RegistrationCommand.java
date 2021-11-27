@@ -11,41 +11,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.jwd.controller.util.Constants.*;
+
 public class RegistrationCommand implements Command {
 
     private final UserService userService = ServiceFactory.getServiceFactory().getUserService();
 
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException, IOException {
+    public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
 
-            final String login = req.getParameter("login");
-            final String password1 = req.getParameter("password1");
-            final String password2 = req.getParameter("password2");
-            final String fName = req.getParameter("fName");
-            final String lName = req.getParameter("lName");
-            final String phone = req.getParameter("phone");
-            final String city = req.getParameter("city");
-            final String street = req.getParameter("street");
-            final String building = req.getParameter("building");
-            final String apartment = req.getParameter("apartment");
+            final String login = req.getParameter(LOGIN_);
+            final String password1 = req.getParameter(PASSWORD1);
+            final String password2 = req.getParameter(PASSWORD2);
+            final String fName = req.getParameter(FIRST_NAME);
+            final String lName = req.getParameter(LAST_NAME);
+            final String phone = req.getParameter(PHONE);
+            final String city = req.getParameter(CITY);
+            final String street = req.getParameter(STREET);
+            final String building = req.getParameter(BUILDING);
+            final String apartment = req.getParameter(APARTMENT);
 
             //todo validation
             // todo password secure
 
-            if (!password1.equals(password2)) resp.sendRedirect("home.jsp?message=passwordsNotMatch");
-            else {
+            if (!password1.equals(password2)) {
+                resp.sendRedirect("home?message=passwordsNotMatch");
+            } else {
                 Address address = new Address(city, street, building, apartment);
-                UserAccount userAccount = new UserAccount(login, password1, "default", fName, lName, phone, address);
+                UserAccount userAccount = new UserAccount(login, password1, DEFAULT_, fName, lName, phone, address);
                 boolean isRegister = userService.register(userAccount);
-                if (!isRegister) resp.sendRedirect("home.jsp?message=userExists");
-                else {
-                    req.setAttribute("message", "User registered successfully.");
-                    req.getRequestDispatcher(Command.prepareUri(req) + ".jsp").forward(req, resp);
+                if (!isRegister) {
+                    resp.sendRedirect("home?message=userExists");
+                } else {
+                    req.setAttribute(MESSAGE, "User registered successfully.");
+                    req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
                 }
             }
         } catch (Exception e) {
-            resp.sendRedirect("home.jsp?message=RegistrationError");
+            resp.sendRedirect("home?message=RegistrationError");
         }
     }
 

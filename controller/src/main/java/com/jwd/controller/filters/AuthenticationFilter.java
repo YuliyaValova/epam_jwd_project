@@ -1,6 +1,8 @@
 package com.jwd.controller.filters;
 
 
+import com.jwd.controller.util.Constants;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.jwd.controller.util.CommandEnum.*;
+import static com.jwd.controller.util.Constants.*;
 import static java.util.Objects.isNull;
 
 public class AuthenticationFilter implements Filter {
@@ -31,16 +34,14 @@ public class AuthenticationFilter implements Filter {
                 LOGIN.getName()
         );
 
-        String param = req.getParameter("command");
-        if(isNull(param)) param = "default";
-
-        System.out.println(req.getSession().getAttribute("role"));
+        String param = req.getParameter(COMMAND);
+        if (isNull(param)) param = DEFAULT_;
 
         if (alwaysAvailableCommands.contains(param) ||
-                req.getSession().getAttribute("role") != null) {
+                req.getSession().getAttribute(ROLE) != null) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
-            res.sendRedirect("home.jsp?message=invalideCommand");
+            res.sendRedirect("home?message=invalideCommand");
         }
     }
 }
