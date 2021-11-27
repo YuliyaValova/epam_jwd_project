@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
         try {
             //todo validation
             long id = userDao.saveUserAccount(convertToDaoUserAccount(user));
-            if (id == -1L) return false;
-            else return true;
+            if (id != -1L) return true;
+            return false;
         } catch (final DaoException | SQLException e) {
             throw new ServiceException(e);
         }

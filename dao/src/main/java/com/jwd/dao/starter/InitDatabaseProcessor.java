@@ -1,6 +1,7 @@
 package com.jwd.dao.starter;
 
 import com.jwd.dao.config.DatabaseConfig;
+import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.exception.DaoException;
@@ -70,14 +71,12 @@ public class InitDatabaseProcessor {
             "(now(), \"Paid up\", 2, 1, 2),\n" +
             "(now(), \"Waiting for payment\", 2, 3, 1);";
 
-    private final DatabaseConfig dataBaseConfig;
-    private final ConnectionPoolImpl connectionPool;
+    private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
 
-    public InitDatabaseProcessor() {
-        dataBaseConfig = new DatabaseConfig();
-        connectionPool = new ConnectionPoolImpl(dataBaseConfig);
-        daoUtil = new ConnectionUtil(connectionPool);
+    public InitDatabaseProcessor(ConnectionPool connectionPool,ConnectionUtil daoUtil) {
+        this.connectionPool = connectionPool;
+        this.daoUtil = daoUtil;
     }
 
     void initDatabase(){

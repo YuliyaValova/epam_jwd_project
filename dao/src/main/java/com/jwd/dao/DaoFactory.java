@@ -6,6 +6,7 @@ import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.repository.UserDao;
 import com.jwd.dao.repository.impl.MysqlUserDaoImpl;
+import com.jwd.dao.starter.InitDatabaseProcessor;
 
 public class DaoFactory {
 
@@ -14,6 +15,7 @@ public class DaoFactory {
     private final ConnectionPool connectionPool = new ConnectionPoolImpl(databaseConfig);
     private final ConnectionUtil daoUtil = new ConnectionUtil(connectionPool);
     private final UserDao userDao = new MysqlUserDaoImpl(connectionPool, daoUtil);
+    private final InitDatabaseProcessor dbProcessor = new InitDatabaseProcessor(connectionPool, daoUtil);
     //private final ProductDao productDao = new ProductDaoImpl(connectionPool); todo
 
     private DaoFactory() {}
@@ -26,7 +28,11 @@ public class DaoFactory {
         return userDao;
     }
 
-   /* public ProductDao getProductDao() {
+    public InitDatabaseProcessor getDbProcessor() {
+        return dbProcessor;
+    }
+
+    /* public ProductDao getProductDao() {
         return productDao;  todo
     }*/
 }
