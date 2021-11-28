@@ -10,23 +10,14 @@
            <div>
                <h2>Home!</h2>
                <!-- NAVIGATION -->
-               <a href="/registerPage">Registration</a>
+               <a href="/registerPage">Sign up</a>
                </br>
-               <a href="/loginPage" >Log In</a>
+               <a href="/loginPage" >Sign in</a>
 
                     <c:if test="${requestScope.message != null}">
                         <p style="color: green">${requestScope.message}</p>
                     </c:if>
 
-                    <c:if test="${error == 'noSuchUser'}">
-                       <p style="color: red">There is no such user</p>
-                   </c:if>
-                   <c:if test="${error == 'userExists'}">
-                       <p style="color: red">Such user already exists</p>
-                   </c:if>
-                   <c:if test="${error == 'passwordsNotMatch'}">
-                       <p style="color: red">Entered passwords don't match</p>
-                   </c:if>
                    <c:if test="${error == 'RegistrationError'}">
                        <p style="color: red">Registration is failed</p>
                    </c:if>
@@ -47,6 +38,10 @@
 
                      <c:if test="${error == 'BasketError'}">
                      <p style="color: red">Basket Error</p>
+                     </c:if>
+
+                     <c:if test="${error == 'AccountError'}">
+                     <p style="color: red">Account Error</p>
                      </c:if>
                <br/>
            </div>

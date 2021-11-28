@@ -1,7 +1,6 @@
 package com.jwd.controller.command.impl;
 
 import com.jwd.controller.command.Command;
-import com.jwd.controller.exception.ControllerException;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.Address;
 import com.jwd.service.domain.UserAccount;
@@ -32,21 +31,30 @@ public class RegistrationCommand implements Command {
             final String building = req.getParameter(BUILDING);
             final String apartment = req.getParameter(APARTMENT);
 
-            //todo validation
             // todo password secure
 
             if (!password1.equals(password2)) {
-                resp.sendRedirect("home?message=passwordsNotMatch");
+                resp.sendRedirect("registerPage?message=passwordsNotMatch");
             } else {
                 Address address = new Address(city, street, building, apartment);
                 UserAccount userAccount = new UserAccount(login, password1, DEFAULT_, fName, lName, phone, address);
-                boolean isRegister = userService.register(userAccount);
-                if (!isRegister) {
-                    resp.sendRedirect("home?message=userExists");
-                } else {
-                    req.setAttribute(MESSAGE, "User registered successfully.");
-                    req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
+                int isRegister = userService.register(userAccount);
+                switch (isRegister) {
+                    case -1:
+                        resp.sendRedirect("registerPage?message=userExists");
+                        break;
+                    case -2:
+                        resp.sendRedirect("registerPage?message=IncompleteInfo");
+                        break;
+                    case 1:
+                        req.setAttribute(MESSAGE, "User registered successfully.");
+                        req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
+                        break;
+                    default:
+                        resp.sendRedirect("home?message=RegistrationError");
+                        break;
                 }
+
             }
         } catch (Exception e) {
             resp.sendRedirect("home?message=RegistrationError");

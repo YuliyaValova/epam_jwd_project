@@ -10,7 +10,7 @@ public interface UserDao {
 
     List<UserAccount> getUsers() throws DaoException;
 
-    UserAccount getUserById(Long id) throws DaoException, SQLException;
+    UserAccount getUserById(long id) throws DaoException, SQLException;
 
     UserAccount getUserByLoginAndPassword(String login, String password) throws DaoException;
 

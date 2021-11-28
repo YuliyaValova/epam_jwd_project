@@ -7,20 +7,29 @@ import com.jwd.dao.repository.UserDao;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.UserService;
+import com.jwd.service.validator.ServiceValidator;
+import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
 import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao = DaoFactory.getFactory().getUserDao();
+    private final ServiceValidator validator = new ServiceValidatorImpl();
 
     @Override
-    public boolean register(UserAccount user) throws ServiceException {
+    public int register(UserAccount user) throws ServiceException {
         try {
-            //todo validation
-            long id = userDao.saveUserAccount(convertToDaoUserAccount(user));
-            if (id != -1L) return true;
-            return false;
+            int isSuccessful = -1;
+            if (validator.validateUserAccount(user)) {
+                long id = userDao.saveUserAccount(convertToDaoUserAccount(user));
+                if (id != -1L) {
+                    isSuccessful = 1;
+                }
+            } else {
+                isSuccessful = -2;
+            }
+            return isSuccessful;
         } catch (final DaoException | SQLException e) {
             throw new ServiceException(e);
         }
@@ -29,12 +38,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserAccount login(UserAccount user) throws ServiceException {
         try {
-            // todo  validation
-
+            UserAccount loginatedUser = null;
             String login = user.getLogin();
             String password = user.getPassword();
-
-            UserAccount loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+            if (validator.validateLoginAndPassword(login, password)) {
+              loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+            }
             return loginatedUser;
 
         } catch (final DaoException e) {

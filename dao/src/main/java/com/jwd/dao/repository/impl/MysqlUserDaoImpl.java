@@ -6,6 +6,8 @@ import com.jwd.dao.domain.Address;
 import com.jwd.dao.domain.UserAccount;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.UserDao;
+import com.jwd.dao.validation.DaoValidator;
+import com.jwd.dao.validation.impl.DaoValidatorImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,6 +37,7 @@ public class MysqlUserDaoImpl implements UserDao {
     private static final String IS_USER_ACCOUNT_EXISTS_QUERY = "select id from UserAccounts where login = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
+    private final DaoValidator validator = new DaoValidatorImpl();
 
     public MysqlUserDaoImpl(ConnectionPool connectionPool, ConnectionUtil daoUtil) {
         this.connectionPool = connectionPool;
@@ -89,7 +92,7 @@ public class MysqlUserDaoImpl implements UserDao {
     }
 
     @Override
-    public UserAccount getUserById(Long id) throws DaoException {
+    public UserAccount getUserById(long id) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -98,6 +101,7 @@ public class MysqlUserDaoImpl implements UserDao {
                 id
         );
         try {
+            validator.validateId(id);
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_ID_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
@@ -116,7 +120,6 @@ public class MysqlUserDaoImpl implements UserDao {
         }
     }
 
-
     @Override
     public UserAccount getUserByLoginAndPassword(String login, String password) throws DaoException {
         Connection connection = null;
@@ -128,12 +131,16 @@ public class MysqlUserDaoImpl implements UserDao {
                 password
         );
         try {
+            validator.validateLoginAndPassword(login, password);
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             UserAccount userAcc = null;
             if (resultSet.next()) {
                 userAcc = getUserAccountFromDb(resultSet);
+            } else {
+                userAcc = new UserAccount();
+                userAcc.setId(-1L);
             }
             return userAcc;
         } catch (SQLException | DaoException e) {
@@ -144,10 +151,11 @@ public class MysqlUserDaoImpl implements UserDao {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
+
     }
 
     @Override
-    public long saveUserAccount(UserAccount userAcc) throws DaoException, SQLException {
+    public long saveUserAccount(UserAccount userAcc) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         long id = userAccountIsExists(userAcc);
@@ -166,6 +174,7 @@ public class MysqlUserDaoImpl implements UserDao {
             );
 
             try {
+                validator.validateUserAccount(userAcc);
                 connection = connectionPool.takeConnection();
                 connection.setAutoCommit(false);
                 preparedStatement = daoUtil.getPreparedStatement(SAVE_USER_ACCOUNT_QUERY, connection, parameters);
@@ -180,7 +189,7 @@ public class MysqlUserDaoImpl implements UserDao {
                 connectionPool.retrieveConnection(connection);
             }
 
-        } else return -1L;
+        } else return -1;
 
     }
 
@@ -242,6 +251,7 @@ public class MysqlUserDaoImpl implements UserDao {
     }
 
     private long userAccountIsExists(UserAccount acc) throws DaoException {
+        Long id = -1L;
         List<Object> parameters = Arrays.asList(
                 acc.getLogin()
         );
@@ -252,8 +262,8 @@ public class MysqlUserDaoImpl implements UserDao {
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(IS_USER_ACCOUNT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) return resultSet.getLong(1);
-            else return -1;
+            if (resultSet.next()) id = resultSet.getLong(1);
+            return id;
 
         } catch (SQLException | DaoException e) {
             e.printStackTrace();

@@ -7,8 +7,8 @@ import com.jwd.service.exception.ServiceException;
 
 public interface UserService {
 
-   boolean register (UserAccount user) throws ServiceException;
+    int register(UserAccount user) throws ServiceException;
 
-    UserAccount login (UserAccount user) throws ServiceException;
+    UserAccount login(UserAccount user) throws ServiceException;
 
 }

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static com.jwd.controller.util.Constants.*;
+import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 public class LogInCommand implements Command {
@@ -25,21 +26,24 @@ public class LogInCommand implements Command {
             final String login = request.getParameter(LOGIN_);
             final String password = request.getParameter(PASSWORD);
 
-            // todo validation
             final UserAccount user = new UserAccount(login, password);
             UserAccount loginatedUser = userService.login(user);
 
-            if (loginatedUser.getId() == 0L) {
-                response.sendRedirect("home?message=noSuchUser");
+            if (isNull(loginatedUser)) {
+                response.sendRedirect("loginPage?message=IncompleteInfo");
             } else {
-                HttpSession session;
-                session = request.getSession(false);
-                if (nonNull(session)) {
-                    session.invalidate();
+                if (loginatedUser.getId() == -1L) {
+                    response.sendRedirect("loginPage?message=noSuchUser");
+                } else {
+                    HttpSession session;
+                    session = request.getSession(false);
+                    if (nonNull(session)) {
+                        session.invalidate();
+                    }
+                    session = request.getSession();
+                    session.setAttribute(ROLE, loginatedUser.getRole());
+                    request.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(request) + JSP).forward(request, response);
                 }
-                session = request.getSession();
-                session.setAttribute(ROLE, loginatedUser.getRole());
-                request.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(request) + JSP).forward(request, response);
             }
 
         } catch (Exception e) {
