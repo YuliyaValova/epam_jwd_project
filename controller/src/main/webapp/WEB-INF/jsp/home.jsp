@@ -37,6 +37,10 @@
                        <p style="color: red">You can't do this operation</p>
                      </c:if>
 
+                     <c:if test="${error == 'InjectionDanger'}">
+                       <p style="color: red">Danger of injection</p>
+                     </c:if>
+
                      <c:if test="${error == 'MenuError'}">
                      <p style="color: red">Menu Error</p>
                      </c:if>
