@@ -43,6 +43,7 @@ public class FrontController extends HttpServlet {
         commands.put(GOTOMENU, new GoToMenuCommand());
         commands.put(GOTOBASKET, new GoToBasketCommand());
         commands.put(GOTOACCOUNT, new GoToAccountCommand());
+        commands.put(LOCALE, new ChangeLanguageCommand());
     }
 
 

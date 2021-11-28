@@ -7,7 +7,8 @@ public enum CommandEnum {
     LOGOUT("logout"),
     GOTOMENU("gotomenu"),
     GOTOBASKET("gotobasket"),
-    GOTOACCOUNT("gotoaccount");
+    GOTOACCOUNT("gotoaccount"),
+    LOCALE("locale");
 
 
     private String name;

@@ -31,7 +31,8 @@ public class AuthenticationFilter implements Filter {
         final List<String> alwaysAvailableCommands = Arrays.asList(
                 DEFAULT.getName(),
                 REGISTRATION.getName(),
-                LOGIN.getName()
+                LOGIN.getName(),
+                LOCALE.getName()
         );
 
         String param = req.getParameter(COMMAND);
