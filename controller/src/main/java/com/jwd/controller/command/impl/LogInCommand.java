@@ -41,6 +41,8 @@ public class LogInCommand implements Command {
                         session.invalidate();
                     }
                     session = request.getSession();
+                    session.setAttribute(USER, loginatedUser);
+                    session.setAttribute(ADDRESS, loginatedUser.getAddress());
                     session.setAttribute(ROLE, loginatedUser.getRole());
                     request.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(request) + JSP).forward(request, response);
                 }

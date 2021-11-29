@@ -10,6 +10,7 @@ public enum CommandEnum {
     GOTOBASKET("gotobasket"),
     GOTOACCOUNT("gotoaccount"),
     LOCALE("locale"),
+    GOTOPROFILE("gotoprofile"),
     SHOWPRODUCTS("showproducts");
 
 

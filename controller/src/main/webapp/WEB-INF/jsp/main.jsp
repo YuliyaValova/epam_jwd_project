@@ -23,6 +23,8 @@
         <fmt:message bundle="${loc}" key="locale.account" var="account" />
         <fmt:message bundle="${loc}" key="locale.basket" var="basket" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_menuError" var="errorMsg_menuError" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_basketError" var="errorMsg_basketError" />
 
 
 <title>
@@ -71,8 +73,8 @@
                      <button type="submit">${basket}</button>
                      </form>
 
-                     <form method="get" action="/main" >
-                     <input type="hidden" name="command" value="gotoaccount"/>
+                     <form method="get" action="/profile" >
+                     <input type="hidden" name="command" value="gotoprofile"/>
                      <button type="submit">${account}</button>
                      </form>
 
@@ -95,6 +97,14 @@
 
                      <c:if test="${error == 'MenuError'}">
                      <p style="color: red">${errorMsg_menuError}</p>
+                     </c:if>
+
+                     <c:if test="${error == 'AccountError'}">
+                     <p style="color: red">${errorMsg_accountError}</p>
+                     </c:if>
+
+                     <c:if test="${error == 'BasketError'}">
+                     <p style="color: red">${errorMsg_basketError}</p>
                      </c:if>
 
 

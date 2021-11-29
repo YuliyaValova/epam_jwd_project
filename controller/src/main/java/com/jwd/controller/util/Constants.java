@@ -26,5 +26,8 @@ public class Constants {
             CURRENT_PAGE = "currentPage",
             PAGE_LIMIT = "pageLimit",
             PAGEABLE = "pageable",
-            MAIN = "main";
+            MAIN = "main",
+            ID = "id",
+            ADDRESS = "addr",
+            USER = "user";
 }

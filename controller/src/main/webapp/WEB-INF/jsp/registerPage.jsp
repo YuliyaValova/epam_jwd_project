@@ -82,14 +82,6 @@
                 <p style="color: red">${errorMsg_pswNotMatch}</p>
             </c:if>
 
-            <c:if test="${error == 'invalideCommand'}">
-                <p style="color: red">${errorMsg_invOperation}</p>
-            </c:if>
-
-            <c:if test="${error == 'InjectionDanger'}">
-                <p style="color: red">${errorMsg_injectDanger}</p>
-            </c:if>
-
            <form method="post" action="/" >
                <input type="hidden" name="command" value="registration"/>
                <p>${login}*</p>
