@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-//todo validation
+//todo transactions
 //todo logger
 
 public class MysqlUserDaoImpl implements UserDao {
@@ -251,7 +251,7 @@ public class MysqlUserDaoImpl implements UserDao {
     }
 
     private long userAccountIsExists(UserAccount acc) throws DaoException {
-        Long id = -1L;
+        long id = -1L;
         List<Object> parameters = Arrays.asList(
                 acc.getLogin()
         );
@@ -259,6 +259,7 @@ public class MysqlUserDaoImpl implements UserDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
+            validator.validateUserAccount(acc);
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(IS_USER_ACCOUNT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();

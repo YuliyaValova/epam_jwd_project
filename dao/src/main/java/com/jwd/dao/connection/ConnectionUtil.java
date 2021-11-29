@@ -51,7 +51,12 @@ public class ConnectionUtil {
             preparedStatement.setInt(queryParameterIndex, (Integer) parameter);
         } else if (String.class == parameter.getClass()) {
             preparedStatement.setString(queryParameterIndex, (String) parameter);
+        } else if (Boolean.class == parameter.getClass()) {
+            preparedStatement.setBoolean(queryParameterIndex, (Boolean) parameter);
+        } else if (Double.class == parameter.getClass()) {
+            preparedStatement.setDouble(queryParameterIndex, (Double) parameter);
         }
+
     }
 
 

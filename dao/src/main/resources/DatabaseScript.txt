@@ -23,10 +23,10 @@ address_id bigint
 
 create table if not exists Products(
 id bigint primary key auto_increment,
-name varchar(30) not null,
-type varchar(30) not null,
+name varchar(100) unique not null,
+type varchar(100) not null,
 description text,
-price integer not null,
+price double not null,
 isAvailable bool not null
 );
 

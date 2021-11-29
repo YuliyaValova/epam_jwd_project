@@ -34,10 +34,10 @@ public class InitDatabaseProcessor {
             ");";
     private static final String CREATE_PRODUCTS_QUERY = "create table if not exists Products(\n" +
             "id bigint primary key auto_increment,\n" +
-            "name varchar(30) not null,\n" +
-            "type varchar(30) not null,\n" +
+            "name varchar(100) unique not null,\n" +
+            "type varchar(100) not null,\n" +
             "description text,\n" +
-            "price integer not null,\n" +
+            "price double not null,\n" +
             "isAvailable bool not null\n" +
             ");\n";
     private static final String CREATE_ORDERS_QUERY = "create table if not exists Orders(\n" +

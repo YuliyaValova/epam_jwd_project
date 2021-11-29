@@ -19,7 +19,6 @@ public class RegistrationCommand implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
-
             final String login = req.getParameter(LOGIN_);
             final String password1 = req.getParameter(PASSWORD1);
             final String password2 = req.getParameter(PASSWORD2);
