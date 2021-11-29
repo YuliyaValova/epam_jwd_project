@@ -6,9 +6,11 @@ public enum CommandEnum {
     LOGIN("login"),
     LOGOUT("logout"),
     GOTOMENU("gotomenu"),
+    GOTOMAIN("gotomain"),
     GOTOBASKET("gotobasket"),
     GOTOACCOUNT("gotoaccount"),
-    LOCALE("locale");
+    LOCALE("locale"),
+    SHOWPRODUCTS("showproducts");
 
 
     private String name;

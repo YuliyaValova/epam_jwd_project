@@ -22,5 +22,9 @@ public class Constants {
             ACCOUNT = "account",
             MENU = "menu",
             COMMAND = "command",
-            DEFAULT_ = "default";
+            DEFAULT_ = "default",
+            CURRENT_PAGE = "currentPage",
+            PAGE_LIMIT = "pageLimit",
+            PAGEABLE = "pageable",
+            MAIN = "main";
 }

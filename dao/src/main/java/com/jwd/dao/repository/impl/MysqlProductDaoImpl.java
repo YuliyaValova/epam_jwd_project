@@ -4,6 +4,7 @@ import com.jwd.dao.config.DatabaseConfig;
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
+import com.jwd.dao.domain.Pageable;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.ProductDao;
@@ -27,9 +28,12 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String DELETE_PRODUCT_QUERY = "delete from Products where id = ?;";
     private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
     private static final String GET_PRODUCT_BY_ID_QUERY = "select * from Products where id = ?;";
+    private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true;";
+    private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true order by p.%s %s limit ? offset ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
+
 
     public MysqlProductDaoImpl(ConnectionPool connectionPool, ConnectionUtil daoUtil) {
         this.connectionPool = connectionPool;
@@ -84,7 +88,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(IS_PRODUCT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 id = resultSet.getLong(1);
             }
             return id;
@@ -185,15 +189,67 @@ public class MysqlProductDaoImpl implements ProductDao {
         }
     }
 
+    @Override
+    public Pageable<Product> findPage(Pageable<Product> daoProductPageable) throws DaoException {
+        final int offset = (daoProductPageable.getPageNumber() - 1) * daoProductPageable.getLimit();
+        List<Object> parameters1 = Collections.emptyList();
+        List<Object> parameters2 = Arrays.asList(
+                daoProductPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_SORTED, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT, daoProductPageable.getSortBy(), daoProductPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getProductRowPageable(daoProductPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private Pageable<Product> getProductRowPageable(Pageable<Product> daoProductPageable,ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
+        final Pageable<Product> pageable = new Pageable<>();
+        long totalElements = 0L;
+        while (resultSet1.next()) {
+            totalElements = resultSet1.getLong(1);
+        }
+        final List<Product> products = new ArrayList<>();
+        while (resultSet2.next()) {
+            products.add(getProductFromDb(resultSet2));
+        }
+        pageable.setPageNumber(daoProductPageable.getPageNumber());
+        pageable.setLimit(daoProductPageable.getLimit());
+        pageable.setTotalElements(totalElements);
+        pageable.setElements(products);
+        pageable.setSortBy(daoProductPageable.getSortBy());
+        pageable.setDirection(daoProductPageable.getDirection());
+        return pageable;
+    }
+
+
     public static void main(String[] args) {
         ConnectionPool pool = new ConnectionPoolImpl(new DatabaseConfig());
         ConnectionUtil util = new ConnectionUtil(pool);
         ProductDao dao = new MysqlProductDaoImpl(pool, util);
-        Product product = new Product(null,"pizza", "Lolololo", 5, true);
+        Product product = new Product(null, "pizza", "Lolololo", 5, true);
         try {
             dao.addProduct(product);
             List<Product> products = dao.getAllProducts();
-            for (Product prod:products) {
+            for (Product prod : products) {
                 System.out.println(prod.toString());
             }/*
             Product pr = dao.getProductById(0);

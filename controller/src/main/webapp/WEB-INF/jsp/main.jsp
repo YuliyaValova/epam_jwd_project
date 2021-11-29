@@ -22,6 +22,8 @@
         <fmt:message bundle="${loc}" key="locale.menu" var="menu" />
         <fmt:message bundle="${loc}" key="locale.account" var="account" />
         <fmt:message bundle="${loc}" key="locale.basket" var="basket" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_menuError" var="errorMsg_menuError" />
+
 
 <title>
     <c:out value = "${main}" />
@@ -31,6 +33,8 @@
 
 
     <body>
+    <c:set var="error" value="${param.message}"/>
+
             <h1>${main}</h1>
             <!-- LOCALE -->
             <div>
@@ -49,13 +53,15 @@
                 </div>
 
 
+
+
             <c:if test="${sessionScope.role != null}">
 
                      <p>Authorized = ${sessionScope.role} </p>
 
                      <div>
 
-                     <form method="get" action="/main" >
+                     <form method="get" action="/menu" >
                      <input type="hidden" name="command" value="gotomenu"/>
                      <button type="submit">${menu}</button>
                      </form>
@@ -77,9 +83,7 @@
 
                      </div>
 
-                     <c:if test="${sessionScope.page == 'menu'}">
-                     <p>Status = ${sessionScope.page} </p>
-                     </c:if>
+
 
                      <c:if test="${sessionScope.page == 'account'}">
                      <p>Status = ${sessionScope.page} </p>
@@ -87,6 +91,10 @@
 
                      <c:if test="${sessionScope.page == 'basket'}">
                      <p>Status = ${sessionScope.page} </p>
+                     </c:if>
+
+                     <c:if test="${error == 'MenuError'}">
+                     <p style="color: red">${errorMsg_menuError}</p>
                      </c:if>
 
 

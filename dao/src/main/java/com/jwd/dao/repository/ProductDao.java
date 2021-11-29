@@ -1,5 +1,6 @@
 package com.jwd.dao.repository;
 
+import com.jwd.dao.domain.Pageable;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
 
@@ -14,6 +15,9 @@ public interface ProductDao {
     List<Product> getAllProducts() throws DaoException;
 
     Product getProductById(long id) throws DaoException;
+
+    Pageable<Product> findPage(Pageable<Product> daoProductPageable) throws DaoException;
+
 
     // boolean updateProduct (Product product)
 

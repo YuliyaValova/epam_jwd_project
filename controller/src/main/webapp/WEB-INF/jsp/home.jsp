@@ -22,7 +22,6 @@
         <fmt:message bundle="${loc}" key="locale.signUp" var="signUp" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_registrError" var="errorMsg_registrError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_loginError" var="errorMsg_loginError" />
-        <fmt:message bundle="${loc}" key="locale.errorMsg_menuError" var="errorMsg_menuError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_basketError" var="errorMsg_basketError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_injectDanger" var="errorMsg_injectDanger" />
@@ -82,9 +81,6 @@
                        <p style="color: red">${errorMsg_injectDanger}</p>
                      </c:if>
 
-                     <c:if test="${error == 'MenuError'}">
-                     <p style="color: red">${errorMsg_menuError}</p>
-                     </c:if>
 
                      <c:if test="${error == 'BasketError'}">
                      <p style="color: red">${errorMsg_basketError}</p>
