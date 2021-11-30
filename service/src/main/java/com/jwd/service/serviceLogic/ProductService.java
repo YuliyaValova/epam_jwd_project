@@ -9,4 +9,5 @@ public interface ProductService {
     Page<Product> showProducts(Page<Product> productPageRequest) throws ServiceException;
 
     Page<Product> showBasket(Page<Product> pageRequest, long id) throws ServiceException;
+    void cleanBasket(long id) throws ServiceException;
 }

@@ -73,6 +73,11 @@
                               <button form="showbasket" type="submit">${showBasket}</button>
                           </form>
 
+                          <form id="cleanbasket" method="get" action="/basket" >
+                              <input type="hidden" name="command" value="cleanbasket"/>
+                              <button form="cleanbasket" type="submit">${deleteAllBascket}</button>
+                          </form>
+
                           <form id="gotomain" method="get" action="/main" >
                               <input type="hidden" name="command" value="gotomain"/>
                               <button form="gotomain" type="submit">${goMain}</button>

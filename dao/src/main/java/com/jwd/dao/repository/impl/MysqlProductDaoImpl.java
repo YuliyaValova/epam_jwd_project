@@ -36,6 +36,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
             "where Orders.customer_id = ?\n" +
             "order by p.%s %s limit ? offset ?;";
+    private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -258,6 +259,30 @@ public class MysqlProductDaoImpl implements ProductDao {
         } finally {
             daoUtil.close(resultSet1, resultSet2);
             daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void deleteOrdersByUserId(long id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        List<Object> parameters = Arrays.asList(
+                id
+        );
+
+        try {
+            validator.validateId(id);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(TRUNCATE_BASKET_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
     }

@@ -18,7 +18,9 @@ public interface ProductDao {
 
     Pageable<Product> findPage(Pageable<Product> daoProductPageable) throws DaoException;
 
-    Pageable<Product> findBasketPage(Pageable<Product> daoBasketPageable, long id)throws DaoException;
+    Pageable<Product> findBasketPage(Pageable<Product> daoBasketPageable, long id) throws DaoException;
+
+    void deleteOrdersByUserId(long id) throws DaoException;
 
 
     // boolean updateProduct (Product product)

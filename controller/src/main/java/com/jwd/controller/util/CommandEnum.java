@@ -12,7 +12,8 @@ public enum CommandEnum {
     LOCALE("locale"),
     GOTOPROFILE("gotoprofile"),
     SHOWPRODUCTS("showproducts"),
-    SHOWBASKET("showbasket");
+    SHOWBASKET("showbasket"),
+    CLEANBASKET("cleanbasket");
 
 
     private String name;

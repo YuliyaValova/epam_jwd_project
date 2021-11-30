@@ -15,7 +15,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
     private final ServiceValidator validator = new ServiceValidatorImpl();
 
-    public ProductServiceImpl(ProductDao productDao){
+    public ProductServiceImpl(ProductDao productDao) {
         this.productDao = productDao;
     }
 
@@ -36,12 +36,22 @@ public class ProductServiceImpl implements ProductService {
         try {
             validator.validateId(id);
             final Pageable<Product> daoBasketPageable = convertToPageable(pageRequest);
-            final Pageable<Product> productsPageable = productDao.findBasketPage(daoBasketPageable,id);
+            final Pageable<Product> productsPageable = productDao.findBasketPage(daoBasketPageable, id);
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public void cleanBasket(long id) throws ServiceException {
+        try {
+            productDao.deleteOrdersByUserId(id);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
 
     private Page<Product> convertToServicePage(Pageable<Product> productRowsPageable) {
         Page<Product> page = new Page<>();
