@@ -14,7 +14,8 @@ public enum CommandEnum {
     SHOWPRODUCTS("showproducts"),
     SHOWBASKET("showbasket"),
     CLEANBASKET("cleanbasket"),
-    SENDORDER("sendOrder");
+    SENDORDER("sendOrder"),
+    DELETEFROMBASKET("deletefrombasket");
 
 
     private String name;

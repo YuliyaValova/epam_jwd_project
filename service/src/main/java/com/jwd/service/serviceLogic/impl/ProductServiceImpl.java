@@ -73,6 +73,17 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public void deleteFromBasket(long id, long productId) throws ServiceException {
+        try {
+            validator.validateId(id);
+            validator.validateId(productId);
+            productDao.deleteFromBasket(id, productId);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
 
     private Page<Product> convertToServicePage(Pageable<Product> productRowsPageable) {
         Page<Product> page = new Page<>();

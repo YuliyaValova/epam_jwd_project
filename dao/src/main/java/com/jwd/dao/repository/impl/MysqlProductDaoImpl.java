@@ -30,20 +30,22 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String COUNT_BASKET_SORTED = "select count(*) from Products\n" +
             "join Orders on Orders.product_id = Products.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
-            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\";";
+            "where Orders.customer_id = ? and Orders.status = \"Waiting for payment\";";
     private static final String PARAM_FOR_BASKET_SORT = "select * from Products p\n" +
             "join Orders on Orders.product_id = p.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
-            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\"\n" +
+            "where Orders.customer_id = ? and Orders.status = \"Waiting for payment\"\n" +
             "order by p.%s %s limit ? offset ?;";
     private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ?;";
     private static final String GET_SUM_QUERY = "select sum(Products.price) from Products\n" +
             "join Orders on Orders.product_id = Products.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
-            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\";";
+            "where Orders.customer_id = ? and Orders.status = \"Waiting for payment\";";
     private static final String SET_ALL_STATUS_QUERY = "update Orders\n" +
             "set Orders.status = ? \n" +
-            "where Orders.customer_id = ? && Orders.status = ?;";
+            "where Orders.customer_id = ? and Orders.status = ?;";
+    private static final String DELETE_FROM_BASKET_QUERY = "delete from Orders\n" +
+            "where customer_id = ? and product_id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -335,6 +337,28 @@ public class MysqlProductDaoImpl implements ProductDao {
             validator.validateStatus(newStatus);
             connection = connectionPool.takeConnection();
             preparedStatement = daoUtil.getPreparedStatement(SET_ALL_STATUS_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void deleteFromBasket(long id, long productId) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        List<Object> parameters = Arrays.asList(
+                id,
+                productId
+        );
+        try {
+            validator.validateId(id);
+            validator.validateId(productId);
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(DELETE_FROM_BASKET_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);

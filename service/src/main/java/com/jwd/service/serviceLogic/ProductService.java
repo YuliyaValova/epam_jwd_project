@@ -15,4 +15,7 @@ public interface ProductService {
     double getSum(long id) throws ServiceException;
 
     void sendOrder(long id) throws ServiceException;
+
+    void deleteFromBasket(long id, long productId) throws ServiceException;
+
 }

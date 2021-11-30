@@ -26,6 +26,8 @@ public interface ProductDao {
 
     void changeAllOrdersStatus(long id, String newStatus, String oldStatus) throws DaoException;
 
+    void deleteFromBasket(long id, long productId) throws DaoException;
+
     // boolean updateProduct (Product product)
 
 }

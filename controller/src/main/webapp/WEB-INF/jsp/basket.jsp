@@ -19,6 +19,7 @@
         <fmt:message bundle="${loc}" key="locale.locbutton.name.ru" var="ru_button" />
         <fmt:message bundle="${loc}" key="locale.basket" var="basket" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_showBasketError" var="errorMsg_showBasketError" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_basketError" var="errorMsg_basketError" />
         <fmt:message bundle="${loc}" key="locale.showBasket" var="showBasket" />
         <fmt:message bundle="${loc}" key="locale.goMain" var="goMain" />
         <fmt:message bundle="${loc}" key="locale.id" var="id" />
@@ -59,6 +60,10 @@
                 </div>
 
                 <!--Errors-->
+
+                  <c:if test="${error == 'BasketError'}">
+                       <p style="color: red">${errorMsg_basketError}</p>
+                  </c:if>
 
                   <c:if test="${error == 'ShowBasketError'}">
                        <p style="color: red">${errorMsg_showBasketError}</p>
@@ -118,8 +123,10 @@
                                          <div>
                                          <form method="post" action="/basket" >
                                          <input type="hidden" name="command" value="deletefrombasket"/>
-                                         <button type="button">${deleteFromBascket}</button><br/>
+                                         <input type="hidden" name="productId" value=${product.id}/>
+                                         <button type="submit">${deleteFromBascket}</button><br/>
                                          </form>
+
                                          </div>
                                          </td>
                                      </tr>
