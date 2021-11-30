@@ -11,7 +11,8 @@ public enum CommandEnum {
     GOTOACCOUNT("gotoaccount"),
     LOCALE("locale"),
     GOTOPROFILE("gotoprofile"),
-    SHOWPRODUCTS("showproducts");
+    SHOWPRODUCTS("showproducts"),
+    SHOWBASKET("showbasket");
 
 
     private String name;

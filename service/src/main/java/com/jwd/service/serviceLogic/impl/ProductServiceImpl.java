@@ -7,11 +7,13 @@ import com.jwd.dao.repository.ProductDao;
 import com.jwd.service.domain.Page;
 import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.ProductService;
+import com.jwd.service.validator.ServiceValidator;
+import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
 
 public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
-    //private final ServiceValidator validator = new ServiceValidatorImpl();
+    private final ServiceValidator validator = new ServiceValidatorImpl();
 
     public ProductServiceImpl(ProductDao productDao){
         this.productDao = productDao;
@@ -22,8 +24,20 @@ public class ProductServiceImpl implements ProductService {
         // todo validation
         try {
             final Pageable<Product> daoProductPageable = convertToPageable(productPageRequest);
-            final Pageable<Product> productRowsPageable = productDao.findPage(daoProductPageable);
-            return convertToServicePage(productRowsPageable);
+            final Pageable<Product> productsPageable = productDao.findPage(daoProductPageable);
+            return convertToServicePage(productsPageable);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public Page<Product> showBasket(Page<Product> pageRequest, long id) throws ServiceException {
+        try {
+            validator.validateId(id);
+            final Pageable<Product> daoBasketPageable = convertToPageable(pageRequest);
+            final Pageable<Product> productsPageable = productDao.findBasketPage(daoBasketPageable,id);
+            return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }

@@ -68,7 +68,7 @@
                      <button type="submit">${menu}</button>
                      </form>
 
-                     <form method="get" action="/main" >
+                     <form method="get" action="/basket" >
                      <input type="hidden" name="command" value="gotobasket"/>
                      <button type="submit">${basket}</button>
                      </form>

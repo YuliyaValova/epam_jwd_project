@@ -15,10 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class MysqlProductDaoImpl implements ProductDao {
     //todo transactions
@@ -30,6 +27,15 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String GET_PRODUCT_BY_ID_QUERY = "select * from Products where id = ?;";
     private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true;";
     private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_BASKET_SORTED = "select count(*) from Products\n" +
+            "join Orders on Orders.product_id = Products.id\n" +
+            "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
+            "where Orders.customer_id = ?;";
+    private static final String PARAM_FOR_BASKET_SORT = "select * from Products p\n" +
+            "join Orders on Orders.product_id = p.id\n" +
+            "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
+            "where Orders.customer_id = ?\n" +
+            "order by p.%s %s limit ? offset ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -212,6 +218,41 @@ public class MysqlProductDaoImpl implements ProductDao {
             resultSet2 = preparedStatement2.executeQuery();
             connection.commit();
             return getProductRowPageable(daoProductPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public Pageable<Product> findBasketPage(Pageable<Product> daoBasketPageable, long id) throws DaoException {
+        final int offset = (daoBasketPageable.getPageNumber() - 1) * daoBasketPageable.getLimit();
+        List<Object> parameters1 = Arrays.asList(
+                id
+        );
+        List<Object> parameters2 = Arrays.asList(
+                id,
+                daoBasketPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_BASKET_SORTED, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_BASKET_SORT, daoBasketPageable.getSortBy(), daoBasketPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getProductRowPageable(daoBasketPageable, resultSet1, resultSet2);
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {

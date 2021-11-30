@@ -65,6 +65,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FrontServlet</servlet-name>
+        <url-pattern>/basket</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FrontServlet</servlet-name>
         <url-pattern>/loginPage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

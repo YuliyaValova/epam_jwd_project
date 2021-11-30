@@ -80,15 +80,17 @@
 
 
 
-                <form method="get" action="/profile" >
+                <form method="get" action="/home" >
                                <input type="hidden" name="command" value="deleteAcc"/>
                                <button type="submit">${deleteAccount}</button>
                 </form>
-
+                   <!-- todo
                 <form method="post" action="/profile" >
                                <input type="hidden" name="command" value="updateAcc"/>
                                <button type="submit">${updateAccount}</button>
                 </form>
+
+                -->
 
                 <div>
                     <form id="gotomain" method="post" action="/home" >
