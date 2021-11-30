@@ -54,6 +54,13 @@ public class DaoValidatorImpl implements DaoValidator {
         }
     }
 
+    @Override
+    public void validatePassword(String password) throws DaoException {
+        if (isNullOrEmpty(password)){
+            throw new DaoException("Password");
+        }
+    }
+
     private boolean isIncompleteProduct(Product product) {
         boolean isIncomplete = false;
         if (

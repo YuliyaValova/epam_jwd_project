@@ -11,4 +11,6 @@ public interface UserService {
     UserAccount login(UserAccount user) throws ServiceException;
 
     void deleteAccount(long id) throws ServiceException;
+
+    boolean changePassword(long id, String oldPassword, String newPassword) throws ServiceException;
 }

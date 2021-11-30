@@ -40,6 +40,15 @@ public class ServiceValidatorImpl implements ServiceValidator {
         return isValid;
     }
 
+    @Override
+    public boolean validatePassword(String password) {
+        boolean isValid = true;
+        if (isNullOrEmpty(password)) {
+            isValid = false;
+        }
+        return isValid;
+    }
+
     private boolean isIncompleteAddress(UserAccount acc) {
         boolean isIncomplete = false;
         if (isNull(acc.getAddress())) {

@@ -17,4 +17,6 @@ public interface UserDao {
     long saveUserAccount(UserAccount user) throws DaoException, SQLException;
 
     void deleteUserById(long id) throws DaoException;
+
+    void changePassword(long id, String oldPassword, String newPassword) throws DaoException;
 }

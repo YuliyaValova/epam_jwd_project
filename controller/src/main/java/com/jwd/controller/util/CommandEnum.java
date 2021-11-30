@@ -16,6 +16,7 @@ public enum CommandEnum {
     SENDORDER("sendOrder"),
     DELETEFROMBASKET("deletefrombasket"),
     ADDTOBASKET("addtobasket"),
+    CHANGEPASSWORD("changepassword"),
     DELETEACCOUNT("deleteAccount");
 
 

@@ -12,6 +12,8 @@ import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
 import java.sql.SQLException;
 
+import static java.util.Objects.isNull;
+
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao = DaoFactory.getFactory().getUserDao();
@@ -42,7 +44,7 @@ public class UserServiceImpl implements UserService {
             String login = user.getLogin();
             String password = user.getPassword();
             if (validator.validateLoginAndPassword(login, password)) {
-              loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+                loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
             }
             return loginatedUser;
 
@@ -54,9 +56,27 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteAccount(long id) throws ServiceException {
         try {
-            validator.validateId(id);
-            userDao.deleteUserById(id);
+            if (validator.validateId(id)) {
+                userDao.deleteUserById(id);
+            }
         } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public boolean changePassword(long id, String oldPassword, String newPassword) throws ServiceException {
+        boolean isSuccessful = false;
+        try {
+            if (validator.validatePassword(oldPassword) && validator.validatePassword(newPassword) && validator.validateId(id)) {
+                UserAccount acc = new UserAccount(userDao.getUserById(id));
+                if (!isNull(acc)&&acc.getPassword().equals(oldPassword)) {
+                    userDao.changePassword(id, oldPassword, newPassword);
+                    isSuccessful = true;
+                }
+            }
+            return isSuccessful;
+        } catch (final DaoException | SQLException e) {
             throw new ServiceException(e);
         }
     }

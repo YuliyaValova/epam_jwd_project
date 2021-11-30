@@ -31,6 +31,7 @@
         <fmt:message bundle="${loc}" key="locale.deleteAccount" var="deleteAccount" />
         <fmt:message bundle="${loc}" key="locale.updateAccount" var="updateAccount" />
         <fmt:message bundle="${loc}" key="locale.changePassword" var="changePassword" />
+        <fmt:message bundle="${loc}" key="locale.IncorrectOldPassword" var="IncorrectOldPassword" />
 
 
 <title>
@@ -65,6 +66,14 @@
 
 
             </div>
+
+             <c:if test="${requestScope.message != null}">
+             <p style="color: green">${requestScope.message}</p>
+             </c:if>
+
+            <c:if test="${error == 'IncorrectOldPassword'}">
+            <p style="color: red">${IncorrectOldPassword}</p>
+            </c:if>
 
             <c:if test="${sessionScope.role != null}">
 

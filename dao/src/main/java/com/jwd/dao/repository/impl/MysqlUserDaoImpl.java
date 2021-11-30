@@ -36,6 +36,9 @@ public class MysqlUserDaoImpl implements UserDao {
             "city = ? and street = ? and building = ? and apartment = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_QUERY = "select id from UserAccounts where login = ?;";
     private static final String DELETE_USER_QUERY = "delete from UserAccounts where id = ?;";
+    private static final String UPDATE_PASSWORD_QUERY = "update UserAccounts\n" +
+            "set password = ?\n" +
+            "where id = ? and password = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -97,7 +100,6 @@ public class MysqlUserDaoImpl implements UserDao {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
         List<Object> parameters = Arrays.asList(
                 id
         );
@@ -210,6 +212,35 @@ public class MysqlUserDaoImpl implements UserDao {
             preparedStatement = daoUtil.getPreparedStatement(DELETE_USER_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void changePassword(long id, String oldPassword, String newPassword) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        List<Object> parameters = Arrays.asList(
+                newPassword,
+                id,
+                oldPassword
+        );
+
+        try {
+            validator.validateId(id);
+            validator.validatePassword(oldPassword);
+            validator.validatePassword(newPassword);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(UPDATE_PASSWORD_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
+
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {

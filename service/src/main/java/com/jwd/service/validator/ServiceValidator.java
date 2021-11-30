@@ -11,4 +11,5 @@ public interface ServiceValidator {
 
     boolean validateId(long id) throws ServiceException;
 
+    boolean validatePassword(String oldPassword);
 }
