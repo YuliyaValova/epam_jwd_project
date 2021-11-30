@@ -47,6 +47,13 @@ public class DaoValidatorImpl implements DaoValidator {
         }
     }
 
+    @Override
+    public void validateStatus(String newStatus) throws DaoException {
+        if (isNullOrEmpty(newStatus)){
+            throw new DaoException("Invalid status");
+        }
+    }
+
     private boolean isIncompleteProduct(Product product) {
         boolean isIncomplete = false;
         if (

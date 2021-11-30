@@ -29,5 +29,6 @@ public class Constants {
             MAIN = "main",
             ID = "id",
             ADDRESS = "addr",
-            USER = "user";
+            USER = "user",
+            SUM = "sum";
 }

@@ -105,7 +105,6 @@
                                          <div>
                                          <form method="post" action="/menu" >
                                          <input type="hidden" name="command" value="addtobasket"/>
-                                         <input type="number" min = "1" max = "10" size = "1" name="amount" value="1"/>
                                          <button type="button">${addBascket}</button><br/>
                                          </form>
                                          </div>

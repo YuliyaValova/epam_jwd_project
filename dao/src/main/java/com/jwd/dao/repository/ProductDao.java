@@ -22,6 +22,9 @@ public interface ProductDao {
 
     void deleteOrdersByUserId(long id) throws DaoException;
 
+    double getSum(long id) throws DaoException;
+
+    void changeAllOrdersStatus(long id, String newStatus, String oldStatus) throws DaoException;
 
     // boolean updateProduct (Product product)
 

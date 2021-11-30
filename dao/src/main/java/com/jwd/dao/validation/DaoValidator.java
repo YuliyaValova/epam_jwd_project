@@ -14,4 +14,5 @@ public interface DaoValidator {
 
     void validateProduct(Product product) throws DaoException;
 
+    void validateStatus(String newStatus) throws DaoException;
 }

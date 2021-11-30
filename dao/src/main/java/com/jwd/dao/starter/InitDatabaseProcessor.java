@@ -65,11 +65,13 @@ public class InitDatabaseProcessor {
             "(\"Margarita\", \"Pizza\", \"Juicy tomato pizza with mozzarella and cheddar\", 18, true),\n" +
             "(\"Pesto\", \"Pizza\", \"Consists of: green - from basil, red - from tomatoes, and white - from mozzarella.\", 16, true),\n" +
             "(\"Pepperoni\", \"Pizza\", \"Pepperoni, chili peppers, tomatoes in their own juice, oregano, dried basil\", 17, true);";
-    private static final String INSERT_TO_ORDERS_QUERY = "insert into Orders (date, status, product_amount, product_id, customer_id)\n" +
+    private static final String INSERT_TO_ORDERS_QUERY = "insert into Orders (date, status, product_id, customer_id)\n" +
             "values\n" +
-            "(now(), \"Paid up\", 1, 1, 1),\n" +
-            "(now(), \"Paid up\", 2, 1, 2),\n" +
-            "(now(), \"Waiting for payment\", 2, 3, 1);";
+            "(now(), \"Waiting for payment\", 1, 1),\n" +
+            "(now(), \"Paid up\", 1, 2),\n" +
+            "(now(), \"Waiting for payment\", 2, 1),\n" +
+            "(now(), \"Waiting for payment\", 3, 1),\n" +
+            "(now(), \"Waiting for payment\", 2, 2);";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;

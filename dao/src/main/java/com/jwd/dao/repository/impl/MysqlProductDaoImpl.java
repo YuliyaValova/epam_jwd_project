@@ -30,13 +30,20 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String COUNT_BASKET_SORTED = "select count(*) from Products\n" +
             "join Orders on Orders.product_id = Products.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
-            "where Orders.customer_id = ?;";
+            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\";";
     private static final String PARAM_FOR_BASKET_SORT = "select * from Products p\n" +
             "join Orders on Orders.product_id = p.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
-            "where Orders.customer_id = ?\n" +
+            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\"\n" +
             "order by p.%s %s limit ? offset ?;";
     private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ?;";
+    private static final String GET_SUM_QUERY = "select sum(Products.price) from Products\n" +
+            "join Orders on Orders.product_id = Products.id\n" +
+            "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
+            "where Orders.customer_id = ? && Orders.status = \"Waiting for payment\";";
+    private static final String SET_ALL_STATUS_QUERY = "update Orders\n" +
+            "set Orders.status = ? \n" +
+            "where Orders.customer_id = ? && Orders.status = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -287,7 +294,57 @@ public class MysqlProductDaoImpl implements ProductDao {
         }
     }
 
-    private Pageable<Product> getProductRowPageable(Pageable<Product> daoProductPageable,ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
+    @Override
+    public double getSum(long id) throws DaoException {
+        double sum = 0;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Object> parameters = Arrays.asList(
+                id
+        );
+        try {
+            validator.validateId(id);
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(GET_SUM_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                sum = resultSet.getDouble(1);
+            }
+            return sum;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet);
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void changeAllOrdersStatus(long id, String newStatus, String oldStatus) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        List<Object> parameters = Arrays.asList(
+                newStatus,
+                id,
+                oldStatus
+        );
+        try {
+            validator.validateId(id);
+            validator.validateStatus(newStatus);
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(SET_ALL_STATUS_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private Pageable<Product> getProductRowPageable(Pageable<Product> daoProductPageable, ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
         final Pageable<Product> pageable = new Pageable<>();
         long totalElements = 0L;
         while (resultSet1.next()) {

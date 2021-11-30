@@ -13,7 +13,8 @@ public enum CommandEnum {
     GOTOPROFILE("gotoprofile"),
     SHOWPRODUCTS("showproducts"),
     SHOWBASKET("showbasket"),
-    CLEANBASKET("cleanbasket");
+    CLEANBASKET("cleanbasket"),
+    SENDORDER("sendOrder");
 
 
     private String name;

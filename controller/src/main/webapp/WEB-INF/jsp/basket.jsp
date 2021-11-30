@@ -29,6 +29,7 @@
         <fmt:message bundle="${loc}" key="locale.deleteFromBascket" var="deleteFromBascket" />
         <fmt:message bundle="${loc}" key="locale.deleteAllBascket" var="deleteAllBascket" />
         <fmt:message bundle="${loc}" key="locale.sum" var="sum" />
+        <fmt:message bundle="${loc}" key="locale.sendOrd" var="sendOrd" />
 
 
 <title>
@@ -62,6 +63,11 @@
                   <c:if test="${error == 'ShowBasketError'}">
                        <p style="color: red">${errorMsg_showBasketError}</p>
                   </c:if>
+
+                <!--Message-->
+                <c:if test="${requestScope.message != null}">
+                     <p style="color: green">${requestScope.message}</p>
+                </c:if>
 
 
                   <!--Menu-->
@@ -134,5 +140,16 @@
                                      </c:if>
                                  </c:forEach>
                              </div>
+
                          </div>
+
+                         <c:if test="${requestScope.page == 'show'}">
+                               <p>${sum}: ${requestScope.sum}</p>
+                                <form id="sendOrder" method="get" action="/basket" >
+                                <input type="hidden" name="command" value="sendOrder"/>
+                                <button form="sendOrder" type="submit">${sendOrd}</button>
+                                </form>
+                         </c:if>
+
+
                      </c:if>

@@ -52,6 +52,27 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public double getSum(long id) throws ServiceException {
+        try {
+            validator.validateId(id);
+            double sum = productDao.getSum(id);
+            return sum;
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public void sendOrder(long id) throws ServiceException {
+        try {
+            validator.validateId(id);
+            productDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
 
     private Page<Product> convertToServicePage(Pageable<Product> productRowsPageable) {
         Page<Product> page = new Page<>();
