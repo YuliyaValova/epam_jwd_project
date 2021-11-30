@@ -28,6 +28,8 @@ public interface ProductDao {
 
     void deleteFromBasket(long id, long productId) throws DaoException;
 
+    boolean addToBasket(long id, long productId) throws DaoException;
+
     // boolean updateProduct (Product product)
 
 }

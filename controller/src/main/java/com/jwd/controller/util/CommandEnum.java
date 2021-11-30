@@ -8,14 +8,14 @@ public enum CommandEnum {
     GOTOMENU("gotomenu"),
     GOTOMAIN("gotomain"),
     GOTOBASKET("gotobasket"),
-    GOTOACCOUNT("gotoaccount"),
     LOCALE("locale"),
     GOTOPROFILE("gotoprofile"),
     SHOWPRODUCTS("showproducts"),
     SHOWBASKET("showbasket"),
     CLEANBASKET("cleanbasket"),
     SENDORDER("sendOrder"),
-    DELETEFROMBASKET("deletefrombasket");
+    DELETEFROMBASKET("deletefrombasket"),
+    ADDTOBASKET("addtobasket");
 
 
     private String name;

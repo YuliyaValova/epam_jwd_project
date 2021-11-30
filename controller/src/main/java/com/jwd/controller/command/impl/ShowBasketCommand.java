@@ -47,9 +47,8 @@ public class ShowBasketCommand implements Command {
 
                 final Page<Product> pageable = productService.showBasket(pageRequest,user.getId());
                 final double totalSum = productService.getSum(user.getId());
-
                 req.setAttribute(PAGEABLE, pageable);
-                req.setAttribute(SUM, totalSum);
+                session.setAttribute(SUM, totalSum);
                 req.setAttribute(PAGE, "show");
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }

@@ -46,6 +46,11 @@ public class MysqlProductDaoImpl implements ProductDao {
             "where Orders.customer_id = ? and Orders.status = ?;";
     private static final String DELETE_FROM_BASKET_QUERY = "delete from Orders\n" +
             "where customer_id = ? and product_id = ?;";
+    private static final String ADD_TO_BASKET_QUERY = "insert into Orders (date, status,  product_id, customer_id)\n" +
+            "values\n" +
+            "(now(), \"Waiting for payment\", ? , ?);";
+    private static final String IS_ORDER_EXISTS_QUERY = "select id from Orders\n" +
+            "where customer_id = ? and product_id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -363,6 +368,64 @@ public class MysqlProductDaoImpl implements ProductDao {
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public boolean addToBasket(long id, long productId) throws DaoException {
+        boolean isSuccess = false;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        List<Object> parameters = Arrays.asList(
+                productId,
+                id
+        );
+        try {
+            validator.validateId(id);
+            validator.validateId(productId);
+            if (!isOrderExists(id, productId)) {
+                isSuccess = true;
+                connection = connectionPool.takeConnection();
+                preparedStatement = daoUtil.getPreparedStatement(ADD_TO_BASKET_QUERY, connection, parameters);
+                int affectedRows = preparedStatement.executeUpdate();
+            }
+            return isSuccess;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private boolean isOrderExists(long id, long productId) throws DaoException {
+        boolean isExists = false;
+        List<Object> parameters = Arrays.asList(
+                id,
+                productId
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            validator.validateId(id);
+            validator.validateId(productId);
+            connection = connectionPool.takeConnection();
+            preparedStatement = daoUtil.getPreparedStatement(IS_ORDER_EXISTS_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                isExists = true;
+            }
+            return isExists;
+
+        } catch (SQLException | DaoException e) {
+            e.printStackTrace();
+            throw new DaoException(e);
+
+        } finally {
+            daoUtil.close(resultSet);
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }

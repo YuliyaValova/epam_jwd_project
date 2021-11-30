@@ -43,7 +43,6 @@ public class FrontController extends HttpServlet {
         commands.put(GOTOMENU, new GoToMenuCommand());
         commands.put(GOTOMAIN, new GoToMainCommand());
         commands.put(GOTOBASKET, new GoToBasketCommand());
-        commands.put(GOTOACCOUNT, new GoToAccountCommand());
         commands.put(LOCALE, new ChangeLanguageCommand());
         commands.put(SHOWPRODUCTS, new ShowProductsCommand());
         commands.put(SHOWBASKET, new ShowBasketCommand());
@@ -51,6 +50,7 @@ public class FrontController extends HttpServlet {
         commands.put(CLEANBASKET, new CleanBasketCommand());
         commands.put(SENDORDER, new SendOrderCommand());
         commands.put(DELETEFROMBASKET, new DeleteFromBasketCommand());
+        commands.put(ADDTOBASKET, new AddToBasketCommand());
     }
 
 

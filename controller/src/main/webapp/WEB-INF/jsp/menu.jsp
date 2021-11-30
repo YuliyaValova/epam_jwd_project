@@ -27,6 +27,7 @@
         <fmt:message bundle="${loc}" key="locale.price" var="price" />
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.addBascket" var="addBascket" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_orderExistsError" var="errorMsg_orderExistsError" />
 
 
 <title>
@@ -59,6 +60,14 @@
 
                   <c:if test="${error == 'ShowProductsError'}">
                        <p style="color: red">${errorMsg_showProductsError}</p>
+                  </c:if>
+
+                  <c:if test="${error == 'OrderExists'}">
+                       <p style="color: red">${errorMsg_orderExistsError}</p>
+                  </c:if>
+
+                  <c:if test="${requestScope.message != null}">
+                        <p style="color: green">${requestScope.message}</p>
                   </c:if>
 
 
@@ -105,7 +114,8 @@
                                          <div>
                                          <form method="post" action="/menu" >
                                          <input type="hidden" name="command" value="addtobasket"/>
-                                         <button type="button">${addBascket}</button><br/>
+                                         <input type="hidden" name="productId" value=${product.id}/>
+                                         <button type="submit">${addBascket}</button><br/>
                                          </form>
                                          </div>
                                          </td>

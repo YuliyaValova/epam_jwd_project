@@ -151,7 +151,7 @@
                          </div>
 
                          <c:if test="${requestScope.page == 'show'}">
-                               <p>${sum}: ${requestScope.sum}</p>
+                               <p>${sum}: ${sessionScope.sum}</p>
                                 <form id="sendOrder" method="get" action="/basket" >
                                 <input type="hidden" name="command" value="sendOrder"/>
                                 <button form="sendOrder" type="submit">${sendOrd}</button>
