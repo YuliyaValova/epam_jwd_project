@@ -35,6 +35,7 @@ public class MysqlUserDaoImpl implements UserDao {
     private static final String IS_ADDRESS_EXISTS_QUERY = "select distinct id from Addresses where\n" +
             "city = ? and street = ? and building = ? and apartment = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_QUERY = "select id from UserAccounts where login = ?;";
+    private static final String DELETE_USER_QUERY = "delete from UserAccounts where id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -191,6 +192,30 @@ public class MysqlUserDaoImpl implements UserDao {
 
         } else return -1;
 
+    }
+
+    @Override
+    public void deleteUserById(long id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        List<Object> parameters = Arrays.asList(
+                id
+        );
+
+        try {
+            validator.validateId(id);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(DELETE_USER_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
     }
 
     private Long saveAddress(Address address) throws DaoException {

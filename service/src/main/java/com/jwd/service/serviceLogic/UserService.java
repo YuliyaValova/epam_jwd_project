@@ -10,4 +10,5 @@ public interface UserService {
 
     UserAccount login(UserAccount user) throws ServiceException;
 
+    void deleteAccount(long id) throws ServiceException;
 }

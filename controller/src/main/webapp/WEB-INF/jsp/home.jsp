@@ -26,6 +26,7 @@
         <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_injectDanger" var="errorMsg_injectDanger" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_invOperation" var="errorMsg_invOperation" />
+        <fmt:message bundle="${loc}" key="locale.errorMsg_sessionError" var="errorMsg_sessionError" />
 
 <title>
     <c:out value = "${home}" />
@@ -70,6 +71,11 @@
                    <c:if test="${error == 'RegistrationError'}">
                        <p style="color: red">${errorMsg_registrError}</p>
                    </c:if>
+
+                   <c:if test="${error == 'SessionError'}">
+                       <p style="color: red">${errorMsg_sessionError}</p>
+                   </c:if>
+
                     <c:if test="${error == 'LoginationError'}">
                        <p style="color: red">${errorMsg_loginError}</p>
                     </c:if>

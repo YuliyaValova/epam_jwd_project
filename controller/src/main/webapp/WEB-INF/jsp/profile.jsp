@@ -81,9 +81,10 @@
 
 
                 <form method="get" action="/home" >
-                               <input type="hidden" name="command" value="deleteAcc"/>
+                               <input type="hidden" name="command" value="deleteAccount"/>
                                <button type="submit">${deleteAccount}</button>
                 </form>
+
                    <!-- todo
                 <form method="post" action="/profile" >
                                <input type="hidden" name="command" value="updateAcc"/>
@@ -93,7 +94,7 @@
                 -->
 
                 <div>
-                    <form id="gotomain" method="post" action="/home" >
+                    <form id="changePassword" method="post" action="/home" >
                                 <input type="hidden" name="command" value="changepassword"/>
                                 <input type="text" name="oldPassword" value="old password"/>
                                 <input type="text" name="newPassword" value="new password"/>

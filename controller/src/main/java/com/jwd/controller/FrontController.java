@@ -51,6 +51,7 @@ public class FrontController extends HttpServlet {
         commands.put(SENDORDER, new SendOrderCommand());
         commands.put(DELETEFROMBASKET, new DeleteFromBasketCommand());
         commands.put(ADDTOBASKET, new AddToBasketCommand());
+        commands.put(DELETEACCOUNT, new DeleteAccountCommand());
     }
 
 

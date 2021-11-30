@@ -51,6 +51,16 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void deleteAccount(long id) throws ServiceException {
+        try {
+            validator.validateId(id);
+            userDao.deleteUserById(id);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {
         com.jwd.dao.domain.UserAccount acc = new com.jwd.dao.domain.UserAccount();
         acc.setId(user.getId());
