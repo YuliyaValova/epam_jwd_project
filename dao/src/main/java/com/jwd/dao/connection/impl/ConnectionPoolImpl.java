@@ -49,6 +49,7 @@ public class ConnectionPoolImpl implements ConnectionPool {
     @Override
     public void retrieveConnection(Connection connection) {
         if (nonNull(connection)){
+
             taken.remove(connection);
             pool.add(connection);
         }

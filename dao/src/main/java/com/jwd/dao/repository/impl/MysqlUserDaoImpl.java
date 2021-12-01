@@ -56,6 +56,7 @@ public class MysqlUserDaoImpl implements UserDao {
         ResultSet resultSet = null;
         try {
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(FIND_ALL_USERS_QUERY, connection, Collections.emptyList());
             resultSet = preparedStatement.executeQuery();
             final List<UserAccount> users = new ArrayList<>();
@@ -106,6 +107,7 @@ public class MysqlUserDaoImpl implements UserDao {
         try {
             validator.validateId(id);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_ID_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             UserAccount userAcc = null;
@@ -136,6 +138,7 @@ public class MysqlUserDaoImpl implements UserDao {
         try {
             validator.validateLoginAndPassword(login, password);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             UserAccount userAcc = null;
@@ -262,9 +265,11 @@ public class MysqlUserDaoImpl implements UserDao {
             PreparedStatement preparedStatement = null;
             try {
                 connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
                 preparedStatement = daoUtil.getPreparedStatement(SAVE_ADDRESS_QUERY, connection, parameters);
                 int affectedRows = preparedStatement.executeUpdate();
                 addressId = getAddressId(address);
+                connection.commit();
                 return addressId;
             } catch (SQLException | DaoException e) {
                 e.printStackTrace();
@@ -290,6 +295,7 @@ public class MysqlUserDaoImpl implements UserDao {
         ResultSet resultSet = null;
         try {
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(IS_ADDRESS_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -317,6 +323,7 @@ public class MysqlUserDaoImpl implements UserDao {
         try {
             validator.validateUserAccount(acc);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(IS_USER_ACCOUNT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) id = resultSet.getLong(1);

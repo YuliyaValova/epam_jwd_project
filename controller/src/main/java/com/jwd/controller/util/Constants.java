@@ -19,7 +19,6 @@ public class Constants {
             BUILDING = "building",
             APARTMENT = "apartment",
             BASKET = "basket",
-            ACCOUNT = "account",
             MENU = "menu",
             COMMAND = "command",
             DEFAULT_ = "default",

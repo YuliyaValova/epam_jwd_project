@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class MysqlProductDaoImpl implements ProductDao {
-    //todo transactions
+    //todo commit
 
     private static final String SAVE_PRODUCT_QUERY = "insert into Products (name, type, description, price, isAvailable) values (?,?,?,?,?);";
     private static final String IS_PRODUCT_EXISTS_QUERY = "select id from Products where name = ?;";
@@ -50,7 +50,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             "values\n" +
             "(now(), \"Waiting for payment\", ? , ?);";
     private static final String IS_ORDER_EXISTS_QUERY = "select id from Orders\n" +
-            "where customer_id = ? and product_id = ?;";
+            "where customer_id = ? and product_id = ? and status = \"Waiting for payment\";";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -107,11 +107,13 @@ public class MysqlProductDaoImpl implements ProductDao {
         try {
             validator.validateProduct(product);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(IS_PRODUCT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 id = resultSet.getLong(1);
             }
+            connection.commit();
             return id;
 
         } catch (SQLException | DaoException e) {
@@ -156,12 +158,14 @@ public class MysqlProductDaoImpl implements ProductDao {
         ResultSet resultSet = null;
         try {
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(GET_ALL_PRODUCTS_QUERY, connection, Collections.emptyList());
             resultSet = preparedStatement.executeQuery();
             final List<Product> products = new ArrayList<>();
             while (resultSet.next()) {
                 products.add(getProductFromDb(resultSet));
             }
+            connection.commit();
             return products;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
@@ -194,12 +198,14 @@ public class MysqlProductDaoImpl implements ProductDao {
         try {
             validator.validateId(id);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(GET_PRODUCT_BY_ID_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             Product product = null;
             while (resultSet.next()) {
                 product = getProductFromDb(resultSet);
             }
+            connection.commit();
             return product;
         } catch (SQLException e) {
             throw new DaoException(e);
@@ -313,11 +319,13 @@ public class MysqlProductDaoImpl implements ProductDao {
         try {
             validator.validateId(id);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(GET_SUM_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 sum = resultSet.getDouble(1);
             }
+            connection.commit();
             return sum;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
@@ -341,8 +349,10 @@ public class MysqlProductDaoImpl implements ProductDao {
             validator.validateId(id);
             validator.validateStatus(newStatus);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(SET_ALL_STATUS_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
@@ -363,8 +373,10 @@ public class MysqlProductDaoImpl implements ProductDao {
             validator.validateId(id);
             validator.validateId(productId);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(DELETE_FROM_BASKET_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
@@ -388,8 +400,10 @@ public class MysqlProductDaoImpl implements ProductDao {
             if (!isOrderExists(id, productId)) {
                 isSuccess = true;
                 connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
                 preparedStatement = daoUtil.getPreparedStatement(ADD_TO_BASKET_QUERY, connection, parameters);
                 int affectedRows = preparedStatement.executeUpdate();
+                connection.commit();
             }
             return isSuccess;
         } catch (SQLException | DaoException e) {
@@ -413,11 +427,13 @@ public class MysqlProductDaoImpl implements ProductDao {
             validator.validateId(id);
             validator.validateId(productId);
             connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(IS_ORDER_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 isExists = true;
             }
+            connection.commit();
             return isExists;
 
         } catch (SQLException | DaoException e) {

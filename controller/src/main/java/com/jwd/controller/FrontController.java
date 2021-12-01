@@ -53,6 +53,7 @@ public class FrontController extends HttpServlet {
         commands.put(ADDTOBASKET, new AddToBasketCommand());
         commands.put(DELETEACCOUNT, new DeleteAccountCommand());
         commands.put(CHANGEPASSWORD, new ChangePasswordCommand());
+        commands.put(GOTOADDPRODUCTPAGE, new GoToAddProductPageCommand());
     }
 
 

@@ -17,6 +17,7 @@ public enum CommandEnum {
     DELETEFROMBASKET("deletefrombasket"),
     ADDTOBASKET("addtobasket"),
     CHANGEPASSWORD("changepassword"),
+    GOTOADDPRODUCTPAGE("gotoAddProductPage"),
     DELETEACCOUNT("deleteAccount");
 
 
