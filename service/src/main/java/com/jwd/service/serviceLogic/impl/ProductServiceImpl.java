@@ -10,6 +10,8 @@ import com.jwd.service.serviceLogic.ProductService;
 import com.jwd.service.validator.ServiceValidator;
 import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
+import java.sql.SQLException;
+
 
 public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
@@ -94,6 +96,35 @@ public class ProductServiceImpl implements ProductService {
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public int addProductToMenu(Product product) throws ServiceException {
+        try {
+            int isSuccessful = -1;
+            if (validator.validateProduct(product)) {
+                long id = productDao.saveProduct(convertToDaoProduct(product));
+                if (id != -1L) {
+                    isSuccessful = 1;
+                }
+            } else {
+                isSuccessful = -2;
+            }
+            return isSuccessful;
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
+        com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();
+        newProduct.setId(product.getId());
+        newProduct.setName(product.getName());
+        newProduct.setDescription(product.getDescription());
+        newProduct.setPrice(product.getPrice());
+        newProduct.setType(product.getType());
+        newProduct.setIsAvailable(product.getIsAvailable());
+        return newProduct;
     }
 
 

@@ -30,5 +30,10 @@ public class Constants {
             ADDRESS = "addr",
             USER = "user",
             SUM = "sum",
-            PROD_ID = "productId";
+            PROD_ID = "productId",
+            NAME = "name",
+            TYPE = "type",
+            DESCRIPTION = "description",
+            STATUS = "status",
+            PRICE = "price";
 }

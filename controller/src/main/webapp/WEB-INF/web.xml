@@ -8,7 +8,7 @@
 
     <filter>
         <filter-name>EncodingFilter</filter-name>
-        <filter-class>com.jwd.controller.filters.EncodingFilter</filter-class>
+        <filter-class>com.jwd.controller.filter.EncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
@@ -21,7 +21,7 @@
 
     <filter>
         <filter-name>AntiInjectionFilter</filter-name>
-        <filter-class>com.jwd.controller.filters.AntiInjectionFilter</filter-class>
+        <filter-class>com.jwd.controller.filter.AntiInjectionFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AntiInjectionFilter</filter-name>
@@ -30,7 +30,7 @@
 
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
-        <filter-class>com.jwd.controller.filters.AuthenticationFilter</filter-class>
+        <filter-class>com.jwd.controller.filter.AuthenticationFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>

@@ -19,4 +19,6 @@ public interface ProductService {
     void deleteFromBasket(long id, long productId) throws ServiceException;
 
     boolean addToBasket(long id, long productId) throws ServiceException;
+
+    int addProductToMenu(Product product) throws ServiceException;
 }

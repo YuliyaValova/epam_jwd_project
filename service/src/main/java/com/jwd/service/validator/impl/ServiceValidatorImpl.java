@@ -1,5 +1,6 @@
 package com.jwd.service.validator.impl;
 
+import com.jwd.dao.domain.Product;
 import com.jwd.service.domain.Address;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.exception.ServiceException;
@@ -49,6 +50,31 @@ public class ServiceValidatorImpl implements ServiceValidator {
         return isValid;
     }
 
+    @Override
+    public boolean validateProduct(Product product) {
+        boolean isValid = true;
+        if (isNull(product)) {
+            isValid = false;
+        } else {
+            if (isIncompleteProduct(product)) {
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
+
+    private boolean isIncompleteProduct(Product product) {
+        boolean isIncomplete = false;
+        if (
+                isNullOrEmpty(product.getName())||
+                isNullOrEmpty(product.getType())||
+                product.getPrice() < 0
+        ) {
+            isIncomplete = true;
+        }
+        return isIncomplete;
+    }
+
     private boolean isIncompleteAddress(UserAccount acc) {
         boolean isIncomplete = false;
         if (isNull(acc.getAddress())) {
@@ -57,8 +83,8 @@ public class ServiceValidatorImpl implements ServiceValidator {
             Address address = acc.getAddress();
             if (
                     isNullOrEmpty(address.getCity()) ||
-                            isNullOrEmpty(address.getStreet()) ||
-                            isNullOrEmpty(address.getBuilding())
+                    isNullOrEmpty(address.getStreet()) ||
+                    isNullOrEmpty(address.getBuilding())
             ) {
                 isIncomplete = true;
             }
@@ -70,11 +96,11 @@ public class ServiceValidatorImpl implements ServiceValidator {
         boolean isIncomplete = false;
         if (
                 isNullOrEmpty(acc.getLogin()) ||
-                        isNullOrEmpty(acc.getPassword()) ||
-                        isNullOrEmpty(acc.getRole()) ||
-                        isNullOrEmpty(acc.getFirstName()) ||
-                        isNullOrEmpty(acc.getLastName()) ||
-                        isNullOrEmpty(acc.getPhone())
+                isNullOrEmpty(acc.getPassword()) ||
+                isNullOrEmpty(acc.getRole()) ||
+                isNullOrEmpty(acc.getFirstName()) ||
+                isNullOrEmpty(acc.getLastName()) ||
+                isNullOrEmpty(acc.getPhone())
         ) {
             isIncomplete = true;
         }

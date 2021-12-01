@@ -25,7 +25,8 @@
         <fmt:message bundle="${loc}" key="locale.add" var="add" />
         <fmt:message bundle="${loc}" key="locale.getPaid" var="getPaid" />
         <fmt:message bundle="${loc}" key="locale.getAll" var="getAll" />
-        <fmt:message bundle="${loc}" key="locale.findById" var="findById" />
+        <fmt:message bundle="${loc}" key="locale.findUserById" var="findUserById" />
+        <fmt:message bundle="${loc}" key="locale.findProductById" var="findProductById" />
         <fmt:message bundle="${loc}" key="locale.add_admin" var="add_admin" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_menuError" var="errorMsg_menuError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
@@ -59,6 +60,9 @@
 
                 </div>
 
+        <c:if test="${requestScope.message != null}">
+        <p style="color: green">${requestScope.message}</p>
+        </c:if>
 
 
 
@@ -114,7 +118,7 @@
                      <form method="post" action="/main" >
                      <input type="hidden" name="command" value="findUserById"/>
                      <input type="text" name="id" value="id"/>
-                     <button type="submit">${findById}</button>
+                     <button type="submit">${findUserById}</button>
                      </form>
 
                      <form method="post" action="/main" >
@@ -123,10 +127,10 @@
                      <button type="submit">${add_admin}</button>
                      </form>
 
-                     <form method="get" action="/main" >
-                     <input type="hidden" name="command" value="addAdmin"/>
-                     <input type="text" name="admin_id" value="id"/>
-                     <button type="submit">${add_admin}</button>
+                     <form method="post" action="/main" >
+                     <input type="hidden" name="command" value="findProductById"/>
+                     <input type="text" name="product_id" value="id"/>
+                     <button type="submit">${findProductById}</button>
                      </form>
 
                      </c:if>

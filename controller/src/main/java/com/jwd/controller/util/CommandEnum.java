@@ -18,7 +18,8 @@ public enum CommandEnum {
     ADDTOBASKET("addtobasket"),
     CHANGEPASSWORD("changepassword"),
     GOTOADDPRODUCTPAGE("gotoAddProductPage"),
-    DELETEACCOUNT("deleteAccount");
+    DELETEACCOUNT("deleteAccount"),
+    ADDPRODUCTTOMENU("addProductToMenu");
 
 
     private String name;

@@ -4,6 +4,7 @@ import com.jwd.dao.config.DatabaseConfig;
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
+import com.jwd.dao.domain.Address;
 import com.jwd.dao.domain.Pageable;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
@@ -412,6 +413,39 @@ public class MysqlProductDaoImpl implements ProductDao {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
+    }
+
+    @Override
+    public long saveProduct(Product product) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        long id = productIsExists(product);
+        if (id == -1) {
+            List<Object> parameters = Arrays.asList(
+                    product.getName(),
+                    product.getType(),
+                    product.getDescription(),
+                    product.getPrice(),
+                    product.getIsAvailable()
+            );
+
+            try {
+                validator.validateProduct(product);
+                connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
+                preparedStatement = daoUtil.getPreparedStatement(SAVE_PRODUCT_QUERY, connection, parameters);
+                int affectedRows = preparedStatement.executeUpdate();
+                connection.commit();
+                return productIsExists(product);
+            } catch (SQLException | DaoException e) {
+                e.printStackTrace();
+                throw new DaoException(e);
+            } finally {
+                daoUtil.close(preparedStatement);
+                connectionPool.retrieveConnection(connection);
+            }
+
+        } else return -1;
     }
 
     private boolean isOrderExists(long id, long productId) throws DaoException {

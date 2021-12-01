@@ -1,7 +1,5 @@
-package com.jwd.controller.filters;
+package com.jwd.controller.filter;
 
-
-import com.jwd.controller.util.Constants;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

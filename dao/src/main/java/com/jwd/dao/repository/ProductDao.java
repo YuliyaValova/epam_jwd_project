@@ -30,6 +30,8 @@ public interface ProductDao {
 
     boolean addToBasket(long id, long productId) throws DaoException;
 
+    long saveProduct(Product product) throws DaoException;
+
     // boolean updateProduct (Product product)
 
 }

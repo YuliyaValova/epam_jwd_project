@@ -1,4 +1,4 @@
-package com.jwd.controller.filters;
+package com.jwd.controller.filter;
 
 import javax.servlet.*;
 import java.io.IOException;
