@@ -19,7 +19,7 @@ import java.util.*;
 
 public class MysqlProductDaoImpl implements ProductDao {
     //todo refactor find pages methods
-
+    //todo modify get-orders methods for cases where product was deleted
     private static final String SAVE_PRODUCT_QUERY = "insert into Products (name, type, description, price, isAvailable) values (?,?,?,?,?);";
     private static final String IS_PRODUCT_EXISTS_QUERY = "select id from Products where name = ?;";
     private static final String DELETE_PRODUCT_QUERY = "delete from Products where id = ?;";
@@ -51,11 +51,14 @@ public class MysqlProductDaoImpl implements ProductDao {
             "(now(), \"Waiting for payment\", ? , ?);";
     private static final String IS_ORDER_EXISTS_QUERY = "select id from Orders\n" +
             "where customer_id = ? and product_id = ? and status = \"Waiting for payment\";";
-    private static final String COUNT_ALL_PAID = "select count(*) from Orders where status = \"Paid up\";";
+    private static final String COUNT_ALL_PAID = "select count(*) from Orders \n" +
+            "left join Products on Products.id = Orders.product_id\n" +
+            "where status = \"Paid up\" and Products.id is not null;";
     private static final String PARAM_FOR_SORT_PAID = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "where Orders.status = \"Paid up\" order by p.%s %s limit ? offset ?;";
-    private static final String COUNT_ALL_ORDERS = "select count(*) from Orders;";
+    private static final String COUNT_ALL_ORDERS = "select count(*) from Orders left join Products on Products.id = Orders.product_id\n" +
+            "where Products.id is not null;";
     private static final String PARAM_FOR_SORT_ALL_ORDERS = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "order by p.%s %s limit ? offset ?;";

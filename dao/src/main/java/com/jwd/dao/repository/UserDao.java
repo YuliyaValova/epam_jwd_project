@@ -19,4 +19,7 @@ public interface UserDao {
     void deleteUserById(long id) throws DaoException;
 
     void changePassword(long id, String oldPassword, String newPassword) throws DaoException;
+
+    void makeAdmin(long userId) throws DaoException;
+
 }

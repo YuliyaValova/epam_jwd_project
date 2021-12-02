@@ -28,13 +28,17 @@ public class Constants {
             MAIN = "main",
             ID = "id",
             ADDRESS = "addr",
+            FIND_ADDRESS = "findAddr",
             USER = "user",
+            FIND_USER = "findUser",
             SUM = "sum",
             PROD_ID = "productId",
             NAME = "name",
             TYPE = "type",
             DESCRIPTION = "description",
             STATUS = "status",
+            ADMIN_ID = "admin_id",
             PAGEABLE2 = "pageable2",
+            PROFILE = "profile",
             PRICE = "price";
 }

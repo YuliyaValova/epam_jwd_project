@@ -114,7 +114,7 @@
                      <button type="submit">${add}</button>
                      </form>
 
-                     <form method="post" action="/main" >
+                     <form method="post" action="/profile" >
                      <input type="hidden" name="command" value="findUserById"/>
                      <input type="text" name="id" value="id"/>
                      <button type="submit">${findUserById}</button>
@@ -279,6 +279,10 @@
                      <p style="color: red">${errorMsg_menuError}</p>
                      </c:if>
 
+                     <c:if test="${error == 'AddAdminError'}">
+                     <p style="color: red">AddAdminError!</p>
+                     </c:if>
+
                      <c:if test="${error == 'SessionError'}">
                      <p style="color: red">SessionError!</p>
                      </c:if>
@@ -291,8 +295,16 @@
                      <p style="color: red">${errorMsg_accountError}</p>
                      </c:if>
 
+                     <c:if test="${error == 'FindUserError'}">
+                     <p style="color: red">FindUserError!</p>
+                     </c:if>
+
                      <c:if test="${error == 'BasketError'}">
                      <p style="color: red">${errorMsg_basketError}</p>
+                     </c:if>
+
+                     <c:if test="${error == 'UserNotExists'}">
+                     <p style="color: red">UserNotExists!</p>
                      </c:if>
 
                      <c:if test="${error == 'GetAllOrdersError'}">

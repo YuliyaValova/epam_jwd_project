@@ -81,6 +81,30 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void addAdmin(long userId) throws ServiceException {
+        try {
+            if (validator.validateId(userId)) {
+                userDao.makeAdmin(userId);
+            }
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public UserAccount findUser(long userId) throws ServiceException {
+        try {
+            UserAccount account = null;
+            if (validator.validateId(userId)) {
+                account = new UserAccount(userDao.getUserById(userId));
+            }
+            return account;
+        } catch (final DaoException | SQLException e) {
+            throw new ServiceException(e);
+        }
+    }
+
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {
         com.jwd.dao.domain.UserAccount acc = new com.jwd.dao.domain.UserAccount();
         acc.setId(user.getId());

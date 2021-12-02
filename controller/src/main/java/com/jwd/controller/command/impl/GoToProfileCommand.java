@@ -21,7 +21,7 @@ public class GoToProfileCommand implements Command {
             if (isNull(session)) {
                 resp.sendRedirect("main?message=AccountError");
             } else {
-                session.setAttribute(PAGE, MENU);
+                session.setAttribute(PAGE, PROFILE);
                 req.getRequestDispatcher(PATH_TO_JSP+ Command.prepareUri(req) + JSP).forward(req, resp);
             }
         } catch (Exception e) {

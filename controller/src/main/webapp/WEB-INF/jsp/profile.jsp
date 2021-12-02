@@ -18,11 +18,13 @@
         <fmt:message bundle="${loc}" key="locale.locbutton.name.ru" var="ru_button" />
         <fmt:message bundle="${loc}" key="locale.login" var="login" />
         <fmt:message bundle="${loc}" key="locale.profile" var="profile" />
+        <fmt:message bundle="${loc}" key="locale.account" var="account" />
         <fmt:message bundle="${loc}" key="locale.password" var="password" />
         <fmt:message bundle="${loc}" key="locale.address" var="address" />
         <fmt:message bundle="${loc}" key="locale.fname" var="fname" />
         <fmt:message bundle="${loc}" key="locale.lname" var="lname" />
         <fmt:message bundle="${loc}" key="locale.phone" var="phone" />
+        <fmt:message bundle="${loc}" key="locale.role" var="role" />
         <fmt:message bundle="${loc}" key="locale.city" var="city" />
         <fmt:message bundle="${loc}" key="locale.street" var="street" />
         <fmt:message bundle="${loc}" key="locale.building" var="building" />
@@ -35,7 +37,7 @@
 
 
 <title>
-    <c:out value = "${profile}" />
+    <c:out value = "${account}" />
 </title>
 
 </head>
@@ -43,7 +45,7 @@
 
     <c:set var="error" value="${param.message}"/>
 
-           <h1>${profile}</h1>
+           <h1>${account}</h1>
             <!-- LOCALE -->
             <div>
                     <form method="post" action="/profile" >
@@ -76,6 +78,8 @@
             </c:if>
 
             <c:if test="${sessionScope.role != null}">
+
+                <c:if test="${sessionScope.page != 'findUser'}">
 
                <h3>${login}:${sessionScope.user.login}</h3>
                <h3>${fname}: ${sessionScope.user.firstName}</h3>
@@ -111,6 +115,22 @@
                     </form>
 
                 </div>
+                </c:if>
+
+                <c:if test="${sessionScope.page == 'findUser'}">
+
+                               <h3>${login}:${sessionScope.findUser.login}</h3>
+                               <h3>${fname}: ${sessionScope.findUser.firstName}</h3>
+                               <h3>${lname}: ${sessionScope.findUser.lastName}</h3>
+                               <h3>${phone}: ${sessionScope.findUser.phone}</h3>
+                               <h3>${role}: ${sessionScope.findUser.role}</h3>
+                               <h3>${city}: ${sessionScope.findAddr.city}</h3>
+                               <h3>${street}: ${sessionScope.findAddr.street}</h3>
+                               <h3>${building}:${sessionScope.findAddr.building}</h3>
+                               <h3>${apartment}: ${sessionScope.findAddr.apartment}</h3>
+                               <br>
+
+                </c:if>
 
             </c:if>
 

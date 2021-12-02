@@ -1,7 +1,9 @@
 package com.jwd.dao.repository.impl;
 
+import com.jwd.dao.config.DatabaseConfig;
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
+import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.domain.Address;
 import com.jwd.dao.domain.UserAccount;
 import com.jwd.dao.exception.DaoException;
@@ -39,6 +41,9 @@ public class MysqlUserDaoImpl implements UserDao {
     private static final String UPDATE_PASSWORD_QUERY = "update UserAccounts\n" +
             "set password = ?\n" +
             "where id = ? and password = ?;";
+    private static final String MAKE_ADMIN_QUERY = "update UserAccounts\n" +
+            "set role = \"admin\"\n" +
+            "where id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -244,6 +249,30 @@ public class MysqlUserDaoImpl implements UserDao {
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
 
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void makeAdmin(long userId) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        List<Object> parameters = Arrays.asList(
+                userId
+        );
+
+        try {
+            validator.validateId(userId);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(MAKE_ADMIN_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
