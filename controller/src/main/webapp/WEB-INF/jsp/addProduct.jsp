@@ -26,6 +26,7 @@
             <fmt:message bundle="${loc}" key="locale.errorMsg_fieldsFill" var="errorMsg_fieldsFill" />
             <fmt:message bundle="${loc}" key="locale.errorMsg_addProduct" var="errorMsg_addProduct" />
             <fmt:message bundle="${loc}" key="locale.errorMsg_productExists" var="errorMsg_productExists" />
+            <fmt:message bundle="${loc}" key="locale.errorMsg_invalidPrice" var="errorMsg_invalidPrice" />
 
     <title>
         <c:out value = "${addProdPage}" />
@@ -69,6 +70,10 @@
 
             <c:if test="${error == 'ProductExists'}">
             <p style="color: red">${errorMsg_productExists}</p>
+            </c:if>
+
+            <c:if test="${error == 'InvalidPriceError'}">
+            <p style="color: red">${errorMsg_invalidPrice}</p>
             </c:if>
 
              <c:if test="${sessionScope.role == 'admin'}">

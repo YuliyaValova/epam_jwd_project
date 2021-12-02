@@ -502,7 +502,7 @@ public class MysqlProductDaoImpl implements ProductDao {
 
 
     public static void main(String[] args) {
-        ConnectionPool pool = new ConnectionPoolImpl(new DatabaseConfig());
+        /*ConnectionPool pool = new ConnectionPoolImpl(new DatabaseConfig());
         ConnectionUtil util = new ConnectionUtil(pool);
         ProductDao dao = new MysqlProductDaoImpl(pool, util);
         Product product = new Product(null, "pizza", "Lolololo", 5, true);
@@ -520,9 +520,11 @@ public class MysqlProductDaoImpl implements ProductDao {
             System.out.println("---------------------");
             for (Product prod:products) {
                 System.out.println(prod.toString());
-            }*/
+            }
         } catch (DaoException e) {
             System.out.println(e.getMessage());
-        }
+        }*/
+
+
     }
 }

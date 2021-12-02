@@ -21,4 +21,6 @@ public interface ProductService {
     boolean addToBasket(long id, long productId) throws ServiceException;
 
     int addProductToMenu(Product product) throws ServiceException;
+
+    double convertStringToDouble(String parameter);
 }

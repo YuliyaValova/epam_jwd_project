@@ -116,6 +116,18 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public double convertStringToDouble(String parameter) {
+            double price = -1;
+            try {
+                price = Double.parseDouble(parameter);
+                if (price < 0) {
+                    price = -1;
+                }
+            } catch (Exception e){}
+            return price;
+    }
+
     private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
         com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();
         newProduct.setId(product.getId());

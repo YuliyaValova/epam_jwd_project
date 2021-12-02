@@ -66,7 +66,7 @@ public class DaoValidatorImpl implements DaoValidator {
         if (
                 isNullOrEmpty(product.getName()) ||
                 isNullOrEmpty(product.getType()) ||
-                isNullOrEmpty(product.getDescription())
+                product.getPrice() < 0
         ) {
             isIncomplete = true;
         }

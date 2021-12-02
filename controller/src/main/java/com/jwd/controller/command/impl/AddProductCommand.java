@@ -24,27 +24,30 @@ public class AddProductCommand implements Command {
             final String name = req.getParameter(NAME);
             final String type = req.getParameter(TYPE);
             final String description = req.getParameter(DESCRIPTION);
-            final double price = Double.parseDouble(req.getParameter(PRICE));
             final boolean status = Boolean.getBoolean(req.getParameter(STATUS));
+            double price = productService.convertStringToDouble(req.getParameter(PRICE));
 
-            Product product = new Product(name, type, description, price, status);
-            int isAdded = productService.addProductToMenu(product);
-            switch (isAdded) {
-                case -1:
-                    resp.sendRedirect("addProduct?message=productExists");
-                    break;
-                case -2:
-                    resp.sendRedirect("addProduct?message=IncompleteInfo");
-                    break;
-                case 1:
-                    req.setAttribute(MESSAGE, "Product registered successfully.");
-                    req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
-                    break;
-                default:
-                    resp.sendRedirect("addProduct?message=AddProductError");
-                    break;
+            if (price != -1) {
+                Product product = new Product(name, type, description, price, status);
+                int isAdded = productService.addProductToMenu(product);
+                switch (isAdded) {
+                    case -1:
+                        resp.sendRedirect("addProduct?message=productExists");
+                        break;
+                    case -2:
+                        resp.sendRedirect("addProduct?message=IncompleteInfo");
+                        break;
+                    case 1:
+                        req.setAttribute(MESSAGE, "Product registered successfully.");
+                        req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
+                        break;
+                    default:
+                        resp.sendRedirect("addProduct?message=AddProductError");
+                        break;
+                }
+            } else {
+                resp.sendRedirect("addProduct?message=InvalidPriceError");
             }
-
         } catch (Exception e) {
             resp.sendRedirect("addProduct?message=AddProductError");
         }
