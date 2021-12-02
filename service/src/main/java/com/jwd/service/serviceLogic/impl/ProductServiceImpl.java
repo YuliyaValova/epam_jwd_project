@@ -13,8 +13,6 @@ import com.jwd.service.serviceLogic.ProductService;
 import com.jwd.service.validator.ServiceValidator;
 import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
-import java.sql.SQLException;
-
 
 public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
@@ -150,6 +148,16 @@ public class ProductServiceImpl implements ProductService {
             final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
             final PageableOrder<Order> ordersPageable = productDao.findAllOrderPage(daoOrderPageable);
             return convertToServicePage(ordersPageable);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public void deleteFromMenu(long id) throws ServiceException {
+        try {
+            validator.validateId(id);
+            productDao.deleteProductById(id);
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }

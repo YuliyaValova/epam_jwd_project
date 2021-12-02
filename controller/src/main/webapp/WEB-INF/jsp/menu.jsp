@@ -27,6 +27,7 @@
         <fmt:message bundle="${loc}" key="locale.price" var="price" />
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.addBascket" var="addBascket" />
+        <fmt:message bundle="${loc}" key="locale.deleteFromMenu" var="deleteFromMenu" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_orderExistsError" var="errorMsg_orderExistsError" />
 
 
@@ -56,6 +57,7 @@
 
                 </div>
 
+
                 <!--Errors-->
 
                   <c:if test="${error == 'ShowProductsError'}">
@@ -68,6 +70,10 @@
 
                   <c:if test="${requestScope.message != null}">
                         <p style="color: green">${requestScope.message}</p>
+                  </c:if>
+
+                  <c:if test="${error == 'DeletingError'}">
+                  <p style="color: red">DeletingError!</p>
                   </c:if>
 
 
@@ -112,11 +118,23 @@
                                          <td>
                                          <td>
                                          <div>
+
+                                         <c:if test="${sessionScope.role == 'admin'}">
+                                         <form method="post" action="/menu" >
+                                         <input type="hidden" name="command" value="deletefrommenu"/>
+                                         <input type="hidden" name="productId" value=${product.id}/>
+                                         <button type="submit">${deleteFromMenu}</button><br/>
+                                         </form>
+                                         </c:if>
+
+                                         <c:if test="${sessionScope.role != 'admin'}">
                                          <form method="post" action="/menu" >
                                          <input type="hidden" name="command" value="addtobasket"/>
                                          <input type="hidden" name="productId" value=${product.id}/>
                                          <button type="submit">${addBascket}</button><br/>
                                          </form>
+                                         </c:if>
+
                                          </div>
                                          </td>
                                      </tr>

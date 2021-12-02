@@ -21,7 +21,8 @@ public enum CommandEnum {
     DELETEACCOUNT("deleteAccount"),
     ADDPRODUCTTOMENU("addProductToMenu"),
     GETPAIDORDERS("getPaidOrders"),
-    GETALLORDERS("getAllOrders");
+    GETALLORDERS("getAllOrders"),
+    DELETEFROMMENU("deletefrommenu");
 
 
     private String name;

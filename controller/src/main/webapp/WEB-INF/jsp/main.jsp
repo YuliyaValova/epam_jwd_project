@@ -275,14 +275,6 @@
 
 
 
-                     <c:if test="${sessionScope.page == 'account'}">
-                     <p>Status = ${sessionScope.page} </p>
-                     </c:if>
-
-                     <c:if test="${sessionScope.page == 'basket'}">
-                     <p>Status = ${sessionScope.page} </p>
-                     </c:if>
-
                      <c:if test="${error == 'MenuError'}">
                      <p style="color: red">${errorMsg_menuError}</p>
                      </c:if>

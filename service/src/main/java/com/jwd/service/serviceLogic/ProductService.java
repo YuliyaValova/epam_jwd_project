@@ -29,4 +29,6 @@ public interface ProductService {
     PageOrder<Order> showPaidOrders(PageOrder<Order> pageRequest) throws ServiceException;
 
     PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException;
+
+    void deleteFromMenu(long productId) throws ServiceException;
 }
