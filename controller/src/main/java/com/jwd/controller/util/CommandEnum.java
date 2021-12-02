@@ -24,6 +24,8 @@ public enum CommandEnum {
     GETALLORDERS("getAllOrders"),
     ADDADMIN("addAdmin"),
     FINDUSERBYID("findUserById"),
+    HIDEPRODUCT("hideProduct"),
+    FINDPRODUCTBYID("findProductById"),
     DELETEFROMMENU("deletefrommenu");
 
 

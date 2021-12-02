@@ -29,6 +29,15 @@ public class Product {
         this.isAvailable = isAvailable;
     }
 
+    public Product(Product product) {
+        this.id = product.getId();
+        this.name = product.getName();
+        this.type = product.getType();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
+        this.isAvailable = product.getIsAvailable();
+    }
+
     public long getId() {
         return id;
     }

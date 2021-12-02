@@ -37,9 +37,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<Product> showBasket(Page<Product> pageRequest, long id) throws ServiceException {
         try {
-            validator.validateId(id);
-            final Pageable<Product> daoBasketPageable = convertToPageable(pageRequest);
-            final Pageable<Product> productsPageable = productDao.findBasketPage(daoBasketPageable, id);
+            Pageable<Product> daoBasketPageable = null;
+            Pageable<Product> productsPageable = null;
+            if (validator.validateId(id)) {
+                daoBasketPageable = convertToPageable(pageRequest);
+                productsPageable = productDao.findBasketPage(daoBasketPageable, id);
+            }
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -49,7 +52,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void cleanBasket(long id) throws ServiceException {
         try {
-            productDao.deleteOrdersByUserId(id);
+            if (validator.validateId(id)) {
+                productDao.deleteOrdersByUserId(id);
+            }
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
@@ -58,8 +63,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public double getSum(long id) throws ServiceException {
         try {
-            validator.validateId(id);
-            double sum = productDao.getSum(id);
+            double sum = 0;
+            if (validator.validateId(id)) {
+                sum = productDao.getSum(id);
+            }
             return sum;
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -69,8 +76,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void sendOrder(long id) throws ServiceException {
         try {
-            validator.validateId(id);
-            productDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+            if (validator.validateId(id)) {
+                productDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+            }
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
@@ -79,9 +87,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteFromBasket(long id, long productId) throws ServiceException {
         try {
-            validator.validateId(id);
-            validator.validateId(productId);
-            productDao.deleteFromBasket(id, productId);
+            if (validator.validateId(id) && validator.validateId(productId)) {
+                productDao.deleteFromBasket(id, productId);
+            }
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
@@ -90,10 +98,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public boolean addToBasket(long id, long productId) throws ServiceException {
         try {
-            validator.validateId(id);
-            validator.validateId(productId);
-            return productDao.addToBasket(id, productId);
-
+            Boolean isAdded = null;
+            if (validator.validateId(id) && validator.validateId(productId)) {
+                isAdded = productDao.addToBasket(id, productId);
+            }
+            return isAdded;
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
@@ -119,14 +128,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public double convertStringToDouble(String parameter) {
-            double price = -1;
-            try {
-                price = Double.parseDouble(parameter);
-                if (price < 0) {
-                    price = -1;
-                }
-            } catch (Exception e){}
-            return price;
+        double price = -1;
+        try {
+            price = Double.parseDouble(parameter);
+            if (price < 0) {
+                price = -1;
+            }
+        } catch (Exception e) {
+        }
+        return price;
     }
 
     @Override
@@ -156,8 +166,22 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteFromMenu(long id) throws ServiceException {
         try {
-            validator.validateId(id);
-            productDao.deleteProductById(id);
+            if (validator.validateId(id)) {
+                productDao.deleteProductById(id);
+            }
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public Product findProduct(long productId) throws ServiceException {
+        try {
+            Product product = null;
+            if (validator.validateId(productId)) {
+                product = new Product(productDao.getProductById(productId));
+            }
+            return product;
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }

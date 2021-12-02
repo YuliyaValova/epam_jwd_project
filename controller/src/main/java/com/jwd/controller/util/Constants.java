@@ -29,6 +29,7 @@ public class Constants {
             ID = "id",
             ADDRESS = "addr",
             FIND_ADDRESS = "findAddr",
+            PRODUCT = "product",
             USER = "user",
             FIND_USER = "findUser",
             SUM = "sum",

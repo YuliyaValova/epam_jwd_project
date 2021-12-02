@@ -60,6 +60,8 @@ public class FrontController extends HttpServlet {
         commands.put(DELETEFROMMENU, new DeleteFromMenuCommand());
         commands.put(ADDADMIN, new AddAdminCommand());
         commands.put(FINDUSERBYID, new GetUserByIdCommand());
+        commands.put(FINDPRODUCTBYID, new GetProductByIdCommand());
+        commands.put(HIDEPRODUCT, new HideProductCommand());
     }
 
 

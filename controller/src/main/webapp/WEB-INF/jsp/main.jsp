@@ -41,6 +41,7 @@
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.paidOrders" var="paidOrders" />
         <fmt:message bundle="${loc}" key="locale.getAll" var="getAll" />
+        <fmt:message bundle="${loc}" key="locale.hideProd" var="hideProd" />
         <fmt:message bundle="${loc}" key="locale.AllOrders" var="AllOrders" />
 
 
@@ -126,14 +127,32 @@
                      <button type="submit">${add_admin}</button>
                      </form>
 
+                     <div>
                      <form method="post" action="/main" >
                      <input type="hidden" name="command" value="findProductById"/>
-                     <input type="text" name="product_id" value="id"/>
+                     <input type="text" name="productId" value="id"/>
                      <button type="submit">${findProductById}</button>
                      </form>
 
+                     <c:if test="${sessionScope.page == 'findProduct'}">
+                     <form method="get" action="/main" >
+                     <input type="hidden" name="command" value="hideProduct"/>
+                     <button type="submit">${hideProd}</button>
+                     </form>
+                     </c:if>
+                     </div>
+
                      </c:if>
 
+                     <c:if test="${sessionScope.role == 'admin'}">
+                        <c:if test="${sessionScope.page == 'findProduct'}">
+                            <p>Product name: ${sessionScope.product.name}</p>
+                            <p>Product type: ${sessionScope.product.type}</p>
+                            <p>Product price: ${sessionScope.product.price}</p>
+                            <p>Product description: ${sessionScope.product.description}</p>
+                            <p>Product status is available: ${sessionScope.product.isAvailable}</p>
+                        </c:if>
+                     </c:if>
 
                      <!--Show Paid Orders -->
                      <c:if test="${sessionScope.role == 'admin'}">
@@ -279,6 +298,10 @@
                      <p style="color: red">${errorMsg_menuError}</p>
                      </c:if>
 
+                     <c:if test="${error == 'HideProductError'}">
+                     <p style="color: red">HideProductError!</p>
+                     </c:if>
+
                      <c:if test="${error == 'AddAdminError'}">
                      <p style="color: red">AddAdminError!</p>
                      </c:if>
@@ -309,6 +332,14 @@
 
                      <c:if test="${error == 'GetAllOrdersError'}">
                      <p style="color: red">GetAllOrdersError!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'ProductNotExists'}">
+                     <p style="color: red">ProductNotExists!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'FindProductError'}">
+                     <p style="color: red">FindProductError!</p>
                      </c:if>
 
 
