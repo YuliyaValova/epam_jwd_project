@@ -28,9 +28,18 @@
         <fmt:message bundle="${loc}" key="locale.findUserById" var="findUserById" />
         <fmt:message bundle="${loc}" key="locale.findProductById" var="findProductById" />
         <fmt:message bundle="${loc}" key="locale.add_admin" var="add_admin" />
+        <fmt:message bundle="${loc}" key="locale.changeStatus" var="changeStatus" />
+        <fmt:message bundle="${loc}" key="locale.userId" var="userId" />
+        <fmt:message bundle="${loc}" key="locale.status" var="status" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_menuError" var="errorMsg_menuError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_basketError" var="errorMsg_basketError" />
+        <fmt:message bundle="${loc}" key="locale.id" var="id" />
+        <fmt:message bundle="${loc}" key="locale.name" var="name" />
+        <fmt:message bundle="${loc}" key="locale.description" var="description" />
+        <fmt:message bundle="${loc}" key="locale.price" var="price" />
+        <fmt:message bundle="${loc}" key="locale.type" var="type" />
+        <fmt:message bundle="${loc}" key="locale.paidOrders" var="paidOrders" />
 
 
 <title>
@@ -68,8 +77,6 @@
 
             <c:if test="${sessionScope.role != null}">
 
-                     <p>Authorized = ${sessionScope.role} </p>
-
                      <div>
 
                      <form method="get" action="/menu" >
@@ -106,11 +113,6 @@
                      </form>
 
                      <form method="get" action="/main" >
-                     <input type="hidden" name="command" value="getPaidOrders"/>
-                     <button type="submit">${getPaid}</button>
-                     </form>
-
-                     <form method="get" action="/main" >
                      <input type="hidden" name="command" value="getAllOrders"/>
                      <button type="submit">${getAll}</button>
                      </form>
@@ -135,6 +137,72 @@
 
                      </c:if>
 
+                     <c:if test="${sessionScope.role == 'admin'}">
+
+                     <form id="getPaidOrders" method="get" action="/main" >
+                     <input type="hidden" name="command" value="getPaidOrders"/>
+                     <button form="getPaidOrders" type="submit">${getPaid}</button>
+                     </form>
+
+                     </form>
+                        <div>
+                             <table>
+                                <thead>
+                                    <tr>
+                                        <c:if test="${requestScope.page == 'show'}">
+                                        <p>${paidOrders}</p>
+                                            <td><h4><c:out value="${id}"/></h4></td>
+                                            <td><h4><c:out value="${name}"/></h4></td>
+                                            <td><h4><c:out value="${type}"/></h4></td>
+                                            <td><h4><c:out value="${description}"/></h4></td>
+                                            <td><h4><c:out value="${price}"/></h4></td>
+                                            <td><h4><c:out value="${userId}"/></h4></td>
+                                            <td><h4><c:out value="${status}"/></h4></td>
+                                        </c:if>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <c:forEach items="${requestScope.pageable.elements}" var="order">
+                                        <tr>
+                                            <td>${order.id}</td>
+                                            <td>${order.name}</td>
+                                            <td>${order.type}</td>
+                                            <td>${order.description}</td>
+                                            <td>${order.price}</td>
+                                            <td>${order.customerId}</td>
+                                            <td>${order.status}</td>
+                                            <td>
+                                            <td>
+                                            <div>
+                                            <form method="post" action="/main" >
+                                            <input type="hidden" name="command" value="changeOrderStatus"/>
+                                            <input type="hidden" name="orderId" value=${order.id}/>
+                                            <button type="submit">${changeStatus}</button><br/>
+                                            </form>
+                                            </div>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                                     <div style="margin-left: center">
+                                 <c:forEach begin="1" end="${Math.ceil(pageable.totalElements / pageable.limit)}" var="i">
+                                     <c:if test="${i == pageable.pageNumber}">
+                                         <span>
+                                             <button style="color:red" form="getPaidOrders" type="submit" name="currentPage" value="${i}">${i}</button>
+                                         </span>
+                                     </c:if>
+                                     <c:if test="${i != pageable.pageNumber}">
+                                         <span>
+                                             <button form="getPaidOrders" type="submit" name="currentPage" value="${i}">${i}</button>
+                                         </span>
+                                     </c:if>
+                                 </c:forEach>
+                             </div>
+                        </div>
+                     </c:if>
+
 
 
                      <c:if test="${sessionScope.page == 'account'}">
@@ -147,6 +215,14 @@
 
                      <c:if test="${error == 'MenuError'}">
                      <p style="color: red">${errorMsg_menuError}</p>
+                     </c:if>
+
+                     <c:if test="${error == 'SessionError'}">
+                     <p style="color: red">SessionError!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'GetPaidOrdersError'}">
+                     <p style="color: red">GetPaidOrdersError!</p>
                      </c:if>
 
                      <c:if test="${error == 'AccountError'}">

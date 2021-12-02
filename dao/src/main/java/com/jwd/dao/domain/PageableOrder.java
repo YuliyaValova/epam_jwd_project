@@ -3,23 +3,29 @@ package com.jwd.dao.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pageable<T> {
+public class PageableOrder<T> {
 
     private int pageNumber;
     private long totalElements;
     private int limit;
+    private String status;
+    private long customerId;
     private List<T> elements = new ArrayList<>();
     private String sortBy = "id";
     private String direction = "ASC";
 
-    public Pageable() {
+    public PageableOrder() {
     }
 
-    public Pageable(int pageNumber, long totalElements, int limit, List<T> elements) {
+    public PageableOrder(int pageNumber, long totalElements, int limit, String status, long customerId, List<T> elements, String sortBy, String direction) {
         this.pageNumber = pageNumber;
         this.totalElements = totalElements;
         this.limit = limit;
+        this.status = status;
+        this.customerId = customerId;
         this.elements = elements;
+        this.sortBy = sortBy;
+        this.direction = direction;
     }
 
     public int getPageNumber() {
@@ -70,19 +76,37 @@ public class Pageable<T> {
         this.direction = direction;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Pageable<?> pageable = (Pageable<?>) o;
+        PageableOrder<?> that = (PageableOrder<?>) o;
 
-        if (pageNumber != pageable.pageNumber) return false;
-        if (totalElements != pageable.totalElements) return false;
-        if (limit != pageable.limit) return false;
-        if (elements != null ? !elements.equals(pageable.elements) : pageable.elements != null) return false;
-        if (sortBy != null ? !sortBy.equals(pageable.sortBy) : pageable.sortBy != null) return false;
-        return direction != null ? direction.equals(pageable.direction) : pageable.direction == null;
+        if (pageNumber != that.pageNumber) return false;
+        if (totalElements != that.totalElements) return false;
+        if (limit != that.limit) return false;
+        if (customerId != that.customerId) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (elements != null ? !elements.equals(that.elements) : that.elements != null) return false;
+        if (sortBy != null ? !sortBy.equals(that.sortBy) : that.sortBy != null) return false;
+        return direction != null ? direction.equals(that.direction) : that.direction == null;
     }
 
     @Override
@@ -90,6 +114,8 @@ public class Pageable<T> {
         int result = pageNumber;
         result = 31 * result + (int) (totalElements ^ (totalElements >>> 32));
         result = 31 * result + limit;
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (int) (customerId ^ (customerId >>> 32));
         result = 31 * result + (elements != null ? elements.hashCode() : 0);
         result = 31 * result + (sortBy != null ? sortBy.hashCode() : 0);
         result = 31 * result + (direction != null ? direction.hashCode() : 0);

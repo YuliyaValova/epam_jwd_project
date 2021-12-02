@@ -1,11 +1,10 @@
 package com.jwd.dao.repository.impl;
 
-import com.jwd.dao.config.DatabaseConfig;
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
-import com.jwd.dao.connection.impl.ConnectionPoolImpl;
-import com.jwd.dao.domain.Address;
+import com.jwd.dao.domain.Order;
 import com.jwd.dao.domain.Pageable;
+import com.jwd.dao.domain.PageableOrder;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.ProductDao;
@@ -16,10 +15,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class MysqlProductDaoImpl implements ProductDao {
-    //todo commit
+    //todo refactor find pages methods
 
     private static final String SAVE_PRODUCT_QUERY = "insert into Products (name, type, description, price, isAvailable) values (?,?,?,?,?);";
     private static final String IS_PRODUCT_EXISTS_QUERY = "select id from Products where name = ?;";
@@ -52,6 +54,10 @@ public class MysqlProductDaoImpl implements ProductDao {
             "(now(), \"Waiting for payment\", ? , ?);";
     private static final String IS_ORDER_EXISTS_QUERY = "select id from Orders\n" +
             "where customer_id = ? and product_id = ? and status = \"Waiting for payment\";";
+    private static final String COUNT_ALL_PAID = "select count(*) from Orders where status = \"Paid up\";";
+    private static final String PARAM_FOR_SORT_PAID = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
+            "join Products as p on p.id = Orders.product_id\n" +
+            "where Orders.status = \"Paid up\" order by p.id ASC limit ? offset ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -446,6 +452,69 @@ public class MysqlProductDaoImpl implements ProductDao {
             }
 
         } else return -1;
+    }
+
+    @Override
+    public PageableOrder<Order> findOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException {
+        final int offset = (daoOrderPageable.getPageNumber() - 1) * daoOrderPageable.getLimit();
+        List<Object> parameters1 = Collections.emptyList();
+        List<Object> parameters2 = Arrays.asList(
+                daoOrderPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_PAID, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT_PAID, daoOrderPageable.getSortBy(), daoOrderPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getOrderRowPageable(daoOrderPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private PageableOrder<Order> getOrderRowPageable(PageableOrder<Order> daoOrderPageable, ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
+        final PageableOrder<Order> pageable = new PageableOrder<>();
+        long totalElements = 0L;
+        while (resultSet1.next()) {
+            totalElements = resultSet1.getLong(1);
+        }
+        final List<Order> orders = new ArrayList<>();
+        while (resultSet2.next()) {
+            orders.add(getOrderFromDb(resultSet2));
+        }
+        pageable.setPageNumber(daoOrderPageable.getPageNumber());
+        pageable.setLimit(daoOrderPageable.getLimit());
+        pageable.setTotalElements(totalElements);
+        pageable.setElements(orders);
+        pageable.setSortBy(daoOrderPageable.getSortBy());
+        pageable.setDirection(daoOrderPageable.getDirection());
+        return pageable;
+    }
+
+    private Order getOrderFromDb(ResultSet resultSet) throws SQLException {
+        long id = resultSet.getLong(1);
+        String name = resultSet.getString(2);
+        String type = resultSet.getString(3);
+        String description = resultSet.getString(4);
+        double price = resultSet.getDouble(5);
+        boolean isAvailable = resultSet.getBoolean(6);
+        long customerId = resultSet.getLong(7);
+        String status = resultSet.getString(8);
+        return new Order(id, name, type, description, price, isAvailable, customerId,status);
     }
 
     private boolean isOrderExists(long id, long productId) throws DaoException {

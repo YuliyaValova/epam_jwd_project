@@ -19,7 +19,8 @@ public enum CommandEnum {
     CHANGEPASSWORD("changepassword"),
     GOTOADDPRODUCTPAGE("gotoAddProductPage"),
     DELETEACCOUNT("deleteAccount"),
-    ADDPRODUCTTOMENU("addProductToMenu");
+    ADDPRODUCTTOMENU("addProductToMenu"),
+    GETPAIDORDERS("getPaidOrders");
 
 
     private String name;
