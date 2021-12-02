@@ -34,7 +34,9 @@ public interface ProductDao {
 
     long saveProduct(Product product) throws DaoException;
 
-    PageableOrder<Order> findOrderPage(PageableOrder<Order> daoProductPageable) throws DaoException;
+    PageableOrder<Order> findPaidOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException;
+
+    PageableOrder<Order> findAllOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException;
 
     // boolean updateProduct (Product product)
 

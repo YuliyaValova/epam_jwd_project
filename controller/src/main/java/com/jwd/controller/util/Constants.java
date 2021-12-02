@@ -35,5 +35,6 @@ public class Constants {
             TYPE = "type",
             DESCRIPTION = "description",
             STATUS = "status",
+            PAGEABLE2 = "pageable2",
             PRICE = "price";
 }

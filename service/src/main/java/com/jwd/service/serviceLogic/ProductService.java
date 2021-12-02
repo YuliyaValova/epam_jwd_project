@@ -27,4 +27,6 @@ public interface ProductService {
     double convertStringToDouble(String parameter);
 
     PageOrder<Order> showPaidOrders(PageOrder<Order> pageRequest) throws ServiceException;
+
+    PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException;
 }

@@ -40,6 +40,8 @@
         <fmt:message bundle="${loc}" key="locale.price" var="price" />
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.paidOrders" var="paidOrders" />
+        <fmt:message bundle="${loc}" key="locale.getAll" var="getAll" />
+        <fmt:message bundle="${loc}" key="locale.AllOrders" var="AllOrders" />
 
 
 <title>
@@ -112,11 +114,6 @@
                      <button type="submit">${add}</button>
                      </form>
 
-                     <form method="get" action="/main" >
-                     <input type="hidden" name="command" value="getAllOrders"/>
-                     <button type="submit">${getAll}</button>
-                     </form>
-
                      <form method="post" action="/main" >
                      <input type="hidden" name="command" value="findUserById"/>
                      <input type="text" name="id" value="id"/>
@@ -137,6 +134,8 @@
 
                      </c:if>
 
+
+                     <!--Show Paid Orders -->
                      <c:if test="${sessionScope.role == 'admin'}">
 
                      <form id="getPaidOrders" method="get" action="/main" >
@@ -144,12 +143,13 @@
                      <button form="getPaidOrders" type="submit">${getPaid}</button>
                      </form>
 
-                     </form>
+                         <c:if test="${requestScope.page == 'show'}">
+
                         <div>
                              <table>
                                 <thead>
                                     <tr>
-                                        <c:if test="${requestScope.page == 'show'}">
+
                                         <p>${paidOrders}</p>
                                             <td><h4><c:out value="${id}"/></h4></td>
                                             <td><h4><c:out value="${name}"/></h4></td>
@@ -158,7 +158,7 @@
                                             <td><h4><c:out value="${price}"/></h4></td>
                                             <td><h4><c:out value="${userId}"/></h4></td>
                                             <td><h4><c:out value="${status}"/></h4></td>
-                                        </c:if>
+
                                     </tr>
                                 </thead>
 
@@ -186,7 +186,7 @@
                                     </c:forEach>
                                 </tbody>
                             </table>
-                                     <div style="margin-left: center">
+                              <div style="margin-left: center">
                                  <c:forEach begin="1" end="${Math.ceil(pageable.totalElements / pageable.limit)}" var="i">
                                      <c:if test="${i == pageable.pageNumber}">
                                          <span>
@@ -201,7 +201,77 @@
                                  </c:forEach>
                              </div>
                         </div>
+                        <br>
+                        </c:if>
                      </c:if>
+
+                     <c:if test="${sessionScope.role == 'admin'}">
+                     <!--Show All Orders -->
+
+                      <form id="getAllOrders" method="get" action="/main" >
+                      <input type="hidden" name="command" value="getAllOrders"/>
+                      <button form="getAllOrders" type="submit">${getAll}</button>
+                      </form>
+
+                        <c:if test="${requestScope.page == 'showAll'}">
+                         <div>
+                              <table>
+                                 <thead>
+                                     <tr>
+
+                                         <p>${AllOrders}</p>
+                                             <td><h4><c:out value="${id}"/></h4></td>
+                                             <td><h4><c:out value="${name}"/></h4></td>
+                                             <td><h4><c:out value="${type}"/></h4></td>
+                                             <td><h4><c:out value="${description}"/></h4></td>
+                                             <td><h4><c:out value="${price}"/></h4></td>
+                                             <td><h4><c:out value="${userId}"/></h4></td>
+                                             <td><h4><c:out value="${status}"/></h4></td>
+
+                                     </tr>
+                                 </thead>
+
+                                 <tbody>
+                                     <c:forEach items="${requestScope.pageable2.elements}" var="order">
+                                         <tr>
+                                             <td>${order.id}</td>
+                                             <td>${order.name}</td>
+                                             <td>${order.type}</td>
+                                             <td>${order.description}</td>
+                                             <td>${order.price}</td>
+                                             <td>${order.customerId}</td>
+                                             <td>${order.status}</td>
+                                             <td>
+                                             <td>
+                                             <div>
+                                             <form method="post" action="/main" >
+                                             <input type="hidden" name="command" value="changeOrderStatus"/>
+                                             <input type="hidden" name="orderId" value=${order.id}/>
+                                             <button type="submit">${changeStatus}</button><br/>
+                                             </form>
+                                             </div>
+                                             </td>
+                                         </tr>
+                                     </c:forEach>
+                                 </tbody>
+                             </table>
+                                      <div style="margin-left: center">
+                                  <c:forEach begin="1" end="${Math.ceil(pageable2.totalElements / pageable2.limit)}" var="i">
+                                      <c:if test="${i == pageable2.pageNumber}">
+                                          <span>
+                                              <button style="color:red" form="getAllOrders" type="submit" name="currentPage" value="${i}">${i}</button>
+                                          </span>
+                                      </c:if>
+                                      <c:if test="${i != pageable2.pageNumber}">
+                                          <span>
+                                              <button form="getAllOrders" type="submit" name="currentPage" value="${i}">${i}</button>
+                                          </span>
+                                      </c:if>
+                                  </c:forEach>
+                              </div>
+                         </div>
+                        </c:if>
+                      </c:if>
 
 
 
@@ -231,6 +301,10 @@
 
                      <c:if test="${error == 'BasketError'}">
                      <p style="color: red">${errorMsg_basketError}</p>
+                     </c:if>
+
+                     <c:if test="${error == 'GetAllOrdersError'}">
+                     <p style="color: red">GetAllOrdersError!</p>
                      </c:if>
 
 

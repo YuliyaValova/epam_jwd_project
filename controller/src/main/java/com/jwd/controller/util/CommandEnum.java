@@ -20,7 +20,8 @@ public enum CommandEnum {
     GOTOADDPRODUCTPAGE("gotoAddProductPage"),
     DELETEACCOUNT("deleteAccount"),
     ADDPRODUCTTOMENU("addProductToMenu"),
-    GETPAIDORDERS("getPaidOrders");
+    GETPAIDORDERS("getPaidOrders"),
+    GETALLORDERS("getAllOrders");
 
 
     private String name;

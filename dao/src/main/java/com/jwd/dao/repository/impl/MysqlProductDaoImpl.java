@@ -15,10 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class MysqlProductDaoImpl implements ProductDao {
     //todo refactor find pages methods
@@ -57,7 +54,11 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String COUNT_ALL_PAID = "select count(*) from Orders where status = \"Paid up\";";
     private static final String PARAM_FOR_SORT_PAID = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
-            "where Orders.status = \"Paid up\" order by p.id ASC limit ? offset ?;";
+            "where Orders.status = \"Paid up\" order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_ALL_ORDERS = "select count(*) from Orders;";
+    private static final String PARAM_FOR_SORT_ALL_ORDERS = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
+            "join Products as p on p.id = Orders.product_id\n" +
+            "order by p.%s %s limit ? offset ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -455,7 +456,7 @@ public class MysqlProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public PageableOrder<Order> findOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException {
+    public PageableOrder<Order> findPaidOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException {
         final int offset = (daoOrderPageable.getPageNumber() - 1) * daoOrderPageable.getLimit();
         List<Object> parameters1 = Collections.emptyList();
         List<Object> parameters2 = Arrays.asList(
@@ -472,6 +473,38 @@ public class MysqlProductDaoImpl implements ProductDao {
             connection.setAutoCommit(false);
             preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_PAID, connection, parameters1);
             final String findPageOrderedQuery = String.format(PARAM_FOR_SORT_PAID, daoOrderPageable.getSortBy(), daoOrderPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getOrderRowPageable(daoOrderPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public PageableOrder<Order> findAllOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException {
+        final int offset = (daoOrderPageable.getPageNumber() - 1) * daoOrderPageable.getLimit();
+        List<Object> parameters1 = Collections.emptyList();
+        List<Object> parameters2 = Arrays.asList(
+                daoOrderPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_ORDERS, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT_ALL_ORDERS, daoOrderPageable.getSortBy(), daoOrderPageable.getDirection());
             preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
             resultSet1 = preparedStatement1.executeQuery();
             resultSet2 = preparedStatement2.executeQuery();

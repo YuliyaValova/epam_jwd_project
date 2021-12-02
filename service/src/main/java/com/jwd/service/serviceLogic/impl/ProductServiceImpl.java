@@ -135,9 +135,21 @@ public class ProductServiceImpl implements ProductService {
     public PageOrder<Order> showPaidOrders(PageOrder<Order> pageRequest) throws ServiceException {
         // todo validation
         try {
-            final PageableOrder<Order> daoProductPageable = convertToPageable(pageRequest);
-            final PageableOrder<Order> productsPageable = productDao.findOrderPage(daoProductPageable);
-            return convertToServicePage(productsPageable);
+            final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
+            final PageableOrder<Order> ordersPageable = productDao.findPaidOrderPage(daoOrderPageable);
+            return convertToServicePage(ordersPageable);
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException {
+        // todo validation
+        try {
+            final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
+            final PageableOrder<Order> ordersPageable = productDao.findAllOrderPage(daoOrderPageable);
+            return convertToServicePage(ordersPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
