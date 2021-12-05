@@ -33,4 +33,6 @@ public interface ProductService {
     void deleteFromMenu(long productId) throws ServiceException;
 
     Product findProduct(long productId) throws ServiceException;
+
+    boolean changeStatus(long orderId, String status) throws ServiceException;
 }

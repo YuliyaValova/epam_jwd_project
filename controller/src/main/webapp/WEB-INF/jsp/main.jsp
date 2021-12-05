@@ -35,6 +35,8 @@
         <fmt:message bundle="${loc}" key="locale.errorMsg_accountError" var="errorMsg_accountError" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_basketError" var="errorMsg_basketError" />
         <fmt:message bundle="${loc}" key="locale.id" var="id" />
+        <fmt:message bundle="${loc}" key="locale.orderId" var="orderId" />
+        <fmt:message bundle="${loc}" key="locale.productId" var="productId" />
         <fmt:message bundle="${loc}" key="locale.name" var="name" />
         <fmt:message bundle="${loc}" key="locale.description" var="description" />
         <fmt:message bundle="${loc}" key="locale.price" var="price" />
@@ -170,7 +172,8 @@
                                     <tr>
 
                                         <p>${paidOrders}</p>
-                                            <td><h4><c:out value="${id}"/></h4></td>
+                                            <td><h4><c:out value="${orderId}"/></h4></td>
+                                            <td><h4><c:out value="${productId}"/></h4></td>
                                             <td><h4><c:out value="${name}"/></h4></td>
                                             <td><h4><c:out value="${type}"/></h4></td>
                                             <td><h4><c:out value="${description}"/></h4></td>
@@ -185,6 +188,7 @@
                                     <c:forEach items="${requestScope.pageable.elements}" var="order">
                                         <tr>
                                             <td>${order.id}</td>
+                                            <td>${order.productId}</td>
                                             <td>${order.name}</td>
                                             <td>${order.type}</td>
                                             <td>${order.description}</td>
@@ -196,6 +200,7 @@
                                             <div>
                                             <form method="post" action="/main" >
                                             <input type="hidden" name="command" value="changeOrderStatus"/>
+                                            <input type="text" name="status" value="new status"/>
                                             <input type="hidden" name="orderId" value=${order.id}/>
                                             <button type="submit">${changeStatus}</button><br/>
                                             </form>
@@ -239,7 +244,8 @@
                                      <tr>
 
                                          <p>${AllOrders}</p>
-                                             <td><h4><c:out value="${id}"/></h4></td>
+                                             <td><h4><c:out value="${orderId}"/></h4></td>
+                                             <td><h4><c:out value="${productId}"/></h4></td>
                                              <td><h4><c:out value="${name}"/></h4></td>
                                              <td><h4><c:out value="${type}"/></h4></td>
                                              <td><h4><c:out value="${description}"/></h4></td>
@@ -254,6 +260,7 @@
                                      <c:forEach items="${requestScope.pageable2.elements}" var="order">
                                          <tr>
                                              <td>${order.id}</td>
+                                             <td>${order.productId}</td>
                                              <td>${order.name}</td>
                                              <td>${order.type}</td>
                                              <td>${order.description}</td>
@@ -265,6 +272,7 @@
                                              <div>
                                              <form method="post" action="/main" >
                                              <input type="hidden" name="command" value="changeOrderStatus"/>
+                                             <input type="text" name="status" value="new status"/>
                                              <input type="hidden" name="orderId" value=${order.id}/>
                                              <button type="submit">${changeStatus}</button><br/>
                                              </form>
@@ -340,6 +348,10 @@
 
                      <c:if test="${error == 'FindProductError'}">
                      <p style="color: red">FindProductError!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'ChangeProductStatusError'}">
+                     <p style="color: red">ChangeProductStatusError!</p>
                      </c:if>
 
 

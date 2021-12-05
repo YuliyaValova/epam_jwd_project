@@ -187,6 +187,20 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public boolean changeStatus(long orderId, String newStatus) throws ServiceException {
+        try {
+            boolean isChanged = false;
+            if (validator.validateId(orderId) && validator.validateStatus(newStatus)) {
+                productDao.changeOrderStatus(orderId, newStatus);
+                isChanged = true;
+            }
+            return isChanged;
+        } catch (final DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
 
     private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
         com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();

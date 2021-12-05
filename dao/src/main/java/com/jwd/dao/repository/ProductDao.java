@@ -38,6 +38,8 @@ public interface ProductDao {
 
     PageableOrder<Order> findAllOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException;
 
+    void changeOrderStatus(long orderId, String newStatus) throws DaoException;
+
     // boolean updateProduct (Product product)
 
 }

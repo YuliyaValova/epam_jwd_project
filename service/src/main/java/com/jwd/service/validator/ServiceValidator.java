@@ -15,4 +15,6 @@ public interface ServiceValidator {
     boolean validatePassword(String oldPassword);
 
     boolean validateProduct(Product product);
+
+    boolean validateStatus(String newStatus);
 }

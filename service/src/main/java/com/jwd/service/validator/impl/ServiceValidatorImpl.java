@@ -63,6 +63,18 @@ public class ServiceValidatorImpl implements ServiceValidator {
         return isValid;
     }
 
+    @Override
+    public boolean validateStatus(String newStatus) {
+        boolean isValid = true;
+        if (isNullOrEmpty(newStatus)) {
+            isValid = false;
+        }
+        if (!newStatus.equals("Waiting for payment")&&!newStatus.equals("Paid up")){
+            isValid = false;
+        }
+        return isValid;
+    }
+
     private boolean isIncompleteProduct(Product product) {
         boolean isIncomplete = false;
         if (

@@ -54,14 +54,17 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String COUNT_ALL_PAID = "select count(*) from Orders \n" +
             "left join Products on Products.id = Orders.product_id\n" +
             "where status = \"Paid up\" and Products.id is not null;";
-    private static final String PARAM_FOR_SORT_PAID = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
+    private static final String PARAM_FOR_SORT_PAID = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "where Orders.status = \"Paid up\" order by p.%s %s limit ? offset ?;";
     private static final String COUNT_ALL_ORDERS = "select count(*) from Orders left join Products on Products.id = Orders.product_id\n" +
             "where Products.id is not null;";
-    private static final String PARAM_FOR_SORT_ALL_ORDERS = "select p.*, Orders.customer_id, Orders.status from Orders\n" +
+    private static final String PARAM_FOR_SORT_ALL_ORDERS = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "order by p.%s %s limit ? offset ?;";
+    private static final String SET_STATUS_QUERY = "update Orders\n" +
+            "set status = ?\n" +
+            "where id = ?;";
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -522,6 +525,30 @@ public class MysqlProductDaoImpl implements ProductDao {
         }
     }
 
+    @Override
+    public void changeOrderStatus(long orderId, String newStatus) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        List<Object> parameters = Arrays.asList(
+                newStatus,
+                orderId
+        );
+        try {
+            validator.validateId(orderId);
+            validator.validateStatus(newStatus);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(SET_STATUS_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
     private PageableOrder<Order> getOrderRowPageable(PageableOrder<Order> daoOrderPageable, ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
         final PageableOrder<Order> pageable = new PageableOrder<>();
         long totalElements = 0L;
@@ -543,14 +570,15 @@ public class MysqlProductDaoImpl implements ProductDao {
 
     private Order getOrderFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
-        String name = resultSet.getString(2);
-        String type = resultSet.getString(3);
-        String description = resultSet.getString(4);
-        double price = resultSet.getDouble(5);
-        boolean isAvailable = resultSet.getBoolean(6);
-        long customerId = resultSet.getLong(7);
-        String status = resultSet.getString(8);
-        return new Order(id, name, type, description, price, isAvailable, customerId,status);
+        long productId = resultSet.getLong(2);
+        String name = resultSet.getString(3);
+        String type = resultSet.getString(4);
+        String description = resultSet.getString(5);
+        double price = resultSet.getDouble(6);
+        boolean isAvailable = resultSet.getBoolean(7);
+        long customerId = resultSet.getLong(8);
+        String status = resultSet.getString(9);
+        return new Order(id, productId, name, type, description, price, isAvailable, customerId,status);
     }
 
     private boolean isOrderExists(long id, long productId) throws DaoException {

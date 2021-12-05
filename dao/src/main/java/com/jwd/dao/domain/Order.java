@@ -3,6 +3,7 @@ package com.jwd.dao.domain;
 public class Order {
 
     private long id;
+    private long productId;
     private String name;
     private String type;
     private String description;
@@ -14,8 +15,9 @@ public class Order {
     public Order() {
     }
 
-    public Order(long id, String name, String type, String description, double price, boolean isAvailable, long customerId, String status) {
+    public Order(long id, long productId, String name, String type, String description, double price, boolean isAvailable, long customerId, String status) {
         this.id = id;
+        this.productId = productId;
         this.name = name;
         this.type = type;
         this.description = description;
@@ -25,13 +27,14 @@ public class Order {
         this.status = status;
     }
 
-    public Order(String name, String type, String description, double price, boolean isAvailable, long customerId, String status) {
+    public Order(String name, String type, String description, double price, boolean isAvailable, long customerId, long productId, String status) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.price = price;
         this.isAvailable = isAvailable;
         this.customerId = customerId;
+        this.productId = productId;
         this.status = status;
     }
 
@@ -99,6 +102,14 @@ public class Order {
         this.status = status;
     }
 
+    public long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,6 +118,7 @@ public class Order {
         Order order = (Order) o;
 
         if (id != order.id) return false;
+        if (productId != order.productId) return false;
         if (Double.compare(order.price, price) != 0) return false;
         if (isAvailable != order.isAvailable) return false;
         if (customerId != order.customerId) return false;
@@ -121,6 +133,7 @@ public class Order {
         int result;
         long temp;
         result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (int) (productId ^ (productId >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
@@ -136,6 +149,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
+                ", productId=" + productId +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
