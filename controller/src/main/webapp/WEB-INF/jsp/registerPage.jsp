@@ -82,7 +82,7 @@
                 <p style="color: red">${errorMsg_pswNotMatch}</p>
             </c:if>
 
-           <form method="post" action="/" >
+           <form method="post" action="/home" >
                <input type="hidden" name="command" value="registration"/>
                <p>${login}*</p>
                <input type="text" name="login" value="">

@@ -18,6 +18,9 @@ import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
 
 public class ProductServiceImpl implements ProductService {
+
+
+
     private final ProductDao productDao;
     private final BasketDao basketDao;
     private final OrderDao orderDao;
@@ -208,6 +211,15 @@ public class ProductServiceImpl implements ProductService {
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public boolean convertStringToBoolean(String status) {
+        boolean value = false;
+        if(status.equals("true")){
+            value = true;
+        }
+        return value;
     }
 
 

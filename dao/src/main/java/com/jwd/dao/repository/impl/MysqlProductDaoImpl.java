@@ -2,9 +2,6 @@ package com.jwd.dao.repository.impl;
 
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
-import com.jwd.dao.domain.Order;
-import com.jwd.dao.domain.Pageable;
-import com.jwd.dao.domain.PageableOrder;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.ProductDao;
@@ -15,7 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class MysqlProductDaoImpl implements ProductDao {
 
@@ -47,13 +45,12 @@ public class MysqlProductDaoImpl implements ProductDao {
         try {
             validator.validateProduct(product);
             connection = connectionPool.takeConnection();
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(IS_PRODUCT_EXISTS_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 id = resultSet.getLong(1);
             }
-            connection.commit();
             return id;
 
         } catch (SQLException | DaoException e) {
@@ -138,14 +135,13 @@ public class MysqlProductDaoImpl implements ProductDao {
         try {
             validator.validateId(id);
             connection = connectionPool.takeConnection();
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(true);
             preparedStatement = daoUtil.getPreparedStatement(GET_PRODUCT_BY_ID_QUERY, connection, parameters);
             resultSet = preparedStatement.executeQuery();
             Product product = null;
             while (resultSet.next()) {
                 product = getProductFromDb(resultSet);
             }
-            connection.commit();
             return product;
         } catch (SQLException e) {
             throw new DaoException(e);
@@ -160,33 +156,35 @@ public class MysqlProductDaoImpl implements ProductDao {
     public long saveProduct(Product product) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        long id = productIsExists(product);
-        if (id == -1) {
-            List<Object> parameters = Arrays.asList(
-                    product.getName(),
-                    product.getType(),
-                    product.getDescription(),
-                    product.getPrice(),
-                    product.getIsAvailable()
-            );
 
             try {
-                validator.validateProduct(product);
+                long id = productIsExists(product);
+                if (id == -1) {
+                    List<Object> parameters = Arrays.asList(
+                            product.getName(),
+                            product.getType(),
+                            product.getDescription(),
+                            product.getPrice(),
+                            product.getIsAvailable()
+                    );
+
+                    validator.validateProduct(product);
                 connection = connectionPool.takeConnection();
                 connection.setAutoCommit(false);
                 preparedStatement = daoUtil.getPreparedStatement(SAVE_PRODUCT_QUERY, connection, parameters);
                 int affectedRows = preparedStatement.executeUpdate();
                 connection.commit();
-                return productIsExists(product);
+                id = productIsExists(product);
+                } else {
+                    id = -1;
+                }
+                return id;
             } catch (SQLException | DaoException e) {
-                e.printStackTrace();
                 throw new DaoException(e);
             } finally {
                 daoUtil.close(preparedStatement);
                 connectionPool.retrieveConnection(connection);
             }
-
-        } else return -1;
     }
 
     public static void main(String[] args) {

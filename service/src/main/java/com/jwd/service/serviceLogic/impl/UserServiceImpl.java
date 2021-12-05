@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
                 isSuccessful = -2;
             }
             return isSuccessful;
-        } catch (final DaoException | SQLException e) {
+        } catch (final DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService {
                 }
             }
             return isSuccessful;
-        } catch (final DaoException | SQLException e) {
+        } catch (final DaoException e) {
             throw new ServiceException(e);
         }
     }
@@ -104,7 +104,7 @@ public class UserServiceImpl implements UserService {
                 account = new UserAccount(userDao.getUserById(userId));
             }
             return account;
-        } catch (final DaoException | SQLException e) {
+        } catch (final DaoException e) {
             throw new ServiceException(e);
         }
     }

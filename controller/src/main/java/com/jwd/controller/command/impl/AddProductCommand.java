@@ -24,11 +24,12 @@ public class AddProductCommand implements Command {
             final String name = req.getParameter(NAME);
             final String type = req.getParameter(TYPE);
             final String description = req.getParameter(DESCRIPTION);
-            final boolean status = Boolean.getBoolean(req.getParameter(STATUS));
+            final String status = req.getParameter(STATUS);
             double price = productService.convertStringToDouble(req.getParameter(PRICE));
+            boolean isAvailable = productService.convertStringToBoolean(status);
 
             if (price != -1) {
-                Product product = new Product(name, type, description, price, status);
+                Product product = new Product(name, type, description, price, isAvailable);
                 int isAdded = productService.addProductToMenu(product);
                 switch (isAdded) {
                     case -1:

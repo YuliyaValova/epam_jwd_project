@@ -22,8 +22,6 @@ import java.util.List;
 
 public class MysqlPageDaoImpl implements PageDao {
 
-    private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true;";
-    private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true order by p.%s %s limit ? offset ?;";
     private static final String COUNT_BASKET_SORTED = "select count(*) from Products\n" +
             "join Orders on Orders.product_id = Products.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
@@ -33,21 +31,23 @@ public class MysqlPageDaoImpl implements PageDao {
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
             "where Orders.customer_id = ? and Orders.status = \"Waiting for payment\"\n" +
             "order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_ALL_ORDERS = "select count(*) from Orders left join Products on Products.id = Orders.product_id\n" +
+            "where Products.id is not null;";
+    private static final String PARAM_FOR_SORT_ALL_ORDERS = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
+            "join Products as p on p.id = Orders.product_id\n" +
+            "order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true;";
+    private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true order by p.%s %s limit ? offset ?;";
     private static final String COUNT_ALL_PAID = "select count(*) from Orders \n" +
             "left join Products on Products.id = Orders.product_id\n" +
             "where status = \"Paid up\" and Products.id is not null;";
     private static final String PARAM_FOR_SORT_PAID = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "where Orders.status = \"Paid up\" order by p.%s %s limit ? offset ?;";
-    private static final String COUNT_ALL_ORDERS = "select count(*) from Orders left join Products on Products.id = Orders.product_id\n" +
-            "where Products.id is not null;";
-    private static final String PARAM_FOR_SORT_ALL_ORDERS = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
-            "join Products as p on p.id = Orders.product_id\n" +
-            "order by p.%s %s limit ? offset ?;";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
-    private final DaoValidator validator = new DaoValidatorImpl();
+    private final DaoValidator validator = new DaoValidatorImpl(); //todo validation
 
     public MysqlPageDaoImpl(ConnectionPool connectionPool, ConnectionUtil daoUtil) {
         this.connectionPool = connectionPool;

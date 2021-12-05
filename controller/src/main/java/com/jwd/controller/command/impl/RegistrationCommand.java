@@ -53,7 +53,6 @@ public class RegistrationCommand implements Command {
                         resp.sendRedirect("home?message=RegistrationError");
                         break;
                 }
-
             }
         } catch (Exception e) {
             resp.sendRedirect("home?message=RegistrationError");

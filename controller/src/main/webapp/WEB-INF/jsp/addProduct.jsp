@@ -68,7 +68,7 @@
             <p style="color: red">${errorMsg_addProduct}</p>
             </c:if>
 
-            <c:if test="${error == 'ProductExists'}">
+            <c:if test="${error == 'productExists'}">
             <p style="color: red">${errorMsg_productExists}</p>
             </c:if>
 

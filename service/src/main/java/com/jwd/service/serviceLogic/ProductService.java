@@ -35,4 +35,6 @@ public interface ProductService {
     Product findProduct(long productId) throws ServiceException;
 
     boolean changeStatus(long orderId, String status) throws ServiceException;
+
+    boolean convertStringToBoolean(String status);
 }
