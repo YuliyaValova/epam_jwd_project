@@ -44,6 +44,8 @@ public class MysqlUserDaoImpl implements UserDao {
     private static final String MAKE_ADMIN_QUERY = "update UserAccounts\n" +
             "set role = \"admin\"\n" +
             "where id = ?;";
+    private static final String IS_USER_ACCOUNT_EXISTS_BY_ID_QUERY = "select id from UserAccounts where id = ?";
+
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
     private final DaoValidator validator = new DaoValidatorImpl();
@@ -258,7 +260,7 @@ public class MysqlUserDaoImpl implements UserDao {
     }
 
     @Override
-    public void makeAdmin(long userId) throws DaoException {
+    public boolean makeAdmin(long userId) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
@@ -267,12 +269,17 @@ public class MysqlUserDaoImpl implements UserDao {
         );
 
         try {
+            boolean isMakedAdmin = true;
             validator.validateId(userId);
+            if (userAccountIsExists(userId) == -1L){
+                isMakedAdmin = false;
+            }
             connection = connectionPool.takeConnection();
             connection.setAutoCommit(false);
             preparedStatement = daoUtil.getPreparedStatement(MAKE_ADMIN_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
+            return isMakedAdmin;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
@@ -357,6 +364,34 @@ public class MysqlUserDaoImpl implements UserDao {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) id = resultSet.getLong(1);
             return id;
+
+        } catch (SQLException | DaoException e) {
+            e.printStackTrace();
+            throw new DaoException(e);
+
+        } finally {
+            daoUtil.close(resultSet);
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private long userAccountIsExists(long id) throws DaoException {
+        long userId = -1L;
+        List<Object> parameters = Arrays.asList(
+                id
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            validator.validateId(id);
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            preparedStatement = daoUtil.getPreparedStatement(IS_USER_ACCOUNT_EXISTS_BY_ID_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) userId = resultSet.getLong(1);
+            return userId;
 
         } catch (SQLException | DaoException e) {
             e.printStackTrace();

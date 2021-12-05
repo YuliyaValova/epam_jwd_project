@@ -14,7 +14,7 @@ public interface UserService {
 
     boolean changePassword(long id, String oldPassword, String newPassword) throws ServiceException;
 
-    void addAdmin(long userId) throws ServiceException;
+    boolean addAdmin(long userId) throws ServiceException;
 
     UserAccount findUser(long userId) throws ServiceException;
 }

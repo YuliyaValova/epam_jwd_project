@@ -20,6 +20,6 @@ public interface UserDao {
 
     void changePassword(long id, String oldPassword, String newPassword) throws DaoException;
 
-    void makeAdmin(long userId) throws DaoException;
+    boolean makeAdmin(long userId) throws DaoException;
 
 }

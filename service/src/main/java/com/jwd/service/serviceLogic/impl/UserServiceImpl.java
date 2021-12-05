@@ -82,11 +82,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addAdmin(long userId) throws ServiceException {
+    public boolean addAdmin(long userId) throws ServiceException {
         try {
+            boolean isSuccess = false;
             if (validator.validateId(userId)) {
-                userDao.makeAdmin(userId);
+                if (userDao.makeAdmin(userId)) {
+                    isSuccess = true;
+                }
             }
+            return isSuccess;
         } catch (final DaoException e) {
             throw new ServiceException(e);
         }

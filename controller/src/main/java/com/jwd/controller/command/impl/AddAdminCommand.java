@@ -28,9 +28,12 @@ public class AddAdminCommand implements Command {
             } else {
                 // todo validation
                 long userId = Long.parseLong(req.getParameter(ADMIN_ID).replace("/", ""));
-                userService.addAdmin(userId);
-                req.setAttribute(MESSAGE, "Admin was added");
-                req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
+                if (userService.addAdmin(userId)) {
+                    req.setAttribute(MESSAGE, "Admin was added");
+                    req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
+                } else {
+                    resp.sendRedirect("main?message=UserNotExists");
+                }
             }
 
         } catch (Exception e) {

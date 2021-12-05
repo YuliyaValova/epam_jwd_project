@@ -5,6 +5,9 @@ import com.jwd.dao.domain.Pageable;
 import com.jwd.dao.domain.PageableOrder;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
+import com.jwd.dao.repository.BasketDao;
+import com.jwd.dao.repository.OrderDao;
+import com.jwd.dao.repository.PageDao;
 import com.jwd.dao.repository.ProductDao;
 import com.jwd.service.domain.Page;
 import com.jwd.service.domain.PageOrder;
@@ -16,10 +19,16 @@ import com.jwd.service.validator.impl.ServiceValidatorImpl;
 
 public class ProductServiceImpl implements ProductService {
     private final ProductDao productDao;
+    private final BasketDao basketDao;
+    private final OrderDao orderDao;
+    private final PageDao pageDao;
     private final ServiceValidator validator = new ServiceValidatorImpl();
 
-    public ProductServiceImpl(ProductDao productDao) {
+    public ProductServiceImpl(ProductDao productDao, BasketDao basketDao, OrderDao orderDao, PageDao pageDao) {
         this.productDao = productDao;
+        this.basketDao = basketDao;
+        this.orderDao = orderDao;
+        this.pageDao = pageDao;
     }
 
     @Override
@@ -27,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
         // todo validation
         try {
             final Pageable<Product> daoProductPageable = convertToPageable(productPageRequest);
-            final Pageable<Product> productsPageable = productDao.findPage(daoProductPageable);
+            final Pageable<Product> productsPageable = pageDao.findPage(daoProductPageable);
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -41,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
             Pageable<Product> productsPageable = null;
             if (validator.validateId(id)) {
                 daoBasketPageable = convertToPageable(pageRequest);
-                productsPageable = productDao.findBasketPage(daoBasketPageable, id);
+                productsPageable = pageDao.findBasketPage(daoBasketPageable, id);
             }
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
@@ -53,7 +62,7 @@ public class ProductServiceImpl implements ProductService {
     public void cleanBasket(long id) throws ServiceException {
         try {
             if (validator.validateId(id)) {
-                productDao.deleteOrdersByUserId(id);
+                orderDao.deleteOrdersByUserId(id);
             }
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -65,7 +74,7 @@ public class ProductServiceImpl implements ProductService {
         try {
             double sum = 0;
             if (validator.validateId(id)) {
-                sum = productDao.getSum(id);
+                sum = basketDao.getSum(id);
             }
             return sum;
         } catch (final DaoException e) {
@@ -77,7 +86,7 @@ public class ProductServiceImpl implements ProductService {
     public void sendOrder(long id) throws ServiceException {
         try {
             if (validator.validateId(id)) {
-                productDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+                orderDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
             }
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -88,7 +97,7 @@ public class ProductServiceImpl implements ProductService {
     public void deleteFromBasket(long id, long productId) throws ServiceException {
         try {
             if (validator.validateId(id) && validator.validateId(productId)) {
-                productDao.deleteFromBasket(id, productId);
+                basketDao.deleteFromBasket(id, productId);
             }
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -100,7 +109,7 @@ public class ProductServiceImpl implements ProductService {
         try {
             Boolean isAdded = null;
             if (validator.validateId(id) && validator.validateId(productId)) {
-                isAdded = productDao.addToBasket(id, productId);
+                isAdded = basketDao.addToBasket(id, productId);
             }
             return isAdded;
         } catch (final DaoException e) {
@@ -144,7 +153,7 @@ public class ProductServiceImpl implements ProductService {
         // todo validation
         try {
             final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
-            final PageableOrder<Order> ordersPageable = productDao.findPaidOrderPage(daoOrderPageable);
+            final PageableOrder<Order> ordersPageable = pageDao.findPaidOrderPage(daoOrderPageable);
             return convertToServicePage(ordersPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -156,7 +165,7 @@ public class ProductServiceImpl implements ProductService {
         // todo validation
         try {
             final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
-            final PageableOrder<Order> ordersPageable = productDao.findAllOrderPage(daoOrderPageable);
+            final PageableOrder<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable);
             return convertToServicePage(ordersPageable);
         } catch (final DaoException e) {
             throw new ServiceException(e);
@@ -192,7 +201,7 @@ public class ProductServiceImpl implements ProductService {
         try {
             boolean isChanged = false;
             if (validator.validateId(orderId) && validator.validateStatus(newStatus)) {
-                productDao.changeOrderStatus(orderId, newStatus);
+                orderDao.changeOrderStatus(orderId, newStatus);
                 isChanged = true;
             }
             return isChanged;

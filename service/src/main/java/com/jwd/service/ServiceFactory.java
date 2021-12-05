@@ -1,7 +1,6 @@
 package com.jwd.service;
 
 import com.jwd.dao.DaoFactory;
-import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.ProductService;
 import com.jwd.service.serviceLogic.UserService;
 import com.jwd.service.serviceLogic.impl.ProductServiceImpl;
@@ -12,9 +11,13 @@ public class ServiceFactory {
     private static final ServiceFactory serviceFactory = new ServiceFactory();
     private final DaoFactory daoFactory = DaoFactory.getFactory();
     private final UserService userService = new UserServiceImpl();
-    private final ProductService productService = new ProductServiceImpl(daoFactory.getProductDao());
+    private final ProductService productService = new ProductServiceImpl(daoFactory.getProductDao(),
+                                                                         daoFactory.getBasketDao(),
+                                                                         daoFactory.getOrderDao(),
+                                                                         daoFactory.getPageDao());
 
-    private ServiceFactory(){ }
+    private ServiceFactory() {
+    }
 
     public static ServiceFactory getServiceFactory() {
         return serviceFactory;

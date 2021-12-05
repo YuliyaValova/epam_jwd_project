@@ -1,5 +1,7 @@
 package com.jwd.dao.domain;
 
+import static java.util.Objects.nonNull;
+
 public class Product {
 
     private long id;
@@ -30,12 +32,16 @@ public class Product {
     }
 
     public Product(Product product) {
-        this.id = product.getId();
-        this.name = product.getName();
-        this.type = product.getType();
-        this.description = product.getDescription();
-        this.price = product.getPrice();
-        this.isAvailable = product.getIsAvailable();
+        if (nonNull(product)) {
+            this.id = product.getId();
+            this.name = product.getName();
+            this.type = product.getType();
+            this.description = product.getDescription();
+            this.price = product.getPrice();
+            this.isAvailable = product.getIsAvailable();
+        } else {
+            this.id = -1L;
+        }
     }
 
     public long getId() {

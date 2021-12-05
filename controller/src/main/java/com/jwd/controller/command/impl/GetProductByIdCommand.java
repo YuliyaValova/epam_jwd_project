@@ -32,7 +32,7 @@ public class GetProductByIdCommand implements Command {
                 // todo validation
                 long productId = Long.parseLong(req.getParameter(PROD_ID).replace("/", ""));
                 Product product = productService.findProduct(productId);
-                if (product.getId() == 0L) {
+                if (product.getId() == -1L) {
                     resp.sendRedirect("main?message=ProductNotExists");
                 } else {
                     session.setAttribute(PRODUCT, product);
