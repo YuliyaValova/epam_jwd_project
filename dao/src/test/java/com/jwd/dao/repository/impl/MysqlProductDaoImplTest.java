@@ -7,7 +7,6 @@ import com.jwd.dao.connection.ConnectionUtil;
 import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
-import org.junit.AfterClass;
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -15,7 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.Collections;
 
 import static java.util.Objects.nonNull;
 
@@ -40,13 +38,11 @@ public class MysqlProductDaoImplTest {
         resultSet = preparedStatement.executeQuery();
         if (resultSet.next()){
             countBeforeUpdate = resultSet.getInt(1);
-            System.out.println(countBeforeUpdate);
         }
         productDao.saveProduct(product);
         resultSet = preparedStatement.executeQuery();
         if (resultSet.next()){
             countAfterUpdate = resultSet.getInt(1);
-            System.out.println(countAfterUpdate);
         }
         connectionPool.retrieveConnection(connection);
         assert (countAfterUpdate == countBeforeUpdate + 1);
@@ -95,13 +91,11 @@ public class MysqlProductDaoImplTest {
         resultSet = preparedStatement.executeQuery();
         if (resultSet.next()){
             countBeforeUpdate = resultSet.getInt(1);
-            System.out.println(countBeforeUpdate);
         }
         productDao.deleteProductById(id);
         resultSet = preparedStatement.executeQuery();
         if (resultSet.next()){
             countAfterUpdate = resultSet.getInt(1);
-            System.out.println(countAfterUpdate);
         }
         connectionPool.retrieveConnection(connection);
         assert (countAfterUpdate == countBeforeUpdate - 1);
