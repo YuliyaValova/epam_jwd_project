@@ -29,6 +29,7 @@ public enum CommandEnum {
     FINDPRODUCTBYID("findProductById"),
     CHANGEPRODUCTSTATUS("changeproductstatus"),
     GETALLPRODUCTS("getAllProducts"),
+    UPDATEUSER("updateUser"),
     DELETEFROMMENU("deletefrommenu");
 
 

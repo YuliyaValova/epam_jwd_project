@@ -427,6 +427,10 @@
                      <p style="color: red">ProductNotExists!</p>
                      </c:if>
 
+                     <c:if test="${error == 'UpdateUserError'}">
+                     <p style="color: red">UpdateUserError!</p>
+                     </c:if>
+
                      <c:if test="${error == 'FindProductError'}">
                      <p style="color: red">FindProductError!</p>
                      </c:if>

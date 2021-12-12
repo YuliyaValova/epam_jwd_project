@@ -42,6 +42,10 @@ public class MysqlUserDaoImpl implements UserDao {
             "set role = \"admin\"\n" +
             "where id = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_BY_ID_QUERY = "select id from UserAccounts where id = ?";
+    private static final String UPDATE_USER_ACCOUNT_QUERY = "update UserAccounts\n" +
+            "join Addresses on Addresses.id = UserAccounts.address_id\n" +
+            "set fName = ?, lName = ?, phone = ?, address_id = ?\n" +
+            "where UserAccounts.login = ?;";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
@@ -281,6 +285,42 @@ public class MysqlUserDaoImpl implements UserDao {
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
             return isMakedAdmin;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public long updateUserAccount(UserAccount user) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            long id = userAccountIsExists(user);
+            if (id != -1) {
+                Address address = user.getAddress();
+                //todo update address but not save
+                Long addressId = saveAddress(address);
+                List<Object> parameters = Arrays.asList(
+                        user.getFirstName(),
+                        user.getLastName(),
+                        user.getPhone(),
+                        addressId,
+                        user.getLogin()
+                );
+                validator.validateUserAccount(user);
+                connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
+                preparedStatement = daoUtil.getPreparedStatement(UPDATE_USER_ACCOUNT_QUERY, connection, parameters);
+                int affectedRows = preparedStatement.executeUpdate();
+                connection.commit();
+                id = userAccountIsExists(user);
+            } else {
+                id = -1L;
+            }
+            return id;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {

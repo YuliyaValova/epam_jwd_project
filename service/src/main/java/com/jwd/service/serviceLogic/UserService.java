@@ -54,4 +54,12 @@ public interface UserService {
      * @throws ServiceException is a module exception
      */
     UserAccount findUser(long userId) throws ServiceException;
+
+    /**
+     * Updates user's info
+     * @param user for updating
+     * @return -2 if user is not valid, -1 if such user not exists, 1 if registration is successful
+     * @throws ServiceException is a module exception
+     */
+    int update(UserAccount user) throws ServiceException;
 }

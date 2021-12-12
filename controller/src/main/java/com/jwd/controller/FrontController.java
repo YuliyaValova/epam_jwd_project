@@ -63,6 +63,7 @@ public class FrontController extends HttpServlet {
         commands.put(CHANGEPRODUCTSTATUS, new ChangeProductStatusCommand());
         commands.put(GETALLPRODUCTS, new GetAllProductsCommand());
         commands.put(HIDEPRODUCT, new HideProductCommand());
+        commands.put(UPDATEUSER, new UpdateUserCommand());
         commands.put(CHANGEORDERSTATUS, new ChangeOrderStatusCommand());
     }
 

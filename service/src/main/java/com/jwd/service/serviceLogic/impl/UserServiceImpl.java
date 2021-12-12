@@ -128,6 +128,26 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public int update(UserAccount user) throws ServiceException {
+        try {
+            int isSuccessful = -1;
+            if (validator.validateUserAccount(user)) {
+                long id = userDao.updateUserAccount(convertToDaoUserAccount(user));
+                if (id != -1L) {
+                    isSuccessful = 1;
+                }
+            } else {
+                logger.info("#update invalid user info.");
+                isSuccessful = -2;
+            }
+            return isSuccessful;
+        } catch (final DaoException e) {
+            logger.error("#update throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {
         com.jwd.dao.domain.UserAccount acc = new com.jwd.dao.domain.UserAccount();
         acc.setId(user.getId());

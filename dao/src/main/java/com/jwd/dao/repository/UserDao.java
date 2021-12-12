@@ -64,4 +64,11 @@ public interface UserDao {
      */
     boolean makeAdmin(long userId) throws DaoException;
 
+    /**
+     * Updates user's information
+     * @param  user for updating
+     * @return user id
+     * @throws DaoException
+     */
+    long updateUserAccount(UserAccount user)throws DaoException;
 }

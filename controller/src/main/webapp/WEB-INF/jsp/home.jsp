@@ -92,6 +92,10 @@
                      <p style="color: red">${errorMsg_basketError}</p>
                      </c:if>
 
+                     <c:if test="${error == 'userNotExists'}">
+                     <p style="color: red">Your account is not exists!</p>
+                     </c:if>
+
                      <c:if test="${error == 'AccountError'}">
                      <p style="color: red">${errorMsg_accountError}</p>
                      </c:if>

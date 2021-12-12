@@ -30,6 +30,7 @@
         <fmt:message bundle="${loc}" key="locale.building" var="building" />
         <fmt:message bundle="${loc}" key="locale.apartment" var="apartment" />
         <fmt:message bundle="${loc}" key="locale.goMain" var="goMain" />
+        <fmt:message bundle="${loc}" key="locale.UpdateUser" var="UpdateUser" />
         <fmt:message bundle="${loc}" key="locale.deleteAccount" var="deleteAccount" />
         <fmt:message bundle="${loc}" key="locale.updateAccount" var="updateAccount" />
         <fmt:message bundle="${loc}" key="locale.changePassword" var="changePassword" />
@@ -77,21 +78,36 @@
             <p style="color: red">${IncorrectOldPassword}</p>
             </c:if>
 
+            <c:if test="${error == 'IncompleteInfo'}">
+            <p style="color: red">All fields must be filled!</p>
+            </c:if>
+
             <c:if test="${sessionScope.role != null}">
 
                 <c:if test="${sessionScope.page != 'findUser'}">
 
-               <h3>${login}:${sessionScope.user.login}</h3>
-               <h3>${fname}: ${sessionScope.user.firstName}</h3>
-               <h3>${lname}: ${sessionScope.user.lastName}</h3>
-               <h3>${phone}: ${sessionScope.user.phone}</h3>
-               <h3>${city}: ${sessionScope.addr.city}</h3>
-               <h3>${street}: ${sessionScope.addr.street}</h3>
-               <h3>${building}:${sessionScope.addr.building}</h3>
-               <h3>${apartment}: ${sessionScope.addr.apartment}</h3>
+                <form method="post" action="/main" >
+                <input type="hidden" name="command" value="updateUser"/>
+                <h3>${login}: ${sessionScope.user.login}</h3>
+                <h3>${fname}:</h3>
+                <input type="text" name="fName" value="${sessionScope.user.firstName}"/>
+                <h3>${lname}:</h3>
+                <input type="text" name="lName" value="${sessionScope.user.lastName}"/>
+                <h3>${phone}:</h3>
+                <input type="text" name="phone" value="${sessionScope.user.phone}"/>
+                <h3>${city}:</h3>
+                <input type="text" name="city" value="${sessionScope.addr.city}"/>
+                <h3>${street}:</h3>
+                <input type="text" name="street" value="${sessionScope.addr.street}"/>
+                <h3>${building}:</h3>
+                <input type="text" name="building" value="${sessionScope.addr.building}"/>
+                <h3>${apartment}:</h3>
+                <input type="text" name="apartment" value="${sessionScope.addr.apartment}"/>
+                <br>
+                <br>
+                <button type="submit">${UpdateUser}</button>
+                </form>
                <br>
-
-
 
                 <form method="get" action="/home" >
                                <input type="hidden" name="command" value="deleteAccount"/>
