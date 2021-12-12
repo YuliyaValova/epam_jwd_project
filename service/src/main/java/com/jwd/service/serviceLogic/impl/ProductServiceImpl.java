@@ -274,6 +274,19 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public Page<Product> showAllProducts(Page<Product> pageRequest) throws ServiceException {
+        // todo validation
+        try {
+            final Pageable<Product> daoProductPageable = convertToPageable(pageRequest);
+            final Pageable<Product> productsPageable = pageDao.findAllProductsPage(daoProductPageable);
+            return convertToServicePage(productsPageable);
+        } catch (final DaoException e) {
+            logger.error("#showProduct throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
 
     private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
         com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();

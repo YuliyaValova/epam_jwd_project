@@ -134,4 +134,12 @@ public interface ProductService {
      * @throws ServiceException is a module exception
      */
     boolean changeProductStatus(long productId, String status) throws ServiceException;
+
+    /**
+     * Makes a page for showing all products
+     * @param pageRequest required pages params
+     * @return product page
+     * @throws ServiceException is a module exception
+     */
+    Page<Product> showAllProducts(Page<Product> pageRequest) throws ServiceException;
 }

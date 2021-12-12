@@ -43,8 +43,17 @@
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.paidOrders" var="paidOrders" />
         <fmt:message bundle="${loc}" key="locale.getAll" var="getAll" />
+        <fmt:message bundle="${loc}" key="locale.getAllProd" var="getAllProd" />
         <fmt:message bundle="${loc}" key="locale.hideProd" var="hideProd" />
+        <fmt:message bundle="${loc}" key="locale.isAvailable" var="isAvailable" />
         <fmt:message bundle="${loc}" key="locale.AllOrders" var="AllOrders" />
+        <fmt:message bundle="${loc}" key="locale.AllProducts" var="AllProducts" />
+        <fmt:message bundle="${loc}" key="locale.name" var="name" />
+        <fmt:message bundle="${loc}" key="locale.description" var="description" />
+        <fmt:message bundle="${loc}" key="locale.price" var="price" />
+        <fmt:message bundle="${loc}" key="locale.type" var="type" />
+        <fmt:message bundle="${loc}" key="locale.changeStatus" var="changeStatus" />
+        <fmt:message bundle="${loc}" key="locale.deleteFromMenu" var="deleteFromMenu" />
 
 
 <title>
@@ -297,8 +306,80 @@
                                   </c:forEach>
                               </div>
                          </div>
+                         <br>
                         </c:if>
                       </c:if>
+
+                      <c:if test="${sessionScope.role == 'admin'}">
+                      <!--Show All Products -->
+
+                       <form id="getAllProducts" method="get" action="/main" >
+                       <input type="hidden" name="command" value="getAllProducts"/>
+                       <button form="getAllProducts" type="submit">${getAllProd}</button>
+                       </form>
+
+                         <c:if test="${requestScope.page == 'showProducts'}">
+                          <div>
+                               <table>
+                                  <thead>
+                                      <tr>
+
+                                          <p>${AllProducts}</p>
+                                              <td><h4><c:out value="${id}"/></h4></td>
+                                              <td><h4><c:out value="${name}"/></h4></td>
+                                              <td><h4><c:out value="${type}"/></h4></td>
+                                              <td><h4><c:out value="${description}"/></h4></td>
+                                              <td><h4><c:out value="${price}"/></h4></td>
+                                              <td><h4><c:out value="${isAvailable}"/></h4></td>
+                                      </tr>
+                                  </thead>
+
+                                  <tbody>
+                                      <c:forEach items="${requestScope.pageable3.elements}" var="product">
+                                          <tr>
+                                              <td>${product.id}</td>
+                                              <td>${product.name}</td>
+                                              <td>${product.type}</td>
+                                              <td>${product.description}</td>
+                                              <td>${product.price}</td>
+                                              <td>${product.isAvailable}</td>
+                                              <td>
+                                              <td>
+                                              <div>
+                                              <form method="post" action="/menu" >
+                                              <input type="hidden" name="command" value="deletefrommenu"/>
+                                              <input type="hidden" name="productId" value=${product.id}/>
+                                              <button type="submit">${deleteFromMenu}</button><br/>
+                                              </form>
+                                              <form method="post" action="/menu" >
+                                              <input type="hidden" name="command" value="changeproductstatus"/>
+                                              <input type="hidden" name="productId" value=${product.id}/>
+                                              <input type="hidden" name="status" value=${product.isAvailable}/>
+                                              <button type="submit">${changeStatus}</button><br/>
+                                              </form>
+                                              </div>
+                                              </td>
+                                          </tr>
+                                      </c:forEach>
+                                  </tbody>
+                              </table>
+                                       <div style="margin-left: center">
+                                   <c:forEach begin="1" end="${Math.ceil(pageable3.totalElements / pageable3.limit)}" var="i">
+                                       <c:if test="${i == pageable3.pageNumber}">
+                                           <span>
+                                               <button style="color:red" form="getAllProducts" type="submit" name="currentPage" value="${i}">${i}</button>
+                                           </span>
+                                       </c:if>
+                                       <c:if test="${i != pageable3.pageNumber}">
+                                           <span>
+                                               <button form="getAllProducts" type="submit" name="currentPage" value="${i}">${i}</button>
+                                           </span>
+                                       </c:if>
+                                   </c:forEach>
+                               </div>
+                          </div>
+                         </c:if>
+                       </c:if>
 
 
 

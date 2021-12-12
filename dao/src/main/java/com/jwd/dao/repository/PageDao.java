@@ -41,4 +41,11 @@ public interface PageDao {
      */
     PageableOrder<Order> findAllOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException;
 
+    /**
+     * Makes a page for showing all products to admin
+     * @param daoProductPageable page params object
+     * @return all products page
+     * @throws DaoException is a module exception
+     */
+    Pageable<Product> findAllProductsPage(Pageable<Product> daoProductPageable) throws DaoException;
 }

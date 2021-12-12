@@ -15,10 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class MysqlPageDaoImpl implements PageDao {
 
@@ -44,6 +41,8 @@ public class MysqlPageDaoImpl implements PageDao {
     private static final String PARAM_FOR_SORT_PAID = "select Orders.id, p.*, Orders.customer_id, Orders.status from Orders\n" +
             "join Products as p on p.id = Orders.product_id\n" +
             "where Orders.status = \"Paid up\" order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_ALL_PRODUCTS = "select count(*) from Products;";
+    private static final String PARAM_FOR_SORT_ALL_PRODUCTS = "select * from Products p order by p.%s %s limit ? offset ?;";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
@@ -176,6 +175,38 @@ public class MysqlPageDaoImpl implements PageDao {
             resultSet2 = preparedStatement2.executeQuery();
             connection.commit();
             return getOrderRowPageable(daoOrderPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public Pageable<Product> findAllProductsPage(Pageable<Product> daoProductPageable) throws DaoException {
+        final int offset = (daoProductPageable.getPageNumber() - 1) * daoProductPageable.getLimit();
+        List<Object> parameters1 = Collections.emptyList();
+        List<Object> parameters2 = Arrays.asList(
+                daoProductPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_PRODUCTS, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT_ALL_PRODUCTS, daoProductPageable.getSortBy(), daoProductPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getProductRowPageable(daoProductPageable, resultSet1, resultSet2);
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
