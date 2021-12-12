@@ -125,4 +125,13 @@ public interface ProductService {
      * @return boolean value
      */
     boolean convertStringToBoolean(String status);
+
+    /**
+     * Сhanges the status to the opposite
+     * @param productId identifies a product for updating
+     * @param status old product status
+     * @return true if changing is successful, otherwise - false
+     * @throws ServiceException is a module exception
+     */
+    boolean changeProductStatus(long productId, String status) throws ServiceException;
 }

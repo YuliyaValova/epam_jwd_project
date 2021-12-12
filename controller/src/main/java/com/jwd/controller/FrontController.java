@@ -60,6 +60,7 @@ public class FrontController extends HttpServlet {
         commands.put(ADDADMIN, new AddAdminCommand());
         commands.put(FINDUSERBYID, new GetUserByIdCommand());
         commands.put(FINDPRODUCTBYID, new GetProductByIdCommand());
+        commands.put(CHANGEPRODUCTSTATUS, new ChangeProductStatusCommand());
         commands.put(HIDEPRODUCT, new HideProductCommand());
         commands.put(CHANGEORDERSTATUS, new ChangeOrderStatusCommand());
     }
@@ -100,6 +101,4 @@ public class FrontController extends HttpServlet {
         }
         return cause;
     }
-
-
 }

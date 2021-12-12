@@ -27,6 +27,7 @@ public enum CommandEnum {
     HIDEPRODUCT("hideProduct"),
     CHANGEORDERSTATUS("changeOrderStatus"),
     FINDPRODUCTBYID("findProductById"),
+    CHANGEPRODUCTSTATUS("changeproductstatus"),
     DELETEFROMMENU("deletefrommenu");
 
 

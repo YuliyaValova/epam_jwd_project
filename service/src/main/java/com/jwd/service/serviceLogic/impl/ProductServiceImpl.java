@@ -257,6 +257,23 @@ public class ProductServiceImpl implements ProductService {
         return value;
     }
 
+    @Override
+    public boolean changeProductStatus(long productId, String status) throws ServiceException {
+        try {
+            boolean isChanged = false;
+            if (validator.validateId(productId) && validator.validateProductStatus(status)) {
+                productDao.changeProductStatus(productId, status);
+                isChanged = true;
+            } else {
+                logger.info("#changeProductStatus invalid info.");
+            }
+            return isChanged;
+        } catch (final DaoException e) {
+            logger.error("#changeProductStatus throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
 
     private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
         com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();

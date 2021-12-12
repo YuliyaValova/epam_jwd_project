@@ -27,6 +27,14 @@ public interface ProductDao {
      */
     Product getProductById(long id) throws DaoException;
 
+    /**
+     * Reverses the product status
+     * @param productId identifies product
+     * @param status old status that will be changed
+     * @throws DaoException is a module exception
+     */
+    void changeProductStatus(long productId, String status) throws DaoException;
+
     // boolean updateProduct (Product product)
     // List<Product> getAllProducts() throws DaoException;
 

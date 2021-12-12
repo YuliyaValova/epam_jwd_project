@@ -22,6 +22,7 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String IS_PRODUCT_EXISTS_QUERY = "select id from Products where name = ?;";
     private static final String DELETE_PRODUCT_QUERY = "delete from Products where id = ?;";
     private static final String GET_PRODUCT_BY_ID_QUERY = "select * from Products where id = ?;";
+    private static final String CHANGE_PRODUCT_STATUS_QUERY = "update Products set isAvailable = ? where id = ?;";
     //private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
 
     private final ConnectionPool connectionPool;
@@ -147,6 +148,34 @@ public class MysqlProductDaoImpl implements ProductDao {
             throw new DaoException(e);
         } finally {
             daoUtil.close(resultSet);
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void changeProductStatus(long productId, String status) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            validator.validateId(productId);
+            validator.validateStatus(status);
+            boolean newStatus = false;
+            if (status.equals("false")){
+                newStatus = true;
+            }
+            List<Object> parameters = Arrays.asList(
+                    newStatus,
+                    productId
+            );
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            preparedStatement = daoUtil.getPreparedStatement(CHANGE_PRODUCT_STATUS_QUERY, connection, parameters);
+            int affectedRows = preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }

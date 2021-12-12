@@ -26,6 +26,7 @@
         <fmt:message bundle="${loc}" key="locale.description" var="description" />
         <fmt:message bundle="${loc}" key="locale.price" var="price" />
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
+        <fmt:message bundle="${loc}" key="locale.changeStatus" var="changeStatus" />
         <fmt:message bundle="${loc}" key="locale.addBascket" var="addBascket" />
         <fmt:message bundle="${loc}" key="locale.deleteFromMenu" var="deleteFromMenu" />
         <fmt:message bundle="${loc}" key="locale.errorMsg_orderExistsError" var="errorMsg_orderExistsError" />
@@ -124,6 +125,12 @@
                                          <input type="hidden" name="command" value="deletefrommenu"/>
                                          <input type="hidden" name="productId" value=${product.id}/>
                                          <button type="submit">${deleteFromMenu}</button><br/>
+                                         </form>
+                                         <form method="post" action="/menu" >
+                                         <input type="hidden" name="command" value="changeproductstatus"/>
+                                         <input type="hidden" name="productId" value=${product.id}/>
+                                         <input type="hidden" name="status" value=${product.isAvailable}/>
+                                         <button type="submit">${changeStatus}</button><br/>
                                          </form>
                                          </c:if>
 

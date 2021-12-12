@@ -61,6 +61,7 @@ public class DaoValidatorImpl implements DaoValidator {
         }
     }
 
+
     private boolean isIncompleteProduct(Product product) {
         boolean isIncomplete = false;
         if (

@@ -51,4 +51,11 @@ public interface ServiceValidator {
      * @return true if it is in the list of valid values, otherwise - false
      */
     boolean validateStatus(String newStatus);
+
+    /**
+     * Validates product's status
+     * @param status for validation
+     * @return true if it is "true" or "false", otherwise - false
+     */
+    boolean validateProductStatus(String status);
 }
