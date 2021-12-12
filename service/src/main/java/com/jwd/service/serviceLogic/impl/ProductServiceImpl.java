@@ -15,12 +15,13 @@ import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.ProductService;
 import com.jwd.service.validator.ServiceValidator;
 import com.jwd.service.validator.impl.ServiceValidatorImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class ProductServiceImpl implements ProductService {
 
-
-
+    private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
     private final ProductDao productDao;
     private final BasketDao basketDao;
     private final OrderDao orderDao;
@@ -42,6 +43,7 @@ public class ProductServiceImpl implements ProductService {
             final Pageable<Product> productsPageable = pageDao.findPage(daoProductPageable);
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
+            logger.error("#showProduct throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -54,9 +56,12 @@ public class ProductServiceImpl implements ProductService {
             if (validator.validateId(id)) {
                 daoBasketPageable = convertToPageable(pageRequest);
                 productsPageable = pageDao.findBasketPage(daoBasketPageable, id);
+            } else {
+                logger.info("#showBasket invalid id");
             }
             return convertToServicePage(productsPageable);
         } catch (final DaoException e) {
+            logger.error("#showBasket throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -66,8 +71,11 @@ public class ProductServiceImpl implements ProductService {
         try {
             if (validator.validateId(id)) {
                 orderDao.deleteOrdersByUserId(id);
+            } else {
+                logger.info("#cleanBasket invalid id");
             }
         } catch (final DaoException e) {
+            logger.error("#cleanBasket throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -78,9 +86,12 @@ public class ProductServiceImpl implements ProductService {
             double sum = 0;
             if (validator.validateId(id)) {
                 sum = basketDao.getSum(id);
+            } else {
+                logger.info("#getSum invalid id.");
             }
             return sum;
         } catch (final DaoException e) {
+            logger.error("#getSum throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -90,8 +101,11 @@ public class ProductServiceImpl implements ProductService {
         try {
             if (validator.validateId(id)) {
                 orderDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+            } else {
+                logger.info("#sendOrder invalid id.");
             }
         } catch (final DaoException e) {
+            logger.error("#sendOrder throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -101,8 +115,11 @@ public class ProductServiceImpl implements ProductService {
         try {
             if (validator.validateId(id) && validator.validateId(productId)) {
                 basketDao.deleteFromBasket(id, productId);
+            } else {
+                logger.info("#deleteFromBasket invalid id.");
             }
         } catch (final DaoException e) {
+            logger.error("#deleteFromBasket throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -113,9 +130,12 @@ public class ProductServiceImpl implements ProductService {
             Boolean isAdded = null;
             if (validator.validateId(id) && validator.validateId(productId)) {
                 isAdded = basketDao.addToBasket(id, productId);
+            } else {
+                logger.info("#addToBasket tinvalid id.");
             }
             return isAdded;
         } catch (final DaoException e) {
+            logger.error("#addToBasket throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -130,10 +150,12 @@ public class ProductServiceImpl implements ProductService {
                     isSuccessful = 1;
                 }
             } else {
+                logger.info("#addProductToMenu invalid product info.");
                 isSuccessful = -2;
             }
             return isSuccessful;
         } catch (final DaoException e) {
+            logger.error("#addProductToMenu throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -144,9 +166,11 @@ public class ProductServiceImpl implements ProductService {
         try {
             price = Double.parseDouble(parameter);
             if (price < 0) {
+                logger.info("#convertStringToDouble invalid price.");
                 price = -1;
             }
         } catch (Exception e) {
+            logger.error("#convertStringToDouble throws exception.");
         }
         return price;
     }
@@ -159,6 +183,7 @@ public class ProductServiceImpl implements ProductService {
             final PageableOrder<Order> ordersPageable = pageDao.findPaidOrderPage(daoOrderPageable);
             return convertToServicePage(ordersPageable);
         } catch (final DaoException e) {
+            logger.error("#showPaidOrders throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -171,6 +196,7 @@ public class ProductServiceImpl implements ProductService {
             final PageableOrder<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable);
             return convertToServicePage(ordersPageable);
         } catch (final DaoException e) {
+            logger.error("#showAllOrders throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -180,8 +206,11 @@ public class ProductServiceImpl implements ProductService {
         try {
             if (validator.validateId(id)) {
                 productDao.deleteProductById(id);
+            } else {
+                logger.info("#deleteFromMenu invalid id.");
             }
         } catch (final DaoException e) {
+            logger.error("#deleteFromMenu throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -192,9 +221,12 @@ public class ProductServiceImpl implements ProductService {
             Product product = null;
             if (validator.validateId(productId)) {
                 product = new Product(productDao.getProductById(productId));
+            } else {
+                logger.info("#findProduct invalid id.");
             }
             return product;
         } catch (final DaoException e) {
+            logger.error("#findProduct throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -206,9 +238,12 @@ public class ProductServiceImpl implements ProductService {
             if (validator.validateId(orderId) && validator.validateStatus(newStatus)) {
                 orderDao.changeOrderStatus(orderId, newStatus);
                 isChanged = true;
+            } else {
+                logger.info("#changeStatus invalid info.");
             }
             return isChanged;
         } catch (final DaoException e) {
+            logger.error("#changeStatus throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -216,7 +251,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public boolean convertStringToBoolean(String status) {
         boolean value = false;
-        if(status.equals("true")){
+        if (status.equals("true")) {
             value = true;
         }
         return value;

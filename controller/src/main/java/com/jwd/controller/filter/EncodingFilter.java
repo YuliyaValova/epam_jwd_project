@@ -1,10 +1,13 @@
 package com.jwd.controller.filter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.*;
 import java.io.IOException;
 
 public class EncodingFilter implements Filter {
-
+    private static final Logger logger = LoggerFactory.getLogger(EncodingFilter.class);
     private static final String FILTERABLE_CONTENT_TYPE = "application/x-www-form-urlencoded";
     private static final String ENCODING_DEFAULT = "UTF-8";
     private static final String ENCODING_INIT_PARAM = "encoding";
@@ -12,6 +15,7 @@ public class EncodingFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig){
+        logger.info("#EncodingFilter init");
         encoding = filterConfig.getInitParameter(ENCODING_INIT_PARAM);
         if (encoding == null) {
             encoding = ENCODING_DEFAULT;

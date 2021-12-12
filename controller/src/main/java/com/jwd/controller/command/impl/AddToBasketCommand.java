@@ -5,6 +5,8 @@ import com.jwd.controller.exception.ControllerException;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.serviceLogic.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,13 +19,16 @@ import static java.util.Objects.isNull;
 public class AddToBasketCommand implements Command {
 
     private final ProductService productService = ServiceFactory.getServiceFactory().getProductService();
+    private static final Logger logger = LoggerFactory.getLogger(AddToBasketCommand.class);
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException, IOException {
         try {
+            logger.info("#AddToBasketCommand starts.");
             HttpSession session;
             session = req.getSession(false);
             if (isNull(session)) {
+                logger.info("#AddToBasketCommand session is null.");
                 resp.sendRedirect("menu?message=BasketError");
             } else {
                 // todo validation
@@ -32,6 +37,7 @@ public class AddToBasketCommand implements Command {
                 boolean isAdded = productService.addToBasket(user.getId(), productId);
                 if (!isAdded) {
                     req.setAttribute(MESSAGE, null);
+                    logger.info("#AddToBasketCommand order exists.");
                     resp.sendRedirect("menu?message=OrderExists");
                 } else {
                     req.setAttribute(MESSAGE, "Product was added to your basket");
@@ -39,6 +45,7 @@ public class AddToBasketCommand implements Command {
                 }
             }
         } catch (Exception e) {
+            logger.error("#AddToBasketCommand throws exception.");
             resp.sendRedirect("menu?message=BasketError");
         }
     }

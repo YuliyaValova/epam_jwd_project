@@ -42,5 +42,18 @@ public class Constants {
             ADMIN_ID = "admin_id",
             PAGEABLE2 = "pageable2",
             PROFILE = "profile",
+            LOCAL = "locale",
+            SHOW_ALL = "showAll",
+            SHOW = "show",
+            FIND_PRODUCT = "findProduct",
+            ADD_PRODUCT = "addProduct",
+            PAID_SUCCESSFULLY = "Your order paid successfully!",
+            STATUS_CHANGED = "Status is changed.",
+            PASSWORD_CHANGED = "Password is changed.",
+            OLD_PASSWORD = "oldPassword",
+            ACCOUNT_DELETED = "Account is deleted.",
+            PRODUCT_DELETED = "Product is deleted.",
+            NEW_PASSWORD = "newPassword",
+            PRODUCT_SUCCESSFULLY_ADDED = "Product is successfully added.",
             PRICE = "price";
 }

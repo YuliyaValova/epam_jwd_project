@@ -6,6 +6,8 @@ import com.jwd.dao.domain.Order;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.PageOrder;
 import com.jwd.service.serviceLogic.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,10 +21,12 @@ import static java.util.Objects.isNull;
 public class ShowAllOrdersCommand implements Command {
 
     private final ProductService productService = ServiceFactory.getServiceFactory().getProductService();
+    private static final Logger logger = LoggerFactory.getLogger(ShowAllOrdersCommand.class);
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException, IOException {
         try {
+            logger.info("#ShowAllOrdersCommand starts.");
             String currentPageParam = req.getParameter(CURRENT_PAGE);
             if (isNullOrEmpty(currentPageParam)) {
                 currentPageParam = "1";
@@ -39,15 +43,17 @@ public class ShowAllOrdersCommand implements Command {
             HttpSession session;
             session = req.getSession(false);
             if (isNull(session)) {
+                logger.info("#ShowAllOrdersCommand session is null.");
                 resp.sendRedirect("main?message=SessionError");
             } else {
                 // todo validation
                 final PageOrder<Order> pageableOrder = productService.showAllOrders(pageRequest);
                 req.setAttribute(PAGEABLE2, pageableOrder);
-                req.setAttribute(PAGE, "showAll");
+                req.setAttribute(PAGE, SHOW_ALL);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }
         } catch (Exception e) {
+            logger.error("#ShowAllOrdersCommand throws exception.");
             resp.sendRedirect("main?message=GetAllOrdersError");
         }
     }

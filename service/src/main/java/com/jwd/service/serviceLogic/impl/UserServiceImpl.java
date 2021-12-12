@@ -9,13 +9,14 @@ import com.jwd.service.exception.ServiceException;
 import com.jwd.service.serviceLogic.UserService;
 import com.jwd.service.validator.ServiceValidator;
 import com.jwd.service.validator.impl.ServiceValidatorImpl;
-
-import java.sql.SQLException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static java.util.Objects.isNull;
 
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserDao userDao = DaoFactory.getFactory().getUserDao();
     private final ServiceValidator validator = new ServiceValidatorImpl();
 
@@ -29,10 +30,12 @@ public class UserServiceImpl implements UserService {
                     isSuccessful = 1;
                 }
             } else {
+                logger.info("#register invalid user info.");
                 isSuccessful = -2;
             }
             return isSuccessful;
         } catch (final DaoException e) {
+            logger.error("#register throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -45,10 +48,13 @@ public class UserServiceImpl implements UserService {
             String password = user.getPassword();
             if (validator.validateLoginAndPassword(login, password)) {
                 loginatedUser = new UserAccount(userDao.getUserByLoginAndPassword(login, password));
+            } else {
+                logger.info("#login invalid user info.");
             }
             return loginatedUser;
 
         } catch (final DaoException e) {
+            logger.error("#login throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -58,8 +64,11 @@ public class UserServiceImpl implements UserService {
         try {
             if (validator.validateId(id)) {
                 userDao.deleteUserById(id);
+            } else {
+                logger.info("#deleteAccount invalid id.");
             }
         } catch (final DaoException e) {
+            logger.error("#deleteAccount throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -74,9 +83,12 @@ public class UserServiceImpl implements UserService {
                     userDao.changePassword(id, oldPassword, newPassword);
                     isSuccessful = true;
                 }
+            } else {
+                logger.info("#changePassword invalid info.");
             }
             return isSuccessful;
         } catch (final DaoException e) {
+            logger.error("#changePassword throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -88,10 +100,14 @@ public class UserServiceImpl implements UserService {
             if (validator.validateId(userId)) {
                 if (userDao.makeAdmin(userId)) {
                     isSuccess = true;
+                    logger.info("New admin is added! It's id - " + userId);
                 }
+            } else {
+                logger.info("#addAdmin invalid id.");
             }
             return isSuccess;
         } catch (final DaoException e) {
+            logger.error("#addAdmin throws exception.");
             throw new ServiceException(e);
         }
     }
@@ -102,9 +118,12 @@ public class UserServiceImpl implements UserService {
             UserAccount account = null;
             if (validator.validateId(userId)) {
                 account = new UserAccount(userDao.getUserById(userId));
+            } else {
+                logger.info("#findUser invalid id.");
             }
             return account;
         } catch (final DaoException e) {
+            logger.error("#findUser throws exception.");
             throw new ServiceException(e);
         }
     }

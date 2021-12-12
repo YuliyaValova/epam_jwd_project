@@ -1,5 +1,8 @@
 package com.jwd.controller.filter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,6 +10,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class AntiInjectionFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(AntiInjectionFilter.class);
     private static final String NOT_CONTAIN = "^((?!<|>|script).)*$";
 
     @Override
@@ -25,6 +29,7 @@ public class AntiInjectionFilter implements Filter {
         if (sb.toString().trim().matches(NOT_CONTAIN)) {
             filterChain.doFilter(req, resp);
         } else {
+            logger.warn("#AntiInjectionFilter js injection.");
             resp.sendRedirect("home?message=InjectionDanger");
         }
     }

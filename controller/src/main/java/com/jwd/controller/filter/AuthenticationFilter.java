@@ -1,6 +1,10 @@
 package com.jwd.controller.filter;
 
 
+import com.jwd.controller.command.impl.ShowBasketCommand;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +17,7 @@ import static com.jwd.controller.util.Constants.*;
 import static java.util.Objects.isNull;
 
 public class AuthenticationFilter implements Filter {
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -40,6 +45,7 @@ public class AuthenticationFilter implements Filter {
                 req.getSession().getAttribute(ROLE) != null) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
+            logger.warn("#AuthenticationFilter invalid operation.");
             res.sendRedirect("home?message=invalideCommand");
         }
     }

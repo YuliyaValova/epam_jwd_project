@@ -21,7 +21,6 @@ import static com.jwd.controller.util.Constants.MESSAGE;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
-// todo filters
 
 public class FrontController extends HttpServlet {
     private Map<CommandEnum, Command> commands;
