@@ -23,6 +23,9 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String DELETE_PRODUCT_QUERY = "delete from Products where id = ?;";
     private static final String GET_PRODUCT_BY_ID_QUERY = "select * from Products where id = ?;";
     private static final String CHANGE_PRODUCT_STATUS_QUERY = "update Products set isAvailable = ? where id = ?;";
+    private static final String UPDATE_PRODUCT_QUERY = "update Products\n" +
+            "set name = ?, type = ?, description = ?, price = ?\n" +
+            "where id =  ?;";
     //private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
 
     private final ConnectionPool connectionPool;
@@ -173,6 +176,41 @@ public class MysqlProductDaoImpl implements ProductDao {
             preparedStatement = daoUtil.getPreparedStatement(CHANGE_PRODUCT_STATUS_QUERY, connection, parameters);
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public long updateProduct(Product product) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            long id = new Product(getProductById(product.getId())).getId();
+            if (id != -1) {
+                List<Object> parameters = Arrays.asList(
+                        product.getName(),
+                        product.getType(),
+                        product.getDescription(),
+                        product.getPrice(),
+                        id
+                );
+
+                validator.validateProduct(product);
+                connection = connectionPool.takeConnection();
+                connection.setAutoCommit(false);
+                preparedStatement = daoUtil.getPreparedStatement(UPDATE_PRODUCT_QUERY, connection, parameters);
+                int affectedRows = preparedStatement.executeUpdate();
+                connection.commit();
+                id = new Product(getProductById(product.getId())).getId();
+            } else {
+                id = -1;
+            }
+            return id;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {

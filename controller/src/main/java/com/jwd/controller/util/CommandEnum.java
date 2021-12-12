@@ -30,6 +30,7 @@ public enum CommandEnum {
     CHANGEPRODUCTSTATUS("changeproductstatus"),
     GETALLPRODUCTS("getAllProducts"),
     UPDATEUSER("updateUser"),
+    UPDATEPRODUCT("updateProduct"),
     DELETEFROMMENU("deletefrommenu");
 
 

@@ -54,6 +54,7 @@
         <fmt:message bundle="${loc}" key="locale.type" var="type" />
         <fmt:message bundle="${loc}" key="locale.changeStatus" var="changeStatus" />
         <fmt:message bundle="${loc}" key="locale.deleteFromMenu" var="deleteFromMenu" />
+        <fmt:message bundle="${loc}" key="locale.Update" var="Update" />
 
 
 <title>
@@ -337,26 +338,37 @@
                                   <tbody>
                                       <c:forEach items="${requestScope.pageable3.elements}" var="product">
                                           <tr>
+                                          <div>
+                                          <form method="post" action="/main" >
+                                           <input type="hidden" name="command" value="updateProduct"/>
+                                           <input type="hidden" name="productId" value=${product.id}/>
+                                           <input type="hidden" name="status" value=${product.isAvailable}/>
                                               <td>${product.id}</td>
-                                              <td>${product.name}</td>
-                                              <td>${product.type}</td>
-                                              <td>${product.description}</td>
-                                              <td>${product.price}</td>
+                                              <td><input type="text" id = "form_name"  name="name" value="${product.name}"/></td>
+                                              <td><input type="text" id = "form_type" name="type" value="${product.type}"/></td>
+                                              <td><input type="text" id = "form_description" name="description" value="${product.description}"/></td>
+                                              <td><input type="text" id = "form_price" name="price" value="${product.price}"/></td>
                                               <td>${product.isAvailable}</td>
-                                              <td>
-                                              <td>
-                                              <div>
-                                              <form method="post" action="/menu" >
+                                              <td><button type="submit">${Update}</button>
+                                           </form>
+
+
+
+                                              <form method="post" action="/main" >
                                               <input type="hidden" name="command" value="deletefrommenu"/>
                                               <input type="hidden" name="productId" value=${product.id}/>
                                               <button type="submit">${deleteFromMenu}</button><br/>
                                               </form>
-                                              <form method="post" action="/menu" >
+
+
+
+                                              <form method="post" action="/main" >
                                               <input type="hidden" name="command" value="changeproductstatus"/>
                                               <input type="hidden" name="productId" value=${product.id}/>
                                               <input type="hidden" name="status" value=${product.isAvailable}/>
                                               <button type="submit">${changeStatus}</button><br/>
                                               </form>
+
                                               </div>
                                               </td>
                                           </tr>
@@ -437,6 +449,18 @@
 
                      <c:if test="${error == 'ChangeProductStatusError'}">
                      <p style="color: red">ChangeProductStatusError!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'productNotExists'}">
+                     <p style="color: red">ProductNotExists!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'IncompleteInfo'}">
+                     <p style="color: red">Incomplete Info!</p>
+                     </c:if>
+
+                     <c:if test="${error == 'InvalidPriceError'}">
+                     <p style="color: red">InvalidPriceError!</p>
                      </c:if>
 
 

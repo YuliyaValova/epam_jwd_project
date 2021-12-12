@@ -53,7 +53,7 @@ public class UpdateUserCommand implements Command {
                         resp.sendRedirect("profile?message=IncompleteInfo");
                         break;
                     case 1:
-                        req.setAttribute(MESSAGE, "Updated successfully.");
+                        req.setAttribute(MESSAGE, UPDATED_SUCCESSFULLY);
                         req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
                         break;
                     default:

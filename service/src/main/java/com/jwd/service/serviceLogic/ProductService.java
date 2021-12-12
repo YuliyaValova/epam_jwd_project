@@ -142,4 +142,12 @@ public interface ProductService {
      * @throws ServiceException is a module exception
      */
     Page<Product> showAllProducts(Page<Product> pageRequest) throws ServiceException;
+
+    /**
+     * Updates product's info
+     * @param product for updating
+     * @return  -2 if product is invalid, -1 if such product not exists, 1 if updating is successful
+     * @throws ServiceException is a module exception
+     */
+    int updateProduct(Product product) throws ServiceException;
 }

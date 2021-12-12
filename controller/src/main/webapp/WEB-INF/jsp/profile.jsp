@@ -30,7 +30,7 @@
         <fmt:message bundle="${loc}" key="locale.building" var="building" />
         <fmt:message bundle="${loc}" key="locale.apartment" var="apartment" />
         <fmt:message bundle="${loc}" key="locale.goMain" var="goMain" />
-        <fmt:message bundle="${loc}" key="locale.UpdateUser" var="UpdateUser" />
+        <fmt:message bundle="${loc}" key="locale.Update" var="Update" />
         <fmt:message bundle="${loc}" key="locale.deleteAccount" var="deleteAccount" />
         <fmt:message bundle="${loc}" key="locale.updateAccount" var="updateAccount" />
         <fmt:message bundle="${loc}" key="locale.changePassword" var="changePassword" />
@@ -105,7 +105,7 @@
                 <input type="text" name="apartment" value="${sessionScope.addr.apartment}"/>
                 <br>
                 <br>
-                <button type="submit">${UpdateUser}</button>
+                <button type="submit">${Update}</button>
                 </form>
                <br>
 
@@ -114,13 +114,6 @@
                                <button type="submit">${deleteAccount}</button>
                 </form>
 
-                   <!-- todo
-                <form method="post" action="/profile" >
-                               <input type="hidden" name="command" value="updateAcc"/>
-                               <button type="submit">${updateAccount}</button>
-                </form>
-
-                -->
 
                 <div>
                     <form id="changePassword" method="post" action="/home" >

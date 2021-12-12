@@ -18,7 +18,7 @@ public class MysqlOrderDaoImpl implements OrderDao {
     private static final String SET_ALL_STATUS_QUERY = "update Orders\n" +
             "set Orders.status = ? \n" +
             "where Orders.customer_id = ? and Orders.status = ?;";
-    private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ?;";
+    private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ? and status = \"Waiting for payment\";";
     private static final String SET_STATUS_QUERY = "update Orders\n" +
             "set status = ?\n" +
             "where id = ?;";

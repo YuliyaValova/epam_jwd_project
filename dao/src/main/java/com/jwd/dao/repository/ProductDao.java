@@ -35,7 +35,12 @@ public interface ProductDao {
      */
     void changeProductStatus(long productId, String status) throws DaoException;
 
-    // boolean updateProduct (Product product)
-    // List<Product> getAllProducts() throws DaoException;
+    /**
+     * Updates product
+     * @param product info for updating
+     * @return updated product id
+     * @throws DaoException is a module exception
+     */
+    long updateProduct(Product product) throws DaoException;
 
 }

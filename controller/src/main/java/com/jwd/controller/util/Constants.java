@@ -56,6 +56,7 @@ public class Constants {
             ACCOUNT_DELETED = "Account is deleted.",
             PRODUCT_DELETED = "Product is deleted.",
             NEW_PASSWORD = "newPassword",
+            UPDATED_SUCCESSFULLY = "Update was successful",
             PRODUCT_SUCCESSFULLY_ADDED = "Product is successfully added.",
             PRICE = "price";
 }
