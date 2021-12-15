@@ -1,0 +1,904 @@
+2021-12-12 19:39:57,816 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:39:59,906 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:40:04,594 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 19:40:05,050 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 19:40:06,331 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 19:40:07,236 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 19:40:09,528 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 19:40:10,730 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 19:40:12,348 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 19:40:16,938 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2021-12-12 19:40:19,299 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 19:40:20,717 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 19:40:21,862 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 19:40:25,971 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2021-12-12 19:40:28,719 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2021-12-12 19:40:30,865 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 19:40:33,973 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-12 19:40:39,815 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-12 19:42:23,492 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:44:55,357 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:44:56,893 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:45:00,160 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:45:05,605 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:47:41,925 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 19:47:43,510 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:47:57,505 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:48:04,253 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:48:06,127 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 19:48:26,693 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2021-12-12 19:48:26,724 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:27:58,888 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:28:00,813 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:28:01,866 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:28:05,187 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 21:28:05,422 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 21:28:06,577 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 21:28:08,191 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:28:12,933 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-12 21:28:12,934 ERROR ChangeProductStatusCommand:43 - #ChangeProductStatusCommand throws exception.
+2021-12-12 21:28:12,938 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:28:56,816 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:29:00,642 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:29:01,847 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:29:04,772 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 21:29:44,863 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 21:29:48,110 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 21:29:48,904 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:29:53,210 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-12 21:30:33,659 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:30:34,955 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:30:36,343 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:30:38,829 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 21:30:38,991 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 21:30:40,421 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 21:30:42,575 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:30:47,527 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-12 21:31:40,500 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:31:55,162 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:31:57,476 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:31:58,759 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:32:01,449 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 21:32:01,642 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 21:32:02,617 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 21:32:03,300 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:32:06,665 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-12 21:32:54,541 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:32:55,975 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:32:57,837 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 21:53:43,516 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 21:54:13,165 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:54:14,658 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 21:54:17,455 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 21:54:17,683 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:00:47,197 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:00:49,704 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:00:50,911 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:00:53,993 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:00:54,272 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:01:03,211 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:01:04,141 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:01:05,681 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:01:06,643 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:01:12,403 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:16:33,814 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:16:34,840 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:16:35,777 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:16:39,076 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:16:39,619 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:16:42,090 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:16:45,505 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:16:46,611 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:16:48,902 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:16:50,453 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:03,510 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:15,235 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:17,737 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:19,415 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:26,948 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-12 22:17:29,981 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 22:17:31,753 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:33,211 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:34,410 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:36,223 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:41,571 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-12 22:17:42,243 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 22:17:43,624 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 22:17:47,579 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2021-12-12 22:17:49,231 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-12 22:17:50,865 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 22:17:52,083 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:54,676 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:56,733 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:17:58,657 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:18:00,147 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:18:01,110 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:18:03,398 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 22:18:07,196 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-12 22:18:09,087 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 22:18:10,483 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:19:38,166 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:19:39,098 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:19:40,235 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:19:43,105 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:19:43,321 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:19:45,541 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:19:50,913 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 22:19:54,289 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:21:21,395 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:21:25,880 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:21:27,005 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:21:31,027 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:21:31,137 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:21:33,033 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:21:36,220 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 22:21:39,545 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-12 22:21:44,533 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-12 22:21:46,287 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:24:43,226 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-12 22:24:44,469 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 22:30:28,710 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:30:32,037 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:30:33,446 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:30:39,505 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:30:39,589 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:30:40,783 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 22:36:14,420 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:36:22,121 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:36:23,871 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:36:27,010 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:36:27,094 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:36:28,513 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 22:37:12,709 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:37:22,079 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:37:23,195 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:37:25,929 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:37:26,011 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:37:27,715 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 22:37:42,978 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:37:45,471 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:37:46,623 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:37:49,412 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:37:49,529 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:37:52,038 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 22:38:44,401 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 22:38:46,805 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:38:51,026 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 22:38:53,667 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 22:38:53,976 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 22:38:55,557 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:01:59,090 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:02:02,406 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:02:03,435 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:02:09,658 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:02:09,773 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:02:10,967 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:02:21,719 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:02:27,957 INFO  UserServiceImpl:141 - #update invalid user info.
+2021-12-12 23:02:35,317 INFO  UpdateUserCommand:42 - #UpdateUserCommand incomplete info.
+2021-12-12 23:02:36,402 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:06:31,000 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:06:35,944 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:06:38,408 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:06:42,543 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:06:42,631 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:06:44,282 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:06:47,935 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:06:47,937 INFO  UserServiceImpl:141 - #update invalid user info.
+2021-12-12 23:06:47,938 INFO  UpdateUserCommand:42 - #UpdateUserCommand incomplete info.
+2021-12-12 23:06:47,952 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:06:59,923 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:06:59,924 INFO  UserServiceImpl:141 - #update invalid user info.
+2021-12-12 23:06:59,924 INFO  UpdateUserCommand:42 - #UpdateUserCommand incomplete info.
+2021-12-12 23:06:59,931 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:07:33,763 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:07:33,764 INFO  UserServiceImpl:141 - #update invalid user info.
+2021-12-12 23:07:33,765 INFO  UpdateUserCommand:42 - #UpdateUserCommand incomplete info.
+2021-12-12 23:07:33,772 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:08:07,040 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:08:09,296 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:08:10,572 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:08:14,463 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:08:14,549 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:08:15,906 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:08:44,356 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:10:41,258 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:10:42,402 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:10:44,428 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:10:52,542 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:10:52,638 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:10:53,661 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:11:32,932 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:12:11,911 INFO  UserServiceImpl:141 - #update invalid user info.
+2021-12-12 23:13:03,198 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:13:04,437 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2021-12-12 23:13:04,450 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:13:07,451 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:13:08,893 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:13:19,031 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:13:19,116 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:13:20,545 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:15:21,864 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:15:23,163 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:15:27,833 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-12 23:15:29,105 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:15:37,996 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:15:38,006 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:15:39,213 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:16:07,375 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:17:01,494 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:17:02,695 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:17:04,078 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:17:09,309 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:17:09,397 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:17:10,476 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:17:24,285 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:22:28,204 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:22:29,434 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:22:30,943 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:22:36,528 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:22:36,616 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:22:38,027 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:22:58,257 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:24:09,200 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:24:16,666 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:24:18,915 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:24:22,918 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:24:23,016 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:24:24,260 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:24:39,905 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:26:29,564 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:28:54,028 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:28:54,992 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:28:55,731 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:28:59,786 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:28:59,863 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:29:01,185 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:29:21,037 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:29:24,938 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:29:29,409 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:29:31,602 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:29:40,375 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:29:41,803 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:29:59,055 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 23:29:59,934 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-12 23:30:01,020 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:30:03,750 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:30:03,753 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:30:05,262 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:30:11,943 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2021-12-12 23:30:14,187 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-12 23:30:17,251 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-12 23:37:19,270 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:37:20,855 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:37:22,105 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:37:24,813 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:37:24,966 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:37:27,048 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 23:39:22,058 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:39:25,559 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:39:26,659 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:39:29,332 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:39:29,420 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:39:31,261 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 23:41:11,333 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:41:16,014 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:41:17,214 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:41:19,856 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:41:19,945 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:41:22,075 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-12 23:41:33,425 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-12 23:41:34,701 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:41:35,833 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-12 23:41:38,473 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-12 23:41:38,556 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-12 23:41:41,137 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:06:49,050 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:06:51,376 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:06:52,349 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:06:55,742 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:06:55,830 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:06:59,217 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:07:01,316 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:07:02,465 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:07:20,996 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:07:20,996 ERROR ProductServiceImpl:173 - #convertStringToDouble throws exception.
+2021-12-13 00:07:20,996 ERROR UpdateProductCommand:59 - #UpdateProductCommand throws exception.
+2021-12-13 00:07:21,000 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:08:46,086 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:08:47,184 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:08:48,340 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:08:50,848 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:08:50,938 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:08:53,098 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:08:54,870 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:08:57,407 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:09:11,738 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:13:17,063 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:13:22,197 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:13:23,269 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:13:25,911 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:13:26,074 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:13:28,055 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:13:30,844 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:13:47,170 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:14:07,864 ERROR ProductServiceImpl:173 - #convertStringToDouble throws exception.
+2021-12-13 00:14:43,138 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:14:48,844 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:14:49,985 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:14:52,634 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:14:52,724 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:14:54,720 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:14:56,761 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:15:06,554 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:15:16,313 ERROR ProductServiceImpl:173 - #convertStringToDouble throws exception.
+2021-12-13 00:17:47,579 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:17:48,622 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:17:50,023 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:17:53,142 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:17:53,227 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:17:57,168 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:18:04,095 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:23:02,477 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:23:09,383 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:23:10,642 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:23:14,944 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:23:15,106 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:23:17,769 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:23:20,005 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:23:26,762 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:24:41,903 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:24:45,369 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:24:46,645 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:24:49,150 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:24:49,240 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:24:51,434 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:24:52,826 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:25:00,068 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:25:45,110 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:25:46,809 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:25:48,375 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:25:52,835 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:25:52,920 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:25:55,274 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:25:58,343 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:26:04,134 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:27:10,650 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:27:23,099 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:27:26,566 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:27:27,771 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:27:30,139 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:27:30,228 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:27:32,185 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:27:33,286 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:27:39,118 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 00:34:28,374 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 00:34:33,220 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:34:34,629 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 00:34:38,598 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 00:34:38,718 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 00:34:40,950 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:34:42,018 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 00:34:47,802 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:04:45,024 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:04:46,224 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:04:47,356 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:04:50,428 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:04:50,512 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:04:52,884 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:04:59,282 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:07:52,961 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:07:54,645 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:07:55,945 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:07:59,108 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:07:59,193 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:08:01,291 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:08:07,658 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:08:11,552 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:09:31,172 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:09:32,820 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:09:33,929 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:09:38,132 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:09:38,215 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:09:40,185 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:10:35,890 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:10:36,955 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:10:38,314 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:10:41,381 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:10:41,465 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:10:44,151 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:10:48,949 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:10:52,446 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:10:54,208 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:11:01,338 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:12:38,751 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:12:45,164 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:12:47,448 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:12:50,556 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:12:50,642 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:12:52,638 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:12:54,726 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:13:00,641 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:15:26,267 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:15:27,382 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:15:28,704 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:15:31,598 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:15:31,685 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:15:33,652 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:16:13,648 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:16:15,074 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:16:16,089 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:16:20,116 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:16:20,204 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:16:22,206 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:17:45,142 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:17:46,397 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:17:47,550 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:17:50,472 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:17:50,560 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:17:52,856 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:18:35,723 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:18:36,752 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:18:37,932 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:18:40,532 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:18:40,632 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:18:42,731 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:19:05,329 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:19:08,512 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:19:09,704 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:19:13,245 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:19:13,323 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:19:18,345 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:20:13,098 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:20:16,825 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:20:17,931 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:20:20,915 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:20:21,002 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:20:22,971 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:20:35,916 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-13 01:20:43,200 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:20:47,583 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:20:49,248 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:21:26,263 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:21:28,508 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:21:30,008 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:21:33,587 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:21:33,675 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:21:36,214 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:21:56,002 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:21:57,314 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:21:58,203 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:22:00,685 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:22:00,765 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:22:02,732 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:22:12,200 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:23:03,580 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:23:25,974 INFO  UpdateProductCommand:38 - #UpdateProductCommand product not exists.
+2021-12-13 01:23:25,979 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:23:46,653 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:23:48,721 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:26:28,326 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:26:32,852 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:26:32,944 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:26:34,265 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:26:35,551 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:27:01,115 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:34:21,614 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:34:22,752 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:34:24,057 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:34:26,845 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:34:26,936 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:34:28,217 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:34:31,463 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:34:44,641 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:35:27,056 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:35:28,187 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:35:29,513 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:35:45,729 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:35:56,801 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:36:53,976 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:36:59,691 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:37:11,962 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:37:14,485 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:37:14,567 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:37:16,451 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:17,933 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:18,764 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:33,771 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:37:35,718 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:37,554 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:42,694 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:37:42,696 INFO  ProductServiceImpl:169 - #convertStringToDouble invalid price.
+2021-12-13 01:37:42,697 INFO  UpdateProductCommand:55 - #UpdateProductCommand invalid price.
+2021-12-13 01:37:42,707 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:37:48,243 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:37:50,232 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:26,725 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:38:30,494 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:38:31,953 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:38:35,091 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:38:35,174 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:38:37,560 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:38,920 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:42,874 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:38:42,877 INFO  ProductServiceImpl:169 - #convertStringToDouble invalid price.
+2021-12-13 01:38:42,877 INFO  UpdateProductCommand:55 - #UpdateProductCommand invalid price.
+2021-12-13 01:38:42,884 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:38:45,069 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:49,257 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:54,878 INFO  UpdateProductCommand:24 - #UpdateProductCommand starts.
+2021-12-13 01:38:54,880 INFO  ProductServiceImpl:300 - #updateProduct invalid product info.
+2021-12-13 01:38:54,880 INFO  UpdateProductCommand:42 - #UpdateProductCommand incomplete info.
+2021-12-13 01:38:54,885 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:38:56,491 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:38:57,624 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:39:03,774 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-13 01:39:42,924 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:39:47,039 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:39:48,044 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:39:52,377 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:39:52,519 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:39:54,730 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:39:57,747 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:02,679 INFO  ChangeProductStatusCommand:26 - #ChangeProductStatusCommand starts.
+2021-12-13 01:40:07,564 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:09,987 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:11,196 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:12,986 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:14,403 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:16,204 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:17,672 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:19,831 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2021-12-13 01:40:22,811 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:23,878 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:24,804 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:26,790 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:29,014 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:32,327 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:36,819 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:38,083 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:38,735 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:39,034 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:39,275 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:39,448 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:41,288 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:41,790 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:42,205 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:42,433 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:42,641 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:44,434 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:44,948 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:45,180 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:45,363 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:47,753 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:40:49,495 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:52,870 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:40:54,442 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-13 01:40:55,762 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:40:56,384 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:40:56,665 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:40:57,136 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:40:59,391 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:41:00,235 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:41:00,591 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:41:00,826 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:41:05,380 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2021-12-13 01:41:07,799 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:13,569 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2021-12-13 01:41:16,864 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2021-12-13 01:41:19,006 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2021-12-13 01:41:20,988 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:22,265 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-13 01:41:26,070 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:27,334 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:41:28,425 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:41:29,962 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:41:31,023 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:41:31,972 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:32,686 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:41:33,726 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:41:41,467 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:41:41,468 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:41:42,756 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:41:43,792 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:41:45,306 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:46,166 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:41:48,020 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:48,910 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:41:50,234 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:41:54,270 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-13 01:41:55,897 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:41:56,784 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:41:57,718 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:41:58,609 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:00,268 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:02,619 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:03,656 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:42:04,609 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:05,773 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:05,775 INFO  AddToBasketCommand:40 - #AddToBasketCommand order exists.
+2021-12-13 01:42:05,791 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:42:07,756 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:08,714 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:42:09,568 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:11,314 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:12,631 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:13,701 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:42:14,578 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:18,809 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:19,631 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:42:20,783 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:21,643 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:23,040 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:24,022 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:24,936 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:26,187 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:27,700 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:29,062 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-13 01:42:32,531 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:33,194 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:42:34,043 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:36,397 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:38,827 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:44,157 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-13 01:42:46,649 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:48,053 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:48,969 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:42:49,910 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:42:51,102 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:42:52,247 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:42:53,145 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:42:54,549 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:56,329 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-13 01:42:57,358 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:42:58,302 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:43:00,198 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:43:01,132 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:43:06,076 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:43:06,078 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:43:13,394 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:15,230 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:22,897 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:34,068 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:37,600 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:39,700 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:44,222 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:43:47,556 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:43:53,653 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:44:24,590 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:44:25,301 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:44:57,093 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:44:58,322 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:45:04,823 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:45:04,825 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:45:06,320 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:45:07,333 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:45:09,949 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:45:20,796 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:45:22,668 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:45:34,363 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:45:44,772 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:45:45,825 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:45:47,063 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:45:50,016 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:45:50,017 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:45:51,290 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:45:53,272 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:45:55,881 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:45:57,243 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:45:59,047 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:46:01,167 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:46:57,164 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:46:59,354 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:01,448 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:02,813 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:06,270 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:07,355 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:08,382 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:17,237 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:47:20,152 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:47:21,412 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:47:26,001 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:47:26,002 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:47:27,536 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:47:28,467 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:47:36,390 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-13 01:47:46,528 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:47:47,829 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:47:48,837 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:47:51,320 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:47:51,321 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:47:52,838 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-13 01:47:55,451 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:48:02,584 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-13 01:48:05,824 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-13 01:48:07,008 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:48:12,521 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:48:12,522 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:48:13,768 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:48:15,181 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:48:17,864 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:48:18,666 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:48:19,407 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:48:20,659 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:48:31,388 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:48:32,194 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:48:33,721 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:48:35,366 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-13 01:50:36,882 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-13 01:50:38,006 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:50:39,144 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-13 01:50:44,779 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-13 01:50:44,861 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-13 01:50:46,267 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:50:47,196 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:50:48,270 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:50:50,106 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:50:51,349 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:50:52,605 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:50:54,970 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-13 01:50:55,894 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:50:56,452 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:50:57,538 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:50:58,394 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-13 01:51:00,864 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:51:01,681 INFO  GoToMenuCommand:21 - #GoToMenuCommand starts.
+2021-12-13 01:51:02,662 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-13 01:51:03,653 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-13 01:51:05,286 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:51:06,199 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-13 01:51:06,993 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:51:08,096 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-13 01:51:14,936 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-13 01:51:16,098 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-13 01:51:19,489 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-15 15:35:45,135 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-15 15:35:51,621 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:35:54,938 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:36:00,562 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:36:00,672 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:36:03,124 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:06,362 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:07,536 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:08,546 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:10,924 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:13,754 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:36:15,660 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-15 15:36:17,065 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:36:19,063 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-15 15:36:20,099 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:36:30,029 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:36:30,032 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:36:31,505 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:36:32,893 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:36:33,581 INFO  GoToBasketCommand:19 - #GoToBasketCommand starts.
+2021-12-15 15:36:34,913 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:37:16,451 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-15 15:37:19,891 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:37:21,866 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:37:26,532 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:37:26,638 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:37:29,495 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:37:31,099 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:37:31,790 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:37:35,023 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:37:35,955 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:37:37,530 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:37:43,764 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:38:22,460 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:38:24,177 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:38:26,878 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:38:35,662 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:38:36,639 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:38:44,810 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:38:46,648 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:40:07,140 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-15 15:40:12,065 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:40:13,545 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:40:17,241 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:40:17,350 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:40:18,910 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:40:24,630 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:40:27,207 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:17,010 INFO  EncodingFilter:18 - #EncodingFilter init
+2021-12-15 15:45:21,171 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:45:22,294 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:45:28,740 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:45:28,857 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:45:29,952 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:33,031 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:35,032 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:37,234 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:37,699 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:37,880 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:38,049 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:38,182 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:40,496 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:45:44,268 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:45:44,272 INFO  AddToBasketCommand:40 - #AddToBasketCommand order exists.
+2021-12-15 15:45:44,283 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:45:46,491 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:48,100 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:49,220 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:45:51,397 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:45:52,431 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:45:53,406 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:45:55,501 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:45:56,694 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:45:58,002 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:02,712 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:03,224 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:03,389 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:03,551 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:03,713 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:03,868 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:06,477 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:12,054 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:15,645 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:21,017 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:22,859 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:24,292 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:30,616 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:32,637 INFO  DeleteFromBasketCommand:27 - #DeleteFromBasketCommand starts.
+2021-12-15 15:46:34,083 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:40,918 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:42,891 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:44,346 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,001 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,161 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,296 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,435 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,601 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,770 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:45,935 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:46,088 INFO  CleanBasketCommand:27 - #CleanBasketCommand starts.
+2021-12-15 15:46:47,636 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:49,892 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:46:51,636 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2021-12-15 15:46:53,180 INFO  AddToBasketCommand:27 - #AddToBasketCommand starts.
+2021-12-15 15:46:54,693 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:46:55,646 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:46:57,452 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:46:59,202 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:00,306 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:00,478 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:00,639 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:00,816 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:00,976 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:01,128 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:01,301 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:01,469 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:01,800 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:02,022 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:02,325 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:02,583 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2021-12-15 15:47:04,613 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2021-12-15 15:47:06,203 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:47:08,960 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-15 15:47:13,716 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:47:14,753 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2021-12-15 15:47:15,737 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2021-12-15 15:47:18,279 INFO  LogInCommand:28 - #LogInCommand starts.
+2021-12-15 15:47:18,281 INFO  LogInCommand:46 - #LogInCommand session is null.
+2021-12-15 15:47:20,383 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:21,765 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:22,223 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:22,384 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:22,537 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:22,702 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:27,289 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:28,288 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:29,170 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:29,323 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:29,477 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:29,625 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2021-12-15 15:47:41,567 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2021-12-15 15:47:46,980 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2021-12-15 15:47:53,387 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2021-12-15 15:47:56,349 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2021-12-15 15:47:58,429 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-15 15:48:00,130 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-15 15:48:01,251 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-15 15:48:02,222 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-15 15:48:03,235 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2021-12-15 15:48:04,265 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
