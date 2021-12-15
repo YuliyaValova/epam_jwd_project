@@ -46,7 +46,6 @@ public class AddProductCommand implements Command {
                         resp.sendRedirect("addProduct?message=IncompleteInfo");
                         break;
                     case 1:
-                        req.setAttribute(PAGE, SHOW);
                         req.setAttribute(MESSAGE, PRODUCT_SUCCESSFULLY_ADDED);
                         req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
                         break;
