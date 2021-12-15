@@ -95,14 +95,14 @@
                      <div>
 
                      <form method="get" action="/menu" >
-                     <input type="hidden" name="command" value="gotomenu"/>
+                     <input type="hidden" name="command" value="showproducts"/>
                      <button type="submit">${menu}</button>
                      </form>
 
                      <c:if test = "${sessionScope.role != 'admin'}">
 
                      <form method="get" action="/basket" >
-                     <input type="hidden" name="command" value="gotobasket"/>
+                     <input type="hidden" name="command" value="showbasket"/>
                      <button type="submit">${basket}</button>
                      </form>
 
