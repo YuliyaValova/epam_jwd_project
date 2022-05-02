@@ -322,6 +322,11 @@ public class MysqlUserDaoImpl implements UserDao {
             }
             return id;
         } catch (SQLException | DaoException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
             throw new DaoException(e);
         } finally {
             daoUtil.close(preparedStatement);

@@ -8,9 +8,80 @@
 <head>
 
 <style type = "text/css">
-    div form {
-        display:inline-block
+
+body {
+
+      height: 100%;
+    background-image: url(https://sun9-67.userapi.com/c850336/v850336040/78acd/SdNEP-ZPNik.jpg);
+}
+    div.links a {
+    align-content:center;
+    display:inline-block;
     }
+    .header {
+     position: relative;
+     display:inline-block;
+     font-size:30px;
+         top: -40;
+         left: 0;
+         color:white;
+         height: 60px;
+         width: 100%;
+         z-index: 2;
+    }
+
+    .loc {
+      font-size:20px;
+    }
+
+    .local {
+    position: fixed;
+         display:inline-block;
+             top: 25;
+             left: 580;
+             color:white;
+             height: 80px;
+             width: 100%;
+             z-index: 2;
+    }
+
+
+    div form{
+    display:inline-block;
+    }
+     a.blubtn {
+     position:relative;
+     top:20;
+       width:fit-content;
+       text-align:center;
+       display:block;
+       align-items: center;
+       font-family: arial;
+       text-decoration: none;
+       font-weight: 300;
+       font-size: 50px;
+       border: white 1px solid;
+       color: white;
+       padding: 3px;
+       padding-left: 5px;
+       padding-right: 5px;
+       transition: .5s;
+       border-radius: 0px;
+       z-index:3;
+     }
+     a.blubtn:hover {
+       top: 5px;
+       transition: .5s;
+       color: #10FF58;
+       border: #10FF58 1px solid;
+       border-radius: 10px;
+     }
+     a.blubtn:active {
+       color: #000;
+       border: #1A1A1A 1px solid;
+       transition: .07s;
+       background-color: #FFF;
+     }
 </style>
 
         <fmt:setLocale value="${sessionScope.locale}" />
@@ -39,28 +110,38 @@
 
     <c:set var="error" value="${param.message}"/>
 
-           <div>
-               <h2>${home}</h2>
+
                <!-- LOCALE -->
-               <div>
+               <div class="header">
+               <h1>Welcome to LulPizza</h1>
+               </div>
+
+                <div class="local">
                        <form method="post" action="/" >
                                       <input type="hidden" name="command" value="locale"/>
                                       <input type="hidden" name="locale" value="en">
-                                      <button type="submit">${en_button}</button>
+                                      <button class ="loc" type="submit">${en_button}</button>
+
                        </form>
 
                        <form method="post" action="/" >
                                       <input type="hidden" name="command" value="locale"/>
                                       <input type="hidden" name="locale" value="ru">
-                                      <button type="submit">${ru_button}</button>
+                                      <button class ="loc" type="submit">${ru_button}</button>
                        </form>
 
-                   </div>
+                       </div>
+
+
+               </div>
 
                <!-- NAVIGATION -->
-               <a href="/registerPage">${signUp}</a>
-               </br>
-               <a href="/loginPage" >${signIn}</a>
+
+               <div class="links">
+               <a href="/registerPage" class="blubtn">${signUp}</a>
+               <a href="/loginPage" class="blubtn">${signIn}</a>
+               </div>
+
 
 
 
@@ -100,6 +181,6 @@
                      <p style="color: red">${errorMsg_accountError}</p>
                      </c:if>
                <br/>
-           </div>
+
        </body>
 </html>
