@@ -8,6 +8,88 @@
 <head>
 
 <style type = "text/css">
+.message {
+     border: 2px solid green;
+              color: green;
+              width:300px;
+              margin: 30px;
+              padding: 12px 12px 12px 12px;
+              color: #333;
+              border-radius: 2px;
+              background: #fff;
+              position: relative;
+              font-weight: bold;
+              font-family: Verdana, sans-serif;
+              box-sizing: border-box;
+          }
+button.but1{
+font-size:20px;
+	float:right;
+	padding:8px 12px;
+	margin:8px 0 0;
+	font-family:'Montserrat',sans-serif;
+	border:2px solid #78788c;
+	background:white;
+	color:#5a5a6e;
+	cursor:pointer;
+	transition:all .3s
+}
+ button.but1:hover{
+	background:red;
+	color:#fff
+}
+div.header{
+                display:inline-block;
+                position:fixed;
+                top:20px;
+                left:500px;
+                }
+
+div.basket{
+ display:inline-block;
+ background:white;
+ border:2px solid gray;
+ width: fit-content;
+ padding:20px;
+                position:fixed;
+                top:150px;
+                left:400px;
+}
+.loc {
+              font-size:20px;
+            }
+    .local {
+        position: fixed;
+             display:inline-block;
+                 top: 35;
+                 left: 30;
+                 color:white;
+                 height: 80px;
+                 width: 150px;
+                 z-index: 2;
+        }
+.n-warning {
+    border: 2px solid red;
+    color: red;
+}
+.n-warning {
+    width:300px;
+    margin: 5px;
+    padding: 12px 12px 12px 12px;
+    color: #333;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body {
+
+      height: 100%;
+      background: url('https://pbs.twimg.com/media/EGMuSK-WoAIRuRQ.jpg') top left;
+      }
+
     div form {
         display:inline-block
     }
@@ -41,72 +123,73 @@
 
  <body>
     <c:set var="error" value="${param.message}"/>
-    <h1>${basket}</h1>
 
      <!-- LOCALE -->
-                <div>
+                <div class="local">
                         <form method="post" action="/basket" >
                                        <input type="hidden" name="command" value="locale"/>
                                        <input type="hidden" name="locale" value="en">
-                                       <button type="submit">${en_button}</button>
+                                       <button class="loc" type="submit">${en_button}</button>
                         </form>
 
                         <form method="post" action="/basket" >
                                        <input type="hidden" name="command" value="locale"/>
                                        <input type="hidden" name="locale" value="ru">
-                                       <button type="submit">${ru_button}</button>
+                                       <button class="loc" type="submit">${ru_button}</button>
                         </form>
+
+                         <!--Errors-->
+
+                                          <c:if test="${error == 'BasketError'}">
+                                               <p class="n-warning">${errorMsg_basketError}</p>
+                                          </c:if>
+
+                                          <c:if test="${error == 'ShowBasketError'}">
+                                               <p class="n-warning">${errorMsg_showBasketError}</p>
+                                          </c:if>
+
+                                        <!--Message-->
+                                        <c:if test="${requestScope.message != null}">
+                                             <p class="message">${requestScope.message}</p>
+                                        </c:if>
+
 
                 </div>
 
-                <!--Errors-->
-
-                  <c:if test="${error == 'BasketError'}">
-                       <p style="color: red">${errorMsg_basketError}</p>
-                  </c:if>
-
-                  <c:if test="${error == 'ShowBasketError'}">
-                       <p style="color: red">${errorMsg_showBasketError}</p>
-                  </c:if>
-
-                <!--Message-->
-                <c:if test="${requestScope.message != null}">
-                     <p style="color: green">${requestScope.message}</p>
-                </c:if>
 
 
                   <!--Menu-->
 
                       <c:if test="${sessionScope.role != null}">
-                      <div>
+                      <div class="header">
                           <form id="showbasket" method="get" action="/basket" >
                               <input type="hidden" name="command" value="showbasket"/>
-                              <button form="showbasket" type="submit">${showBasket}</button>
+                              <button class="but1" form="showbasket" type="submit">${showBasket}</button>
                           </form>
 
                           <form id="cleanbasket" method="get" action="/basket" >
                               <input type="hidden" name="command" value="cleanbasket"/>
-                              <button form="cleanbasket" type="submit">${deleteAllBascket}</button>
+                              <button class="but1" form="cleanbasket" type="submit">${deleteAllBascket}</button>
                           </form>
 
                           <form id="gotomain" method="get" action="/main" >
                               <input type="hidden" name="command" value="gotomain"/>
-                              <button form="gotomain" type="submit">${goMain}</button>
+                              <button class="but1" form="gotomain" type="submit">${goMain}</button>
                           </form>
                       </div>
 
 
-                         <div>
+                         <div class="basket">
                              <table>
                                  <thead>
                                  <tr>
-                                 <c:if test="${requestScope.page == 'show'}">
+
                                      <td><h4><c:out value="${id}"/></h4></td>
                                      <td><h4><c:out value="${name}"/></h4></td>
                                      <td><h4><c:out value="${type}"/></h4></td>
                                      <td><h4><c:out value="${description}"/></h4></td>
                                      <td><h4><c:out value="${price}"/></h4></td>
-                                 </c:if>
+
                                  </tr>
                                  </thead>
 
@@ -146,17 +229,17 @@
                                          </span>
                                      </c:if>
                                  </c:forEach>
-                             </div>
+
 
                          </div>
 
-                         <c:if test="${requestScope.page == 'show'}">
+
                                <p>${sum}: ${sessionScope.sum}</p>
                                 <form id="sendOrder" method="get" action="/basket" >
                                 <input type="hidden" name="command" value="sendOrder"/>
                                 <button form="sendOrder" type="submit">${sendOrd}</button>
                                 </form>
-                         </c:if>
 
 
+                        </div>
                      </c:if>

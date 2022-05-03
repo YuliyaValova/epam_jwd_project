@@ -8,9 +8,148 @@
 <head>
 
 <style type = "text/css">
+.message {
+     border: 2px solid green;
+              color: green;
+              width:300px;
+              margin: 30px;
+              padding: 12px 12px 12px 12px;
+              color: #333;
+              border-radius: 2px;
+              background: #fff;
+              position: relative;
+              font-weight: bold;
+              font-family: Verdana, sans-serif;
+              box-sizing: border-box;
+          }
+button.but1{
+font-size:20px;
+	float:right;
+	padding:8px 12px;
+	margin:8px 0 0;
+	font-family:'Montserrat',sans-serif;
+	border:2px solid #78788c;
+	background:white;
+	color:#5a5a6e;
+	cursor:pointer;
+	transition:all .3s
+}
+ button.but1:hover{
+	background:red;
+	color:#fff
+}
+div.header{
+                display:inline-block;
+                position:relative;
+                top:20px;
+                left:620px;
+                }
+.loc {
+              font-size:20px;
+            }
+    .local {
+        position: fixed;
+             display:inline-block;
+                 top: 35;
+                 left: 30;
+                 color:white;
+                 height: 80px;
+                 width: 150px;
+                 z-index: 2;
+        }
+.n-warning {
+    border: 2px solid red;
+    color: red;
+}
+.n-warning {
+    width:300px;
+    margin: 5px;
+    padding: 12px 12px 12px 12px;
+    color: #333;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body {
+
+      height: 100%;
+      background: url('https://pbs.twimg.com/media/EGMuSK-WoAIRuRQ.jpg') top left;
+}
     div form {
         display:inline-block
     }
+    * {
+       box-sizing: border-box;
+    }
+    .product-item {
+       width: 300px;
+       text-align: center;
+       margin: 0 auto;
+       padding:15px;
+       border: 2px solid grey;
+       background: white;
+       font-family: "Open Sans";
+       transition: .3s ease-in;
+    }
+    .pages{
+            text-align: center;
+            margin: 0 auto;
+            padding:15px;
+    }
+    .product-item:hover {
+       border-bottom: 2px solid #fc5a5a;
+    }
+    .product-item img {
+       display: block;
+       width: 100%;
+    }
+    .product-list {
+       background: #fafafa;
+       padding: 15px 0;
+    }
+
+    .price {
+       font-size: 16px;
+       color: #fc5a5a;
+       display: block;
+       margin-bottom: 12px;
+    }
+
+    .name {
+      font-size: 20px;
+             color: #fc5a5a;
+             display: block;
+             margin-bottom: 12px;
+             text-decoration-line:underline;
+             font-weight:bold;
+    }
+
+     .description {
+           font-size: 16px;
+           color: black;
+           display: block;
+           margin-bottom: 12px;
+     }
+
+
+    .button {
+       text-decoration: none;
+       display: inline-block;
+       padding: 0 12px;
+       background: #cccccc;
+       color: white;
+       text-transform: uppercase;
+       font-size: 12px;
+       line-height: 28px;
+       transition: .3s ease-in;
+    }
+    .product-item:hover .button {
+       background: #fc5a5a;
+    }
+
 </style>
 
         <fmt:setLocale value="${sessionScope.locale}" />
@@ -39,116 +178,117 @@
 </head>
 
  <body>
-    <c:set var="error" value="${param.message}"/>
-    <h1>${menu}</h1>
+
+
+        <c:set var="error" value="${param.message}"/>
+
+
 
      <!-- LOCALE -->
-                <div>
+                <div class="local">
                         <form method="post" action="/menu" >
                                        <input type="hidden" name="command" value="locale"/>
                                        <input type="hidden" name="locale" value="en">
-                                       <button type="submit">${en_button}</button>
+                                       <button class="loc" type="submit">${en_button}</button>
                         </form>
 
                         <form method="post" action="/menu" >
                                        <input type="hidden" name="command" value="locale"/>
                                        <input type="hidden" name="locale" value="ru">
-                                       <button type="submit">${ru_button}</button>
+                                       <button class="loc" type="submit">${ru_button}</button>
                         </form>
+
+                         <!--Errors-->
+
+                                          <c:if test="${error == 'ShowProductsError'}">
+                                               <p class="n-warning">${errorMsg_showProductsError}</p>
+
+                                          </c:if>
+
+                                          <c:if test="${error == 'OrderExists'}">
+                                               <p class="n-warning">${errorMsg_orderExistsError}</p>
+
+                                          </c:if>
+
+                                          <c:if test="${requestScope.message != null}">
+                                                <p class="message">${requestScope.message}</p>
+
+                                          </c:if>
+
+                                          <c:if test="${error == 'DeletingError'}">
+                                          <p class="n-warning">DeletingError!</p>
+
+                                          </c:if>
 
                 </div>
 
 
-                <!--Errors-->
 
-                  <c:if test="${error == 'ShowProductsError'}">
-                       <p style="color: red">${errorMsg_showProductsError}</p>
-                  </c:if>
-
-                  <c:if test="${error == 'OrderExists'}">
-                       <p style="color: red">${errorMsg_orderExistsError}</p>
-                  </c:if>
-
-                  <c:if test="${requestScope.message != null}">
-                        <p style="color: green">${requestScope.message}</p>
-                  </c:if>
-
-                  <c:if test="${error == 'DeletingError'}">
-                  <p style="color: red">DeletingError!</p>
-                  </c:if>
 
 
                   <!--Menu-->
 
                       <c:if test="${sessionScope.role != null}">
-                      <div>
+                      <div class="header">
                           <form id="show_products" method="get" action="/menu" >
                               <input type="hidden" name="command" value="showproducts"/>
-                              <button form="show_products" type="submit">${showProducts}</button>
+                              <button  class="but1" form="show_products" type="submit">${showProducts}</button>
                           </form>
 
                           <form id="gotomain" method="get" action="/main" >
                               <input type="hidden" name="command" value="gotomain"/>
-                              <button form="gotomain" type="submit">${goMain}</button>
+                              <button  class="but1" form="gotomain" type="submit">${goMain}</button>
                           </form>
                       </div>
 
-
+<br>
+<br>
+<br>
                          <div>
-                             <table>
-                                 <thead>
-                                 <tr>
-                                 <c:if test="${requestScope.page == 'show'}">
-                                     <td><h4><c:out value="${id}"/></h4></td>
-                                     <td><h4><c:out value="${name}"/></h4></td>
-                                     <td><h4><c:out value="${type}"/></h4></td>
-                                     <td><h4><c:out value="${description}"/></h4></td>
-                                     <td><h4><c:out value="${price}"/></h4></td>
-                                 </c:if>
-                                 </tr>
-                                 </thead>
 
-                                 <tbody>
+
+
+
+
                                  <c:forEach items="${requestScope.pageable.elements}" var="product">
-                                     <tr>
-                                         <td>${product.id}</td>
-                                         <td>${product.name}</td>
-                                         <td>${product.type}</td>
-                                         <td>${product.description}</td>
-                                         <td>${product.price}</td>
-                                         <td>
-                                         <td>
-                                         <div>
+                                      <div class="product-item">
+                                       <img src="https://kartinkin.net/uploads/posts/2021-03/1617170189_4-p-kusok-pitstsi-krasivo-4.jpg">
+                                       <div class="product-list">
+                                         <div class="name">${product.name}</div>
+                                           <span class="description">${product.description}</span>
+                                           <span class="price">${product.price}</span>
+                                           <c:if test="${sessionScope.role != 'admin'}">
+                                            <form method="post" action="/menu" >
+                                            <input type="hidden" name="command" value="addtobasket"/>
+                                            <input type="hidden" name="productId" value=${product.id}/>
+                                            <br>
+                                            <button class="button" type="submit">${addBascket}</button><br/>
+                                            </form>
+                                            </c:if>
+                                            <c:if test="${sessionScope.role == 'admin'}">
+                                             <form method="post" action="/menu" >
+                                             <input type="hidden" name="command" value="deletefrommenu"/>
+                                             <input type="hidden" name="productId" value=${product.id}/>
+                                             <button type="submit">${deleteFromMenu}</button><br/>
+                                             </form>
+                                             <form method="post" action="/menu" >
+                                             <input type="hidden" name="command" value="changeproductstatus"/>
+                                             <input type="hidden" name="productId" value=${product.id}/>
+                                             <input type="hidden" name="status" value=${product.isAvailable}/>
+                                             <button type="submit">${changeStatus}</button><br/>
+                                             </form>
+                                             </c:if>
 
-                                         <c:if test="${sessionScope.role == 'admin'}">
-                                         <form method="post" action="/menu" >
-                                         <input type="hidden" name="command" value="deletefrommenu"/>
-                                         <input type="hidden" name="productId" value=${product.id}/>
-                                         <button type="submit">${deleteFromMenu}</button><br/>
-                                         </form>
-                                         <form method="post" action="/menu" >
-                                         <input type="hidden" name="command" value="changeproductstatus"/>
-                                         <input type="hidden" name="productId" value=${product.id}/>
-                                         <input type="hidden" name="status" value=${product.isAvailable}/>
-                                         <button type="submit">${changeStatus}</button><br/>
-                                         </form>
-                                         </c:if>
+                                       </div>
+                                      </div>
+<br>
 
-                                         <c:if test="${sessionScope.role != 'admin'}">
-                                         <form method="post" action="/menu" >
-                                         <input type="hidden" name="command" value="addtobasket"/>
-                                         <input type="hidden" name="productId" value=${product.id}/>
-                                         <button type="submit">${addBascket}</button><br/>
-                                         </form>
-                                         </c:if>
 
-                                         </div>
-                                         </td>
-                                     </tr>
+
                                  </c:forEach>
-                                 </tbody>
-                             </table>
-                             <div style="margin-left: center">
+
+
+                             <div class="pages">
                                  <c:forEach begin="1" end="${Math.ceil(pageable.totalElements / pageable.limit)}" var="i">
                                      <c:if test="${i == pageable.pageNumber}">
                                          <span>
