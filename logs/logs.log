@@ -2773,3 +2773,456 @@
 2022-05-03 01:58:03,596 INFO  DefaultCommand:19 - #DefaultCommand starts.
 2022-05-03 01:59:36,259 INFO  EncodingFilter:18 - #EncodingFilter init
 2022-05-03 01:59:37,306 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:50:15,113 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 11:50:38,747 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:50:43,659 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:50:49,297 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:50:50,844 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:50:51,625 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:50:54,990 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:51:01,725 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:03,260 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:04,413 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:05,215 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:05,996 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:09,274 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:32,539 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:51:57,540 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:52:00,156 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:52:12,900 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:52:18,339 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 11:54:15,230 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 11:54:15,494 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 11:58:38,481 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 11:58:39,873 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 11:58:42,112 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 11:59:47,239 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 11:59:48,735 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 11:59:48,743 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 11:59:53,185 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:00:00,595 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:00:00,731 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:00:03,048 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:01:05,303 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:01:06,751 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:01:06,767 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:01:13,007 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:01:17,295 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:01:17,431 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:01:20,903 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:01:30,888 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:01:34,002 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:02:07,683 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:02:10,333 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:02:56,021 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:02:57,469 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:03:23,930 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:03:25,306 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:03:46,428 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:03:47,980 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:03:54,056 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:03:55,450 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:03:56,819 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:04:49,927 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:04:51,359 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:05:01,549 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:05:02,866 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:05:50,466 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:05:51,834 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:07:06,756 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:07:08,100 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:07:11,644 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:07:15,176 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:07:48,367 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:07:49,727 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:09:48,680 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:09:50,040 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:10:01,854 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:10:03,916 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:10:27,752 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:10:29,128 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:10:53,129 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:10:54,505 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:10:55,264 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:11:16,936 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:11:18,368 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:11:50,152 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:11:51,408 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:12:21,446 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:12:22,750 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:12:47,798 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:12:49,449 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:13:09,600 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:13:10,912 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:13:25,368 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:13:27,519 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:13:33,841 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:14:07,759 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:14:09,047 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:14:15,082 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:14:17,340 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:14:18,774 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:15:11,739 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:15:13,003 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:17:25,554 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:17:26,826 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:18:26,587 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:18:27,875 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:18:32,749 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:18:37,360 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:18:38,984 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:18:43,415 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:18:43,543 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:18:47,515 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:19:20,377 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:19:21,809 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:19:21,817 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:19:23,717 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:19:30,145 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:19:30,281 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:19:32,187 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:29:57,756 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:29:59,177 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:29:59,185 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:30:03,864 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:30:05,087 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:30:09,823 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:30:09,967 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:30:12,204 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:31:27,317 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:31:28,565 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:31:28,573 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:31:30,484 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:31:40,751 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:31:40,879 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:31:43,800 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:31:55,619 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:31:57,978 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:32:10,680 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:33:16,992 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:33:18,272 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 12:33:37,903 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:33:37,919 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:34:02,541 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:34:12,894 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:34:13,030 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:34:14,611 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:35:44,787 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:35:46,291 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:35:46,307 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:35:49,496 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:35:53,300 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:35:53,428 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:35:55,932 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:36:15,966 INFO  AddProductCommand:28 - #AddProductCommand starts.
+2022-05-03 12:36:23,185 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:36:25,389 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:36:28,993 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 12:36:32,588 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:42:58,722 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:43:09,786 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:43:11,373 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:43:15,967 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:43:16,127 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:43:17,593 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:43:36,639 INFO  AddProductCommand:28 - #AddProductCommand starts.
+2022-05-03 12:43:39,777 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 12:43:42,105 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 12:43:49,745 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 12:43:52,436 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:43:53,669 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:43:58,947 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:44:12,531 INFO  AddProductCommand:28 - #AddProductCommand starts.
+2022-05-03 12:44:15,648 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:44:16,846 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:45:03,248 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:45:05,157 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:45:06,657 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:45:11,758 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:45:11,894 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:45:13,474 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:45:30,008 INFO  AddProductCommand:28 - #AddProductCommand starts.
+2022-05-03 12:45:32,935 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:45:34,500 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 12:45:43,458 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 12:46:23,855 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:46:25,119 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:46:25,127 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:46:26,687 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:46:31,378 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:46:31,514 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:46:34,488 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:48:58,738 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:48:59,994 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:49:02,137 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:49:06,425 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:49:06,569 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:49:08,811 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:53:10,818 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:53:15,330 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:53:17,046 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:53:20,685 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:53:20,821 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:53:22,280 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:55:04,314 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:55:10,178 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:55:10,186 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:55:12,625 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:55:18,008 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:55:18,136 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:55:20,152 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:56:34,133 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:56:34,141 INFO  GoToAddProductPageCommand:25 - #GoToAddProductPageCommand session is null.
+2022-05-03 12:56:34,149 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:39,479 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:40,894 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:41,173 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:41,616 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:41,915 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:42,172 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:42,482 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:42,826 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:56:48,456 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:57:10,710 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:57:12,326 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:57:12,342 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:57:14,082 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:57:17,695 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:57:17,823 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:57:23,983 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:58:11,028 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:58:12,380 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:58:12,396 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:58:15,535 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:58:19,649 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:58:19,785 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:58:21,728 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 12:58:56,912 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 12:58:58,224 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 12:58:58,232 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:58:59,596 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 12:59:03,755 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 12:59:03,883 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 12:59:07,780 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:00:57,354 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:00:58,650 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:00:58,658 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:01:00,061 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:01:03,533 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:01:03,669 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:01:05,678 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:02:06,561 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:02:08,090 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:02:08,106 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:02:10,448 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:02:15,932 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:02:16,068 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:02:18,144 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:06:13,355 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:06:14,763 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:06:14,779 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:06:16,105 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:06:20,195 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:06:20,323 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:06:21,980 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:07:51,642 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:07:52,914 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:07:52,922 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:07:54,728 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:07:58,283 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:07:58,403 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:07:59,854 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:10:20,130 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:10:21,554 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:10:21,562 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:10:23,468 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:10:26,871 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:10:27,023 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:10:28,597 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:12:50,136 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:13:03,415 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:13:03,423 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:13:05,927 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:13:09,731 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:13:09,859 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:13:11,689 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:13:29,622 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:13:31,102 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:13:31,102 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:13:31,110 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:13:32,855 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:13:35,999 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:13:36,127 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:13:37,953 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:15:14,148 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:15:15,838 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:15:15,846 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:15:17,145 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:15:20,608 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:15:20,728 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:15:22,505 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:16:24,681 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:16:25,849 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:16:25,865 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:16:28,232 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:16:32,106 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:16:32,218 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:16:40,850 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:17:16,032 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:17:24,364 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:17:24,372 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:17:27,850 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:17:31,169 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:17:31,288 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:17:33,078 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:18:01,950 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:18:04,122 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:18:04,130 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:18:06,319 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:18:10,061 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:18:10,173 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:18:11,972 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:18:34,455 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:18:35,703 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:18:35,711 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:18:37,206 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:18:40,395 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:18:40,499 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:18:43,651 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:19:05,146 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:19:06,378 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:19:06,386 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:19:09,083 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:19:12,107 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:19:12,211 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:19:13,794 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:22:03,900 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:22:05,124 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 13:22:05,132 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:22:27,523 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:22:33,392 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:22:46,203 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 13:22:47,331 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:22:51,636 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 13:22:54,987 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 13:22:55,099 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 13:22:56,949 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 13:23:12,780 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 13:23:15,287 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2022-05-03 13:38:14,497 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 13:38:18,265 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 13:38:22,484 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 13:38:29,556 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 13:38:34,707 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 13:38:37,065 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 18:09:56,606 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:09:59,232 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:10:04,368 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:10:04,391 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:10:09,909 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 18:10:10,995 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:10:15,344 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:10:15,412 INFO  LogInCommand:40 - #LogInCommand no such user.
+2022-05-03 18:10:15,421 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:11:11,564 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:11:11,568 INFO  LogInCommand:40 - #LogInCommand no such user.
+2022-05-03 18:11:11,592 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:11:31,151 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:11:31,160 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:11:43,256 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 18:11:44,569 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:11:48,221 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:11:48,229 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:11:50,644 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:16:40,266 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:36,759 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:40,944 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:41,672 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:42,114 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:42,400 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:42,645 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:42,909 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:43,253 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:17:58,309 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-03 18:17:59,333 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 18:17:59,342 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:18:01,280 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:18:04,907 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:18:05,013 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:18:06,622 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:18:27,602 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:19:03,979 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:19:07,192 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:19:42,009 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:20:04,255 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:20:10,516 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:21:30,732 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:22:58,008 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:23:24,462 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:24:30,356 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:26:27,325 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:26:57,369 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:09,811 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:17,362 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:22,129 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:24,990 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:26,722 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:31,190 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:27:39,299 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:02,106 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:07,197 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:11,912 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:16,793 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:22,466 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:29,727 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:34,473 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:40,170 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:44,979 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:52,593 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:28:58,092 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:29:05,933 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:29:11,085 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:29:15,308 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:29:22,237 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:29:31,731 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:31:24,354 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:31:36,693 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:03,133 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:19,006 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:41,194 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:44,558 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:46,576 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:47,596 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:48,305 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:48,932 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:32:54,291 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 18:34:25,282 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:34:28,064 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:34:35,719 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:34:35,732 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:34:37,557 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:35:50,321 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:36:02,885 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-03 18:37:50,393 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-03 18:37:50,405 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:37:52,860 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:37:56,457 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:37:56,464 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:37:58,194 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:38:04,002 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-03 18:38:31,721 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:38:36,561 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:38:36,565 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 18:38:39,216 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:39:31,848 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:40:25,370 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:41:22,185 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:42:01,512 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:42:02,950 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:42:07,671 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:42:33,136 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:43:28,452 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:43:53,319 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:44:25,356 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:44:34,629 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:44:47,125 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.

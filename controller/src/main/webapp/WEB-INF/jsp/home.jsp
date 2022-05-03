@@ -82,6 +82,37 @@ body {
        transition: .07s;
        background-color: #FFF;
      }
+     .n-warning {
+         border: 2px solid red;
+         color: red;
+     }
+     .n-warning {
+         width:fit-content;
+         margin: 30px;
+         padding: 12px 12px 12px 12px;
+         color: #333;
+         border-radius: 2px;
+         background: #fff;
+         position: relative;
+         font-weight: bold;
+         font-family: Verdana, sans-serif;
+         box-sizing: border-box;
+     }
+
+     .message {
+     border: 2px solid green;
+              color: green;
+              width:fit-content;
+              margin: 30px;
+              padding: 12px 12px 12px 12px;
+              color: #333;
+              border-radius: 2px;
+              background: #fff;
+              position: relative;
+              font-weight: bold;
+              font-family: Verdana, sans-serif;
+              box-sizing: border-box;
+          }
 </style>
 
         <fmt:setLocale value="${sessionScope.locale}" />
@@ -140,46 +171,49 @@ body {
                <div class="links">
                <a href="/registerPage" class="blubtn">${signUp}</a>
                <a href="/loginPage" class="blubtn">${signIn}</a>
+
+               <c:if test="${requestScope.message != null}">
+                                       <p class="message">${requestScope.message}</p>
+                                   </c:if>
+
+                                  <c:if test="${error == 'RegistrationError'}">
+                                      <p class="n-warning">${errorMsg_registrError}</p>
+                                  </c:if>
+
+                                  <c:if test="${error == 'SessionError'}">
+                                      <p class="n-warning">${errorMsg_sessionError}</p>
+                                  </c:if>
+
+                                   <c:if test="${error == 'LoginationError'}">
+                                      <p class="n-warning">${errorMsg_loginError}</p>
+                                   </c:if>
+                                    <c:if test="${error == 'invalideCommand'}">
+                                      <p class="n-warning">${errorMsg_invOperation}</p>
+                                    </c:if>
+
+                                    <c:if test="${error == 'InjectionDanger'}">
+                                      <p class="n-warning">${errorMsg_injectDanger}</p>
+                                    </c:if>
+
+
+                                    <c:if test="${error == 'BasketError'}">
+                                    <p class="n-warning">${errorMsg_basketError}</p>
+                                    </c:if>
+
+                                    <c:if test="${error == 'userNotExists'}">
+                                    <p class="n-warning">Your account is not exists!</p>
+                                    </c:if>
+
+                                    <c:if test="${error == 'AccountError'}">
+                                    <p class="n-warning">${errorMsg_accountError}</p>
+                                    </c:if>
+
                </div>
 
 
 
 
-                    <c:if test="${requestScope.message != null}">
-                        <p style="color: green">${requestScope.message}</p>
-                    </c:if>
 
-                   <c:if test="${error == 'RegistrationError'}">
-                       <p style="color: red">${errorMsg_registrError}</p>
-                   </c:if>
-
-                   <c:if test="${error == 'SessionError'}">
-                       <p style="color: red">${errorMsg_sessionError}</p>
-                   </c:if>
-
-                    <c:if test="${error == 'LoginationError'}">
-                       <p style="color: red">${errorMsg_loginError}</p>
-                    </c:if>
-                     <c:if test="${error == 'invalideCommand'}">
-                       <p style="color: red">${errorMsg_invOperation}</p>
-                     </c:if>
-
-                     <c:if test="${error == 'InjectionDanger'}">
-                       <p style="color: red">${errorMsg_injectDanger}</p>
-                     </c:if>
-
-
-                     <c:if test="${error == 'BasketError'}">
-                     <p style="color: red">${errorMsg_basketError}</p>
-                     </c:if>
-
-                     <c:if test="${error == 'userNotExists'}">
-                     <p style="color: red">Your account is not exists!</p>
-                     </c:if>
-
-                     <c:if test="${error == 'AccountError'}">
-                     <p style="color: red">${errorMsg_accountError}</p>
-                     </c:if>
                <br/>
 
        </body>

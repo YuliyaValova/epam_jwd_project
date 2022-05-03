@@ -7,9 +7,178 @@
 <head>
 
 <style type = "text/css">
-    div form {
-        display:inline-block
-    }
+
+body{
+	background: url('https://pbs.twimg.com/media/EGMuSK-WoAIRuRQ.jpg') top left;
+	margin:0
+}
+ .form{
+	width:340px;
+	height:1000px;
+	background:#e6e6e6;
+	border-radius:8px;
+	box-shadow:0 0 40px -10px #000;
+	margin:calc(50vh - 220px) auto;
+	padding:20px 30px;
+	max-width:calc(100vw - 40px);
+	box-sizing:border-box;
+	font-family:'Montserrat',sans-serif;
+	position:relative
+}
+
+ .find_form{
+	width:340px;
+	height:fit-content;
+	background:#e6e6e6;
+	border-radius:8px;
+	box-shadow:0 0 40px -10px #000;
+	margin:calc(50vh - 220px) auto;
+	padding:20px 30px;
+	max-width:calc(100vw - 40px);
+	box-sizing:border-box;
+	font-family:'Montserrat',sans-serif;
+	position:relative
+}
+
+.form2{
+	width:fit-content;
+	height:90px;
+	background:#e6e6e6;
+	border-radius:8px;
+	box-shadow:0 0 40px -10px #000;
+	margin:calc(50vh - 220px) auto;
+	padding:20px 30px;
+	max-width:calc(100vw - 40px);
+	box-sizing:border-box;
+	font-family:'Montserrat',sans-serif;
+	position:fixed;
+	left:1000px;
+	top:0px;
+}
+
+.password{
+	width:200px;
+	height:200px;
+	background:#e6e6e6;
+	border-radius:8px;
+	box-shadow:0 0 40px -10px #000;
+	margin:calc(50vh - 220px) auto;
+	padding:20px 30px;
+	max-width:calc(100vw - 40px);
+	box-sizing:border-box;
+	font-family:'Montserrat',sans-serif;
+	position:fixed;
+	left:1000px;
+	top:100px;
+}
+
+ h2{
+	margin:10px 0;
+	padding-bottom:10px;
+	width:180px;
+	color:#78788c;
+	border-bottom:3px solid #78788c
+}
+ input{
+	width:100%;
+	padding:10px;
+	box-sizing:border-box;
+	background:none;
+	outline:none;
+	resize:none;
+	border:0;
+	font-family:'Montserrat',sans-serif;
+	transition:all .3s;
+	border-bottom:2px solid #bebed2
+}
+ input:focus{
+	border-bottom:2px solid #78788c
+}
+ h3:before{
+	content:attr(type);
+	display:block;
+	margin:28px 0 0;
+	font-size:14px;
+	color:#5a5a5a
+}
+ button{
+	float:right;
+	padding:8px 12px;
+	margin:8px 0 0;
+	font-family:'Montserrat',sans-serif;
+	border:2px solid #78788c;
+	background:#e6e6e6;
+	color:#5a5a6e;
+	cursor:pointer;
+	transition:all .3s
+}
+ button:hover{
+	background:#78788c;
+	color:#fff
+}
+
+ span{
+	margin:0 5px 0 15px
+}
+
+      .header {
+             position: fixed;
+             display:inline-block;
+             font-size:30px;
+                 top: -40;
+                 left: 0;
+                 color:black;
+                 height: 60px;
+                 width: 100%;
+                 z-index: 2;
+            }
+            .loc {
+                  font-size:20px;
+                }
+        .local {
+            position: fixed;
+                 display:inline-block;
+                     top: 35;
+                     left: 30;
+                     color:white;
+                     height: 80px;
+                     width: 100%;
+                     z-index: 2;
+            }
+
+            div form {
+                display:inline-block
+            }
+            .n-warning {
+                border: 2px solid red;
+                color: red;
+            }
+            .n-warning {
+                width:fit-content;
+                margin: 5px;
+                padding: 12px 12px 12px 12px;
+                color: #333;
+                border-radius: 2px;
+                background: #fff;
+                position: relative;
+                font-weight: bold;
+                font-family: Verdana, sans-serif;
+                box-sizing: border-box;
+            }
+            .success {
+            width:fit-content;
+                            margin: 5px;
+                            padding: 12px 12px 12px 12px;
+                            color: #333;
+                            border-radius: 2px;
+                            background: #fff;
+                            position: relative;
+                            font-weight: bold;
+                            font-family: Verdana, sans-serif;
+                            box-sizing: border-box;
+                             border: 2px solid green;
+                                            color: green;
+            }
 </style>
 
         <fmt:setLocale value="${sessionScope.locale}" />
@@ -46,88 +215,91 @@
 
     <c:set var="error" value="${param.message}"/>
 
-           <h1>${account}</h1>
+
             <!-- LOCALE -->
-            <div>
-                    <form method="post" action="/profile" >
-                                   <input type="hidden" name="command" value="locale"/>
-                                   <input type="hidden" name="locale" value="en">
-                                   <button type="submit">${en_button}</button>
-                    </form>
+            <div class="local">
+               <form method="post" action="/profile" >
+                              <input type="hidden" name="command" value="locale"/>
+                              <input type="hidden" name="locale" value="en">
+                              <button class ="loc" type="submit">${en_button}</button>
 
-                    <form method="post" action="/profile" >
-                                   <input type="hidden" name="command" value="locale"/>
-                                   <input type="hidden" name="locale" value="ru">
-                                   <button type="submit">${ru_button}</button>
-                    </form>
+               </form>
 
-
-                    <form id="gotomain" method="get" action="/main" >
-                                    <input type="hidden" name="command" value="gotomain"/>
-                                    <button form="gotomain" type="submit">${goMain}</button>
-                    </form>
-
-
-            </div>
+               <form method="post" action="/profile" >
+                              <input type="hidden" name="command" value="locale"/>
+                              <input type="hidden" name="locale" value="ru">
+                              <button class ="loc" type="submit">${ru_button}</button>
+               </form>
 
              <c:if test="${requestScope.message != null}">
-             <p style="color: green">${requestScope.message}</p>
-             </c:if>
+                         <p class="success">${requestScope.message}</p>
+                         </c:if>
 
-            <c:if test="${error == 'IncorrectOldPassword'}">
-            <p style="color: red">${IncorrectOldPassword}</p>
-            </c:if>
+                        <c:if test="${error == 'IncorrectOldPassword'}">
+                        <p class="n-warning">${IncorrectOldPassword}</p>
+                        </c:if>
 
-            <c:if test="${error == 'IncompleteInfo'}">
-            <p style="color: red">All fields must be filled!</p>
-            </c:if>
+                        <c:if test="${error == 'IncompleteInfo'}">
+                        <p class="n-warning">All fields must be filled!</p>
+                        </c:if>
+
+
+                                 </div>
+
 
             <c:if test="${sessionScope.role != null}">
 
                 <c:if test="${sessionScope.page != 'findUser'}">
 
-                <form method="post" action="/main" >
-                <input type="hidden" name="command" value="updateUser"/>
-                <h3>${login}: ${sessionScope.user.login}</h3>
-                <h3>${fname}:</h3>
-                <input type="text" name="fName" value="${sessionScope.user.firstName}"/>
-                <h3>${lname}:</h3>
-                <input type="text" name="lName" value="${sessionScope.user.lastName}"/>
-                <h3>${phone}:</h3>
-                <input type="text" name="phone" value="${sessionScope.user.phone}"/>
-                <h3>${city}:</h3>
-                <input type="text" name="city" value="${sessionScope.addr.city}"/>
-                <h3>${street}:</h3>
-                <input type="text" name="street" value="${sessionScope.addr.street}"/>
-                <h3>${building}:</h3>
-                <input type="text" name="building" value="${sessionScope.addr.building}"/>
-                <h3>${apartment}:</h3>
-                <input type="text" name="apartment" value="${sessionScope.addr.apartment}"/>
-                <br>
-                <br>
-                <button type="submit">${Update}</button>
-                </form>
-               <br>
 
-                <form method="get" action="/home" >
+                <form class="form" method="post" action="/main">
+                  <h2>${account}</h2>
+                  <input type="hidden" name="command" value="updateUser"/>
+                 <h3>${login}: ${sessionScope.user.login}</h3>
+                   <h3>${fname}:</h3>
+                   <input type="text" name="fName" value="${sessionScope.user.firstName}"/>
+                   <h3>${lname}:</h3>
+                   <input type="text" name="lName" value="${sessionScope.user.lastName}"/>
+                   <h3>${phone}:</h3>
+                   <input type="text" name="phone" value="${sessionScope.user.phone}"/>
+                   <h3>${city}:</h3>
+                   <input type="text" name="city" value="${sessionScope.addr.city}"/>
+                   <h3>${street}:</h3>
+                   <input type="text" name="street" value="${sessionScope.addr.street}"/>
+                   <h3>${building}:</h3>
+                   <input type="text" name="building" value="${sessionScope.addr.building}"/>
+                   <h3>${apartment}:</h3>
+                   <input type="text" name="apartment" value="${sessionScope.addr.apartment}"/>
+                   <br>
+                   <br>
+
+                   <button type="submit">${Update}</button>
+                   </form>
+                                <br>
+
+
+
+                <form class="form2" method="get" action="/home" >
                                <input type="hidden" name="command" value="deleteAccount"/>
                                <button type="submit">${deleteAccount}</button>
                 </form>
 
-
-                <div>
-                    <form id="changePassword" method="post" action="/home" >
+                    <form id="changePassword" class="password" method="post" action="/home" >
                                 <input type="hidden" name="command" value="changepassword"/>
-                                <input type="text" name="oldPassword" value="old password"/>
-                                <input type="text" name="newPassword" value="new password"/>
+                                <input type="text" name="oldPassword" placeholder="old password" value=""/>
+                                <input type="text" name="newPassword" placeholder="new password" value=""/>
+                                <br>
+                                <br>
                                 <button type="submit">${changePassword}</button>
                     </form>
 
-                </div>
+
                 </c:if>
+
 
                 <c:if test="${sessionScope.page == 'findUser'}">
 
+                              <div class="find_form">
                                <h3>${login}:${sessionScope.findUser.login}</h3>
                                <h3>${fname}: ${sessionScope.findUser.firstName}</h3>
                                <h3>${lname}: ${sessionScope.findUser.lastName}</h3>
@@ -138,6 +310,7 @@
                                <h3>${building}:${sessionScope.findAddr.building}</h3>
                                <h3>${apartment}: ${sessionScope.findAddr.apartment}</h3>
                                <br>
+                               </div>
 
                 </c:if>
 
