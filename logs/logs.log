@@ -3226,3 +3226,734 @@
 2022-05-03 18:44:25,356 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
 2022-05-03 18:44:34,629 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
 2022-05-03 18:44:47,125 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 18:45:31,328 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-03 18:45:37,945 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 18:45:42,031 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 18:54:03,530 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 18:54:04,919 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 18:54:08,769 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 18:54:08,793 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:09:58,567 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:09:58,573 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:10:09,319 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:10:09,326 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:10:23,329 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:10:23,337 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:10:44,658 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:10:44,666 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:12:42,394 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:12:42,402 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:12:42,413 ERROR LogInCommand:57 - #LogInCommand throws exception.
+2022-05-03 19:12:42,435 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:12:44,976 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:12:49,762 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:12:49,767 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:12:49,792 ERROR LogInCommand:57 - #LogInCommand throws exception.
+2022-05-03 19:12:49,801 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:12:57,938 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:13:02,594 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:13:02,602 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:13:02,618 ERROR LogInCommand:57 - #LogInCommand throws exception.
+2022-05-03 19:13:02,631 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:13:24,075 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:13:25,980 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 19:13:30,397 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:13:30,403 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:14:25,075 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:14:25,083 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:14:36,848 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:14:36,850 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:19:44,629 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:19:44,637 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:23:38,831 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:23:38,840 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:25:56,024 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:25:56,032 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:26:10,228 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:26:10,237 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:26:12,041 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:26:12,048 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:26:26,607 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:26:26,615 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:26:28,324 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:26:28,326 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:26:42,681 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:26:42,684 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:01,726 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:01,734 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:31,293 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:31,299 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:32,795 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:32,802 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:38,321 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:38,323 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:40,054 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:40,056 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:27:46,720 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:27:46,723 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:28:01,305 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:28:01,310 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:28:28,110 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:28:28,113 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:28:56,729 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:28:56,737 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:28:57,992 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:28:57,999 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:05,358 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:05,364 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:16,682 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:16,688 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:27,290 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:27,300 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:29,307 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:29,312 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:30,328 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:30,331 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:31,783 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:31,790 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:42,507 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:42,514 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:44,161 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:44,162 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:44,986 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:44,993 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:45,593 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:45,598 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:29:58,048 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:29:58,051 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:14,234 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:14,236 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:15,527 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:15,533 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:20,811 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:20,813 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:28,250 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:28,259 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:29,465 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:29,468 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:38,454 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:38,461 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:30:45,664 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:30:45,672 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:03,541 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:03,543 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:11,075 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:11,083 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:16,392 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:16,397 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:22,418 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:22,423 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:38,311 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:38,319 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:39,445 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:39,449 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:31:46,333 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:31:46,335 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:32:29,078 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:32:29,081 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:32:38,493 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:32:38,497 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:32:44,381 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:32:44,383 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:32:50,837 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:32:50,843 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:32:57,501 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:32:57,503 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:33:20,737 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:33:20,744 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:33:42,150 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:33:42,157 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:33:47,018 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:33:47,026 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:00,907 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:00,911 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:18,527 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:18,532 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:19,561 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:19,568 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:25,652 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:25,655 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:26,923 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:26,924 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:27,745 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:27,747 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:34:59,121 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:34:59,131 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:35:08,982 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:35:08,989 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:35:14,953 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:35:14,957 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:35:16,215 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:35:16,221 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:35:17,010 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:35:17,012 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:36:08,524 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:36:08,541 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:36:32,036 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:36:32,039 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:36:33,559 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:36:33,563 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:36:34,414 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:36:34,418 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:37:00,677 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:37:00,685 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:37:01,945 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:37:01,952 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:37:02,604 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:37:02,607 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:37:10,028 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:37:10,036 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:37:11,202 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:37:11,209 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:38:36,522 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:38:36,525 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:38:37,772 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:38:37,778 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:39:32,851 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:39:32,858 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:39:34,001 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:39:34,003 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:39:34,580 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:39:34,582 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:40:00,584 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:40:00,591 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:40:01,655 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:40:01,660 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:41:42,169 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:41:42,176 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:42:13,431 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:42:13,439 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:42:32,089 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:42:32,096 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:42:33,619 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:42:33,624 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:43:32,966 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:43:32,972 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:43:34,557 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:43:34,563 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:20,549 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:20,554 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:21,892 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:21,896 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:22,554 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:22,557 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:39,029 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:39,035 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:40,549 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:40,551 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:41,279 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:41,286 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:44:46,593 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:44:46,597 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:45:00,449 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:45:00,452 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:45:42,778 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:45:42,780 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:45:44,333 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:45:44,339 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:04,385 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:04,392 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:05,328 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:05,336 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:38,871 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:38,878 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:39,905 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:39,912 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:48,332 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:48,338 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:46:49,316 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:46:49,317 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:47:36,565 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:47:36,570 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:47:55,607 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:47:55,615 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:47:56,886 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:47:56,888 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:48:17,038 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:48:17,041 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:48:46,429 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:48:46,440 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:49:03,300 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:49:03,309 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:49:04,771 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:49:04,778 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:49:32,820 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:49:32,828 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:49:33,968 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:49:33,970 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:51:19,667 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:51:19,672 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:51:32,521 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:51:32,527 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:52:03,225 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:52:03,232 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:52:30,852 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:52:30,859 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:53:32,890 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:53:32,896 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:54:20,780 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:54:20,786 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:55:37,155 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:55:37,163 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:56:13,697 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:56:13,699 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:56:31,268 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:56:31,274 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:56:38,362 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:56:38,370 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 19:58:02,196 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 19:58:02,204 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 20:09:31,585 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 20:09:31,589 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 20:09:38,404 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 20:09:38,407 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 20:10:18,269 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 20:10:18,350 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 20:10:29,224 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:10:32,488 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:10:58,696 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:10:59,936 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:11:01,202 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:11:01,844 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:11:02,058 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:13:56,987 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:14:10,643 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:14:27,552 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:14:28,645 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:15:34,002 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:15:54,639 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:15:57,221 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:15:59,750 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:16:02,252 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:16:03,586 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:19:18,714 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:19:19,583 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:19:23,383 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:19:25,156 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:20:45,825 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:20:46,872 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:21:09,216 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:21:23,121 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:21:36,003 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:21:37,070 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:21:37,468 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:22:18,637 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:22:19,615 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:22:46,598 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:25:28,880 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:25:52,046 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:25:53,164 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:25:53,706 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:25:54,386 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:26:06,463 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:26:39,740 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:24,005 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:25,640 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:58,117 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:58,838 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:59,258 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:27:59,452 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:29:05,995 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:29:51,525 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:30:48,657 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:38:07,535 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:40:05,406 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:40:11,121 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:41:32,648 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:42:21,765 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:42:51,405 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:20,867 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:35,971 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:37,072 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:42,975 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:43,700 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:43:52,434 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:44:03,445 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:44:07,079 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:44:07,505 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:44:12,910 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:09,253 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:18,651 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:24,784 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:35,134 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:36,201 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:40,411 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:40,797 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:45,306 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:47,895 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:48,448 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:49,135 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:49,330 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:49,481 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:49,664 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:53,202 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:46:55,194 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:06,313 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:07,739 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:08,209 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:08,440 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:08,597 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:08,779 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:08,960 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:22,277 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:28,727 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:29,786 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:52,833 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:53,252 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:47:53,562 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:48:01,035 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:48:19,993 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 20:48:26,111 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:49:06,744 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:49:21,347 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:49:36,749 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:49:38,951 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:49:41,416 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:49:51,428 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:49:54,868 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:49:58,730 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:50:05,896 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2022-05-03 20:52:53,639 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:53:08,861 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:53:22,582 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:53:52,448 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:53:59,594 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:54:00,967 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:54:16,244 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:54:30,719 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:54:32,160 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:54:54,064 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:55:04,609 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 20:55:07,166 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2022-05-03 20:55:09,876 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 20:56:53,777 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:02,214 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:06,901 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:10,013 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:11,379 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:16,880 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:23,841 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:26,974 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:33,703 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 20:57:52,448 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 20:57:54,544 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 20:57:57,774 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 20:57:57,779 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 20:58:06,006 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 20:58:52,964 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 20:58:54,966 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 20:58:57,877 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 20:58:57,881 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:00:10,606 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:00:10,612 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:00:12,078 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:00:12,084 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:00:30,733 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:00:30,741 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:00:41,611 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:00:41,617 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:00:42,824 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:00:42,830 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:01:23,688 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:01:23,691 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:01:24,704 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:01:24,707 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:01:39,325 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:01:39,331 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:03:16,671 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:03:16,675 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:04:41,182 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:04:41,188 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:04:50,541 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:04:50,542 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:05:15,529 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:05:15,531 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:05:33,498 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:05:33,504 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:05:46,419 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:05:46,422 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:05:53,539 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:05:53,544 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:05:56,031 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:05:57,347 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:06:42,268 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:06:54,593 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:07:21,105 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:07:54,450 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:05,451 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:12,878 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:17,942 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:22,294 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:27,094 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:37,864 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:43,249 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:47,037 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:08:54,056 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:00,079 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:09,382 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:13,611 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:15,894 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:17,585 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:20,741 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:24,519 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:29,581 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:41,955 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:50,915 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:55,320 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:09:59,874 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:10:22,288 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:10:37,732 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:10:41,471 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:10:50,065 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:11:00,130 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:11:18,913 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:11:23,371 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 21:17:54,981 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:17:59,255 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:03,042 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:04,605 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:05,430 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:05,926 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:06,371 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:06,764 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:07,169 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:07,587 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:18:43,656 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:20:59,813 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:01,163 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:02,562 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:03,428 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:04,004 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:04,650 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:20,518 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:21:35,881 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:03,714 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:20,652 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:26,726 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:37,119 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:43,306 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:49,532 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:22:55,824 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:02,117 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:09,505 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:16,771 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:26,607 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:36,227 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:23:53,532 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:24:12,646 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 21:24:36,788 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:24:44,620 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:25:13,026 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 21:25:20,186 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 21:25:21,574 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 21:25:25,520 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:25:25,526 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:26:24,472 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:26:24,476 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:27:43,822 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:27:43,846 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:29:25,861 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:29:25,867 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:30:10,983 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:30:10,987 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:31:09,721 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:31:09,726 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:31:30,388 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:31:30,392 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:32:01,975 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:32:01,979 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:32:35,645 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:32:35,653 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:34:24,648 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:34:24,663 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:35:28,903 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:35:28,914 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:36:13,595 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:36:13,611 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:36:54,575 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:36:54,584 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:38:31,609 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:38:31,623 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:39:20,502 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:39:20,510 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:39:48,499 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 21:39:52,345 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 21:40:36,353 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:40:36,356 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:41:02,073 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 21:41:09,537 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
+2022-05-03 21:41:12,509 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 21:41:18,613 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 21:41:19,888 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 21:41:22,603 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 21:41:22,605 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 21:41:34,628 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 21:41:37,155 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:43:51,272 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:44:45,262 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:46:46,097 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:47:04,688 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:47:38,787 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:47:45,819 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:47:54,769 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:48:56,501 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:49,355 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:50,967 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:52,339 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:53,228 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:53,484 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:49:53,958 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:02,810 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:18,464 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:21,109 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:21,355 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:21,743 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:22,055 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:32,546 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:35,318 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:41,021 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:43,833 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:44,215 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:44,419 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:44,561 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:44,955 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:50:59,812 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:36,909 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:37,813 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:38,191 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:45,070 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:45,815 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:46,260 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:46,620 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:46,939 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:47,285 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:51:52,109 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:52:12,492 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:52:27,037 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:52:33,085 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:52:48,506 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:53:04,306 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:53:26,552 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:53:32,487 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:53:42,837 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:54:00,884 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:54:01,761 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:54:02,114 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:54:16,761 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 21:54:22,326 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:54:28,189 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:54:30,196 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:54:30,199 ERROR GetProductByIdCommand:47 - #GetProductByIdCommand throws exception.
+2022-05-03 21:54:30,206 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 21:54:34,517 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:56:00,344 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:56:04,018 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:56:10,123 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:56:12,531 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 21:56:17,464 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2022-05-03 21:56:42,567 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 21:56:47,637 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 21:56:49,219 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 21:56:50,922 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 21:56:57,442 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:57:37,424 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:57:42,563 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:57:54,638 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:58:38,889 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:58:42,322 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 21:59:01,594 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:59:46,695 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 21:59:53,240 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:30,624 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:39,610 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:43,984 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:46,641 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:49,201 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:00:55,556 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:01:42,185 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:01:49,990 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:01:57,538 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:02:17,761 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:02:26,438 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:02:33,452 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:02:42,265 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:02:56,460 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:03:06,931 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:03:10,824 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 22:03:15,960 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:03:21,249 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2022-05-03 22:03:23,275 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:03:26,162 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:03:26,163 ERROR GetProductByIdCommand:47 - #GetProductByIdCommand throws exception.
+2022-05-03 22:03:26,180 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:03:39,863 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:03:47,866 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 22:03:49,181 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 22:03:50,905 INFO  ChangeLanguageCommand:20 - #ChangeLanguageCommand starts.
+2022-05-03 22:03:52,128 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:05:08,714 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:05:28,866 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:06:11,540 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:06:16,284 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:06:16,286 INFO  GetProductByIdCommand:38 - #GetProductByIdCommand product not exists.
+2022-05-03 22:06:16,293 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:06:20,464 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:06:25,353 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 22:06:26,671 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:06:26,672 ERROR GetProductByIdCommand:47 - #GetProductByIdCommand throws exception.
+2022-05-03 22:06:26,687 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:06:30,746 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:06:39,949 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:07:10,427 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:07:22,899 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:07:55,256 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:08:02,195 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:08:03,451 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:08:10,399 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2022-05-03 22:08:13,658 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:09:04,157 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:09:15,903 INFO  ShowAllOrdersCommand:29 - #ShowAllOrdersCommand starts.
+2022-05-03 22:09:19,588 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:09:33,165 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 22:09:42,705 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:09:50,773 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-03 22:09:58,451 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 22:09:59,534 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:10:02,773 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 22:10:02,776 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 22:10:05,432 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-03 22:10:10,737 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 22:13:54,445 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 22:14:01,430 INFO  ShowProductsCommand:27 - #ShowProductsCommand starts.
+2022-05-03 22:14:03,597 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
+2022-05-03 22:14:05,078 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-03 22:14:06,419 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:14:09,369 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-03 22:14:09,373 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-03 22:14:12,210 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:14:12,210 ERROR GetProductByIdCommand:47 - #GetProductByIdCommand throws exception.
+2022-05-03 22:14:12,217 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:14:40,014 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:14:46,741 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:14:53,895 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:15:00,630 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:15:10,070 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:15:14,623 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-03 22:15:14,623 ERROR GetProductByIdCommand:47 - #GetProductByIdCommand throws exception.
+2022-05-03 22:15:14,641 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:15:19,817 INFO  ShowPaidOrdersCommand:29 - #ShowPaidOrdersCommand starts.
+2022-05-03 22:15:25,457 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:15:29,160 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:15:32,313 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:18,000 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:19,869 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:21,079 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:28,022 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:38,364 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:43,798 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.
+2022-05-03 22:16:48,077 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-03 22:16:48,077 ERROR GetUserByIdCommand:51 - #GetUserByIdCommand throws exception.
+2022-05-03 22:16:48,090 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-03 22:16:59,295 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:17:00,898 INFO  GetAllProductsCommand:31 - #GetAllProductsCommand starts.
+2022-05-03 22:17:03,217 INFO  DeleteFromMenuCommand:26 - #DeleteFromMenuCommand starts.

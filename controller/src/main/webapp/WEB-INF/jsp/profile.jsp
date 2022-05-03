@@ -132,6 +132,7 @@ body{
                  width: 100%;
                  z-index: 2;
             }
+
             .loc {
                   font-size:20px;
                 }
