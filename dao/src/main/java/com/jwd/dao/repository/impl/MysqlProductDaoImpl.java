@@ -124,7 +124,8 @@ public class MysqlProductDaoImpl implements ProductDao {
         String description = resultSet.getString(4);
         double price = resultSet.getDouble(5);
         boolean isAvailable = resultSet.getBoolean(6);
-        return new Product(id, name, type, description, price, isAvailable);
+        String image = resultSet.getString(7);
+        return new Product(id, name, type, description, price, isAvailable, image);
     }
 
     @Override

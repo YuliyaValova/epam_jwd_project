@@ -29,9 +29,10 @@ public class UpdateProductCommand implements Command {
             final String status = req.getParameter(STATUS).replace("/", "");
             double price = productService.convertStringToDouble(req.getParameter(PRICE));
             boolean isAvailable = productService.convertStringToBoolean(status);
+            String image = req.getParameter(IMAGE);
 
             if (price != -1) {
-                Product product = new Product(productId, name, type, description, price, isAvailable);
+                Product product = new Product(productId, name, type, description, price, isAvailable, image);
                 int isSuccess = productService.updateProduct(product);
                 switch (isSuccess) {
                     case -1:

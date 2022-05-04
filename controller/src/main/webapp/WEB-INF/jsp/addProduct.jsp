@@ -260,6 +260,10 @@
                                  </select>
                                  </div>
 
+                                 <div class="input">
+                                 <input type="text" name="image" placeholder="URL*" class="input-field" value="" required/>
+                                 </div>
+
                        			<div class="action">
                        				<button type="submit" class="action-button">${addToMenu}</button>
                        			</div>

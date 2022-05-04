@@ -11,6 +11,11 @@ import com.jwd.service.validator.ServiceValidator;
 import com.jwd.service.validator.impl.ServiceValidatorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.security.provider.MD5;
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import static java.util.Objects.isNull;
 
@@ -77,9 +82,10 @@ public class UserServiceImpl implements UserService {
     public boolean changePassword(long id, String oldPassword, String newPassword) throws ServiceException {
         boolean isSuccessful = false;
         try {
+            String hashedPassword = getHash(oldPassword);
             if (validator.validatePassword(oldPassword) && validator.validatePassword(newPassword) && validator.validateId(id)) {
                 UserAccount acc = new UserAccount(userDao.getUserById(id));
-                if (!isNull(acc)&&acc.getPassword().equals(oldPassword)) {
+                if (!isNull(acc)&&acc.getPassword().equals(hashedPassword)) {
                     userDao.changePassword(id, oldPassword, newPassword);
                     isSuccessful = true;
                 }
@@ -87,10 +93,21 @@ public class UserServiceImpl implements UserService {
                 logger.info("#changePassword invalid info.");
             }
             return isSuccessful;
-        } catch (final DaoException e) {
+        } catch (final DaoException | UnsupportedEncodingException | NoSuchAlgorithmException e) {
             logger.error("#changePassword throws exception.");
             throw new ServiceException(e);
         }
+    }
+
+    private String getHash(String oldPassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        byte[] oldPasswordBytes = oldPassword.getBytes("UTF-8");
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] theMD5digest = md.digest(oldPasswordBytes);
+        StringBuffer sb = new StringBuffer();
+        for (byte aByteData : theMD5digest) {
+            sb.append(Integer.toString((aByteData & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
     }
 
     @Override

@@ -6128,3 +6128,103 @@
 2022-05-04 00:04:41,099 INFO  GoToMainCommand:22 - #GoToMainCommand starts.
 2022-05-04 00:04:42,086 INFO  ShowBasketCommand:30 - #ShowBasketCommand starts.
 2022-05-04 00:04:44,673 INFO  SendOrderCommand:27 - #SendOrderCommand starts.
+2022-05-04 11:31:35,307 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:34:06,288 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:36:28,993 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:37:12,871 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:37:18,640 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:37:19,300 INFO  LogInCommand:40 - #LogInCommand no such user.
+2022-05-04 11:37:19,331 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:39:13,777 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:39:15,380 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:39:17,058 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:39:20,587 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:40:01,732 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:40:07,724 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-04 11:40:08,829 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:40:29,879 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:40:34,316 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:40:37,940 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:40:57,945 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2022-05-04 11:40:58,380 ERROR UserServiceImpl:154 - #update throws exception.
+2022-05-04 11:40:58,380 ERROR UpdateUserCommand:68 - #UpdateUserCommand throws exception.
+2022-05-04 11:40:58,394 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:43:17,477 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:43:18,602 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-04 11:43:18,613 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:43:19,992 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:43:26,822 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:43:26,932 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:43:28,016 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:44:13,292 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2022-05-04 11:44:13,453 ERROR UserServiceImpl:154 - #update throws exception.
+2022-05-04 11:44:13,453 ERROR UpdateUserCommand:68 - #UpdateUserCommand throws exception.
+2022-05-04 11:44:13,461 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:48:45,525 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:48:46,730 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:48:48,187 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:48:59,855 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:48:59,951 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:49:01,205 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:49:06,909 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2022-05-04 11:49:09,570 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:49:22,829 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2022-05-04 11:49:24,157 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:49:42,895 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-04 11:49:42,935 INFO  ChangePasswordCommand:42 - #ChangePasswordCommand incorrect old password.
+2022-05-04 11:49:42,957 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:50:40,034 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:50:43,046 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:50:44,167 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:50:47,795 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:50:54,035 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:50:56,946 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:51:03,134 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-04 11:51:03,141 INFO  ChangePasswordCommand:42 - #ChangePasswordCommand incorrect old password.
+2022-05-04 11:51:03,156 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:52:39,771 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:52:41,071 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:52:42,274 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:52:45,620 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:52:52,823 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:52:55,415 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:53:00,069 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-04 11:56:20,945 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:56:22,241 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:56:23,585 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:56:29,462 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:56:29,575 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:56:31,357 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:56:37,738 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-04 11:57:36,098 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:57:39,769 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:57:39,776 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:59:28,497 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 11:59:29,571 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-04 11:59:29,580 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:59:31,701 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:59:34,969 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:59:35,103 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:59:36,640 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 11:59:43,536 INFO  ChangePasswordCommand:26 - #ChangePasswordCommand starts.
+2022-05-04 11:59:45,371 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 11:59:48,226 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 11:59:48,233 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 11:59:50,160 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 12:00:02,242 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-04 12:00:03,731 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:00:17,604 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:00:17,609 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:00:19,001 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 12:00:20,310 INFO  DeleteAccountCommand:26 - #DeleteAccountCommand starts.
+2022-05-04 12:00:33,851 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:00:53,031 INFO  RegistrationCommand:25 - #RegistrationCommand starts.
+2022-05-04 12:01:57,542 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:02:26,490 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:02:27,988 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:02:39,581 INFO  RegistrationCommand:25 - #RegistrationCommand starts.
+2022-05-04 12:02:43,748 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:02:47,770 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:02:47,786 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:02:49,220 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
+2022-05-04 12:02:55,489 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.

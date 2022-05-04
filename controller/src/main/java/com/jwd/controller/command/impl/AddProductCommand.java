@@ -34,7 +34,7 @@ public class AddProductCommand implements Command {
             boolean isAvailable = productService.convertStringToBoolean(status);
 
             if (price != -1) {
-                Product product = new Product(name, type, description, price, isAvailable);
+                Product product = new Product(name, type, description, price, isAvailable, "http");
                 int isAdded = productService.addProductToMenu(product);
                 switch (isAdded) {
                     case -1:

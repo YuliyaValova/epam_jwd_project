@@ -10,11 +10,12 @@ public class Product {
     private String description;
     private double price;
     private boolean isAvailable;
+    private String image;
 
     public Product() {
     }
 
-    public Product(long id, String name, String type, String description, double price, boolean isAvailable) {
+    public Product(long id, String name, String type, String description, double price, boolean isAvailable, String image) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -23,7 +24,7 @@ public class Product {
         this.isAvailable = isAvailable;
     }
 
-    public Product(String name, String type, String description, double price, boolean isAvailable) {
+    public Product(String name, String type, String description, double price, boolean isAvailable, String image) {
         this.name = name;
         this.type = type;
         this.description = description;
@@ -92,6 +93,15 @@ public class Product {
         isAvailable = available;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -104,7 +114,8 @@ public class Product {
         if (isAvailable != product.isAvailable) return false;
         if (name != null ? !name.equals(product.name) : product.name != null) return false;
         if (type != null ? !type.equals(product.type) : product.type != null) return false;
-        return description != null ? description.equals(product.description) : product.description == null;
+        if (description != null ? !description.equals(product.description) : product.description != null) return false;
+        return image != null ? image.equals(product.image) : product.image == null;
     }
 
     @Override
@@ -118,6 +129,7 @@ public class Product {
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (isAvailable ? 1 : 0);
+        result = 31 * result + (image != null ? image.hashCode() : 0);
         return result;
     }
 
@@ -130,6 +142,7 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", isAvailable=" + isAvailable +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

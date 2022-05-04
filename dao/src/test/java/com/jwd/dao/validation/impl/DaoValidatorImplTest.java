@@ -88,7 +88,7 @@ public class DaoValidatorImplTest {
 
     @Test
     public void testValidateProduct() throws DaoException {
-        Product product = new Product("Pesto", "pizza", "Yummi", 17.7, true);
+        Product product = new Product("Pesto", "pizza", "Yummi", 17.7, true, "http:/...");
         validator.validateProduct(product);
     }
 
@@ -100,13 +100,13 @@ public class DaoValidatorImplTest {
 
     @Test(expected = DaoException.class)
     public void testValidateProduct_negative_incompleteInfo() throws DaoException {
-        Product product = new Product("Pesto", "", "Yummi", 17.7, true);
+        Product product = new Product("Pesto", "", "Yummi", 17.7, true, "http:/...");
         validator.validateProduct(product);
     }
 
     @Test(expected = DaoException.class)
     public void testValidateProduct_negative_invalidPrice() throws DaoException {
-        Product product = new Product("Pesto", "pizza", "Yummi", -5, true);
+        Product product = new Product("Pesto", "pizza", "Yummi", -5, true, "http:/...");
         validator.validateProduct(product);
     }
 

@@ -38,6 +38,7 @@ public class Constants {
             NAME = "name",
             TYPE = "type",
             DESCRIPTION = "description",
+            IMAGE = "image",
             STATUS = "status",
             ADMIN_ID = "admin_id",
             PAGEABLE2 = "pageable2",

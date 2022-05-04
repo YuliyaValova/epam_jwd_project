@@ -31,7 +31,7 @@ public class MysqlProductDaoImplTest {
 
     @Test
     public void testSaveProduct() throws DaoException, SQLException {
-        Product product = new Product("Ppesto", "pizza", "Yummi", 12.2, false);
+        Product product = new Product("Ppesto", "pizza", "Yummi", 12.2, false, "http:/...");
         // check if products count = oldCount + 1;
         int countBeforeUpdate = 0, countAfterUpdate = 0;
         PreparedStatement preparedStatement = util.getPreparedStatement("select count(*) from Products;", connection, Arrays.asList());
@@ -51,7 +51,7 @@ public class MysqlProductDaoImplTest {
     @Test
     public void testSaveProduct_productExists() throws DaoException {
         //given
-        Product product = new Product("Ppesto", "pizza", "Yummi", 12.2, false);
+        Product product = new Product("Ppesto", "pizza", "Yummi", 12.2, false, "http");
         //when
         long id = productDao.saveProduct(product);
         //then

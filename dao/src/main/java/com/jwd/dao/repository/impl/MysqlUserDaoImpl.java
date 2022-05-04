@@ -28,23 +28,23 @@ public class MysqlUserDaoImpl implements UserDao {
             "where UserAccounts.id = ?;";
     private static final String FIND_USER_BY_LOGIN_AND_PASSWORD_QUERY = "select UserAccounts.id, login, password, role, fName, lName, phone, Addresses.id, city, street, building,apartment from UserAccounts\n" +
             "left join Addresses on Addresses.id = UserAccounts.address_id\n" +
-            "where UserAccounts.login = ? and UserAccounts.password = ?;";
+            "where UserAccounts.login = ? and UserAccounts.password = MD5(?);";
     private static final String SAVE_ADDRESS_QUERY = "insert into Addresses (city, street, building, apartment) values (?,?,?,?);";
-    private static final String SAVE_USER_ACCOUNT_QUERY = "insert into UserAccounts (login, password, role, fName, lName, phone, address_id) values ( ?, ?, ?, ?, ?, ?, ?);";
+    private static final String SAVE_USER_ACCOUNT_QUERY = "insert into UserAccounts (login, password, role, fName, lName, phone, address_id, registrDate, status) values ( ?, MD5(?), ?, ?, ?, ?, ?, now(), 'active');";
     private static final String IS_ADDRESS_EXISTS_QUERY = "select distinct id from Addresses where\n" +
             "city = ? and street = ? and building = ? and apartment = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_QUERY = "select id from UserAccounts where login = ?;";
     private static final String DELETE_USER_QUERY = "delete from UserAccounts where id = ?;";
     private static final String UPDATE_PASSWORD_QUERY = "update UserAccounts\n" +
-            "set password = ?\n" +
-            "where id = ? and password = ?;";
+            "set password = MD5(?), useraccounts.updationDate = now()\n" +
+            "where id = ? and password = MD5(?);";
     private static final String MAKE_ADMIN_QUERY = "update UserAccounts\n" +
-            "set role = \"admin\"\n" +
+            "set role = \"admin\" , useraccounts.updationDate = now()\n" +
             "where id = ?;";
     private static final String IS_USER_ACCOUNT_EXISTS_BY_ID_QUERY = "select id from UserAccounts where id = ?";
     private static final String UPDATE_USER_ACCOUNT_QUERY = "update UserAccounts\n" +
             "join Addresses on Addresses.id = UserAccounts.address_id\n" +
-            "set fName = ?, lName = ?, phone = ?, address_id = ?\n" +
+            "set fName = ?, lName = ?, phone = ?, address_id = ?, useraccounts.updationDate = now()\n" +
             "where UserAccounts.login = ?;";
 
     private final ConnectionPool connectionPool;
