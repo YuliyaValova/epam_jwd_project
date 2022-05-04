@@ -6228,3 +6228,543 @@
 2022-05-04 12:02:47,786 INFO  LogInCommand:46 - #LogInCommand session is null.
 2022-05-04 12:02:49,220 INFO  GoToProfileCommand:22 - #GoToProfileCommand starts.
 2022-05-04 12:02:55,489 INFO  UpdateUserCommand:27 - #UpdateUserCommand starts.
+2022-05-04 12:06:58,441 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-04 12:06:59,418 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:07:04,908 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:07:04,913 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:07:12,349 INFO  GetUserByIdCommand:29 - #GetUserByIdCommand starts.
+2022-05-04 12:07:33,036 INFO  AddAdminCommand:26 - #AddAdminCommand starts.
+2022-05-04 12:07:34,063 INFO  UserServiceImpl:120 - New admin is added! It's id - 5
+2022-05-04 12:07:48,090 INFO  GetProductByIdCommand:27 - #GetProductByIdCommand starts.
+2022-05-04 12:08:35,371 INFO  HideProductCommand:26 - #HideProductCommand starts.
+2022-05-04 12:08:37,485 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:16:52,459 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:17:15,728 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:17:16,778 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:17:18,242 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:17:21,642 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:17:21,752 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:17:24,007 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:16,522 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:18,248 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:18,975 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:19,378 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:22,468 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:19:23,207 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:05,301 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:05,608 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:05,617 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:08,843 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:08,851 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:08,865 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:10,825 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:10,831 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:10,839 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:11,957 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:11,959 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:11,976 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:12,525 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:12,528 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:12,537 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:12,981 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:12,987 ERROR GoToAddProductPageCommand:32 - #GoToAddProductPageCommand throws exception.
+2022-05-04 12:20:12,997 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:17,679 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:20:19,448 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:20:57,021 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:21:02,147 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:21:17,069 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:21:28,978 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:23:42,786 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:23:43,717 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:23:47,833 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:23:56,541 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:23:59,523 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:24:02,545 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:24:02,551 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:24:03,985 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:24:15,081 INFO  GoToAddProductPageCommand:21 - #GoToAddProductPageCommand starts.
+2022-05-04 12:25:27,963 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:25:29,089 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:25:30,244 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:25:32,851 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:25:32,960 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:25:34,339 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:25:52,378 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:25:53,421 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:27:47,491 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:28:10,169 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:28:24,434 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:28:33,330 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:28:38,658 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:28:45,384 INFO  GoToAddProductPageCommand:22 - #GoToAddProductPageCommand starts.
+2022-05-04 12:29:23,720 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:29:23,783 ERROR ProductServiceImpl:158 - #addProductToMenu throws exception.
+2022-05-04 12:29:23,784 ERROR AddProductCommand:61 - #AddProductCommand throws exception.
+2022-05-04 12:29:23,789 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:40:29,183 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:40:30,362 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:40:31,397 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:40:34,166 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:40:34,282 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:40:35,817 INFO  GoToAddProductPageCommand:25 - #GoToAddProductPageCommand starts.
+2022-05-04 12:41:15,201 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:41:17,726 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:41:19,124 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:41:21,658 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:41:21,770 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:41:23,486 INFO  GoToAddProductPageCommand:25 - #GoToAddProductPageCommand starts.
+2022-05-04 12:44:48,606 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:44:50,049 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:44:57,365 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:45:02,905 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:45:04,367 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:45:07,106 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:45:07,230 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:45:08,434 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:45:38,930 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:45:45,492 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:45:51,560 WARN  AuthenticationFilter:48 - #AuthenticationFilter invalid operation.
+2022-05-04 12:45:51,570 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:45:52,968 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:45:55,615 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:45:55,724 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:45:57,190 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:47:33,559 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:47:37,654 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:47:43,484 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:47:49,039 INFO  LogOutCommand:20 - #LogOutCommand starts.
+2022-05-04 12:47:49,904 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:47:52,441 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:47:52,450 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:47:53,874 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:47:59,735 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:51:03,002 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:51:04,088 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:51:05,268 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:51:08,563 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:51:08,652 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:51:10,273 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:51:27,078 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:51:31,916 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:51:38,186 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:52:20,187 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:52:20,561 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:52:20,737 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:52:20,905 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:52:21,059 INFO  GoToAddProductPageCommand:27 - #GoToAddProductPageCommand starts.
+2022-05-04 12:53:18,902 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:53:20,047 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:53:21,413 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:53:24,223 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:53:24,336 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:53:26,269 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:53:30,407 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:54:33,235 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:54:34,321 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:35,285 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:38,665 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:54:38,775 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:54:39,978 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:54:40,961 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:40,961 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:40,961 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:40,970 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:41,024 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:41,024 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:41,024 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:41,044 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:41,325 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:41,328 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:41,340 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:41,380 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:41,709 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:41,711 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:41,712 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:41,739 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:41,896 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:41,896 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:41,896 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:41,913 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:42,294 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:42,295 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:42,295 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:42,316 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:42,464 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:42,465 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:42,465 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:42,493 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:42,593 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:42,594 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:42,594 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:42,645 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:42,838 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:42,839 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:42,840 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:42,862 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:43,006 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:43,008 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:43,010 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:43,018 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:43,125 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:43,125 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:43,126 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:43,157 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:43,465 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:43,466 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:43,466 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:43,489 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:43,642 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:43,643 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:43,644 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:43,658 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:43,839 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:43,841 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:43,842 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:43,869 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:44,058 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:44,059 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:44,059 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:44,068 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:44,210 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:44,211 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:44,211 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:44,226 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:44,398 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:44,399 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:44,400 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:44,425 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:44,676 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:44,678 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:44,678 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:44,732 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:44,834 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:44,835 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:44,835 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:44,865 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:45,028 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:45,028 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:45,028 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:45,047 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:45,194 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:45,194 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:45,195 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:45,214 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:45,500 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:45,503 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:45,504 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:45,527 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:45,620 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:45,621 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:45,622 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:45,647 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:45,911 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:45,913 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:45,914 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:45,944 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:46,014 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:46,014 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:46,015 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:46,029 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:46,206 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:46,207 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:46,207 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:46,247 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:46,447 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:46,447 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:46,447 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:46,482 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:46,751 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:46,751 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:46,752 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:46,766 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:46,995 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:46,996 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:46,996 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,021 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:47,170 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:47,171 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:47,171 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,182 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:47,284 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:47,288 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:47,289 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,332 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:47,432 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:47,433 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:47,433 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,452 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:47,684 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:47,685 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:47,685 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,732 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:47,916 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:47,917 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:47,917 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:47,956 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:48,148 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:48,148 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:48,148 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:48,175 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:48,344 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:48,345 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:48,346 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:48,359 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:48,650 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:48,651 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:48,651 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:48,678 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:48,762 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:48,763 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:48,763 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:48,779 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:48,864 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:48,865 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:48,865 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:48,890 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:49,300 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:49,300 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:49,300 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:49,313 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:49,383 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:49,383 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:49,383 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:49,401 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:49,684 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:49,684 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:49,684 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:49,708 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:49,866 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:49,866 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:49,867 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:49,880 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:49,957 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:49,958 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:49,959 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:49,979 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:50,084 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:50,085 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:50,085 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:50,097 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:50,348 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:50,348 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:50,349 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:50,364 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:50,408 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:50,409 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:50,409 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:50,415 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:50,728 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:50,729 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:50,729 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:50,767 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:50,836 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:50,838 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:50,840 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:50,861 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,087 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,088 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,089 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,099 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,161 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,162 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,162 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,168 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,305 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,308 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,309 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,326 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,436 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,439 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,440 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,450 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,710 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,711 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,712 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,729 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,765 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,767 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,767 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,773 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:51,879 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:51,879 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:51,880 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:51,898 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:52,057 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:52,059 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:52,060 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:52,078 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:52,161 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:52,163 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:52,164 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:52,180 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:52,244 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:52,244 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:52,244 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:52,249 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:54:52,474 INFO  AddProductCommand:26 - #AddProductCommand starts.
+2022-05-04 12:54:52,475 ERROR ProductServiceImpl:175 - #convertStringToDouble throws exception.
+2022-05-04 12:54:52,475 INFO  AddProductCommand:57 - #AddProductCommand invalid price.
+2022-05-04 12:54:52,484 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:55:42,078 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 12:55:44,876 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:55:46,064 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 12:55:49,489 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 12:55:49,602 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 12:55:50,814 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 12:56:04,135 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:07,586 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 13:02:13,342 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:14,576 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:17,397 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 13:02:17,521 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 13:02:18,706 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:18,781 ERROR GoToAddProductPageCommand:38 - #GoToAddProductPageCommand throws exception.
+2022-05-04 13:02:18,791 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:20,993 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:20,996 ERROR GoToAddProductPageCommand:38 - #GoToAddProductPageCommand throws exception.
+2022-05-04 13:02:21,008 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:22,099 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:22,101 ERROR GoToAddProductPageCommand:38 - #GoToAddProductPageCommand throws exception.
+2022-05-04 13:02:22,119 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:22,953 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:22,984 ERROR GoToAddProductPageCommand:38 - #GoToAddProductPageCommand throws exception.
+2022-05-04 13:02:22,995 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:40,751 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:41,282 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:02:43,202 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:43,976 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,042 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,158 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,262 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,351 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,422 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,552 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,648 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,772 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,858 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:44,991 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,076 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,185 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,262 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,388 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,471 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,593 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,665 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,752 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,822 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:45,914 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,011 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,087 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,162 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,291 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,378 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,493 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,655 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,786 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,849 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:46,959 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,111 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,194 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,288 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,468 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,569 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,669 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,738 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,797 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:47,928 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,010 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,065 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,176 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,280 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,339 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,458 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,545 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,634 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,777 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,871 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,921 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:48,988 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,076 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,200 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,463 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,522 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,579 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,620 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,659 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,710 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,786 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,836 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,870 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,903 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:49,943 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,016 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,064 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,107 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,140 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,184 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,255 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,308 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,355 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,420 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,506 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,548 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,583 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,618 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,680 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,744 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,789 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,829 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,868 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:50,925 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,007 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,071 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,113 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,156 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,212 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,259 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,298 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,340 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,413 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,519 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,562 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,595 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,638 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,693 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,739 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,779 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,827 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:02:51,879 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:05:04,489 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 13:05:12,967 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:05:13,843 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:05:16,420 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 13:05:16,535 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 13:05:17,651 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:06:18,215 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 13:06:20,352 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:06:21,224 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:06:23,619 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 13:06:23,739 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 13:06:25,039 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:10:52,184 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 13:10:53,881 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:10:55,190 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:10:58,422 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 13:10:58,554 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 13:11:00,268 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:13:16,975 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:13:28,077 INFO  LogInCommand:28 - #LogInCommand starts.
+2022-05-04 13:13:28,089 INFO  LogInCommand:46 - #LogInCommand session is null.
+2022-05-04 13:13:29,841 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:13:37,789 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:18:43,754 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:18:46,848 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:19:18,261 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:19:36,473 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.
+2022-05-04 13:20:16,759 INFO  EncodingFilter:18 - #EncodingFilter init
+2022-05-04 13:20:18,556 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:20:19,819 INFO  DefaultCommand:19 - #DefaultCommand starts.
+2022-05-04 13:20:22,618 INFO  LogInCommand:30 - #LogInCommand starts.
+2022-05-04 13:20:22,729 INFO  LogInCommand:48 - #LogInCommand session is null.
+2022-05-04 13:20:23,866 INFO  GoToAddProductPageCommand:26 - #GoToAddProductPageCommand starts.

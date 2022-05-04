@@ -12,7 +12,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MysqlProductDaoImpl implements ProductDao {
@@ -26,6 +28,7 @@ public class MysqlProductDaoImpl implements ProductDao {
     private static final String UPDATE_PRODUCT_QUERY = "update Products\n" +
             "set name = ?, type = ?, description = ?, price = ?\n" +
             "where id =  ?;";
+    private static final String GET_PRODUCT_TYPES_QUERY = "select name from Product_types;";
     //private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
 
     private final ConnectionPool connectionPool;
@@ -165,7 +168,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             validator.validateId(productId);
             validator.validateStatus(status);
             boolean newStatus = false;
-            if (status.equals("false")){
+            if (status.equals("false")) {
                 newStatus = true;
             }
             List<Object> parameters = Arrays.asList(
@@ -221,38 +224,61 @@ public class MysqlProductDaoImpl implements ProductDao {
     }
 
     @Override
+    public ArrayList getProductTypes() throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        ArrayList<String> types = new ArrayList<>();
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            preparedStatement = daoUtil.getPreparedStatement(GET_PRODUCT_TYPES_QUERY, connection, Collections.emptyList());
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                types.add(resultSet.getString(1));
+            }
+            return types;
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
     public long saveProduct(Product product) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
-            try {
-                long id = productIsExists(product);
-                if (id == -1) {
-                    List<Object> parameters = Arrays.asList(
-                            product.getName(),
-                            product.getType(),
-                            product.getDescription(),
-                            product.getPrice(),
-                            product.getIsAvailable()
-                    );
+        try {
+            long id = productIsExists(product);
+            if (id == -1) {
+                List<Object> parameters = Arrays.asList(
+                        product.getName(),
+                        product.getType(),
+                        product.getDescription(),
+                        product.getPrice(),
+                        product.getIsAvailable()
+                );
 
-                    validator.validateProduct(product);
+                validator.validateProduct(product);
                 connection = connectionPool.takeConnection();
                 connection.setAutoCommit(false);
                 preparedStatement = daoUtil.getPreparedStatement(SAVE_PRODUCT_QUERY, connection, parameters);
                 int affectedRows = preparedStatement.executeUpdate();
                 connection.commit();
                 id = productIsExists(product);
-                } else {
-                    id = -1;
-                }
-                return id;
-            } catch (SQLException | DaoException e) {
-                throw new DaoException(e);
-            } finally {
-                daoUtil.close(preparedStatement);
-                connectionPool.retrieveConnection(connection);
+            } else {
+                id = -1;
             }
+            return id;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
     }
 
     public static void main(String[] args) {

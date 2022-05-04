@@ -3,6 +3,7 @@ package com.jwd.controller.command.impl;
 import com.jwd.controller.command.Command;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.UserAccount;
+import com.jwd.service.serviceLogic.ProductService;
 import com.jwd.service.serviceLogic.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 public class LogInCommand implements Command {
+    private final ProductService productService = ServiceFactory.getServiceFactory().getProductService();
     private static final Logger logger = LoggerFactory.getLogger(LogInCommand.class);
     private final UserService userService = ServiceFactory.getServiceFactory().getUserService();
 
@@ -50,6 +52,7 @@ public class LogInCommand implements Command {
                     session.setAttribute(USER, loginatedUser);
                     session.setAttribute(ADDRESS, loginatedUser.getAddress());
                     session.setAttribute(ROLE, loginatedUser.getRole());
+                    session.setAttribute("types", productService.getTypes());
                     request.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(request) + JSP).forward(request, response);
                 }
             }

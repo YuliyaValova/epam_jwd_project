@@ -6,6 +6,8 @@ import com.jwd.service.domain.Page;
 import com.jwd.service.domain.PageOrder;
 import com.jwd.service.exception.ServiceException;
 
+import java.util.ArrayList;
+
 public interface ProductService {
 
     /**
@@ -150,4 +152,7 @@ public interface ProductService {
      * @throws ServiceException is a module exception
      */
     int updateProduct(Product product) throws ServiceException;
+
+    ArrayList getTypes() throws ServiceException;
+
 }

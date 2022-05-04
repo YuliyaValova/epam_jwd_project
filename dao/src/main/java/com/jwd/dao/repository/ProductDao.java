@@ -2,6 +2,8 @@ package com.jwd.dao.repository;
 import com.jwd.dao.domain.Product;
 import com.jwd.dao.exception.DaoException;
 
+import java.util.ArrayList;
+
 public interface ProductDao {
 
     /**
@@ -43,4 +45,5 @@ public interface ProductDao {
      */
     long updateProduct(Product product) throws DaoException;
 
+    ArrayList getProductTypes() throws DaoException;
 }

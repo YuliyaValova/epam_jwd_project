@@ -18,6 +18,8 @@ import com.jwd.service.validator.impl.ServiceValidatorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+
 
 public class ProductServiceImpl implements ProductService {
 
@@ -303,6 +305,16 @@ public class ProductServiceImpl implements ProductService {
             return isSuccessful;
         } catch (final DaoException e) {
             logger.error("#updateProduct throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public ArrayList getTypes() throws ServiceException {
+        try {
+           return productDao.getProductTypes();
+        } catch (Exception e){
+            logger.error("#getTypes throws exception.");
             throw new ServiceException(e);
         }
     }

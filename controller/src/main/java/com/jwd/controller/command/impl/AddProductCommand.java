@@ -3,17 +3,15 @@ package com.jwd.controller.command.impl;
 import com.jwd.controller.command.Command;
 import com.jwd.dao.domain.Product;
 import com.jwd.service.ServiceFactory;
-import com.jwd.service.domain.Address;
-import com.jwd.service.domain.UserAccount;
 import com.jwd.service.serviceLogic.ProductService;
-import com.jwd.service.serviceLogic.UserService;
-import org.omg.PortableInterceptor.SUCCESSFUL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static com.jwd.controller.util.Constants.*;
 
@@ -32,9 +30,10 @@ public class AddProductCommand implements Command {
             final String status = req.getParameter(STATUS);
             double price = productService.convertStringToDouble(req.getParameter(PRICE));
             boolean isAvailable = productService.convertStringToBoolean(status);
+            String image = req.getParameter(IMAGE);
 
             if (price != -1) {
-                Product product = new Product(name, type, description, price, isAvailable, "http");
+                Product product = new Product(name, type, description, price, isAvailable, image);
                 int isAdded = productService.addProductToMenu(product);
                 switch (isAdded) {
                     case -1:

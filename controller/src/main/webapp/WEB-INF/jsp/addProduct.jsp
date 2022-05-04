@@ -188,8 +188,8 @@
     </title>
     </head>
         <body>
-        <c:set var="error" value="${param.message}"/>
 
+        <c:set var="error" value="${param.message}"/>
 
 
             <!-- LOCALE -->
@@ -240,16 +240,23 @@
                        		<form class="card-form" method="post" action="/main" >
                          		<input type="hidden" name="command" value="addProductToMenu"/>
                        			<div class="input">
-                       				<input type="text" name="name" placeholder="${p_name}*" class="input-field" value="" required/>
+                       				<input type="text" name="name" placeholder=" ${p_name}*" class="input-field" value="" required/>
                        			</div>
-                       			<div class="input">
-                                 <input type="text" name="type" placeholder="${p_type}*" class="input-field" value="" required/>
+
+                                  <div class="input">
+                                  <select name="type" class="input-field" required="required">
+                                    <option value="">${p_type}*</option>
+                                    <c:forEach items="${sessionScope.types}" var="type">
+                                    <option value=${type}>${type}</option>
+                                    </c:forEach>
+                                  </select>
+                                  </div>
+
+                                 <div class="input">
+                                 <input type="number" step="any" name="price" placeholder=" ${p_price}*" class="input-field" value="" required/>
                                  </div>
                                  <div class="input">
-                                 <input type="number" step="any" name="price" placeholder="${p_price}*" class="input-field" value="" required/>
-                                 </div>
-                                 <div class="input">
-                                   <input type="text" name="description" placeholder="${p_description}*" class="input-field" value="" required/>
+                                   <input type="text" name="description" placeholder=" ${p_description}*" class="input-field" value="" required/>
                                  </div>
 
                                  <div class="input">
@@ -261,7 +268,7 @@
                                  </div>
 
                                  <div class="input">
-                                 <input type="text" name="image" placeholder="URL*" class="input-field" value="" required/>
+                                 <input type="text" name="image" placeholder=" URL*" class="input-field" value="" required/>
                                  </div>
 
                        			<div class="action">
@@ -277,6 +284,7 @@
 
 
             </c:if>
+
 
         </body>
 
