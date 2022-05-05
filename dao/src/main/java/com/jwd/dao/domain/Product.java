@@ -22,6 +22,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.isAvailable = isAvailable;
+        this.image = image;
     }
 
     public Product(String name, String type, String description, double price, boolean isAvailable, String image) {
@@ -30,6 +31,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.isAvailable = isAvailable;
+        this.image = image;
     }
 
     public Product(Product product) {
@@ -40,6 +42,7 @@ public class Product {
             this.description = product.getDescription();
             this.price = product.getPrice();
             this.isAvailable = product.getIsAvailable();
+            this.image = product.getImage();
         } else {
             this.id = -1L;
         }

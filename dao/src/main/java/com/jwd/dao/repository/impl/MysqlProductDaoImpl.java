@@ -20,15 +20,16 @@ import java.util.List;
 public class MysqlProductDaoImpl implements ProductDao {
 
     //todo modify get-orders methods for cases where product was deleted
-    private static final String SAVE_PRODUCT_QUERY = "insert into Products (name, type, description, price, isAvailable) values (?,?,?,?,?);";
+    private static final String SAVE_PRODUCT_QUERY = "insert into Products (name, description, price, isAvailable, type_id, image_link, creationDate) values (?,?,?,?,?,?,now());";
     private static final String IS_PRODUCT_EXISTS_QUERY = "select id from Products where name = ?;";
     private static final String DELETE_PRODUCT_QUERY = "delete from Products where id = ?;";
     private static final String GET_PRODUCT_BY_ID_QUERY = "select * from Products where id = ?;";
-    private static final String CHANGE_PRODUCT_STATUS_QUERY = "update Products set isAvailable = ? where id = ?;";
+        private static final String CHANGE_PRODUCT_STATUS_QUERY = "update Products set isAvailable = ?, updationDate = now() where id = ?;";
     private static final String UPDATE_PRODUCT_QUERY = "update Products\n" +
-            "set name = ?, type = ?, description = ?, price = ?\n" +
+            "set name = ?, type_id = ?, description = ?, price = ?, image_link = ?, updationDate = now()\n" +
             "where id =  ?;";
     private static final String GET_PRODUCT_TYPES_QUERY = "select name from Product_types;";
+    private static final String GET_TYPE_BY_NAME_QUERY = "select type_id from Product_types where name = ?;";
     //private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
 
     private final ConnectionPool connectionPool;
@@ -123,12 +124,12 @@ public class MysqlProductDaoImpl implements ProductDao {
     private Product getProductFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
         String name = resultSet.getString(2);
-        String type = resultSet.getString(3);
+        String type_id = resultSet.getString(3);
         String description = resultSet.getString(4);
         double price = resultSet.getDouble(5);
         boolean isAvailable = resultSet.getBoolean(6);
         String image = resultSet.getString(7);
-        return new Product(id, name, type, description, price, isAvailable, image);
+        return new Product(id, name, type_id, description, price, isAvailable, image);
     }
 
     @Override
@@ -201,6 +202,7 @@ public class MysqlProductDaoImpl implements ProductDao {
                         product.getType(),
                         product.getDescription(),
                         product.getPrice(),
+                        product.getImage(),
                         id
                 );
 
@@ -237,7 +239,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             while (resultSet.next()) {
                 types.add(resultSet.getString(1));
             }
-            return types;
+                return types;
         } catch (SQLException e) {
             throw new DaoException(e);
         } finally {
@@ -256,10 +258,11 @@ public class MysqlProductDaoImpl implements ProductDao {
             if (id == -1) {
                 List<Object> parameters = Arrays.asList(
                         product.getName(),
-                        product.getType(),
                         product.getDescription(),
                         product.getPrice(),
-                        product.getIsAvailable()
+                        product.getIsAvailable(),
+                        convertToInt(product.getType()),
+                        product.getImage()
                 );
 
                 validator.validateProduct(product);
@@ -276,6 +279,33 @@ public class MysqlProductDaoImpl implements ProductDao {
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
         } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private Integer convertToInt(String type) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        List<Object> parameters = Arrays.asList(
+                type
+        );
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            preparedStatement = daoUtil.getPreparedStatement(GET_TYPE_BY_NAME_QUERY, connection, parameters);
+            resultSet = preparedStatement.executeQuery();
+            Integer type_id = -1;
+            while (resultSet.next()) {
+                type_id = resultSet.getInt(1);
+            }
+            return type_id;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet);
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }

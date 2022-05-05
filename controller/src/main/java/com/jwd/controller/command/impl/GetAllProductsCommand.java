@@ -35,7 +35,7 @@ public class GetAllProductsCommand implements Command {
             }
             String currentLimitParam = req.getParameter(PAGE_LIMIT);
             if (isNullOrEmpty(currentLimitParam)) {
-                currentLimitParam = "2";
+                currentLimitParam = "5";
             }
             int currentPage = Integer.parseInt(currentPageParam);
             int pageLimit = Integer.parseInt(currentLimitParam);

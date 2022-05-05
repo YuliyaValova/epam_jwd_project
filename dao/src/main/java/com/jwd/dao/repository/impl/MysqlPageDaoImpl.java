@@ -270,12 +270,12 @@ public class MysqlPageDaoImpl implements PageDao {
     private Product getProductFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
         String name = resultSet.getString(2);
-        String type = resultSet.getString(3);
-        String description = resultSet.getString(4);
-        double price = resultSet.getDouble(5);
-        boolean isAvailable = resultSet.getBoolean(6);
+        String description = resultSet.getString(3);
+        double price = resultSet.getDouble(4);
+        boolean isAvailable = resultSet.getBoolean(5);
+        String type = resultSet.getString(6);
         String image = resultSet.getString(7);
-        return new Product(id, name, type, description, price, isAvailable, image);
+        return new Product(id, name,type, description, price, isAvailable, image);
     }
 
 }

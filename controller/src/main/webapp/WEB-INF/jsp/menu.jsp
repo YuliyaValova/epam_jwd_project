@@ -61,6 +61,14 @@ div.header{
     border: 2px solid red;
     color: red;
 }
+
+.menu {
+        position:relative;
+        top:70px;
+        display:flex;
+      justify-content:space-between;
+
+}
 .n-warning {
     width:300px;
     margin: 5px;
@@ -74,7 +82,6 @@ div.header{
     box-sizing: border-box;
 }
 body {
-
       height: 100%;
       background: url('https://pbs.twimg.com/media/EGMuSK-WoAIRuRQ.jpg') top left;
 }
@@ -98,6 +105,8 @@ body {
             text-align: center;
             margin: 0 auto;
             padding:15px;
+            position:relative;
+            top:100px;
     }
     .product-item:hover {
        border-bottom: 2px solid #fc5a5a;
@@ -244,15 +253,15 @@ body {
 <br>
 <br>
 <br>
-                         <div>
 
 
 
 
 
+                                <div class="menu">
                                  <c:forEach items="${requestScope.pageable.elements}" var="product">
                                       <div class="product-item">
-                                       <img src="https://kartinkin.net/uploads/posts/2021-03/1617170189_4-p-kusok-pitstsi-krasivo-4.jpg">
+                                       <img src=${product.image}>
                                        <div class="product-list">
                                          <div class="name">${product.name}</div>
                                            <span class="description">${product.description}</span>
@@ -280,12 +289,17 @@ body {
                                              </c:if>
 
                                        </div>
-                                      </div>
+                                    </div>
+
+
 <br>
 
 
 
+
                                  </c:forEach>
+
+                                 </div>
 
 
                              <div class="pages">
@@ -302,5 +316,5 @@ body {
                                      </c:if>
                                  </c:forEach>
                              </div>
-                         </div>
+
                      </c:if>

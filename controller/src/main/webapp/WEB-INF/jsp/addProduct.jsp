@@ -247,7 +247,7 @@
                                   <select name="type" class="input-field" required="required">
                                     <option value="">${p_type}*</option>
                                     <c:forEach items="${sessionScope.types}" var="type">
-                                    <option value=${type}>${type}</option>
+                                    <option value="${type}">${type}</option>
                                     </c:forEach>
                                   </select>
                                   </div>

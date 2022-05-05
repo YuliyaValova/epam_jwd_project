@@ -376,11 +376,12 @@ background:white;
                                      <input type="hidden" name="command" value="gotoAddProductPage"/>
                                      <button class="but2" type="submit">${add}</button>
                                      </form>
+
                                      <br>
 
                                      <form method="post" action="/profile" >
                                      <input type="hidden" name="command" value="findUserById"/>
-                                     <input type="text" name="id" value="id"/>
+                                     <input type="text" name="id" placeholder="id" value=""/>
                                      <button  class="but2" type="submit">${findUserById}</button>
                                      </form>
 
@@ -388,7 +389,7 @@ background:white;
 
                                      <form method="post" action="/main" >
                                      <input type="hidden" name="command" value="addAdmin"/>
-                                     <input type="text" name="admin_id" value="id"/>
+                                     <input type="text" name="admin_id" placeholder="id" value=""/>
                                      <button class="but2" type="submit">${add_admin}</button>
                                      </form>
 
@@ -397,7 +398,7 @@ background:white;
                                      <div>
                                      <form method="post" action="/main" >
                                      <input type="hidden" name="command" value="findProductById"/>
-                                     <input type="text" name="productId" value="id"/>
+                                     <input type="text" name="productId" placeholder="id" value=""/>
                                      <button class="but2" type="submit">${findProductById}</button>
                                      </form>
 
@@ -416,9 +417,9 @@ background:white;
                                      <c:if test="${sessionScope.role == 'admin'}">
                                         <c:if test="${sessionScope.page == 'findProduct'}">
                                             <p>Product name: ${sessionScope.product.name}</p>
-                                            <p>Product type: ${sessionScope.product.type}</p>
-                                            <p>Product price: ${sessionScope.product.price}</p>
-                                            <p>Product description: ${sessionScope.product.description}</p>
+                                            <p>Product price: ${sessionScope.product.description}</p>
+                                            <p>Product type: ${sessionScope.product.price}</p>
+                                            <p>Product description: ${sessionScope.product.type}</p>
                                             <p>Product status is available: ${sessionScope.product.isAvailable}</p>
                                         </c:if>
                                      </c:if>
@@ -585,10 +586,11 @@ background:white;
                                                           <p>${AllProducts}</p>
                                                               <td><h4><c:out value="${id}"/></h4></td>
                                                               <td><h4><c:out value="${name}"/></h4></td>
-                                                              <td><h4><c:out value="${type}"/></h4></td>
                                                               <td><h4><c:out value="${description}"/></h4></td>
+                                                              <td><h4><c:out value="${type}"/></h4></td>
                                                               <td><h4><c:out value="${price}"/></h4></td>
                                                               <td><h4><c:out value="${isAvailable}"/></h4></td>
+                                                              <td><h4><c:out value="URL"/></h4></td>
                                                       </tr>
                                                   </thead>
 
@@ -602,10 +604,11 @@ background:white;
                                                            <input type="hidden" name="status" value=${product.isAvailable}/>
                                                               <td>${product.id}</td>
                                                               <td><input type="text" id = "form_name"  name="name" value="${product.name}"/></td>
-                                                              <td><input type="text" id = "form_type" name="type" value="${product.type}"/></td>
                                                               <td><input type="text" id = "form_description" name="description" value="${product.description}"/></td>
+                                                              <td><input type="text" id = "form_type" name="type" value="${product.type}"/></td>
                                                               <td><input type="text" id = "form_price" name="price" value="${product.price}"/></td>
                                                               <td>${product.isAvailable}</td>
+                                                              <td><input type="text" id = "form_image" name="image" value=""/></td>
                                                               <td><button class="but2" type="submit">${Update}</button>
                                                            </form>
 
