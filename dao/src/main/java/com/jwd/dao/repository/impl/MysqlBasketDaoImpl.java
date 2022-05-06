@@ -7,10 +7,8 @@ import com.jwd.dao.repository.BasketDao;
 import com.jwd.dao.validation.DaoValidator;
 import com.jwd.dao.validation.impl.DaoValidatorImpl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,9 +16,9 @@ public class MysqlBasketDaoImpl implements BasketDao {
 
     private static final String DELETE_FROM_BASKET_QUERY = "delete from Orders\n" +
             "where customer_id = ? and product_id = ?;";
-    private static final String ADD_TO_BASKET_QUERY = "insert into Orders (date, status,  product_id, customer_id)\n" +
+    private static final String ADD_TO_BASKET_QUERY = "insert into {0} (item_price, product_id,  product_amount, creationDate)\n" +
             "values\n" +
-            "(now(), \"Waiting for payment\", ? , ?);";
+            "(?, ?, ?, now());";
     private static final String GET_SUM_QUERY = "select sum(Products.price) from Products\n" +
             "join Orders on Orders.product_id = Products.id\n" +
             "join UserAccounts on UserAccounts.id = Orders.customer_id\n" +
@@ -92,25 +90,24 @@ public class MysqlBasketDaoImpl implements BasketDao {
     }
 
     @Override
-    public boolean addToBasket(long id, long productId) throws DaoException {
+    public boolean addToBasket(long id, String login, double price, long productId, int count) throws DaoException {
         boolean isSuccess = false;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         List<Object> parameters = Arrays.asList(
+                price,
                 productId,
-                id
+                count
         );
         try {
             validator.validateId(id);
             validator.validateId(productId);
-            if (!isOrderExists(id, productId)) {
-                isSuccess = true;
-                connection = connectionPool.takeConnection();
-                connection.setAutoCommit(false);
-                preparedStatement = daoUtil.getPreparedStatement(ADD_TO_BASKET_QUERY, connection, parameters);
-                int affectedRows = preparedStatement.executeUpdate();
-                connection.commit();
-            }
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            String query = MessageFormat.format(ADD_TO_BASKET_QUERY, login + "_basket");
+            preparedStatement = daoUtil.getPreparedStatement(query, connection, parameters);
+            preparedStatement.executeUpdate();
+            isSuccess = true;
             return isSuccess;
         } catch (SQLException | DaoException e) {
             throw new DaoException(e);
@@ -120,7 +117,7 @@ public class MysqlBasketDaoImpl implements BasketDao {
         }
     }
 
-    private boolean isOrderExists(long id, long productId) throws DaoException {
+   /* private boolean isOrderExists(long id, long productId) throws DaoException {
         boolean isExists = false;
         List<Object> parameters = Arrays.asList(
                 id,
@@ -151,5 +148,5 @@ public class MysqlBasketDaoImpl implements BasketDao {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
-    }
+    }*/
 }

@@ -9,10 +9,8 @@ import com.jwd.dao.repository.UserDao;
 import com.jwd.dao.validation.DaoValidator;
 import com.jwd.dao.validation.impl.DaoValidatorImpl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -46,6 +44,16 @@ public class MysqlUserDaoImpl implements UserDao {
             "join Addresses on Addresses.id = UserAccounts.address_id\n" +
             "set fName = ?, lName = ?, phone = ?, address_id = ?, useraccounts.updationDate = now()\n" +
             "where UserAccounts.login = ?;";
+    private static final String CREATE_BASKET_QUERY = "create table {0} (\n" +
+            "order_detail_id int primary key auto_increment,\n" +
+            "product_amount int,\n" +
+            "item_price double,\n" +
+            "product_id int, \n" +
+            "product_detail varchar(100),\n" +
+            "creationDate datetime,\n" +
+            "updationDate datetime\n" +
+            ");";
+    private static final String DELETE_BASKET_QUERY = "drop table {0};";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
@@ -330,6 +338,38 @@ public class MysqlUserDaoImpl implements UserDao {
             throw new DaoException(e);
         } finally {
             daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void createBasket(String login) throws DaoException {
+        Connection connection = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            Statement preparedStatement1 = connection.createStatement();
+            preparedStatement1.execute(MessageFormat.format(CREATE_BASKET_QUERY, login+"_basket"));
+            preparedStatement1.close();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public void deleteBasket(String login) throws DaoException {
+        Connection connection = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            Statement preparedStatement1 = connection.createStatement();
+            preparedStatement1.execute(MessageFormat.format(DELETE_BASKET_QUERY, login+"_basket"));
+            preparedStatement1.close();
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
             connectionPool.retrieveConnection(connection);
         }
     }

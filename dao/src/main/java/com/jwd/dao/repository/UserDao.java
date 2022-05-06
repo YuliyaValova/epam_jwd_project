@@ -71,4 +71,8 @@ public interface UserDao {
      * @throws DaoException
      */
     long updateUserAccount(UserAccount user)throws DaoException;
+
+    void createBasket(String login) throws DaoException;
+
+    void deleteBasket(String login) throws DaoException;
 }

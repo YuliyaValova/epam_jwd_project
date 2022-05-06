@@ -64,7 +64,7 @@ public interface ProductService {
      * @return true if adding is successful, otherwise - false
      * @throws ServiceException is a module exception
      */
-    boolean addToBasket(long id, long productId) throws ServiceException;
+    boolean addToBasket(long id, String login, double price, long productId, int count) throws ServiceException;
 
     /**
      * Add a product to a menu

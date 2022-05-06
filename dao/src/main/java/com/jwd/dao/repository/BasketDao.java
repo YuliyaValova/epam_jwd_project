@@ -27,6 +27,6 @@ public interface BasketDao {
      * @return true if added is successful, otherwise - false
      * @throws DaoException is a module exception
      */
-    boolean addToBasket(long id, long productId) throws DaoException;
+    boolean addToBasket(long id, String login, double price, long productId, int count) throws DaoException;
 
 }

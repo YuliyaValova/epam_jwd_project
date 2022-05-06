@@ -63,4 +63,7 @@ public interface UserService {
      */
     int update(UserAccount user) throws ServiceException;
 
+    void createBasket(String login) throws ServiceException;
+
+    void deleteBasket(String login) throws ServiceException;
 }

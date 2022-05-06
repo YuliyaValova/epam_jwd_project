@@ -22,6 +22,59 @@
               font-family: Verdana, sans-serif;
               box-sizing: border-box;
           }
+
+.number {
+	display:inline-block;
+	 margin: 0 auto;
+	position: relative;
+	width: 100px;
+
+}
+.number input[type="number"] {
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+.number input[type="number"]::-webkit-outer-spin-button,
+.number input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.number-minus {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	bottom: 1px;
+	width: 20px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	border-right: 1px solid #ddd;
+	font-size: 16px;
+	font-weight: 600;
+}
+.number-plus {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	width: 20px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	border-left: 1px solid #ddd;
+	font-size: 16px;
+	font-weight: 600;
+}
 button.but1{
 font-size:20px;
 	float:right;
@@ -126,6 +179,14 @@ body {
        display: block;
        margin-bottom: 12px;
     }
+
+    .line{
+      display:flex;
+          justify-content:space-between;
+    }
+
+
+
 
     .name {
       font-size: 20px;
@@ -269,7 +330,16 @@ body {
                                            <c:if test="${sessionScope.role != 'admin'}">
                                             <form method="post" action="/menu" >
                                             <input type="hidden" name="command" value="addtobasket"/>
+                                            <div class="line">
+                                           <div class="number">
+                                           	<button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+                                           	<input type="number"  name="counter" min="1" max="10" value="1">
+                                           	<button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+                                           </div>
+                                           <br>
+                                           </div>
                                             <input type="hidden" name="productId" value=${product.id}/>
+                                            <input type="hidden" name="price" value=${product.price}/>
                                             <br>
                                             <button class="button" type="submit">${addBascket}</button><br/>
                                             </form>

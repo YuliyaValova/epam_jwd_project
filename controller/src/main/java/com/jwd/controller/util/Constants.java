@@ -34,6 +34,8 @@ public class Constants {
             FIND_USER = "findUser",
             SUM = "sum",
             PROD_ID = "productId",
+            COUNTER = "counter",
+            SIZE = "size",
             ORDER_ID = "orderId",
             NAME = "name",
             TYPE = "type",

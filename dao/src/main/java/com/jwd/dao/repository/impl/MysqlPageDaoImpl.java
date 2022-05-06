@@ -224,7 +224,7 @@ public class MysqlPageDaoImpl implements PageDao {
         }
         final List<Order> orders = new ArrayList<>();
         while (resultSet2.next()) {
-            orders.add(getOrderFromDb(resultSet2));
+          //  orders.add(getOrderFromDb(resultSet2));
         }
         pageable.setPageNumber(daoOrderPageable.getPageNumber());
         pageable.setLimit(daoOrderPageable.getLimit());
@@ -235,7 +235,7 @@ public class MysqlPageDaoImpl implements PageDao {
         return pageable;
     }
 
-    private Order getOrderFromDb(ResultSet resultSet) throws SQLException {
+   /* private Order getOrderFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
         long productId = resultSet.getLong(2);
         String name = resultSet.getString(3);
@@ -246,7 +246,7 @@ public class MysqlPageDaoImpl implements PageDao {
         long customerId = resultSet.getLong(8);
         String status = resultSet.getString(9);
         return new Order(id, productId, name, type, description, price, isAvailable, customerId, status);
-    }
+    }*/
 
     private Pageable<Product> getProductRowPageable(Pageable<Product> daoProductPageable, ResultSet resultSet1, ResultSet resultSet2) throws SQLException {
         final Pageable<Product> pageable = new Pageable<>();

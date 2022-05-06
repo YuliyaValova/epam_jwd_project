@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService {
             String hashedPassword = getHash(oldPassword);
             if (validator.validatePassword(oldPassword) && validator.validatePassword(newPassword) && validator.validateId(id)) {
                 UserAccount acc = new UserAccount(userDao.getUserById(id));
-                if (!isNull(acc)&&acc.getPassword().equals(hashedPassword)) {
+                if (!isNull(acc) && acc.getPassword().equals(hashedPassword)) {
                     userDao.changePassword(id, oldPassword, newPassword);
                     isSuccessful = true;
                 }
@@ -165,6 +165,25 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void createBasket(String login) throws ServiceException {
+        try {
+            userDao.createBasket(login);
+        } catch (final DaoException e) {
+            logger.error("#createBasket throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public void deleteBasket(String login) throws ServiceException {
+        try {
+            userDao.deleteBasket(login);
+        } catch (final DaoException e) {
+            logger.error("#createBasket throws exception.");
+            throw new ServiceException(e);
+        }
+    }
 
 
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {

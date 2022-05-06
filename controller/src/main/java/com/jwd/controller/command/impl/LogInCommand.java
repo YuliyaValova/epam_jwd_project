@@ -34,6 +34,7 @@ public class LogInCommand implements Command {
             final UserAccount user = new UserAccount(login, password);
             UserAccount loginatedUser = userService.login(user);
 
+
             if (isNull(loginatedUser)) {
                 logger.info("#LogInCommand incompleteInfo.");
                 response.sendRedirect("loginPage?message=IncompleteInfo");
@@ -48,6 +49,7 @@ public class LogInCommand implements Command {
                         logger.info("#LogInCommand session is null.");
                         session.invalidate();
                     }
+                    userService.createBasket(login);
                     session = request.getSession();
                     session.setAttribute(USER, loginatedUser);
                     session.setAttribute(ADDRESS, loginatedUser.getAddress());

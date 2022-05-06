@@ -33,8 +33,11 @@ public class AddToBasketCommand implements Command {
             } else {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
+                String login = user.getLogin();
                 long productId = Long.parseLong(req.getParameter(PROD_ID).replace("/", ""));
-                boolean isAdded = productService.addToBasket(user.getId(), productId);
+                int count = Integer.parseInt(req.getParameter(COUNTER));
+                Double price = Double.valueOf(req.getParameter(PRICE).replace("/", ""));
+                boolean isAdded = productService.addToBasket(user.getId(), login, price, productId, count);
                 if (!isAdded) {
                     req.setAttribute(MESSAGE, null);
                     logger.info("#AddToBasketCommand order exists.");

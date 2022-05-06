@@ -127,13 +127,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean addToBasket(long id, long productId) throws ServiceException {
+    public boolean addToBasket(long id, String login, double price, long productId, int count) throws ServiceException {
         try {
             Boolean isAdded = null;
             if (validator.validateId(id) && validator.validateId(productId)) {
-                isAdded = basketDao.addToBasket(id, productId);
+                isAdded = basketDao.addToBasket(id, login, price, productId, count);
             } else {
-                logger.info("#addToBasket tinvalid id.");
+                logger.info("#addToBasket invalid id.");
             }
             return isAdded;
         } catch (final DaoException e) {
