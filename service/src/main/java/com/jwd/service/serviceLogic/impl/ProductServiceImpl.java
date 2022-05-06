@@ -319,6 +319,23 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public boolean writeToCSV(String path) throws ServiceException {
+        try {
+            boolean isSuccessful = false;
+            long success = productDao.writeToCsv(path);
+            if (success != -1L) {
+                isSuccessful = true;
+            } else {
+                logger.info("#update invalid user info.");
+            }
+            return isSuccessful;
+        } catch (final DaoException e) {
+            logger.error("#update throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
 
     private com.jwd.dao.domain.Product convertToDaoProduct(Product product) {
         com.jwd.dao.domain.Product newProduct = new com.jwd.dao.domain.Product();

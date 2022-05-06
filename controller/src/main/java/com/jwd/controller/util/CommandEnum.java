@@ -29,7 +29,8 @@ public enum CommandEnum {
     GETALLPRODUCTS("getAllProducts"),
     UPDATEUSER("updateUser"),
     UPDATEPRODUCT("updateProduct"),
-    DELETEFROMMENU("deletefrommenu");
+    DELETEFROMMENU("deletefrommenu"),
+    WRITETOCSV("writeToCSV");
 
 
     private String name;

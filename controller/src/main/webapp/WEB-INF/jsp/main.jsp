@@ -378,6 +378,12 @@ background:white;
                                      </form>
 
                                      <br>
+                                      <form method="get" action="/main" >
+                                      <input type="hidden" name="command" value="writeToCSV"/>
+                                      <input type="text" name="path" placeholder="path" value=""/>
+                                      <button class="but2" type="submit">Write products to csv</button>
+                                      </form>
+                                     <br>
 
                                      <form method="post" action="/profile" >
                                      <input type="hidden" name="command" value="findUserById"/>
@@ -582,7 +588,6 @@ background:white;
                                                <table>
                                                   <thead>
                                                       <tr>
-
                                                           <p>${AllProducts}</p>
                                                               <td><h4><c:out value="${id}"/></h4></td>
                                                               <td><h4><c:out value="${name}"/></h4></td>

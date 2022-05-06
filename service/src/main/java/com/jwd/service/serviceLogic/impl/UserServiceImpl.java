@@ -165,6 +165,8 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+
+
     private com.jwd.dao.domain.UserAccount convertToDaoUserAccount(UserAccount user) {
         com.jwd.dao.domain.UserAccount acc = new com.jwd.dao.domain.UserAccount();
         acc.setId(user.getId());

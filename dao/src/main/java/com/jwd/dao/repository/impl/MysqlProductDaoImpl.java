@@ -7,7 +7,9 @@ import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.ProductDao;
 import com.jwd.dao.validation.DaoValidator;
 import com.jwd.dao.validation.impl.DaoValidatorImpl;
+import com.opencsv.CSVWriter;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,6 +32,7 @@ public class MysqlProductDaoImpl implements ProductDao {
             "where id =  ?;";
     private static final String GET_PRODUCT_TYPES_QUERY = "select name from Product_types;";
     private static final String GET_TYPE_BY_NAME_QUERY = "select type_id from Product_types where name = ?;";
+    private static final String GET_PRODUCTS_QUERY = "select * from Products;";
     //private static final String GET_ALL_PRODUCTS_QUERY = "select * from Products;";
 
     private final ConnectionPool connectionPool;
@@ -124,10 +127,10 @@ public class MysqlProductDaoImpl implements ProductDao {
     private Product getProductFromDb(ResultSet resultSet) throws SQLException {
         long id = resultSet.getLong(1);
         String name = resultSet.getString(2);
-        String type_id = resultSet.getString(3);
-        String description = resultSet.getString(4);
-        double price = resultSet.getDouble(5);
-        boolean isAvailable = resultSet.getBoolean(6);
+        String description = resultSet.getString(3);
+        double price = resultSet.getDouble(4);
+        boolean isAvailable = resultSet.getBoolean(5);
+        String type_id = resultSet.getString(6);
         String image = resultSet.getString(7);
         return new Product(id, name, type_id, description, price, isAvailable, image);
     }
@@ -246,6 +249,54 @@ public class MysqlProductDaoImpl implements ProductDao {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
+    }
+
+    @Override
+    public long writeToCsv(String path) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List csvData = new ArrayList<>();
+        String[] header = {"id", "name", "type_id", "description", "price", "isAvailable", "image_link"};
+        csvData.add(header);
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(true);
+            preparedStatement = daoUtil.getPreparedStatement(GET_PRODUCTS_QUERY, connection, Collections.emptyList());
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Product product = getProductFromDb(resultSet);
+                String[] productData = getData(product);
+                csvData.add(productData);
+            }
+            File file = new File(path);
+            FileOutputStream os = new FileOutputStream(file);
+            try (CSVWriter writer = new CSVWriter(new OutputStreamWriter(os, "Windows-1251"))) {
+                writer.writeAll(csvData);
+                return 1;
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
+        } catch (SQLException | DaoException | FileNotFoundException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+        return -1;
+    }
+
+    private String[] getData(Product product) {
+        String id = String.valueOf(product.getId());
+        String name = product.getName();
+        String type = product.getType();
+        String description = product.getDescription();
+        String price = String.valueOf(product.getPrice());
+        String isAvailable = String.valueOf(product.getIsAvailable());
+        String image = product.getImage();
+        String[] array = {id, name, type, description, price, isAvailable, image};
+        return array;
     }
 
     @Override

@@ -62,4 +62,5 @@ public interface UserService {
      * @throws ServiceException is a module exception
      */
     int update(UserAccount user) throws ServiceException;
+
 }

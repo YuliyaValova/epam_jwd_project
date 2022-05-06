@@ -155,4 +155,6 @@ public interface ProductService {
 
     ArrayList getTypes() throws ServiceException;
 
+    boolean writeToCSV(String path) throws ServiceException;
+
 }

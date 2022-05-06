@@ -46,4 +46,6 @@ public interface ProductDao {
     long updateProduct(Product product) throws DaoException;
 
     ArrayList getProductTypes() throws DaoException;
+
+    long writeToCsv(String path) throws DaoException;
 }
