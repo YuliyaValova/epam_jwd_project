@@ -32,7 +32,7 @@ public interface PageDao {
      * @return all orders page
      * @throws DaoException is a module exception
      */
-   // PageableOrder<Order> findAllOrderPage(PageableOrder<Order> daoOrderPageable) throws DaoException;
+   Pageable<Order> findAllOrderPage(Pageable<Order> daoOrderPageable) throws DaoException;
 
     /**
      * Makes a page for showing all products to admin

@@ -543,42 +543,63 @@ background:white;
 
                                         <c:if test="${requestScope.page == 'showAll'}">
                                          <div>
-                                              <table>
+                                              <table class="table">
+                                              <caption>
+                                               <p>${AllOrders}</p>
+                                              </caption>
                                                  <thead>
                                                      <tr>
-
-                                                         <p>${AllOrders}</p>
                                                              <td><h4><c:out value="${orderId}"/></h4></td>
-                                                             <td><h4><c:out value="${productId}"/></h4></td>
-                                                             <td><h4><c:out value="${name}"/></h4></td>
-                                                             <td><h4><c:out value="${type}"/></h4></td>
-                                                             <td><h4><c:out value="${description}"/></h4></td>
-                                                             <td><h4><c:out value="${price}"/></h4></td>
-                                                             <td><h4><c:out value="${userId}"/></h4></td>
-                                                             <td><h4><c:out value="${status}"/></h4></td>
-
+                                                             <td><h4><c:out value="date"/></h4></td>
+                                                             <td><h4><c:out value="status"/></h4></td>
+                                                             <td><h4><c:out value="totalPrice"/></h4></td>
+                                                             <td><h4><c:out value="customerId"/></h4></td>
+                                                             <td><h4><c:out value="comment"/></h4></td>
+                                                             <td><h4><c:out value="products"/></h4></td>
+                                                             <td><h4><c:out value="action"/></h4></td>
                                                      </tr>
                                                  </thead>
 
                                                  <tbody>
                                                      <c:forEach items="${requestScope.pageable2.elements}" var="order">
                                                          <tr>
-                                                             <td>${order.id}</td>
-                                                             <td>${order.productId}</td>
-                                                             <td>${order.name}</td>
-                                                             <td>${order.type}</td>
-                                                             <td>${order.description}</td>
-                                                             <td>${order.price}</td>
-                                                             <td>${order.customerId}</td>
+                                                             <td>${order.orderId}</td>
+                                                             <td>${order.date}</td>
                                                              <td>${order.status}</td>
+                                                             <td>${order.totalPrice}</td>
+                                                             <td>${order.customerId}</td>
+                                                             <td>${order.comment}</td>
                                                              <td>
-                                                             <td>
+                                                             <table>
+                                                              <tr>
+                                                              <td><h4><c:out value="detail_id"/></h4></td>
+                                                              <td><h4><c:out value="product_amount"/></h4></td>
+                                                              <td><h4><c:out value="item_price"/></h4></td>
+                                                              <td><h4><c:out value="product_id"/></h4></td>
+                                                              <td><h4><c:out value="product_name"/></h4></td>
+                                                              </tr>
+                                                             <thead>
+                                                             </thead>
+                                                              <c:forEach items="${order.details}" var="detail">
+
+                                                                <tr>
+                                                                 <td>${detail.orderDetailId}</td>
+                                                                 <td>${detail.productAmount}</td>
+                                                                 <td>${detail.itemPrice}</td>
+                                                                 <td>${detail.productId}</td>
+                                                                 <td>${detail.productName}</td>
+                                                                </tr>
+                                                                </c:forEach>
+
+                                                             </table>
+                                                             </td>
+                                                              <td>
                                                              <div>
                                                              <form method="post" action="/main" >
                                                              <input type="hidden" name="command" value="changeOrderStatus"/>
-                                                             <input type="text" name="status" value="new status"/>
-                                                             <input type="hidden" name="orderId" value=${order.id}/>
-                                                             <button class="but2" type="submit">${changeStatus}</button><br/>
+                                                             <input type="text" name="status"  placeholder = "new status" value=""/>
+                                                             <input type="hidden" name="orderId" value=${order.orderId}/>
+                                                             <button class="tbutton" type="submit">${changeStatus}</button><br/>
                                                              </form>
                                                              </div>
                                                              </td>

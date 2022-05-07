@@ -28,4 +28,5 @@ public interface OrderDao {
      */
     void changeOrderStatus(long orderId, String newStatus) throws DaoException;
 
+    boolean isBasketEmpty(String login) throws DaoException;
 }

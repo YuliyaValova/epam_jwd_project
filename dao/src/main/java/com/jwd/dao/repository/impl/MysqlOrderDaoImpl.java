@@ -18,6 +18,7 @@ import java.util.List;
 
 public class MysqlOrderDaoImpl implements OrderDao {
 
+    private static final String COUNT_BASKET_SORTED = "select count(*) from {0}";
     private static final String SAVE_ORDER_QUERY = " insert into Orders (date, status, totalPrice, customer_id, comment, creationDate)\n" +
             "values\n" +
             "(now(), \"Waiting for payment\", (select sum(item_price*product_amount) from {0}), ?, ?, now());";
@@ -118,6 +119,33 @@ public class MysqlOrderDaoImpl implements OrderDao {
             throw new DaoException(e);
         } finally {
             daoUtil.close(preparedStatement);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    @Override
+    public boolean isBasketEmpty(String login) throws DaoException {
+        boolean isEmpty = false;
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        ResultSet resultSet1 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            String query1 = MessageFormat.format(COUNT_BASKET_SORTED, login + "_basket");
+            preparedStatement1 = daoUtil.getPreparedStatement(query1, connection, Collections.emptyList());
+            resultSet1 = preparedStatement1.executeQuery();
+            connection.commit();
+            if (resultSet1.next()){
+                long count = resultSet1.getLong(1);
+                if(count == 0L) isEmpty = true;
+            }
+            return isEmpty;
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1);
+            daoUtil.close(preparedStatement1);
             connectionPool.retrieveConnection(connection);
         }
     }

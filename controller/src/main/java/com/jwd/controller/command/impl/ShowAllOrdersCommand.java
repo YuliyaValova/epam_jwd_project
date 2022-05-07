@@ -4,6 +4,7 @@ import com.jwd.controller.command.Command;
 import com.jwd.controller.exception.ControllerException;
 import com.jwd.dao.domain.Order;
 import com.jwd.service.ServiceFactory;
+import com.jwd.service.domain.Page;
 import com.jwd.service.domain.PageOrder;
 import com.jwd.service.serviceLogic.ProductService;
 import org.slf4j.Logger;
@@ -33,11 +34,11 @@ public class ShowAllOrdersCommand implements Command {
             }
             String currentLimitParam = req.getParameter(PAGE_LIMIT);
             if (isNullOrEmpty(currentLimitParam)) {
-                currentLimitParam = "2";
+                currentLimitParam = "5";
             }
             int currentPage = Integer.parseInt(currentPageParam);
             int pageLimit = Integer.parseInt(currentLimitParam);
-            final PageOrder<Order> pageRequest = new PageOrder<>();
+            final Page<Order> pageRequest = new Page<>();
             pageRequest.setPageNumber(currentPage);
             pageRequest.setLimit(pageLimit);
             HttpSession session;
@@ -47,8 +48,8 @@ public class ShowAllOrdersCommand implements Command {
                 resp.sendRedirect("main?message=SessionError");
             } else {
                 // todo validation
-               // final PageOrder<Order> pageableOrder = productService.showAllOrders(pageRequest);
-                //req.setAttribute(PAGEABLE2, pageableOrder);
+                final Page<Order> pageableOrder = productService.showAllOrders(pageRequest);
+                req.setAttribute(PAGEABLE2, pageableOrder);
                 req.setAttribute(PAGE, SHOW_ALL);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }

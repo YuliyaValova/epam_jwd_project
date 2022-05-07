@@ -87,6 +87,7 @@ public class ProductServiceImpl implements ProductService {
     public void sendOrder(long id, String login, String comment) throws ServiceException {
         try {
             if (validator.validateId(id)) {
+                if(!orderDao.isBasketEmpty(login))
                 orderDao.changeAllOrdersStatus(id, login, comment);
             } else {
                 logger.info("#sendOrder invalid id.");
@@ -175,18 +176,18 @@ public class ProductServiceImpl implements ProductService {
         }
     }*/
 
-   /* @Override
-    public PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException {
+    @Override
+    public Page<Order> showAllOrders(Page<Order> pageRequest) throws ServiceException {
         // todo validation
         try {
-            final PageableOrder<Order> daoOrderPageable = convertToPageable(pageRequest);
-            final PageableOrder<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable);
-            return convertToServicePage(ordersPageable);
+            final Pageable<Order> daoOrderPageable = convertOrdersToPageable(pageRequest);
+            final Pageable<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable);
+            return convertOrderToServicePage(ordersPageable);
         } catch (final DaoException e) {
             logger.error("#showAllOrders throws exception.");
             throw new ServiceException(e);
         }
-    }*/
+    }
 
     @Override
     public void deleteFromMenu(long id) throws ServiceException {
@@ -357,6 +358,17 @@ public class ProductServiceImpl implements ProductService {
         return page;
     }
 
+    private Page<Order> convertOrderToServicePage(Pageable<Order> productRowsPageable) {
+        Page<Order> page = new Page<>();
+        page.setPageNumber(productRowsPageable.getPageNumber());
+        page.setLimit(productRowsPageable.getLimit());
+        page.setTotalElements(productRowsPageable.getTotalElements());
+        page.setElements(productRowsPageable.getElements());
+        page.setSortBy(productRowsPageable.getSortBy());
+        page.setDirection(productRowsPageable.getDirection());
+        return page;
+    }
+
 
     private Pageable<OrderDetail> convertOrderToPageable(Page<OrderDetail> page) {
         final Pageable<OrderDetail> pageable = new Pageable<>();
@@ -378,12 +390,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-    private PageableOrder<Order> convertToPageable(PageOrder<Order> page) {
-        final PageableOrder<Order> pageable = new PageableOrder<>();
+    private Pageable<Order> convertOrdersToPageable(Page<Order> page) {
+        final Pageable<Order> pageable = new Pageable<>();
         pageable.setPageNumber(page.getPageNumber());
         pageable.setLimit(page.getLimit());
-        pageable.setStatus(page.getStatus());
-        pageable.setCustomerId(page.getCustomerId());
         pageable.setTotalElements(page.getTotalElements());
         pageable.setSortBy(page.getSortBy());
         pageable.setDirection(page.getDirection());

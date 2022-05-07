@@ -74,7 +74,7 @@ public interface ProductService {
      * @return order page
      * @throws ServiceException is a module exception
      */
-    //PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException;
+    Page<Order> showAllOrders(Page<Order> pageRequest) throws ServiceException;
 
     /**
      * Deletes a product from menu
