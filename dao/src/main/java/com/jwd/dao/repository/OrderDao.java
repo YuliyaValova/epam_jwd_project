@@ -18,7 +18,7 @@ public interface OrderDao {
      * @param oldStatus status to be changed
      * @throws DaoException is a module exception
      */
-    void changeAllOrdersStatus(long id, String newStatus, String oldStatus) throws DaoException;
+    void changeAllOrdersStatus(long id, String login, String comment) throws DaoException;
 
     /**
      * Changes the status of the specified order

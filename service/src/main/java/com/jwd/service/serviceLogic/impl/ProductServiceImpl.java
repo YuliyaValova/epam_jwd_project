@@ -84,10 +84,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void sendOrder(long id) throws ServiceException {
+    public void sendOrder(long id, String login, String comment) throws ServiceException {
         try {
             if (validator.validateId(id)) {
-                orderDao.changeAllOrdersStatus(id, "Paid up", "Waiting for payment");
+                orderDao.changeAllOrdersStatus(id, login, comment);
             } else {
                 logger.info("#sendOrder invalid id.");
             }

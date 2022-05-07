@@ -8,6 +8,41 @@
 <head>
 
 <style type = "text/css">
+.delete {
+margin-top:15px;
+}
+
+
+.table {
+ counter-reset: trCount;
+ text-align:center;
+    overflow: auto;
+    white-space: nowrap;
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+	height:fit-content;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+.table tr td:first-child:before {
+    position:relative;
+    counter-increment: trCount;
+    content:counter(trCount);
+    color:#1d1f21;
+    background:#c5c8c6;
+}
+.w3 {width:3%};
 .message {
      border: 2px solid green;
               color: green;
@@ -124,6 +159,7 @@ body {
  <body>
     <c:set var="error" value="${param.message}"/>
 
+
      <!-- LOCALE -->
                 <div class="local">
                         <form method="post" action="/basket" >
@@ -180,22 +216,28 @@ body {
 
 
                          <div class="basket">
-                             <table>
+                             <table class="table">
+
                                  <thead>
-                                 <tr>
 
-                                     <td><h4><c:out value="№"/></h4></td>
-                                     <td><h4><c:out value="${name}"/></h4></td>
-                                     <td><h4><c:out value="${price}"/></h4></td>
-                                     <td><h4><c:out value="number"/></h4></td>
+                                    <tr>
+                                     <th><c:out value="№"/></th>
+                                     <th><c:out value="${name}"/></th>
+                                     <th><c:out value="${price}"/></th>
+                                     <th><c:out value="number"/></th>
+                                     <th><c:out value="description"/></th>
+                                     <th><c:out value="action"/></th>
 
-                                 </tr>
+                                     <tr>
+
+
+
                                  </thead>
 
                                  <tbody>
                                  <c:forEach items="${requestScope.pageable.elements}" var="product">
                                      <tr>
-                                         <td>${product.orderDetailId}</td>
+                                         <td></td>
                                          <td>${product.productName}</td>
                                          <td>${product.itemPrice}</td>
                                          <td>${product.productAmount}</td>
@@ -207,7 +249,7 @@ body {
                                          <form method="post" action="/basket" >
                                          <input type="hidden" name="command" value="deletefrombasket"/>
                                          <input type="hidden" name="productId" value=${product.orderDetailId}/>
-                                         <button type="submit">${deleteFromBascket}</button><br/>
+                                         <button class = "delete" type="submit">${deleteFromBascket}</button><br/>
                                          </form>
 
                                          </div>

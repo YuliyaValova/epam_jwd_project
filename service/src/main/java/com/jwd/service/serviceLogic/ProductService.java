@@ -32,7 +32,7 @@ public interface ProductService {
      * @param id identifies user
      * @throws ServiceException is a module exception
      */
-    void sendOrder(long id) throws ServiceException;
+    void sendOrder(long id, String login, String comment) throws ServiceException;
 
     void deleteFromBasket(String login, long productId) throws ServiceException;
 

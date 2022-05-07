@@ -33,8 +33,12 @@ public class SendOrderCommand implements Command {
             } else {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
-
-                productService.sendOrder(user.getId());
+                String comment = req.getParameter("comment");
+                productService.sendOrder(user.getId(), user.getLogin(), comment);
+                productService.cleanBasket( user.getLogin());
+                final double totalSum = productService.getSum(user.getLogin());
+                String sum = String.format("%.1f",totalSum);
+                session.setAttribute(SUM, sum);
                 req.setAttribute(MESSAGE, PAID_SUCCESSFULLY);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }

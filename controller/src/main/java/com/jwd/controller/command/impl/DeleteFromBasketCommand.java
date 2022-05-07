@@ -53,6 +53,9 @@ public class DeleteFromBasketCommand implements Command {
                 productService.deleteFromBasket(user.getLogin(),productId);
                 final Page<OrderDetail> pageable = productService.showBasket(pageRequest, user.getLogin());
                 req.setAttribute(PAGEABLE, pageable);
+                final double totalSum = productService.getSum(user.getLogin());
+                String sum = String.format("%.1f",totalSum);
+                session.setAttribute(SUM, sum);
                 req.setAttribute(PAGE, SHOW);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }

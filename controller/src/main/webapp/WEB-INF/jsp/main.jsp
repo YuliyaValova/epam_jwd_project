@@ -6,6 +6,35 @@
 
 			<head>
 				<style type="text/css">
+				.tbutton {
+                margin-top:15px;
+                }
+
+                .thidden{
+                display:none
+                }
+                .table {
+
+                 text-align:center;
+                    overflow: auto;
+                    white-space: nowrap;
+                	width: 100%;
+                	margin-bottom: 20px;
+                	border: 1px solid #dddddd;
+                	border-collapse: collapse;
+                	height:fit-content;
+                }
+                .table th {
+                	font-weight: bold;
+                	padding: 5px;
+                	background: #efefef;
+                	border: 1px solid #dddddd;
+                }
+                .table td {
+                	border: 1px solid #dddddd;
+                	padding: 5px;
+                }
+                .w3 {width:3%}
 				body{
                 	background: url('https://pbs.twimg.com/media/EGMuSK-WoAIRuRQ.jpg') top left;
                 	margin:0
@@ -430,7 +459,7 @@ background:white;
                                         </c:if>
                                      </c:if>
 
-                                     <!--Show Paid Orders -->
+                                     <!--Show Paid Orders
                                      <c:if test="${sessionScope.role == 'admin'}">
 
                                      <form id="getPaidOrders" method="get" action="/main" >
@@ -502,6 +531,7 @@ background:white;
                                         <br>
                                         </c:if>
                                      </c:if>
+                                     -->
 
                                      <c:if test="${sessionScope.role == 'admin'}">
                                      <!--Show All Orders -->
@@ -585,24 +615,27 @@ background:white;
 
                                          <c:if test="${requestScope.page == 'showProducts'}">
                                           <div>
-                                               <table>
+                                               <table class="table">
+                                               <caption>
+                                                <p>${AllProducts}</p>
+                                               </caption>
                                                   <thead>
                                                       <tr>
-                                                          <p>${AllProducts}</p>
-                                                              <td><h4><c:out value="${id}"/></h4></td>
-                                                              <td><h4><c:out value="${name}"/></h4></td>
-                                                              <td><h4><c:out value="${description}"/></h4></td>
-                                                              <td><h4><c:out value="${type}"/></h4></td>
-                                                              <td><h4><c:out value="${price}"/></h4></td>
-                                                              <td><h4><c:out value="${isAvailable}"/></h4></td>
-                                                              <td><h4><c:out value="URL"/></h4></td>
+
+                                                              <th><h4><c:out value="${id}"/></h4></th>
+                                                              <th><h4><c:out value="${name}"/></h4></th>
+                                                              <th><h4><c:out value="${description}"/></h4></th>
+                                                              <th><h4><c:out value="${type}"/></h4></th>
+                                                              <th><h4><c:out value="${price}"/></h4></th>
+                                                              <th><h4><c:out value="${isAvailable}"/></h4></th>
+                                                              <th><h4><c:out value="URL"/></h4></td>
                                                       </tr>
                                                   </thead>
 
                                                   <tbody>
                                                       <c:forEach items="${requestScope.pageable3.elements}" var="product">
                                                           <tr>
-                                                          <div>
+                                                          <div class="thidden">
                                                           <form method="post" action="/main" >
                                                            <input type="hidden" name="command" value="updateProduct"/>
                                                            <input type="hidden" name="productId" value=${product.id}/>
@@ -613,8 +646,8 @@ background:white;
                                                               <td><input type="text" id = "form_type" name="type" value="${product.type}"/></td>
                                                               <td><input type="text" id = "form_price" name="price" value="${product.price}"/></td>
                                                               <td>${product.isAvailable}</td>
-                                                              <td><input type="text" id = "form_image" name="image" value=""/></td>
-                                                              <td><button class="but2" type="submit">${Update}</button>
+                                                              <td><input type="text" id = "form_image" name="image" placeholder = "http://..."  value=""/></td>
+                                                              <td><button class="tbutton" type="submit">${Update}</button>
                                                            </form>
 
 
@@ -622,7 +655,7 @@ background:white;
                                                               <form method="post" action="/main" >
                                                               <input type="hidden" name="command" value="deletefrommenu"/>
                                                               <input type="hidden" name="productId" value=${product.id}/>
-                                                              <button class="but2" type="submit">${deleteFromMenu}</button><br/>
+                                                              <button class="tbutton" type="submit">${deleteFromMenu}</button><br/>
                                                               </form>
 
 
@@ -631,7 +664,7 @@ background:white;
                                                               <input type="hidden" name="command" value="changeproductstatus"/>
                                                               <input type="hidden" name="productId" value=${product.id}/>
                                                               <input type="hidden" name="status" value=${product.isAvailable}/>
-                                                              <button class="but2" type="submit">${changeStatus}</button><br/>
+                                                              <button class="tbutton" type="submit">${changeStatus}</button><br/>
                                                               </form>
 
                                                               </div>

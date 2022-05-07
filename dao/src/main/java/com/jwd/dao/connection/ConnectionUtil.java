@@ -2,10 +2,7 @@ package com.jwd.dao.connection;
 
 import com.jwd.dao.exception.DaoException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 import static java.util.Objects.nonNull;
@@ -30,7 +27,7 @@ public class ConnectionUtil {
 
     public PreparedStatement getPreparedStatement(final String query, final Connection connection,
                                                   final List<Object> parameters) throws SQLException {
-        final PreparedStatement preparedStatement = connection.prepareStatement(query);
+        final PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
         setPreparedStatementParameters(preparedStatement, parameters);
         return preparedStatement;
     }
