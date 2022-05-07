@@ -24,8 +24,8 @@ public class MysqlOrderDaoImpl implements OrderDao {
             "(now(), \"Waiting for payment\", (select sum(item_price*product_amount) from {0}), ?, ?, now());";
     private static final String TRUNCATE_BASKET_QUERY = "truncate table {0};";
     private static final String SET_STATUS_QUERY = "update Orders\n" +
-            "set status = ?\n" +
-            "where id = ?;";
+            "set status = ?, updationDate = now()\n" +
+            "where order_id = ?;";
     private static final String SAVE_ORDER_DETAILS_QUERY = "insert into Order_details (order_id, order_detail_id, product_amount, item_price, product_id, product_detail, creationDate)\n" +
             "select {1}, order_detail_id, product_amount, item_price, product_id, product_detail, creationDate from {0};";
 
