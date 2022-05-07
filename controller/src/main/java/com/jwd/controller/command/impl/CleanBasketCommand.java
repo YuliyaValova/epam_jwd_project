@@ -33,8 +33,10 @@ public class CleanBasketCommand implements Command {
             } else {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
-
-                productService.cleanBasket(user.getId());
+                productService.cleanBasket(user.getLogin());
+                final double totalSum = productService.getSum(user.getLogin());
+                String sum = String.format("%.1f",totalSum);
+                session.setAttribute(SUM, sum);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }
         } catch (Exception e) {

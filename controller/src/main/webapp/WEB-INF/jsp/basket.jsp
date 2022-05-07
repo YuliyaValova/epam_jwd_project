@@ -184,11 +184,10 @@ body {
                                  <thead>
                                  <tr>
 
-                                     <td><h4><c:out value="${id}"/></h4></td>
+                                     <td><h4><c:out value="№"/></h4></td>
                                      <td><h4><c:out value="${name}"/></h4></td>
-                                     <td><h4><c:out value="${type}"/></h4></td>
-                                     <td><h4><c:out value="${description}"/></h4></td>
                                      <td><h4><c:out value="${price}"/></h4></td>
+                                     <td><h4><c:out value="number"/></h4></td>
 
                                  </tr>
                                  </thead>
@@ -196,17 +195,18 @@ body {
                                  <tbody>
                                  <c:forEach items="${requestScope.pageable.elements}" var="product">
                                      <tr>
-                                         <td>${product.id}</td>
-                                         <td>${product.name}</td>
-                                         <td>${product.type}</td>
-                                         <td>${product.description}</td>
-                                         <td>${product.price}</td>
-                                         <td>
+                                         <td>${product.orderDetailId}</td>
+                                         <td>${product.productName}</td>
+                                         <td>${product.itemPrice}</td>
+                                         <td>${product.productAmount}</td>
+                                         <td>${product.productDetail}</td>
+
                                          <td>
                                          <div>
+
                                          <form method="post" action="/basket" >
                                          <input type="hidden" name="command" value="deletefrombasket"/>
-                                         <input type="hidden" name="productId" value=${product.id}/>
+                                         <input type="hidden" name="productId" value=${product.orderDetailId}/>
                                          <button type="submit">${deleteFromBascket}</button><br/>
                                          </form>
 
@@ -235,8 +235,10 @@ body {
 
 
                                <p>${sum}: ${sessionScope.sum}</p>
+                               <br>
                                 <form id="sendOrder" method="get" action="/basket" >
                                 <input type="hidden" name="command" value="sendOrder"/>
+                                <input type="text" name="comment" placeholder = "Comment..." value=""/>
                                 <button form="sendOrder" type="submit">${sendOrd}</button>
                                 </form>
 

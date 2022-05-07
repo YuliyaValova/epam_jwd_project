@@ -10,7 +10,7 @@ public interface BasketDao {
      * @return total sum
      * @throws DaoException is a module exception
      */
-    double getSum(long id) throws DaoException;
+    double getSum(String login) throws DaoException;
 
     /**
      * Deletes a product from user's basket
@@ -18,7 +18,7 @@ public interface BasketDao {
      * @param productId identifies product to be deleted
      * @throws DaoException is a module exception
      */
-    void deleteFromBasket(long id, long productId) throws DaoException;
+    void deleteFromBasket(String login, long productId) throws DaoException;
 
     /**
      * Adds a product to user's basket

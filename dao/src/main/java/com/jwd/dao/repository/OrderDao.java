@@ -9,7 +9,7 @@ public interface OrderDao {
      * @param id identifies user
      * @throws DaoException is a module exception
      */
-    void deleteOrdersByUserId(long id) throws DaoException;
+    void deleteOrdersByUserLogin(String login) throws DaoException;
 
     /**
      * Changes status of all orders of the user with such id

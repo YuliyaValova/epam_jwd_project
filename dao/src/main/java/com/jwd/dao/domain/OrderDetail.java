@@ -8,26 +8,37 @@ public class OrderDetail {
     private int productAmount;
     private double itemPrice;
     private long productId;
+    private String productName;
     private String productDetail;
 
     public OrderDetail() {
     }
 
-    public OrderDetail(long orderId, long orderDetailId, int productAmount, double itemPrice, long productId, String productDetail) {
+    public OrderDetail(long orderId, long orderDetailId, int productAmount, double itemPrice, long productId, String productName, String productDetail) {
         this.orderId = orderId;
         this.orderDetailId = orderDetailId;
         this.productAmount = productAmount;
         this.itemPrice = itemPrice;
         this.productId = productId;
+        this.productName = productName;
         this.productDetail = productDetail;
     }
 
-    public OrderDetail(long orderDetailId, int productAmount, double itemPrice, long productId, String productDetail) {
+    public OrderDetail(long orderDetailId, int productAmount, double itemPrice, long productId, String productName, String productDetail) {
         this.orderDetailId = orderDetailId;
         this.productAmount = productAmount;
         this.itemPrice = itemPrice;
         this.productId = productId;
+        this.productName = productName;
         this.productDetail = productDetail;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public long getOrderId() {
@@ -83,12 +94,12 @@ public class OrderDetail {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderDetail that = (OrderDetail) o;
-        return orderId == that.orderId && orderDetailId == that.orderDetailId && productAmount == that.productAmount && Double.compare(that.itemPrice, itemPrice) == 0 && productId == that.productId && Objects.equals(productDetail, that.productDetail);
+        return orderId == that.orderId && orderDetailId == that.orderDetailId && productAmount == that.productAmount && Double.compare(that.itemPrice, itemPrice) == 0 && productId == that.productId && Objects.equals(productName, that.productName) && Objects.equals(productDetail, that.productDetail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, orderDetailId, productAmount, itemPrice, productId, productDetail);
+        return Objects.hash(orderId, orderDetailId, productAmount, itemPrice, productId, productName, productDetail);
     }
 
     @Override
@@ -99,6 +110,7 @@ public class OrderDetail {
                 ", productAmount=" + productAmount +
                 ", itemPrice=" + itemPrice +
                 ", productId=" + productId +
+                ", productName='" + productName + '\'' +
                 ", productDetail='" + productDetail + '\'' +
                 '}';
     }

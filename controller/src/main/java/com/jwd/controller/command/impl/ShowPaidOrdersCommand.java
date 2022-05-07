@@ -47,8 +47,8 @@ public class ShowPaidOrdersCommand implements Command {
                 resp.sendRedirect("main?message=SessionError");
             } else {
                 // todo validation
-                final PageOrder<Order> pageableOrder = productService.showPaidOrders(pageRequest);
-                req.setAttribute(PAGEABLE, pageableOrder);
+               // final PageOrder<Order> pageableOrder = productService.showPaidOrders(pageRequest);
+              //  req.setAttribute(PAGEABLE, pageableOrder);
                 req.setAttribute(PAGE, SHOW);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }

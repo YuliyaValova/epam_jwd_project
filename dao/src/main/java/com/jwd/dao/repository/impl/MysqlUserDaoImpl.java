@@ -44,7 +44,7 @@ public class MysqlUserDaoImpl implements UserDao {
             "join Addresses on Addresses.id = UserAccounts.address_id\n" +
             "set fName = ?, lName = ?, phone = ?, address_id = ?, useraccounts.updationDate = now()\n" +
             "where UserAccounts.login = ?;";
-    private static final String CREATE_BASKET_QUERY = "create table {0} (\n" +
+    private static final String CREATE_BASKET_QUERY = "create table if not exists {0} (\n" +
             "order_detail_id int primary key auto_increment,\n" +
             "product_amount int,\n" +
             "item_price double,\n" +

@@ -10,7 +10,9 @@ import com.jwd.dao.validation.impl.DaoValidatorImpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.MessageFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MysqlOrderDaoImpl implements OrderDao {
@@ -18,7 +20,7 @@ public class MysqlOrderDaoImpl implements OrderDao {
     private static final String SET_ALL_STATUS_QUERY = "update Orders\n" +
             "set Orders.status = ? \n" +
             "where Orders.customer_id = ? and Orders.status = ?;";
-    private static final String TRUNCATE_BASKET_QUERY = "delete from Orders where customer_id = ? and status = \"Waiting for payment\";";
+    private static final String TRUNCATE_BASKET_QUERY = "truncate table {0};";
     private static final String SET_STATUS_QUERY = "update Orders\n" +
             "set status = ?\n" +
             "where id = ?;";
@@ -33,19 +35,15 @@ public class MysqlOrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public void deleteOrdersByUserId(long id) throws DaoException {
+    public void deleteOrdersByUserLogin(String login) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
-        List<Object> parameters = Arrays.asList(
-                id
-        );
-
         try {
-            validator.validateId(id);
             connection = connectionPool.takeConnection();
             connection.setAutoCommit(false);
-            preparedStatement = daoUtil.getPreparedStatement(TRUNCATE_BASKET_QUERY, connection, parameters);
+            String query = MessageFormat.format(TRUNCATE_BASKET_QUERY, login + "_basket");
+            preparedStatement = daoUtil.getPreparedStatement(query, connection, Collections.emptyList());
             int affectedRows = preparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException | DaoException e) {

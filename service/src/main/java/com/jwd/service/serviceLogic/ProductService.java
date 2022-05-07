@@ -1,10 +1,12 @@
 package com.jwd.service.serviceLogic;
 
 import com.jwd.dao.domain.Order;
+import com.jwd.dao.domain.OrderDetail;
 import com.jwd.dao.domain.Product;
 import com.jwd.service.domain.Page;
 import com.jwd.service.domain.PageOrder;
 import com.jwd.service.exception.ServiceException;
+import com.mysql.cj.x.protobuf.MysqlxCrud;
 
 import java.util.ArrayList;
 
@@ -18,29 +20,12 @@ public interface ProductService {
      */
     Page<Product> showProducts(Page<Product> productPageRequest) throws ServiceException;
 
-    /**
-     * Makes a page for showing products in user's basket
-     * @param pageRequest required pages params
-     * @param id identifies user
-     * @return product page
-     * @throws ServiceException is a module exception
-     */
-    Page<Product> showBasket(Page<Product> pageRequest, long id) throws ServiceException;
+    Page<OrderDetail> showBasket(Page<OrderDetail> pageRequest, String login) throws ServiceException;
 
-    /**
-     * Deletes all products from user's basket
-     * @param id identifies user
-     * @throws ServiceException is a module exception
-     */
-    void cleanBasket(long id) throws ServiceException;
 
-    /**
-     * Calculates the total cost of the user's basket
-     * @param id identifies user
-     * @return total sum
-     * @throws ServiceException is a module exception
-     */
-    double getSum(long id) throws ServiceException;
+    void cleanBasket(String login) throws ServiceException;
+
+    double getSum(String login) throws ServiceException;
 
     /**
      * Changes the status of all items in the user's basket to "Paid up"
@@ -49,13 +34,7 @@ public interface ProductService {
      */
     void sendOrder(long id) throws ServiceException;
 
-    /**
-     * Delete from user's basket selected item
-     * @param id identifies user
-     * @param productId identifies product for deleting
-     * @throws ServiceException is a module exception
-     */
-    void deleteFromBasket(long id, long productId) throws ServiceException;
+    void deleteFromBasket(String login, long productId) throws ServiceException;
 
     /**
      * Adds a product to user's basket
@@ -87,7 +66,7 @@ public interface ProductService {
      * @return order page
      * @throws ServiceException is a module exception
      */
-    PageOrder<Order> showPaidOrders(PageOrder<Order> pageRequest) throws ServiceException;
+    //PageOrder<OrderDetail> showPaidOrders(PageOrder<OrderDetail> pageRequest) throws ServiceException;
 
     /**
      * Makes a page for showing all orders to admin (if ordered product wasn't deleted)
@@ -95,7 +74,7 @@ public interface ProductService {
      * @return order page
      * @throws ServiceException is a module exception
      */
-    PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException;
+    //PageOrder<Order> showAllOrders(PageOrder<Order> pageRequest) throws ServiceException;
 
     /**
      * Deletes a product from menu

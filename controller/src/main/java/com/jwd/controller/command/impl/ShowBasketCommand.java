@@ -2,6 +2,7 @@ package com.jwd.controller.command.impl;
 
 import com.jwd.controller.command.Command;
 import com.jwd.controller.exception.ControllerException;
+import com.jwd.dao.domain.OrderDetail;
 import com.jwd.dao.domain.Product;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.Page;
@@ -34,11 +35,11 @@ public class ShowBasketCommand implements Command {
             }
             String currentLimitParam = req.getParameter(PAGE_LIMIT);
             if (isNullOrEmpty(currentLimitParam)) {
-                currentLimitParam = "2";
+                currentLimitParam = "5";
             }
             int currentPage = Integer.parseInt(currentPageParam);
             int pageLimit = Integer.parseInt(currentLimitParam);
-            final Page<Product> pageRequest = new Page<>();
+            final Page<OrderDetail> pageRequest = new Page<>();
             pageRequest.setPageNumber(currentPage);
             pageRequest.setLimit(pageLimit);
             HttpSession session;
@@ -50,10 +51,11 @@ public class ShowBasketCommand implements Command {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
 
-                final Page<Product> pageable = productService.showBasket(pageRequest, user.getId());
-                final double totalSum = productService.getSum(user.getId());
+                final Page<OrderDetail> pageable = productService.showBasket(pageRequest, user.getLogin());
+                final double totalSum = productService.getSum(user.getLogin());
                 req.setAttribute(PAGEABLE, pageable);
-                session.setAttribute(SUM, totalSum);
+                String sum = String.format("%.1f",totalSum);
+                session.setAttribute(SUM, sum);
                 req.setAttribute(PAGE, SHOW);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
             }
