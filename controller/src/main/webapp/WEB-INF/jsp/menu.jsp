@@ -8,6 +8,68 @@
 <head>
 
 <style type = "text/css">
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+
+
+.service-section {
+
+    background-color:black;
+    width:500px;
+    height:0px;
+    display:inline-block;
+    position:relative;
+    left:34%;
+    top:-20px;
+}
+
+.service-section-header {
+	display: flex;
+	justify-content: space-between;
+	width:500px;
+	height:fit-content;
+}
+
+
+.search-field {
+	display: flex;
+	flex-grow: 1;
+	position: relative;
+	input {
+		width: 100%;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border: 0;
+		border-bottom: 1px solid green;
+		background-color: transparent;
+		padding-left: 1.5rem;
+	}
+
+	i {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.dropdown-field {
+	display: flex;
+	flex-grow: 1;
+	position: relative;
+
+}
+
+.flat-button {
+    text-align:center;
+	border-radius: 6px;
+	background-color: white;
+	padding: 0.5em 1.0em;
+	border-bottom: 1px solid red;
+}
+
 .message {
      border: 2px solid green;
               color: green;
@@ -117,7 +179,7 @@ div.header{
 
 .menu {
         position:relative;
-        top:70px;
+        top:90px;
         display:flex;
       justify-content:space-between;
 
@@ -314,8 +376,69 @@ body {
 <br>
 <br>
 <br>
+<div class="service-section">
+				<div class="service-section-header">
+
+					<div class="dropdown-field">
+                    <form method="post" action="/menu" >
+                    <input type="hidden" name="command" value="pizzafilter"/>
+                    <button class = "flat-button" type="submit">Pizza</button><br/>
+                    </div>
+
+					<div class="dropdown-field">
+                    <form method="post" action="/menu" >
+                    <input type="hidden" name="command" value="colddrinksfilter"/>
+                    <button class = "flat-button" type="submit">Cold drinks</button><br/>
+                    </div>
+
+					<div class="dropdown-field">
+                    <form method="post" action="/menu" >
+                    <input type="hidden" name="command" value="hotdrinksfilter"/>
+                    <button class = "flat-button" type="submit">Hot drinks</button><br/>
+                    </div>
+
+					<div class="dropdown-field">
+                    <form method="post" action="/menu" >
+                    <input type="hidden" name="command" value="bakeryfilter"/>
+                    <button class = "flat-button" type="submit">Bakery</button><br/>
+                    </div>
+
+				</div>
+				<br>
+				<div class="service-section-header">
+                    <form class="card-form" method="post" action="/menu" >
+                    <input type="hidden" name="command" value="sort"/>
+					<div class="dropdown-field">
+						<select name="sort_type" class="input-field" required="required">
+							<option value="name">Name</option>
+							<option value="price">Price</option>
+						</select>
+						<i class="ph-caret-down"></i>
+					</div>
+					<div class="dropdown-field">
+						<select name="sort_direction" class="input-field" required="required">
+							<option value="asc">Ascending</option>
+							<option value="desc">Descending</option>
+						</select>
+						<i class="ph-caret-down"></i>
+					</div>
+					<button class="flat-button" type="submit">
+						Sort
+					</button>
+					<div class="search-field">
+					    <form class="card-form" method="post" action="/menu" >
+                        <input type="hidden" name="command" value="search"/>
+                    		<i class="ph-magnifying-glass"></i>
+                    		<input type="text" placeholder="" value="">
+                    	<button class="flat-button" type="submit">
+                    		Search
+                    	</button>
+
+                    </div>
+				</div>
 
 
+</div>
 
 
 

@@ -667,7 +667,7 @@ background:white;
                                                               <td><input type="text" id = "form_type" name="type" value="${product.type}"/></td>
                                                               <td><input type="text" id = "form_price" name="price" value="${product.price}"/></td>
                                                               <td>${product.isAvailable}</td>
-                                                              <td><input type="text" id = "form_image" name="image" placeholder = "http://..."  value=""/></td>
+                                                              <td><input type="text" id = "form_image" name="image" placeholder = "http://..."  value="${product.image}"/></td>
                                                               <td><button class="tbutton" type="submit">${Update}</button>
                                                            </form>
 
