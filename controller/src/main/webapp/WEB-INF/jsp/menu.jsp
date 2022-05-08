@@ -11,25 +11,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: white;
+	border-bottom: 2px solid red;
+	font: inherit;
+	font-weight:bold;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	color: #5a5a6e;
+}
 
+.flat{
+margin-right:10px;
+height:30px;
+border-radius: 6px;
+width:fit-content;
+	background-color: white;
+	border: 2px red solid;
+	color: black;
+}
 
+.flat:hover{
+    background-color: red;
+    color: white;
+}
 
 .service-section {
 
     background-color:black;
-    width:500px;
+    width:600px;
     height:0px;
     display:inline-block;
     position:relative;
-    left:34%;
+    left:30%;
     top:-20px;
 }
 
 .service-section-header {
 	display: flex;
 	justify-content: space-between;
-	width:500px;
-	height:fit-content;
+	width:600px;
+	height:40px;
 }
 
 
@@ -56,7 +80,7 @@
 }
 
 .dropdown-field {
-	display: flex;
+	display: inline-block;
 	flex-grow: 1;
 	position: relative;
 
@@ -64,10 +88,21 @@
 
 .flat-button {
     text-align:center;
-	border-radius: 6px;
-	background-color: white;
+    font-weight:bold;
+    font-size:15px;
+    color:red;
+    background-color:white;
+	text-decoration:underline 2px;
 	padding: 0.5em 1.0em;
-	border-bottom: 1px solid red;
+	border:none;
+}
+
+.flat-button:hover{
+    text-align:center;
+    color:white;
+    background-color:red;
+	text-decoration:underline 2px;
+	padding: 0.5em 1.0em;
 }
 
 .message {
@@ -231,7 +266,7 @@ body {
        width: 100%;
     }
     .product-list {
-       background: #fafafa;
+       background: white;
        padding: 15px 0;
     }
 
@@ -383,56 +418,62 @@ body {
                     <form method="post" action="/menu" >
                     <input type="hidden" name="command" value="pizzafilter"/>
                     <button class = "flat-button" type="submit">Pizza</button><br/>
+                    </form>
                     </div>
 
 					<div class="dropdown-field">
                     <form method="post" action="/menu" >
                     <input type="hidden" name="command" value="colddrinksfilter"/>
                     <button class = "flat-button" type="submit">Cold drinks</button><br/>
+                    </form>
                     </div>
 
 					<div class="dropdown-field">
                     <form method="post" action="/menu" >
                     <input type="hidden" name="command" value="hotdrinksfilter"/>
                     <button class = "flat-button" type="submit">Hot drinks</button><br/>
+                    </form>
                     </div>
 
 					<div class="dropdown-field">
                     <form method="post" action="/menu" >
                     <input type="hidden" name="command" value="bakeryfilter"/>
                     <button class = "flat-button" type="submit">Bakery</button><br/>
+                    </form>
                     </div>
 
 				</div>
 				<br>
 				<div class="service-section-header">
-                    <form class="card-form" method="post" action="/menu" >
-                    <input type="hidden" name="command" value="sort"/>
+                    <form id = "show_products" class="card-form" method="post" action="/menu" >
+                    <input type="hidden" name="command" value="showproducts"/>
 					<div class="dropdown-field">
 						<select name="sort_type" class="input-field" required="required">
-							<option value="name">Name</option>
-							<option value="price">Price</option>
+						    <option value="${sessionScope.sortBy}">Current:${sessionScope.sortBy}</option>
+							<option value="Name">Name</option>
+							<option value="Price">Price</option>
 						</select>
 						<i class="ph-caret-down"></i>
 					</div>
 					<div class="dropdown-field">
 						<select name="sort_direction" class="input-field" required="required">
-							<option value="asc">Ascending</option>
-							<option value="desc">Descending</option>
+						    <option value="${sessionScope.direct}">Current:${sessionScope.direct}</option>
+							<option value="Asc">Asc</option>
+							<option value="Desc">Desc</option>
 						</select>
 						<i class="ph-caret-down"></i>
 					</div>
-					<button class="flat-button" type="submit">
-						Sort
-					</button>
+					<button class="flat" type="submit">Sort</button>
+   					</form>
 					<div class="search-field">
 					    <form class="card-form" method="post" action="/menu" >
                         <input type="hidden" name="command" value="search"/>
                     		<i class="ph-magnifying-glass"></i>
                     		<input type="text" placeholder="" value="">
-                    	<button class="flat-button" type="submit">
+                    	<button class="flat" type="submit">
                     		Search
                     	</button>
+                    	</form>
 
                     </div>
 				</div>

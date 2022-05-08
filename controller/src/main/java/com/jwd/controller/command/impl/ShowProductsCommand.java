@@ -6,11 +6,13 @@ import com.jwd.dao.domain.Product;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.Page;
 import com.jwd.service.serviceLogic.ProductService;
+import com.mysql.cj.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import static com.jwd.controller.util.Constants.*;
@@ -24,6 +26,9 @@ public class ShowProductsCommand implements Command {
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ControllerException, IOException {
         try {
+            HttpSession session;
+            session = req.getSession(false);
+
             logger.info("#ShowProductsCommand starts.");
             String currentPageParam = req.getParameter(CURRENT_PAGE);
             if (isNullOrEmpty(currentPageParam)) {
@@ -33,9 +38,23 @@ public class ShowProductsCommand implements Command {
             if (isNullOrEmpty(currentLimitParam)) {
                 currentLimitParam = "5";
             }
+            String sort_field = req.getParameter("sort_type");
+            if (isNullOrEmpty(sort_field)) {
+                sort_field = (String) session.getAttribute("sortBy");
+            } else {
+                session.setAttribute("sortBy", sort_field);
+            }
+            String direction = req.getParameter("sort_direction");
+            if (isNullOrEmpty(direction)) {
+                direction = (String) session.getAttribute("direct");
+            } else {
+                session.setAttribute("direct", direction);
+            }
             int currentPage = Integer.parseInt(currentPageParam);
             int pageLimit = Integer.parseInt(currentLimitParam);
             final Page<Product> pageRequest = new Page<>();
+            pageRequest.setSortBy(sort_field);
+            pageRequest.setDirection(direction);
             pageRequest.setPageNumber(currentPage);
             pageRequest.setLimit(pageLimit);
 

@@ -51,6 +51,8 @@ public class LogInCommand implements Command {
                     }
                     userService.createBasket(login);
                     session = request.getSession();
+                    session.setAttribute("sortBy", "Name");
+                    session.setAttribute("direct", "Asc");
                     session.setAttribute(USER, loginatedUser);
                     session.setAttribute(ADDRESS, loginatedUser.getAddress());
                     session.setAttribute(ROLE, loginatedUser.getRole());
