@@ -2,6 +2,7 @@ package com.jwd.service.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Page<T> {
     private int pageNumber;
@@ -10,16 +11,26 @@ public class Page<T> {
     private List<T> elements = new ArrayList<>();
     private String sortBy = "id";
     private String direction = "ASC";
+    private String filter = "(1,2,3,4)";
 
     public Page() {}
 
-    public Page(int pageNumber, long totalElements, int limit, List<T> elements, String sortBy, String direction) {
+    public Page(int pageNumber, long totalElements, int limit, List<T> elements, String sortBy, String direction, String filter) {
         this.pageNumber = pageNumber;
         this.totalElements = totalElements;
         this.limit = limit;
         this.elements = elements;
         this.sortBy = sortBy;
         this.direction = direction;
+        this.filter = filter;
+    }
+
+    public String getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
     }
 
     public int getPageNumber() {
@@ -75,26 +86,13 @@ public class Page<T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Page<?> page = (Page<?>) o;
-
-        if (pageNumber != page.pageNumber) return false;
-        if (totalElements != page.totalElements) return false;
-        if (limit != page.limit) return false;
-        if (elements != null ? !elements.equals(page.elements) : page.elements != null) return false;
-        if (sortBy != null ? !sortBy.equals(page.sortBy) : page.sortBy != null) return false;
-        return direction != null ? direction.equals(page.direction) : page.direction == null;
+        return pageNumber == page.pageNumber && totalElements == page.totalElements && limit == page.limit && Objects.equals(elements, page.elements) && Objects.equals(sortBy, page.sortBy) && Objects.equals(direction, page.direction) && Objects.equals(filter, page.filter);
     }
 
     @Override
     public int hashCode() {
-        int result = pageNumber;
-        result = 31 * result + (int) (totalElements ^ (totalElements >>> 32));
-        result = 31 * result + limit;
-        result = 31 * result + (elements != null ? elements.hashCode() : 0);
-        result = 31 * result + (sortBy != null ? sortBy.hashCode() : 0);
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
-        return result;
+        return Objects.hash(pageNumber, totalElements, limit, elements, sortBy, direction, filter);
     }
 
     @Override
@@ -106,6 +104,7 @@ public class Page<T> {
                 ", elements=" + elements +
                 ", sortBy='" + sortBy + '\'' +
                 ", direction='" + direction + '\'' +
+                ", filter='" + filter + '\'' +
                 '}';
     }
 }

@@ -6,7 +6,6 @@ import com.jwd.dao.domain.Product;
 import com.jwd.service.ServiceFactory;
 import com.jwd.service.domain.Page;
 import com.jwd.service.serviceLogic.ProductService;
-import com.mysql.cj.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +17,7 @@ import java.io.IOException;
 import static com.jwd.controller.util.Constants.*;
 import static com.mysql.cj.util.StringUtils.isNullOrEmpty;
 
-public class ShowProductsCommand implements Command {
-
+public class SearchCommand implements Command {
     private final ProductService productService = ServiceFactory.getServiceFactory().getProductService();
     private static final Logger logger = LoggerFactory.getLogger(ShowProductsCommand.class);
 
@@ -28,6 +26,7 @@ public class ShowProductsCommand implements Command {
         try {
             HttpSession session;
             session = req.getSession(false);
+            Page<Product> pageable = null;
 
             logger.info("#ShowProductsCommand starts.");
             String currentPageParam = req.getParameter(CURRENT_PAGE);
@@ -64,12 +63,13 @@ public class ShowProductsCommand implements Command {
             pageRequest.setFilter(filter);
             pageRequest.setPageNumber(currentPage);
             pageRequest.setLimit(pageLimit);
-
-            // todo validation
-
-            final Page<Product> pageable = productService.showProducts(pageRequest);
-
-            session.setAttribute(PAGEABLE, pageable);
+            String searchRequest = req.getParameter("search");
+            if (isNullOrEmpty(searchRequest)) {
+                pageable = productService.showProducts(pageRequest);
+            } else {
+                pageable = productService.showProducts(pageRequest, searchRequest);
+            }
+            req.setAttribute(PAGEABLE, pageable);
             req.setAttribute(PAGE, SHOW);
             req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
         } catch (Exception e) {

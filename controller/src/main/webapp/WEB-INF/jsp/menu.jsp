@@ -41,18 +41,18 @@ width:fit-content;
 .service-section {
 
     background-color:black;
-    width:600px;
+    width:800px;
     height:0px;
     display:inline-block;
     position:relative;
-    left:30%;
-    top:-20px;
+    left:25%;
+    top:20px;
 }
 
 .service-section-header {
 	display: flex;
 	justify-content: space-between;
-	width:600px;
+	width:800px;
 	height:40px;
 }
 
@@ -412,44 +412,31 @@ body {
 <br>
 <br>
 <div class="service-section">
-				<div class="service-section-header">
 
-					<div class="dropdown-field">
-                    <form method="post" action="/menu" >
-                    <input type="hidden" name="command" value="pizzafilter"/>
-                    <button class = "flat-button" type="submit">Pizza</button><br/>
-                    </form>
-                    </div>
-
-					<div class="dropdown-field">
-                    <form method="post" action="/menu" >
-                    <input type="hidden" name="command" value="colddrinksfilter"/>
-                    <button class = "flat-button" type="submit">Cold drinks</button><br/>
-                    </form>
-                    </div>
-
-					<div class="dropdown-field">
-                    <form method="post" action="/menu" >
-                    <input type="hidden" name="command" value="hotdrinksfilter"/>
-                    <button class = "flat-button" type="submit">Hot drinks</button><br/>
-                    </form>
-                    </div>
-
-					<div class="dropdown-field">
-                    <form method="post" action="/menu" >
-                    <input type="hidden" name="command" value="bakeryfilter"/>
-                    <button class = "flat-button" type="submit">Bakery</button><br/>
-                    </form>
-                    </div>
-
-				</div>
 				<br>
 				<div class="service-section-header">
                     <form id = "show_products" class="card-form" method="post" action="/menu" >
                     <input type="hidden" name="command" value="showproducts"/>
+                    <div class="dropdown-field">
+                    	<select name="type" class="input-field" required="required">
+                    	    <option value="${sessionScope.type}">
+                    	    <c:if test="${sessionScope.type == '(1,2,3,4)'}">Types:All</c:if>
+                    	    <c:if test="${sessionScope.type == '(1)'}">Types:Pizza</c:if>
+                    	    <c:if test="${sessionScope.type == '(2)'}">Types:Cold drinks</c:if>
+                    	    <c:if test="${sessionScope.type == '(4)'}">Types:Hot drinks</c:if>
+                    	    <c:if test="${sessionScope.type == '(3)'}">Types:Bakery</c:if>
+                    	    </option>
+                    		<option value="(1,2,3,4)">All</option>
+                    		<option value="(1)">Pizza</option>
+                    		<option value="(2)">Cold drinks</option>
+                    		<option value="(4)">Hot drinks</option>
+                    		<option value="(3)">Bakery</option>
+                    	</select>
+                    	<i class="ph-caret-down"></i>
+                    </div>
 					<div class="dropdown-field">
 						<select name="sort_type" class="input-field" required="required">
-						    <option value="${sessionScope.sortBy}">Current:${sessionScope.sortBy}</option>
+						    <option value="${sessionScope.sortBy}">Sort by:${sessionScope.sortBy}</option>
 							<option value="Name">Name</option>
 							<option value="Price">Price</option>
 						</select>
@@ -457,7 +444,7 @@ body {
 					</div>
 					<div class="dropdown-field">
 						<select name="sort_direction" class="input-field" required="required">
-						    <option value="${sessionScope.direct}">Current:${sessionScope.direct}</option>
+						    <option value="${sessionScope.direct}">Direction:${sessionScope.direct}</option>
 							<option value="Asc">Asc</option>
 							<option value="Desc">Desc</option>
 						</select>
@@ -469,9 +456,9 @@ body {
 					    <form class="card-form" method="post" action="/menu" >
                         <input type="hidden" name="command" value="search"/>
                     		<i class="ph-magnifying-glass"></i>
-                    		<input type="text" placeholder="" value="">
+                    		<input type="text" name="search" placeholder="" value="">
                     	<button class="flat" type="submit">
-                    		Search
+                    		Search with current sort
                     	</button>
                     	</form>
 
@@ -484,7 +471,7 @@ body {
 
 
                                 <div class="menu">
-                                 <c:forEach items="${requestScope.pageable.elements}" var="product">
+                                 <c:forEach items="${sessionScope.pageable.elements}" var="product">
                                       <div class="product-item">
                                        <img src=${product.image}>
                                        <div class="product-list">

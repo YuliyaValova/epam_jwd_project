@@ -1,7 +1,10 @@
 package com.jwd.dao.repository.impl;
 
+import com.jwd.dao.DaoFactory;
+import com.jwd.dao.config.DatabaseConfig;
 import com.jwd.dao.connection.ConnectionPool;
 import com.jwd.dao.connection.ConnectionUtil;
+import com.jwd.dao.connection.impl.ConnectionPoolImpl;
 import com.jwd.dao.domain.*;
 import com.jwd.dao.exception.DaoException;
 import com.jwd.dao.repository.PageDao;
@@ -18,12 +21,12 @@ import java.util.*;
 public class MysqlPageDaoImpl implements PageDao {
 
     private static final String COUNT_BASKET_SORTED = "select count(*) from {0}";
-    private static final String PARAM_FOR_BASKET_SORT = "select b.*, p.name, p.description from {0} b join Products p on p.id = b.product_id order by {1} %s limit ? offset ? ; ";
+    private static final String PARAM_FOR_BASKET_SORT = "select b.*, p.name, p.description from {0} b join Products p on p.id = b.product_id  order by {1} %s limit ? offset ? ; ";
     private static final String COUNT_ALL_ORDERS = "select count(*) from Orders";
     private static final String PARAM_FOR_SORT_ALL_ORDERS = "select o.* from Orders o " +
             "order by o.%s %s limit ? offset ?;";
-    private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true;";
-    private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true order by p.%s %s limit ? offset ?;";
+    private static final String COUNT_ALL_SORTED = "select count(*) from Products where isAvailable = true and type_id in %s;";
+    private static final String PARAM_FOR_SORT = "select * from Products p where p.isAvailable = true and type_id in %s order by p.%s %s limit ? offset ?;";
     private static final String COUNT_ALL_PAID = "select count(*) from Orders \n" +
             "left join Products on Products.id = Orders.product_id\n" +
             "where status = \"Paid up\" and Products.id is not null;";
@@ -36,6 +39,8 @@ public class MysqlPageDaoImpl implements PageDao {
             "join Products p on p.id = o.product_id\n" +
             "where order_id = {0}\n" +
             "order by o.order_id;";
+    private static final String COUNT_ALL_FILTERED = "select count(*) from Products where isAvailable = true and type_id in %s and (name REGEXP %s or description regexp %s);";
+    private static final String PARAM_FOR_SORT_FILTERED = "select * from Products p where p.isAvailable = true and type_id in %s and (name regexp %s or description regexp %s) order by p.%s %s limit ? offset ?;";
 
     private final ConnectionPool connectionPool;
     private final ConnectionUtil daoUtil;
@@ -62,8 +67,9 @@ public class MysqlPageDaoImpl implements PageDao {
         try {
             connection = connectionPool.takeConnection();
             connection.setAutoCommit(false);
-            preparedStatement1 = daoUtil.getPreparedStatement(COUNT_ALL_SORTED, connection, parameters1);
-            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT, daoProductPageable.getSortBy(), daoProductPageable.getDirection());
+            String queryForCount = String.format(COUNT_ALL_SORTED, daoProductPageable.getFilter());
+            preparedStatement1 = daoUtil.getPreparedStatement(queryForCount, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT, daoProductPageable.getFilter(), daoProductPageable.getSortBy(), daoProductPageable.getDirection());
             preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
             resultSet1 = preparedStatement1.executeQuery();
             resultSet2 = preparedStatement2.executeQuery();
@@ -77,6 +83,61 @@ public class MysqlPageDaoImpl implements PageDao {
             connectionPool.retrieveConnection(connection);
         }
     }
+
+    @Override
+    public Pageable<Product> findPage(Pageable<Product> daoProductPageable, String searchRequest) throws DaoException {
+        final int offset = (daoProductPageable.getPageNumber() - 1) * daoProductPageable.getLimit();
+        List<Object> parameters1 = Collections.emptyList();
+        List<Object> parameters2 = Arrays.asList(
+                daoProductPageable.getLimit(),
+                offset
+        );
+        Connection connection = null;
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        ResultSet resultSet1 = null;
+        ResultSet resultSet2 = null;
+        try {
+            connection = connectionPool.takeConnection();
+            connection.setAutoCommit(false);
+            String searchWords = getWords(searchRequest);
+            String queryForCount = String.format(COUNT_ALL_FILTERED, daoProductPageable.getFilter(), "\'"+searchWords+"\'", "\'"+searchWords+"\'");
+            preparedStatement1 = daoUtil.getPreparedStatement(queryForCount, connection, parameters1);
+            final String findPageOrderedQuery = String.format(PARAM_FOR_SORT_FILTERED,  daoProductPageable.getFilter(), "\'"+searchWords+"\'", "\'"+searchWords+"\'", daoProductPageable.getSortBy(), daoProductPageable.getDirection());
+            preparedStatement2 = daoUtil.getPreparedStatement(findPageOrderedQuery, connection, parameters2);
+            resultSet1 = preparedStatement1.executeQuery();
+            resultSet2 = preparedStatement2.executeQuery();
+            connection.commit();
+            return getProductRowPageable(daoProductPageable, resultSet1, resultSet2);
+        } catch (SQLException | DaoException e) {
+            throw new DaoException(e);
+        } finally {
+            daoUtil.close(resultSet1, resultSet2);
+            daoUtil.close(preparedStatement1, preparedStatement2);
+            connectionPool.retrieveConnection(connection);
+        }
+    }
+
+    private String getWords(String searchRequest) {
+        StringBuilder result = new StringBuilder();
+        String[] words = searchRequest.split(" ");
+        ArrayList<String> variants = new ArrayList<>();
+        Arrays.stream(words).map(word->word.trim()).forEach(word -> {
+            variants.add(word);
+            variants.add(word.toLowerCase(Locale.ROOT));
+            variants.add(word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase(Locale.ROOT));
+        });
+        variants.forEach(variant -> result.append(variant+"|"));
+        result.deleteCharAt(result.length()-1);
+        return result.toString();
+    }
+
+   /* public static void main(String[] args) {
+         final DaoFactory daoFactory = DaoFactory.getFactory();
+         MysqlPageDaoImpl dao = (MysqlPageDaoImpl) daoFactory.getPageDao();
+        String result = dao.getWords("Шоколадный КЕКС");
+        System.out.println(result);
+    }*/
 
     @Override
     public Pageable<OrderDetail> findOrderPage(Pageable<OrderDetail> daoProductPageable) throws DaoException {
@@ -241,7 +302,7 @@ public class MysqlPageDaoImpl implements PageDao {
             preparedStatement = daoUtil.getPreparedStatement(query, connection, Collections.emptyList());
             resultSet = preparedStatement.executeQuery();
             connection.commit();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 OrderDetail detail = getOrderDetailFromDbForOrder(resultSet);
                 details.add(detail);
             }

@@ -46,6 +46,18 @@ public class ProductServiceImpl implements ProductService {
             throw new ServiceException(e);
         }
     }
+    @Override
+    public Page<Product> showProducts(Page<Product> productPageRequest, String searchRequest) throws ServiceException {
+        // todo validation
+        try {
+            final Pageable<Product> daoProductPageable = convertToPageable(productPageRequest);
+            final Pageable<Product> productsPageable = pageDao.findPage(daoProductPageable, searchRequest);
+            return convertToServicePage(productsPageable);
+        } catch (final DaoException e) {
+            logger.error("#showProduct throws exception.");
+            throw new ServiceException(e);
+        }
+    }
 
     @Override
     public Page<OrderDetail> showBasket(Page<OrderDetail> pageRequest, String login) throws ServiceException {
@@ -355,6 +367,7 @@ public class ProductServiceImpl implements ProductService {
         page.setElements(productRowsPageable.getElements());
         page.setSortBy(productRowsPageable.getSortBy());
         page.setDirection(productRowsPageable.getDirection());
+        page.setFilter(productRowsPageable.getFilter());
         return page;
     }
 
@@ -386,6 +399,7 @@ public class ProductServiceImpl implements ProductService {
         pageable.setTotalElements(page.getTotalElements());
         pageable.setSortBy(page.getSortBy());
         pageable.setDirection(page.getDirection());
+        pageable.setFilter(page.getFilter());
         return pageable;
     }
 
@@ -397,6 +411,7 @@ public class ProductServiceImpl implements ProductService {
         pageable.setTotalElements(page.getTotalElements());
         pageable.setSortBy(page.getSortBy());
         pageable.setDirection(page.getDirection());
+        pageable.setFilter(page.getFilter());
         return pageable;
     }
 }

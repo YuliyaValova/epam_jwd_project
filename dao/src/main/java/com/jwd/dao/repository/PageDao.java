@@ -12,6 +12,7 @@ public interface PageDao {
      * @throws DaoException is a module exception
      */
     Pageable<Product> findPage(Pageable<Product> daoProductPageable) throws DaoException;
+    Pageable<Product> findPage(Pageable<Product> daoProductPageable, String searchRequest) throws DaoException;
 
     Pageable<OrderDetail> findOrderPage(Pageable<OrderDetail> daoProductPageable) throws DaoException;
 

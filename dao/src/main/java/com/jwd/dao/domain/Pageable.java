@@ -2,6 +2,7 @@ package com.jwd.dao.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Pageable<T> {
 
@@ -11,6 +12,7 @@ public class Pageable<T> {
     private List<T> elements = new ArrayList<>();
     private String sortBy = "id";
     private String direction = "ASC";
+    private String filter = "(1,2,3,4)";
 
     public Pageable() {
     }
@@ -70,29 +72,24 @@ public class Pageable<T> {
         this.direction = direction;
     }
 
+    public String getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Pageable<?> pageable = (Pageable<?>) o;
-
-        if (pageNumber != pageable.pageNumber) return false;
-        if (totalElements != pageable.totalElements) return false;
-        if (limit != pageable.limit) return false;
-        if (elements != null ? !elements.equals(pageable.elements) : pageable.elements != null) return false;
-        if (sortBy != null ? !sortBy.equals(pageable.sortBy) : pageable.sortBy != null) return false;
-        return direction != null ? direction.equals(pageable.direction) : pageable.direction == null;
+        return pageNumber == pageable.pageNumber && totalElements == pageable.totalElements && limit == pageable.limit && Objects.equals(elements, pageable.elements) && Objects.equals(sortBy, pageable.sortBy) && Objects.equals(direction, pageable.direction) && Objects.equals(filter, pageable.filter);
     }
 
     @Override
     public int hashCode() {
-        int result = pageNumber;
-        result = 31 * result + (int) (totalElements ^ (totalElements >>> 32));
-        result = 31 * result + limit;
-        result = 31 * result + (elements != null ? elements.hashCode() : 0);
-        result = 31 * result + (sortBy != null ? sortBy.hashCode() : 0);
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
-        return result;
+        return Objects.hash(pageNumber, totalElements, limit, elements, sortBy, direction, filter);
     }
 }

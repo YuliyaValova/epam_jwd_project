@@ -2,7 +2,9 @@ package com.jwd.controller.command.impl;
 
 import com.jwd.controller.command.Command;
 import com.jwd.controller.exception.ControllerException;
+import com.jwd.dao.domain.OrderDetail;
 import com.jwd.service.ServiceFactory;
+import com.jwd.service.domain.Page;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.serviceLogic.ProductService;
 import org.slf4j.Logger;
@@ -34,6 +36,8 @@ public class CleanBasketCommand implements Command {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
                 productService.cleanBasket(user.getLogin());
+                final Page<OrderDetail> pageable = new Page<>();
+                req.setAttribute(PAGEABLE, pageable);
                 final double totalSum = productService.getSum(user.getLogin());
                 String sum = String.format("%.1f",totalSum);
                 session.setAttribute(SUM, sum);

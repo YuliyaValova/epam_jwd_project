@@ -53,6 +53,7 @@ public class LogInCommand implements Command {
                     session = request.getSession();
                     session.setAttribute("sortBy", "Name");
                     session.setAttribute("direct", "Asc");
+                    session.setAttribute("type", "(1,2,3,4)");
                     session.setAttribute(USER, loginatedUser);
                     session.setAttribute(ADDRESS, loginatedUser.getAddress());
                     session.setAttribute(ROLE, loginatedUser.getRole());

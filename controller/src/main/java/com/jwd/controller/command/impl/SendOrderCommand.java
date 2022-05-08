@@ -2,7 +2,9 @@ package com.jwd.controller.command.impl;
 
 import com.jwd.controller.command.Command;
 import com.jwd.controller.exception.ControllerException;
+import com.jwd.dao.domain.OrderDetail;
 import com.jwd.service.ServiceFactory;
+import com.jwd.service.domain.Page;
 import com.jwd.service.domain.UserAccount;
 import com.jwd.service.serviceLogic.ProductService;
 import org.slf4j.Logger;
@@ -38,6 +40,8 @@ public class SendOrderCommand implements Command {
                 productService.cleanBasket( user.getLogin());
                 final double totalSum = productService.getSum(user.getLogin());
                 String sum = String.format("%.1f",totalSum);
+                final Page<OrderDetail> pageable = new Page<>();
+                req.setAttribute(PAGEABLE, pageable);
                 session.setAttribute(SUM, sum);
                 req.setAttribute(MESSAGE, PAID_SUCCESSFULLY);
                 req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);

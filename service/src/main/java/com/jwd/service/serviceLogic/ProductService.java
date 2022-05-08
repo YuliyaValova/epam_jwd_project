@@ -19,6 +19,7 @@ public interface ProductService {
      * @throws ServiceException is a module exception
      */
     Page<Product> showProducts(Page<Product> productPageRequest) throws ServiceException;
+    Page<Product> showProducts(Page<Product> productPageRequest, String searchRequest) throws ServiceException;
 
     Page<OrderDetail> showBasket(Page<OrderDetail> pageRequest, String login) throws ServiceException;
 

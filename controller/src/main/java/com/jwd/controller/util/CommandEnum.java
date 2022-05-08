@@ -30,6 +30,7 @@ public enum CommandEnum {
     UPDATEUSER("updateUser"),
     UPDATEPRODUCT("updateProduct"),
     DELETEFROMMENU("deletefrommenu"),
+    SEARCH("search"),
     WRITETOCSV("writeToCSV");
 
 
