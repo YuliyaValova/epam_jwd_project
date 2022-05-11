@@ -382,6 +382,13 @@ background:white;
                                      <button class="but1" type="submit">${account}</button>
                                      </form>
 
+  <c:if test = "${sessionScope.role != 'admin'}">
+                                     <form id="gotohistory" method="get" action="/history" >
+                                          <input type="hidden" name="command" value="gotohistory"/>
+                                          <button class="but1" form="gotohistory" type="submit">History</button>
+                                      </form>
+</c:if>
+
                                       <form method="get" action="/" >
                                       <input type="hidden" name="command" value="logout"/>
                                       <button class="but1" type="submit">${logout}</button>
@@ -411,6 +418,13 @@ background:white;
                                       <input type="hidden" name="command" value="writeToCSV"/>
                                       <input type="text" name="path" placeholder="path" value=""/>
                                       <button class="but2" type="submit">Write products to csv</button>
+                                      </form>
+                                     <br>
+                                     <br>
+                                      <form method="get" action="/main" >
+                                      <input type="hidden" name="command" value="fillfromCSV"/>
+                                      <input type="text" name="path" placeholder="path" value=""/>
+                                      <button class="but2" type="submit">Load products from csv</button>
                                       </form>
                                      <br>
 

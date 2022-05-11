@@ -69,7 +69,7 @@ public class SearchCommand implements Command {
             } else {
                 pageable = productService.showProducts(pageRequest, searchRequest);
             }
-            req.setAttribute(PAGEABLE, pageable);
+            session.setAttribute(PAGEABLE, pageable);
             req.setAttribute(PAGE, SHOW);
             req.getRequestDispatcher(PATH_TO_JSP + Command.prepareUri(req) + JSP).forward(req, resp);
         } catch (Exception e) {

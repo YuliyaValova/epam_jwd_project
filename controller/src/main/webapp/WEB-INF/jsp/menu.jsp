@@ -52,7 +52,7 @@ width:fit-content;
 .service-section-header {
 	display: flex;
 	justify-content: space-between;
-	width:800px;
+	width:1000px;
 	height:40px;
 }
 

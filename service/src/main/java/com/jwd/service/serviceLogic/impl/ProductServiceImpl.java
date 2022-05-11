@@ -96,11 +96,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void sendOrder(long id, String login, String comment) throws ServiceException {
+    public long sendOrder(long id, String login, String comment) throws ServiceException {
         try {
             if (validator.validateId(id)) {
                 if(!orderDao.isBasketEmpty(login))
-                orderDao.changeAllOrdersStatus(id, login, comment);
+                return orderDao.changeAllOrdersStatus(id, login, comment);
             } else {
                 logger.info("#sendOrder invalid id.");
             }
@@ -108,6 +108,7 @@ public class ProductServiceImpl implements ProductService {
             logger.error("#sendOrder throws exception.");
             throw new ServiceException(e);
         }
+        return -1;
     }
 
     @Override
@@ -194,6 +195,19 @@ public class ProductServiceImpl implements ProductService {
         try {
             final Pageable<Order> daoOrderPageable = convertOrdersToPageable(pageRequest);
             final Pageable<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable);
+            return convertOrderToServicePage(ordersPageable);
+        } catch (final DaoException e) {
+            logger.error("#showAllOrders throws exception.");
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public Page<Order> showAllOrders(Page<Order> pageRequest, long id) throws ServiceException {
+        // todo validation
+        try {
+            final Pageable<Order> daoOrderPageable = convertOrdersToPageable(pageRequest);
+            final Pageable<Order> ordersPageable = pageDao.findAllOrderPage(daoOrderPageable, id);
             return convertOrderToServicePage(ordersPageable);
         } catch (final DaoException e) {
             logger.error("#showAllOrders throws exception.");

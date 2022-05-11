@@ -31,6 +31,9 @@ public enum CommandEnum {
     UPDATEPRODUCT("updateProduct"),
     DELETEFROMMENU("deletefrommenu"),
     SEARCH("search"),
+    GETORDERS("getOrders"),
+    GOTOHISTORY("gotohistory"),
+    GOTOPAY("gotopay"),
     WRITETOCSV("writeToCSV");
 
 

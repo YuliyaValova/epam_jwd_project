@@ -59,7 +59,7 @@ public class MysqlOrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public void changeAllOrdersStatus(long id, String login, String comment) throws DaoException {
+    public long changeAllOrdersStatus(long id, String login, String comment) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         PreparedStatement preparedStatement2 = null;
@@ -97,6 +97,7 @@ public class MysqlOrderDaoImpl implements OrderDao {
             daoUtil.close(preparedStatement);
             connectionPool.retrieveConnection(connection);
         }
+        return orderId;
     }
 
     @Override

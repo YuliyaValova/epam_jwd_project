@@ -88,7 +88,18 @@ div.basket{
  padding:20px;
                 position:fixed;
                 top:150px;
-                left:400px;
+                left:470px;
+}
+
+div.orders{
+ display:inline-block;
+ background:white;
+ border:2px solid gray;
+ width: fit-content;
+ padding:20px;
+                position:fixed;
+                top:500px;
+                left:20px;
 }
 .loc {
               font-size:20px;
@@ -208,6 +219,8 @@ body {
                               <button class="but1" form="cleanbasket" type="submit">${deleteAllBascket}</button>
                           </form>
 
+
+
                           <form id="gotomain" method="get" action="/main" >
                               <input type="hidden" name="command" value="gotomain"/>
                               <button class="but1" form="gotomain" type="submit">${goMain}</button>
@@ -278,12 +291,16 @@ body {
 
                                <p>${sum}: ${sessionScope.sum}</p>
                                <br>
-                                <form id="sendOrder" method="get" action="/basket" >
+
+                                <c:if test="${sessionScope.sum != 0.0}">
+                                <form id="sendOrder" method="get" action="/payment" >
                                 <input type="hidden" name="command" value="sendOrder"/>
                                 <input type="text" name="comment" placeholder = "Comment..." value=""/>
                                 <button form="sendOrder" type="submit">${sendOrd}</button>
                                 </form>
+                                </c:if>
 
 
                         </div>
                      </c:if>
+

@@ -33,7 +33,7 @@ public interface ProductService {
      * @param id identifies user
      * @throws ServiceException is a module exception
      */
-    void sendOrder(long id, String login, String comment) throws ServiceException;
+    long sendOrder(long id, String login, String comment) throws ServiceException;
 
     void deleteFromBasket(String login, long productId) throws ServiceException;
 
@@ -76,6 +76,7 @@ public interface ProductService {
      * @throws ServiceException is a module exception
      */
     Page<Order> showAllOrders(Page<Order> pageRequest) throws ServiceException;
+    Page<Order> showAllOrders(Page<Order> pageRequest, long id) throws ServiceException;
 
     /**
      * Deletes a product from menu

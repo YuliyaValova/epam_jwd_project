@@ -66,6 +66,9 @@ public class FrontController extends HttpServlet {
         commands.put(CHANGEORDERSTATUS, new ChangeOrderStatusCommand());
         commands.put(WRITETOCSV, new WriteToCsvCommand());
         commands.put(SEARCH, new SearchCommand());
+        commands.put(GETORDERS, new GetOrdersCommand());
+        commands.put(GOTOHISTORY, new GoToHistoryCommand());
+        commands.put(GOTOPAY, new GoToPayCommand());
     }
 
 

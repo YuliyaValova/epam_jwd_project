@@ -8,7 +8,7 @@ public interface OrderDao {
     void deleteOrdersByUserLogin(String login) throws DaoException;
 
 
-    void changeAllOrdersStatus(long id, String login, String comment) throws DaoException;
+    long changeAllOrdersStatus(long id, String login, String comment) throws DaoException;
 
     void changeOrderStatus(long orderId, String newStatus) throws DaoException;
 

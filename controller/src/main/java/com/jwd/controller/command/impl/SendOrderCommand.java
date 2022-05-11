@@ -36,7 +36,10 @@ public class SendOrderCommand implements Command {
                 // todo validation
                 UserAccount user = (UserAccount) session.getAttribute(USER);
                 String comment = req.getParameter("comment");
-                productService.sendOrder(user.getId(), user.getLogin(), comment);
+                long id = productService.sendOrder(user.getId(), user.getLogin(), comment);
+                session.setAttribute("paymentSum", session.getAttribute("sum"));
+                if(id != -1L) session.setAttribute("lastorderid", id);
+                else session.setAttribute("lastorderid", 0);
                 productService.cleanBasket( user.getLogin());
                 final double totalSum = productService.getSum(user.getLogin());
                 String sum = String.format("%.1f",totalSum);
